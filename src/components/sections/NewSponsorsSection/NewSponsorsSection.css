@@ -1,0 +1,459 @@
+.new-sponsors-section {
+  background-color: #0f172a;
+  padding: 3rem 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sponsors-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+/* Sponsor box styling */
+.sponsor-box {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #0f172a !important; /* Default blue background */
+  cursor: pointer; /* Add cursor pointer to indicate interactivity */
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+/* Track sponsor hover effect */
+.main-sponsor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(243, 232, 255, 0.3);
+  border-color: #f3e8ff;
+  background-color: rgba(243, 232, 255, 0.1) !important;
+}
+
+/* Gold sponsor hover effect */
+.secondary-sponsor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(234, 179, 8, 0.3);
+  border-color: #eab308;
+  background-color: rgba(234, 179, 8, 0.1) !important;
+}
+
+/* Silver sponsor hover effect */
+.tertiary-sponsor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(148, 163, 184, 0.3);
+  border-color: #94a3b8;
+  background-color: rgba(148, 163, 184, 0.1) !important;
+}
+
+/* Community sponsor hover effect */
+.community-sponsor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(34, 197, 94, 0.3);
+  border-color: #22c55e;
+  background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+/* Main (larger) sponsor boxes */
+.main-sponsor {
+  height: 280px;
+  padding: 2rem;
+}
+
+/* Secondary (gold sponsor) boxes */
+.secondary-sponsor {
+  height: 220px;
+  padding: 1.5rem;
+}
+
+/* Tertiary (silver sponsor) boxes */
+.tertiary-sponsor {
+  height: 180px;
+  padding: 1.25rem;
+}
+
+/* Community partner boxes */
+.community-sponsor {
+  height: 180px;
+  padding: 1.25rem;
+}
+
+/* Sponsor label (only visible on hover or for screen readers) */
+.sponsor-label {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sponsor-box:hover .sponsor-label {
+  opacity: 1;
+}
+
+/* Sponsor logo container */
+.sponsor-logo-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sponsor logo */
+.sponsor-logo {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.main-sponsor .sponsor-logo {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.tertiary-sponsor .sponsor-logo {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.community-sponsor .sponsor-logo {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+/* Logo hover effects */
+.main-sponsor:hover .sponsor-logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(243, 232, 255, 0.6));
+}
+
+.secondary-sponsor:hover .sponsor-logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(234, 179, 8, 0.6));
+}
+
+.tertiary-sponsor:hover .sponsor-logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(148, 163, 184, 0.6));
+}
+
+.community-sponsor:hover .sponsor-logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(34, 197, 94, 0.6));
+}
+
+/* Additional styling for sponsor section */
+.sponsors-title {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Row headings */
+.sponsor-row-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-left: 4px solid;
+  line-height: 1.2;
+}
+
+.sponsor-row-heading.track {
+  border-color: #f59e0b;
+}
+
+.sponsor-row-heading.gold {
+  border-color: #eab308;
+}
+
+.sponsor-row-heading.silver {
+  border-color: #94a3b8;
+}
+
+.sponsor-row-heading.community {
+  border-color: #22c55e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main-sponsor {
+    height: 220px;
+  }
+
+  .secondary-sponsor {
+    height: 180px;
+  }
+
+  .tertiary-sponsor, .community-sponsor {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-sponsor {
+    height: 180px;
+  }
+
+  .secondary-sponsor {
+    height: 150px;
+  }
+
+  .tertiary-sponsor, .community-sponsor {
+    height: 130px;
+  }
+
+  .sponsor-row-heading {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .main-sponsor {
+    height: 160px;
+  }
+
+  .secondary-sponsor {
+    height: 130px;
+  }
+
+  .tertiary-sponsor, .community-sponsor {
+    height: 110px;
+  }
+
+  /* Enhance touch targets for mobile */
+  .sponsor-box {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Touch device specific styles */
+@media (hover: none) {
+  /* Apply hover styles to all boxes by default for touch devices */
+  .main-sponsor.touch-device {
+    border-color: rgba(243, 232, 255, 0.3);
+    box-shadow: 0 5px 15px -3px rgba(243, 232, 255, 0.2);
+  }
+
+  .secondary-sponsor.touch-device {
+    border-color: rgba(234, 179, 8, 0.3);
+    box-shadow: 0 5px 15px -3px rgba(234, 179, 8, 0.2);
+  }
+
+  .tertiary-sponsor.touch-device {
+    border-color: rgba(148, 163, 184, 0.3);
+    box-shadow: 0 5px 15px -3px rgba(148, 163, 184, 0.2);
+  }
+
+  .community-sponsor.touch-device {
+    border-color: rgba(34, 197, 94, 0.3);
+    box-shadow: 0 5px 15px -3px rgba(34, 197, 94, 0.2);
+  }
+
+  /* Add active state for touch */
+  .main-sponsor:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px -3px rgba(243, 232, 255, 0.4);
+    border-color: #f3e8ff;
+    background-color: rgba(243, 232, 255, 0.1) !important;
+  }
+
+  .secondary-sponsor:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px -3px rgba(234, 179, 8, 0.4);
+    border-color: #eab308;
+    background-color: rgba(234, 179, 8, 0.1) !important;
+  }
+
+  .tertiary-sponsor:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px -3px rgba(148, 163, 184, 0.4);
+    border-color: #94a3b8;
+    background-color: rgba(148, 163, 184, 0.1) !important;
+  }
+
+  .community-sponsor:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px -3px rgba(34, 197, 94, 0.4);
+    border-color: #22c55e;
+    background-color: rgba(34, 197, 94, 0.1) !important;
+  }
+
+  /* Logo active effects for touch */
+  .main-sponsor:active .sponsor-logo,
+  .secondary-sponsor:active .sponsor-logo,
+  .tertiary-sponsor:active .sponsor-logo,
+  .community-sponsor:active .sponsor-logo {
+    transform: scale(1.05);
+  }
+}
+
+/* Specific styles for when a sponsor is being touched/tapped */
+.main-sponsor[data-hovered="true"] {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(243, 232, 255, 0.3);
+  border-color: #f3e8ff;
+  background-color: rgba(243, 232, 255, 0.1) !important;
+}
+
+.secondary-sponsor[data-hovered="true"] {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(234, 179, 8, 0.3);
+  border-color: #eab308;
+  background-color: rgba(234, 179, 8, 0.1) !important;
+}
+
+.tertiary-sponsor[data-hovered="true"] {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(148, 163, 184, 0.3);
+  border-color: #94a3b8;
+  background-color: rgba(148, 163, 184, 0.1) !important;
+}
+
+.community-sponsor[data-hovered="true"] {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(34, 197, 94, 0.3);
+  border-color: #22c55e;
+  background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+.sponsor-box[data-hovered="true"] .sponsor-logo {
+  transform: scale(1.05);
+}
+
+/* Become a sponsor button styles */
+.become-sponsor-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.become-sponsor-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-weight: 500;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 980px;
+  border: none;
+  position: relative;
+  font-size: 1rem;
+  height: 50px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.become-sponsor-button-text {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b82f6;
+  height: 100%;
+  width: 50px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.arrow-icon {
+  width: 18px;
+  height: 18px;
+  color: white;
+  transition: all 0.3s ease;
+  stroke-width: 2.5px;
+  transform: rotate(0deg);
+}
+
+.become-sponsor-button:hover .arrow-container {
+  background-color: #60a5fa;
+  right: auto;
+  left: 0;
+}
+
+.become-sponsor-button:hover .arrow-icon {
+  transform: rotate(50deg);
+}
+
+/* Dark mode styles */
+.dark .become-sponsor-button {
+  background-color: #1e293b;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .become-sponsor-button {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 640px) {
+  .become-sponsor-button {
+    max-width: 100%;
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .arrow-container {
+    width: 45px;
+  }
+
+  .arrow-icon {
+    width: 18px;
+    height: 18px;
+  }
+}

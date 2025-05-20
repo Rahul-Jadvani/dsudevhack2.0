@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Head -->
+  <circle cx="100" cy="80" r="50" fill="#FFD7B5"/>
+  
+  <!-- Hair -->
+  <path d="M60 70C60 50 75 30 100 30C125 30 140 50 140 70V75C140 75 130 85 100 85C70 85 60 75 60 75V70Z" fill="#A78BFA"/>
+  
+  <!-- Eyes -->
+  <circle cx="80" cy="75" r="5" fill="#333333"/>
+  <circle cx="120" cy="75" r="5" fill="#333333"/>
+  
+  <!-- Smile -->
+  <path d="M85 95C90 105 110 105 115 95" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Body -->
+  <path d="M70 130V180H130V130C130 130 115 140 100 140C85 140 70 130 70 130Z" fill="#A78BFA"/>
+  
+  <!-- Headphones -->
+  <path d="M60 70C60 70 50 70 50 80V90C50 90 55 90 55 85V75C55 75 55 70 60 70Z" fill="#111827"/>
+  <path d="M140 70C140 70 150 70 150 80V90C150 90 145 90 145 85V75C145 75 145 70 140 70Z" fill="#111827"/>
+  <path d="M50 70C50 70 60 50 100 50C140 50 150 70 150 70" stroke="#111827" stroke-width="3"/>
+</svg>

@@ -1,0 +1,303 @@
+@import '../common/SectionStyles.css';
+
+.judges-section {
+  composes: section-container;
+  background-color: #f8f9fa;
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+}
+
+.dark .judges-section {
+  background-color: #111827;
+}
+
+.judges-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.dark .judges-heading {
+  color: #f8f9fa;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 2rem 0;
+}
+
+.dark .divider {
+  background-color: #374151;
+}
+
+/* Tab buttons */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #e2e8f0;
+  color: #4b5563;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.dark .tab-button {
+  background-color: #374151;
+  color: #9ca3af;
+}
+
+.tab-button:hover {
+  background-color: #cbd5e1;
+  color: #111827;
+}
+
+.dark .tab-button:hover {
+  background-color: #4b5563;
+  color: #f8f9fa;
+}
+
+.tab-button.active {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.dark .tab-button.active {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* Judges grid */
+.judges-grid-container {
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.judges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.judge-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dark .judge-card {
+  background-color: #1f2937;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.judge-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark .judge-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.judge-card-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.judge-avatar-container {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.judge-avatar-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.judge-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.judge-avatar-shadow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20px;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.judge-info {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.dark .judge-info {
+  background-color: #1f2937;
+  border-top: 1px solid #374151;
+}
+
+.judge-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.dark .judge-name {
+  color: #f8f9fa;
+}
+
+.judge-role {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.dark .judge-role {
+  color: #9ca3af;
+}
+
+.judge-company {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.dark .judge-company {
+  color: #60a5fa;
+}
+
+/* Fixed header */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.75rem 0;
+  z-index: 50;
+}
+
+.dark .fixed-header {
+  background-color: #111827;
+  border-bottom-color: #374151;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header-title {
+  font-weight: 500;
+  color: #111827;
+}
+
+.dark .header-title {
+  color: #f8f9fa;
+}
+
+.header-date {
+  color: #111827;
+}
+
+.dark .header-date {
+  color: #f8f9fa;
+}
+
+.date-tag {
+  color: #3b82f6;
+}
+
+/* Fixed navigation bar */
+.fixed-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 0.75rem 0;
+  z-index: 50;
+}
+
+.dark .fixed-nav {
+  background-color: #111827;
+  border-top-color: #374151;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  color: #4b5563;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #111827;
+}
+
+.dark .nav-link:hover {
+  color: #f8f9fa;
+}
+
+.nav-link.active {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.nav-link.register {
+  color: #ffffff;
+  background-color: #3b82f6;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.nav-link.register:hover {
+  background-color: #2563eb;
+}

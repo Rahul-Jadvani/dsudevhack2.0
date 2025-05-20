@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M60 20H80C91.046 20 100 28.954 100 40C100 51.046 91.046 60 80 60H60C48.954 60 40 51.046 40 40C40 28.954 48.954 20 60 20Z" stroke="white" stroke-width="4" fill="none"/>
+  <path d="M120 20H140C151.046 20 160 28.954 160 40C160 51.046 151.046 60 140 60H120C108.954 60 100 51.046 100 40C100 28.954 108.954 20 120 20Z" stroke="white" stroke-width="4" fill="none"/>
+</svg>

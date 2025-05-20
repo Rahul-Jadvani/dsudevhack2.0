@@ -1,0 +1,79 @@
+/* Curtain Transition Effect */
+.curtain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Left curtain panel */
+.curtain-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #0a1525;
+  transform: translateX(0);
+  transition: transform 0.1s cubic-bezier(0.77, 0, 0.175, 1); /* Reduced from 1s to 0.1s for almost instant transition */
+}
+
+/* Right curtain panel */
+.curtain-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #0a1525;
+  transform: translateX(0);
+  transition: transform 0.1s cubic-bezier(0.77, 0, 0.175, 1); /* Reduced from 1s to 0.1s for almost instant transition */
+}
+
+/* Opening animation classes */
+.curtain-open .curtain-left {
+  transform: translateX(-100%);
+}
+
+.curtain-open .curtain-right {
+  transform: translateX(100%);
+}
+
+/* Logo in the center of the curtain */
+.curtain-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.1s ease; /* Reduced from 0.5s to 0.1s for faster fade-out */
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text logo styling */
+.text-logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.curtain-open .curtain-logo {
+  opacity: 0;
+}
+
+/* Fade out the entire curtain container after animation completes */
+.curtain-container.fade-out {
+  opacity: 0;
+  transition: opacity 0.1s ease; /* Reduced from 0.3s to 0.1s */
+  transition-delay: 0s; /* Removed delay (was 1s) */
+}

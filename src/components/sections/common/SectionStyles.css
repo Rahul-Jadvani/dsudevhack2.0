@@ -1,0 +1,92 @@
+/* Common section styling */
+.section-container {
+  width: 100%;
+  max-width: 100vw;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #F3F4F6; /* Light mode background */
+  box-sizing: border-box;
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+  .section-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100vw;
+  }
+}
+
+.dark .section-container {
+  background-color: #111827; /* Dark mode background */
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #60A5FA, #A78BFA);
+}
+
+/* Card styling */
+.card-container {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.dark .card-container {
+  background-color: #0F172A;
+  border: 1px solid #1E293B;
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.dark .card-container:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Text styling */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #60A5FA, #A78BFA);
+}
+
+.text-primary {
+  color: #374151;
+}
+
+.dark .text-primary {
+  color: #D1D5DB;
+}
+
+.text-secondary {
+  color: #6B7280;
+}
+
+.dark .text-secondary {
+  color: #9CA3AF;
+}
+
+.text-highlight {
+  color: #3B82F6;
+}
+
+.dark .text-highlight {
+  color: #60A5FA;
+}

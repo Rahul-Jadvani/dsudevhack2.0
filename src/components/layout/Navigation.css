@@ -1,0 +1,12 @@
+/* Navigation styles */
+
+/* Add thin black border to all nav items */
+.nav-item {
+  border: 1px solid #000000 !important;
+  margin: 2px;
+}
+
+/* Dark mode border styles */
+.dark .nav-item {
+  border-color: #374151 !important;
+}
