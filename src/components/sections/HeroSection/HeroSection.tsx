@@ -279,7 +279,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 <img
                   src="/images/hb-logo.png"
                   alt="DSU DevHack Logo"
-                  className="w-24 h-24 sm:w-32 sm:h-32 mb-4 object-contain filter drop-shadow-md transition-transform duration-300 hover:rotate-12"
+                  className="w-24 h-24 sm:w-32 sm:h-32 mb-4 object-contain filter drop-shadow-md "
                 />
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
                   <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>

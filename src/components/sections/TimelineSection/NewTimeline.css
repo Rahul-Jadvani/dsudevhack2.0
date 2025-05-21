@@ -41,8 +41,8 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 /* Hover effect for timeline columns */

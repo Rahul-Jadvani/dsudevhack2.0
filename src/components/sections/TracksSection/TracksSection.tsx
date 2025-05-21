@@ -7,7 +7,7 @@ interface Track {
   color: string;
   description: string;
   bgClass: string;
-  icon: string;
+  icon: string | JSX.Element;
   sponsor: string;
 }
 
@@ -41,7 +41,7 @@ export const TracksSection = () => {
       color: 'green',
       description: 'Innovate for a greener future: energy, environment, and sustainable solutions.',
       bgClass: 'sustainability-bg',
-      icon: '🌱',
+      icon: <img src="/images/sus.png" alt="Sustainability" className="track-icon-img" />,
       sponsor: 'Eco Foundation',
     },
     {
@@ -49,7 +49,7 @@ export const TracksSection = () => {
       color: 'red',
       description: 'Transform healthcare with technology: patient care, data, and wellness.',
       bgClass: 'healthcare-bg',
-      icon: '🩺',
+      icon: <img src="/images/healthcare.png" alt="Healthcare" className="track-icon-img" />,
       sponsor: 'HealthTech Partners',
     },
     {
@@ -57,7 +57,7 @@ export const TracksSection = () => {
       color: 'purple',
       description: 'Build intelligent systems: machine learning, automation, and smart apps.',
       bgClass: 'aiml-bg',
-      icon: '🤖',
+      icon: <img src="/images/ai ml.png" alt="AI/ML" className="track-icon-img" />,
       sponsor: 'AI Alliance',
     },
     {
@@ -65,7 +65,7 @@ export const TracksSection = () => {
       color: 'blue',
       description: 'Decentralize the web: blockchain, smart contracts, and dApps.',
       bgClass: 'web3-bg',
-      icon: '⛓️',
+      icon: <span className="track-icon-emoji">⛓️</span>,
       sponsor: 'Block Innovators',
     },
     {
@@ -73,7 +73,7 @@ export const TracksSection = () => {
       color: 'teal',
       description: 'Connect the world: IoT devices, smart infrastructure, and urban tech.',
       bgClass: 'iot-bg',
-      icon: '🏙️',
+      icon: <img src="/images/iot.png" alt="IoT and Smart Cities" className="track-icon-img" />,
       sponsor: 'Smart City Group',
     },
     {
@@ -81,7 +81,7 @@ export const TracksSection = () => {
       color: 'orange',
       description: 'Create without limits: any tech, any idea, any impact.',
       bgClass: 'open-bg',
-      icon: '🚀',
+      icon: <img src="/images/open innovation.png" alt="Open Innovation" className="track-icon-img" />,
       sponsor: 'OpenX',
     },
   ];

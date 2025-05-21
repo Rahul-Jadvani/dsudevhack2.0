@@ -312,7 +312,7 @@ body {
 }
 
 /* Larger font size for desktop view */
-@media (min-width: 1023px) {
+@media (min-width: 769px) {
   .p-medium {
     font-size: 1.35rem;
   }
@@ -486,7 +486,7 @@ body {
 }
 
 /* Mobile styles for register button */
-@media (max-width: 1022px) {
+@media (max-width: 768px) {
   .nav-register {
     margin: 10px 0;
     width: 100%;
@@ -501,7 +501,7 @@ body {
 }
 
 /* Responsive styles */
-@media (max-width: 1022px) {
+@media (max-width: 768px) {
   .nav {
     display: none;
   }
@@ -738,7 +738,7 @@ body {
   }
 }
 
-@media (min-width: 1023px) {
+@media (min-width: 769px) {
   .menu-button__dots {
     display: none;
   }
@@ -769,7 +769,7 @@ body {
 }
 
 /* For smaller desktop screens */
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 991px) {
   .desktop-navbar-left {
     padding-left: 1rem;
   }
