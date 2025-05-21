@@ -1111,49 +1111,49 @@
 
   /* Adjust key sizes for small mobile */
   .keyboard-key {
-    width: 150px; /* Slightly larger keys */
-    height: 130px;
+    width: 180px; /* Increased key size */
+    height: 160px; /* Increased key size */
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
   }
 
   .key-letter {
-    font-size: 48px; /* Slightly larger font */
+    font-size: 56px; /* Increased font size */
   }
 
-  /* Compact layout for small screens - adjusted for padding */
+  /* Compact layout for small screens - adjusted for padding and increased spacing */
   .keyboard-key-0 { /* D */
     top: 60px;
-    left: 50px; /* Moved left from 80px */
+    left: 30px; /* Moved left for more spacing */
   }
 
   .keyboard-key-1 { /* E */
     top: 120px;
-    left: 130px; /* Moved left from 160px */
+    left: 110px; /* Moved left for more spacing */
   }
 
   .keyboard-key-2 { /* V */
     top: 60px;
-    left: 210px; /* Moved left from 240px */
+    left: 190px; /* Moved left for more spacing */
   }
 
   .keyboard-key-3 { /* H */
     top: 180px;
-    left: 210px; /* Moved left from 240px */
+    left: 190px; /* Moved left for more spacing */
   }
 
   .keyboard-key-4 { /* A */
     top: 240px;
-    left: 130px; /* Moved left from 160px */
+    left: 110px; /* Moved left for more spacing */
   }
 
   .keyboard-key-5 { /* C */
     top: 120px;
-    left: 290px; /* Moved left from 320px */
+    left: 270px; /* Moved left for more spacing */
   }
 
   .keyboard-key-6 { /* K */
     top: 240px;
-    left: 290px; /* Moved left from 320px */
+    left: 270px; /* Moved left for more spacing */
   }
 
   /* Adjust cursor and message circle for small screens */

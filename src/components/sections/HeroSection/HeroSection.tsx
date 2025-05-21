@@ -12,7 +12,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
   // Animation refs
   const cursorRef = useRef<SVGSVGElement>(null);
   const messageBoxRef = useRef<SVGGElement>(null);
-  const keysRef = useRef<(HTMLImageElement | null)[]>([]);
+  const keysRef = useRef<(HTMLDivElement | null)[]>([]);
 
   // Scroll pinning refs
   const sectionRef = useRef<HTMLElement>(null);
@@ -24,7 +24,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
   // Update screen size
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 992);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -241,6 +241,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
   const mobileSvgs = keySvgs.slice(0, 7);
   const displayedSvgs = isMobile ? mobileSvgs : keySvgs;
 
+  // Desktop/Tablet/Responsive: these display positions only on desktop
+  const desktopOrder = ['D', 'E', 'V', 'C', 'A', 'H', 'K'];
+  const mobileOrder = ['D', 'E', 'V', 'H', 'A', 'C', 'K'];
+  const keyboardLetters = isMobile ? mobileOrder : desktopOrder;
+
   return (
     <section
       id="hero"
@@ -339,7 +344,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
           </div>
         </div>
 
-        {/* Right side - SVG Keys */}
+        {/* Right side - Keyboard */}
         <div
           ref={keyboardWrapRef}
           className={`
@@ -360,31 +365,27 @@ export const HeroSection = (_props: HeroSectionProps) => {
             </div>
           </div>
 
-          {/* Mobile view - SVGs in a single line */}
+          {/* Mobile view - Text-based keys */}
           {isMobile && (
             <div className="w-full pb-2">
-              <div className="flex flex-row justify-center items-center py-0 mx-auto">
-                {displayedSvgs.map((svgPath, index) => (
-                  <img
+              <div className="relative w-full flex flex-row items-center justify-center gap-2 sm:gap-5 py-3 px-2">
+                {keyboardLetters.map((letter, index) => (
+                  <div
                     key={index}
-                    src={svgPath}
-                    alt={`Key ${index}`}
                     ref={el => keysRef.current[index] = el}
-                    className="w-[80px] h-[80px] xs:w-[85px] xs:h-[85px] sm:w-[90px] sm:h-[90px] object-contain"
-                    style={{
-                      filter: 'drop-shadow(0px 2px 1px rgba(0,0,0,0.1))',
-                      transition: 'transform 0.2s ease-out',
-                      margin: '0 -35px'
-                    }}
+                    className="relative w-12 h-12 sm:w-[60px] sm:h-[60px] rounded-2xl flex justify-center items-center shadow-md origin-bottom transition-transform duration-200 cursor-pointer z-[2] border border-black/10 bg-white"
                     onMouseEnter={() => handleKeyHover(index, true)}
                     onMouseLeave={() => handleKeyHover(index, false)}
-                  />
+                  >
+                    <span className="text-3xl sm:text-4xl font-bold text-black text-center select-none">{letter}</span>
+                    <div className="absolute bottom-[-6px] left-0 w-full h-[6px] bg-black/30 rounded-b-2xl z-[-1]"></div>
+                  </div>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Desktop view - absolute positioned SVGs */}
+          {/* Desktop view - SVG keys */}
           {!isMobile && (
             <div className="relative w-full h-full">
               {displayedSvgs.map((svgPath, index) => (
@@ -393,10 +394,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   src={svgPath}
                   alt={`Key ${index}`}
                   ref={el => keysRef.current[index] = el}
-                  className={`absolute w-[340px] h-[340px] sm:w-[390px] sm:h-[390px] lg:w-[450px] lg:h-[450px] object-contain ${getSvgPositionClass(index)}`}
+                  className={`absolute w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] lg:w-[700px] lg:h-[700px] object-contain ${getSvgPositionClass(index)}`}
                   style={{
-                    filter: 'drop-shadow(0px 8px 4px rgba(0,0,0,0.2))',
-                    transition: 'transform 0.2s ease-out'
+                    filter: 'drop-shadow(0px 12px 8px rgba(0,0,0,0.3))',
+                    transition: 'transform 0.2s ease-out, filter 0.2s ease-out',
+                    transformOrigin: 'center center'
                   }}
                   onMouseEnter={() => handleKeyHover(index, true)}
                   onMouseLeave={() => handleKeyHover(index, false)}
@@ -446,18 +448,18 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
 // Helper function for absolute position classes (desktop)
 const getSvgPositionClass = (index: number): string => {
-  // Only use on desktop
+  // Only use on desktop - positions shifted slightly more upward, with more varied rotations
   const positions = [
-    'top-[0px] left-[0px] -rotate-12', // D
-    'top-[20px] left-[130px] rotate-6', // E
-    'top-[10px] left-[350px] -rotate-6', // V
-    'top-[40px] left-[250px] rotate-12', // H
-    'top-[160px] left-[0px] -rotate-6', // A
-    'top-[160px] left-[150px] rotate-6', // C
-    'top-[160px] left-[300px] -rotate-6', // K
-    'top-[280px] left-[120px] rotate-6', // 2
-    'top-[280px] left-[0px] -rotate-12', // .
-    'top-[280px] left-[250px] rotate-12', // 0
+    'top-[-120px] left-[-110px] -rotate-15', // D
+    'top-[140px] left-[190px] rotate-20', // E
+    'top-[-110px] left-[430px] -rotate-10', // V
+    'top-[240px] left-[-80px] rotate-25', // H
+    'top-[70px] left-[380px] -rotate-18', // A
+    'top-[330px] left-[80px] rotate-16', // C
+    'top-[90px] left-[530px] -rotate-22', // K
+    'top-[10px] left-[-20px] rotate-18', // 2 (Placeholder, adjusted)
+    'top-[-40px] left-[180px] -rotate-30', // . (Placeholder, adjusted)
+    'top-[280px] left-[430px] rotate-28', // 0 (Placeholder, adjusted)
   ];
   return positions[index % positions.length];
 };
