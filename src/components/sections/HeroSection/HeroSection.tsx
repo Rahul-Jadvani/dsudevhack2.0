@@ -207,8 +207,8 @@ export const HeroSection = (_props: HeroSectionProps) => {
     if (isEnter) {
       gsap.to(key, {
         y: 5,
-        scale: 0.95,
-        filter: 'drop-shadow(0px 4px 2px rgba(0,0,0,0.3))',
+        scale: isMobile ? 0.9 : 0.95,
+        filter: isMobile ? 'drop-shadow(0px 2px 1px rgba(0,0,0,0.2))' : 'drop-shadow(0px 4px 2px rgba(0,0,0,0.3))',
         duration: 0.2,
         ease: "power2.out"
       });
@@ -216,11 +216,25 @@ export const HeroSection = (_props: HeroSectionProps) => {
       gsap.to(key, {
         y: 0,
         scale: 1,
-        filter: 'drop-shadow(0px 8px 4px rgba(0,0,0,0.2))',
+        filter: isMobile ? 'drop-shadow(0px 4px 2px rgba(0,0,0,0.2))' : 'drop-shadow(0px 8px 4px rgba(0,0,0,0.2))',
         duration: 0.3,
         ease: "elastic.out(1, 0.5)"
       });
     }
+  };
+
+  // Define a mapping for letter colors
+  const letterColors: { [key: string]: string } = {
+    'D': 'bg-orange-500',
+    'E': 'bg-purple-500',
+    'V': 'bg-purple-300',
+    'H': 'bg-cyan-500',
+    'A': 'bg-orange-500',
+    'C': 'bg-yellow-400',
+    'K': 'bg-purple-300',
+    '2': 'bg-orange-500',
+    '.': 'bg-purple-500',
+    '0': 'bg-purple-300',
   };
 
   // SVG keys to display
@@ -241,9 +255,9 @@ export const HeroSection = (_props: HeroSectionProps) => {
   const mobileSvgs = keySvgs.slice(0, 7);
   const displayedSvgs = isMobile ? mobileSvgs : keySvgs;
 
-  // Desktop/Tablet/Responsive: these display positions only on desktop
-  const desktopOrder = ['D', 'E', 'V', 'C', 'A', 'H', 'K'];
-  const mobileOrder = ['D', 'E', 'V', 'H', 'A', 'C', 'K'];
+  // Desktop/Tablet/Responsive: these define the order of letters
+  const desktopOrder = ['D', 'E', 'V', 'C', 'A', 'H', 'K', '2', '.', '0'];
+  const mobileOrder  = ['D', 'E', 'V', 'H', 'A', 'C', 'K', '2', '.', '0'];
   const keyboardLetters = isMobile ? mobileOrder : desktopOrder;
 
   return (
@@ -373,12 +387,12 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   <div
                     key={index}
                     ref={el => keysRef.current[index] = el}
-                    className="relative w-12 h-12 sm:w-[60px] sm:h-[60px] rounded-2xl flex justify-center items-center shadow-md origin-bottom transition-transform duration-200 cursor-pointer z-[2] border border-black/10 bg-white"
+                    className={`relative w-12 h-12 sm:w-[60px] sm:h-[60px] rounded-xl flex justify-center items-center shadow-md origin-bottom transition-transform duration-200 cursor-pointer z-[2] border border-black/10 ${letterColors[letter]}`}
                     onMouseEnter={() => handleKeyHover(index, true)}
                     onMouseLeave={() => handleKeyHover(index, false)}
                   >
-                    <span className="text-3xl sm:text-4xl font-bold text-black text-center select-none">{letter}</span>
-                    <div className="absolute bottom-[-6px] left-0 w-full h-[6px] bg-black/30 rounded-b-2xl z-[-1]"></div>
+                    <span className="text-3xl sm:text-4xl font-medium text-black text-center select-none">{letter}</span>
+                    <div className={`absolute bottom-[-6px] left-0 w-full h-[6px] bg-black/30 rounded-b-xl z-[-1]`}></div>
                   </div>
                 ))}
               </div>
