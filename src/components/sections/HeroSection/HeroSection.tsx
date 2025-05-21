@@ -462,18 +462,18 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
 // Helper function for absolute position classes (desktop)
 const getSvgPositionClass = (index: number): string => {
-  // Only use on desktop - positions shifted more left and upward, with more varied rotations, shifted left again
+  // Only use on desktop - positions shifted more left and upward, with more varied rotations, shifted left by 10px
   const positions = [
-    'top-[-50px] left-[-250px] -rotate-15', // D
-    'top-[180px] left-[150px] rotate-20', // E
-    'top-[-70px] left-[350px] -rotate-10', // V
-    'top-[280px] left-[-100px] rotate-25', // H
-    'top-[110px] left-[300px] -rotate-18', // A
-    'top-[380px] left-[0px] rotate-16', // C
-    'top-[130px] left-[450px] -rotate-22', // K
-    'top-[10px] left-[-100px] rotate-18', // 2 (Placeholder, adjusted)
-    'top-[-40px] left-[100px] -rotate-30', // . (Placeholder, adjusted)
-    'top-[330px] left-[350px] rotate-28', // 0 (Placeholder, adjusted)
+    'top-[-50px] left-[-260px] -rotate-15', // D
+    'top-[180px] left-[140px] rotate-20', // E
+    'top-[-70px] left-[340px] -rotate-10', // V
+    'top-[280px] left-[-110px] rotate-25', // H
+    'top-[110px] left-[290px] -rotate-18', // A
+    'top-[380px] left-[-10px] rotate-16', // C
+    'top-[130px] left-[440px] -rotate-22', // K
+    'top-[10px] left-[-110px] rotate-18', // 2 (Placeholder, adjusted)
+    'top-[-40px] left-[90px] -rotate-30', // . (Placeholder, adjusted)
+    'top-[330px] left-[340px] rotate-28', // 0 (Placeholder, adjusted)
   ];
   return positions[index % positions.length];
 };
