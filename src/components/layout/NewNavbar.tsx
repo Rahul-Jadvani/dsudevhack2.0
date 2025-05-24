@@ -50,7 +50,7 @@ export const NewNavbar = () => {
             <img src="/images/hb-logo.png" alt="DSU Logo" />
           </div>
           <div className="mobile-header-title">
-            <span>DSU DEVHACK 2.0</span>
+            <span>DSU DEVHACK </span>
           </div>
           <div
             className={`mobile-menu-dots ${mobileMenuOpen ? 'mobile-menu-dots-active' : ''}`}
@@ -126,7 +126,7 @@ export const NewNavbar = () => {
               <img src="/images/hb-logo.png" alt="DSU Logo" />
             </div>
             <div className="desktop-navbar-left">
-              <span className="desktop-title">DSU DEVHACK 2.0</span>
+              <span className="desktop-title">DSU DEVHACK </span>
             </div>
             <div className="desktop-navbar-right">
               <span className="desktop-date-tag">&lt;date&gt;</span>

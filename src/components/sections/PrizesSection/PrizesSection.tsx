@@ -104,13 +104,13 @@ export const PrizesSection = () => {
     },
     {
       place: "2nd place",
-      amount: "₹40,000",
+      amount: "₹50,000",
       color: "blue",
       image: "/images/prizes/2nd (2).png"
     },
     {
       place: "3rd place",
-      amount: "₹20,000",
+      amount: "₹25,000",
       color: "cyan",
       image: "/images/prizes/3rd.png"
     },
@@ -121,9 +121,9 @@ export const PrizesSection = () => {
       {/* Header bar */}
       <div className="fixed-header">
         <div className="header-content">
-          <div className="header-title">Sui Overflow '25</div>
+          <div className="header-title">DSU Hackathon '25</div>
           <div className="header-date">
-            <span className="date-tag">&lt;date&gt;</span> February-May, 2025 <span className="date-tag">&lt;/date&gt;</span>
+            <span className="date-tag">&lt;date&gt;</span> September, 2025 <span className="date-tag">&lt;/date&gt;</span>
           </div>
         </div>
       </div>

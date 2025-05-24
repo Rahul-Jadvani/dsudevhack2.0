@@ -107,23 +107,42 @@ export const HeroSection = (_props: HeroSectionProps) => {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative min-h-[60vh] w-full overflow-hidden bg-white"
+      className="relative min-h-[60vh] w-full overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
     >
-      <div className="flex flex-col-reverse items-center lg:justify-between lg:flex-row relative w-full justify-center">
+      {/* Grid Background */}
+      <div className="absolute inset-0 grid grid-cols-[repeat(24,minmax(0,1fr))] grid-rows-[repeat(24,minmax(0,1fr))] gap-[1px] pointer-events-none aspect-square">
+        {Array.from({ length: 576 }).map((_, index) => (
+          <div
+            key={index}
+            className="w-full h-full aspect-square border border-black/10 bg-gradient-to-br from-white to-gray-50"
+          />
+        ))}
+      </div>
+
+      <div className="flex flex-col-reverse items-center lg:justify-between lg:flex-row relative w-full justify-start">
         {/* Left side - Scrollable content */}
         <div
           ref={contentWrapRef}
-          className={`relative w-full py-4 px-2 sm:px-4 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto scrollbar-none scroll-p-8 -z-1`}
+          className={`relative w-full py-0 pl-8 sm:pl-12 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto scrollbar-none scroll-p-8 -z-1`}
         >
           {/* First content section */}
           <div className="min-h-[60vh] flex flex-col justify-center py-6 scroll-snap-start mb-8 relative">
-            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-white/95 rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
-              <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
+            {/* University info for desktop */}
+            {!isMobile && (
+              <div className="absolute top-12 left-12 z-[5] max-w-[400px] flex items-center p-2 sm:p-4">
                 <img
-                  src="/images/hb-logo.png"
-                  alt="DSU DevHack Logo"
-                  className="w-24 h-24 sm:w-32 sm:h-32 mb-4 object-contain filter drop-shadow-md "
+                  src="/images/dsu.png"
+                  alt="DSU Logo"
+                  className="w-12 h-12 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
                 />
+                <div className="flex flex-col">
+                  <h3 className="text-[17px] sm:text-[20px] font-semibold m-0 text-black">Dayananda Sagar University</h3>
+                  <p className="text-[13px] sm:text-[15px] mt-1 mb-0 text-[#333]">School of Engineering, Harohalli</p>
+                </div>
+              </div>
+            )}
+            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-white/95 rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-40">
+              <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
                   <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>
                   <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight m-0 text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">DEVHACK 2.0</h1>
@@ -157,7 +176,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
           {/* Video section for mobile/tablet */}
           {isMobile && (
-            <div className="min-h-[50vh] flex flex-col justify-center items-center py-4 scroll-snap-start mb-6 relative">
+            <div className="min-h-[50vh] flex flex-col justify-center items-center py-2 scroll-snap-start mb-4 relative">
               <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-white/95 rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
                 <div className="relative w-full aspect-video flex items-center justify-center">
                   <video
@@ -188,11 +207,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
                     This event gathers brilliant minds nationwide to create revolutionary solutions. It provides a platform for developers, designers, and enthusiasts to transform ideas, showcase skills, and network. 🤝
                   </p>
                 </div>
-                <img
+                {/* <img
                   src="/images/hb-logo.png"
                   alt="DSU Campus"
                   className="w-28 h-28 sm:w-48 sm:h-48 object-cover transition-transform duration-300 hover:scale-105"
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -211,11 +230,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
                     <p>Build solutions that address real-world challenges</p>
                   </div>
                 </div>
-                <img
+                {/* <img
                   src="/images/hb-logo.png"
                   alt="DSU Campus"
                   className="w-28 h-28 sm:w-48 sm:h-48 object-cover transition-transform duration-300 hover:scale-105"
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -225,23 +244,10 @@ export const HeroSection = (_props: HeroSectionProps) => {
         {!isMobile && (
           <div
             ref={keyboardWrapRef}
-            className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden"
+            className="relative w-full h-screen flex flex-col justify-start items-center overflow-hidden"
           >
-            {/* University info */}
-            <div className="absolute top-8 left-2 z-[5] max-w-[400px] flex items-center p-2 sm:p-4">
-              <img
-                src="/images/dsu.png"
-                alt="DSU Logo"
-                className="w-12 h-12 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
-              />
-              <div className="flex flex-col">
-                <h3 className="text-[17px] sm:text-[20px] font-semibold m-0 text-black">Dayananda Sagar University</h3>
-                <p className="text-[13px] sm:text-[15px] mt-1 mb-0 text-[#333]">School of Engineering, Harohalli</p>
-              </div>
-            </div>
-
             {/* Desktop view - Video */}
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-full flex items-start justify-center">
               <video
                 autoPlay
                 loop

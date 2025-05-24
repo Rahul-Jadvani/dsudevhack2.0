@@ -3,7 +3,7 @@
 .faq-section {
   composes: section-container;
   padding-top: 6rem;
-  padding-bottom: 8rem;
+  padding-bottom: 1rem;
   background-color: #f5f5f5;
 }
 
@@ -106,7 +106,7 @@
 /* Mobile specific styles for FAQ questions */
 @media (max-width: 768px) {
   .faq-question {
-    padding: 1rem;
+    padding: 0rem;
     padding-right: 0.75rem; /* Added right padding for mobile */
     font-size: 1rem;
     flex-wrap: wrap; /* Allow content to wrap if needed */

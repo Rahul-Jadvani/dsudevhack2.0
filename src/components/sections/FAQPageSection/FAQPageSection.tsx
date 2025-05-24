@@ -11,7 +11,7 @@ export const FAQPageSection = () => {
 
   const faqItems: FAQItem[] = [
     {
-      question: "What is DSU DEVHACK 2024?",
+      question: "What is DSU DEVHACK 2025?",
       answer: "DSU DEVHACK is a national-level hackathon initiative of a private university in India to help various departments and private organizations find solutions to their pressing problems through students. Participants will have the chance to build innovative projects while competing for prizes, mentorship, and exclusive developer opportunities."
     },
     {
@@ -27,16 +27,8 @@ export const FAQPageSection = () => {
       answer: "Participants must be currently enrolled in an undergraduate Engineering program."
     },
     {
-      question: "Can participants attend online?",
-      answer: "Yes, participants can attend online as the hackathon is conducted in both online and offline modes."
-    },
-    {
       question: "What is the participation fee?",
-      answer: "The participation in DSU DEVHACK 2024 is completely free!"
-    },
-    {
-      question: "Is this online hackathon or offline hackathon?",
-      answer: "It is a hybrid hackathon and preferred offline."
+      answer: "The participation in DSU DEVHACK 2025 is completely free!"
     },
     {
       question: "What are the restrictions on team formation for the event?",
