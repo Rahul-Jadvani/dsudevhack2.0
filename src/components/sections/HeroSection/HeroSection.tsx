@@ -9,11 +9,6 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = (_props: HeroSectionProps) => {
-  // Animation refs
-  const cursorRef = useRef<SVGSVGElement>(null);
-  const messageBoxRef = useRef<SVGGElement>(null);
-  const keysRef = useRef<(HTMLDivElement | null)[]>([]);
-
   // Scroll pinning refs
   const sectionRef = useRef<HTMLElement>(null);
   const keyboardWrapRef = useRef<HTMLDivElement>(null);
@@ -28,98 +23,6 @@ export const HeroSection = (_props: HeroSectionProps) => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Animations (Cursor, etc.) stay desktop only
-  useEffect(() => {
-    if (isMobile) return;
-    if (!cursorRef.current || keysRef.current.length === 0) return;
-
-    const cursor = cursorRef.current;
-    let currentKeyIndex = 0;
-
-    const keySequence = [0, 2, 5, 1, 0, 2];
-    let sequenceIndex = 0;
-
-    const animateCursorToKey = () => {
-      currentKeyIndex = keySequence[sequenceIndex];
-      let key = keysRef.current[currentKeyIndex];
-
-      sequenceIndex = (sequenceIndex + 1) % keySequence.length;
-
-      if (!key) {
-        gsap.to(cursor, {
-          x: "40%",
-          y: "15%",
-          duration: 1,
-          ease: "power2.inOut",
-          onComplete: () => {
-            setTimeout(animateCursorToKey, 800);
-          }
-        });
-        return;
-      }
-
-      const keyRect = key.getBoundingClientRect();
-      const cursorRect = cursor.getBoundingClientRect();
-      const parentRect = cursor.parentElement?.getBoundingClientRect();
-
-      if (!parentRect) return;
-
-      let targetX = keyRect.left - parentRect.left + (keyRect.width / 2) - (cursorRect.width / 2);
-      let targetY = keyRect.top - parentRect.top + (keyRect.height / 2) - (cursorRect.height / 2);
-
-      const padding = 20;
-      const maxX = Math.min(parentRect.width * 0.8, 800) - cursorRect.width;
-      const maxY = (parentRect.height * 0.4) - cursorRect.height;
-      targetX = Math.max(padding, Math.min(targetX, maxX));
-      targetY = Math.max(padding, Math.min(targetY, maxY));
-      targetY = targetY - 8;
-
-      gsap.to(cursor, {
-        x: targetX,
-        y: targetY,
-        duration: 1,
-        ease: "power1.out",
-        onComplete: () => {
-          handleKeyHover(currentKeyIndex, true);
-
-          setTimeout(() => {
-            handleKeyHover(currentKeyIndex, false);
-            setTimeout(() => {
-              animateCursorToKey();
-            }, 400);
-          }, 300);
-        }
-      });
-    };
-
-    const timer = setTimeout(() => {
-      gsap.set(cursor, { x: "30%", y: "10%" });
-      animateCursorToKey();
-    }, 1000);
-
-    return () => {
-      clearTimeout(timer);
-      gsap.killTweensOf(cursor);
-    };
-  }, [isMobile]);
-
-  useEffect(() => {
-    if (!messageBoxRef.current) return;
-    const messageBox = messageBoxRef.current;
-
-    gsap.to(messageBox, {
-      y: -3,
-      duration: 2.5,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut"
-    });
-
-    return () => {
-      gsap.killTweensOf(messageBox);
-    };
   }, []);
 
   useEffect(() => {
@@ -200,66 +103,6 @@ export const HeroSection = (_props: HeroSectionProps) => {
     };
   }, [isMobile]);
 
-  // Handle key hover animations
-  const handleKeyHover = (index: number, isEnter: boolean) => {
-    const key = keysRef.current[index];
-    if (!key) return;
-    if (isEnter) {
-      gsap.to(key, {
-        y: 5,
-        scale: isMobile ? 0.9 : 0.95,
-        filter: isMobile ? 'drop-shadow(0px 2px 1px rgba(0,0,0,0.2))' : 'drop-shadow(0px 4px 2px rgba(0,0,0,0.3))',
-        duration: 0.2,
-        ease: "power2.out"
-      });
-    } else {
-      gsap.to(key, {
-        y: 0,
-        scale: 1,
-        filter: isMobile ? 'drop-shadow(0px 4px 2px rgba(0,0,0,0.2))' : 'drop-shadow(0px 8px 4px rgba(0,0,0,0.2))',
-        duration: 0.3,
-        ease: "elastic.out(1, 0.5)"
-      });
-    }
-  };
-
-  // Define a mapping for letter colors
-  const letterColors: { [key: string]: string } = {
-    'D': 'bg-orange-500',
-    'E': 'bg-purple-500',
-    'V': 'bg-purple-300',
-    'H': 'bg-cyan-500',
-    'A': 'bg-orange-500',
-    'C': 'bg-yellow-400',
-    'K': 'bg-purple-300',
-    '2': 'bg-orange-500',
-    '.': 'bg-purple-500',
-    '0': 'bg-purple-300',
-  };
-
-  // SVG keys to display
-  const keySvgs = [
-    '/images/images/D.svg',
-    '/images/images/E.svg',
-    '/images/images/V.svg',
-    '/images/images/H.svg',
-    '/images/images/A.svg',
-    '/images/images/C.svg',
-    '/images/images/K.svg',
-    '/images/images/2.svg',
-    '/images/images/point.svg',
-    '/images/images/0.svg'
-  ];
-
-  // Use only the first 7 SVGs for mobile view
-  const mobileSvgs = keySvgs.slice(0, 7);
-  const displayedSvgs = isMobile ? mobileSvgs : keySvgs;
-
-  // Desktop/Tablet/Responsive: these define the order of letters
-  const desktopOrder = ['D', 'E', 'V', 'C', 'A', 'H', 'K', '2', '.', '0'];
-  const mobileOrder  = ['D', 'E', 'V', 'H', 'A', 'C', 'K', '2', '.', '0'];
-  const keyboardLetters = isMobile ? mobileOrder : desktopOrder;
-
   return (
     <section
       id="hero"
@@ -312,6 +155,26 @@ export const HeroSection = (_props: HeroSectionProps) => {
             </div>
           </div>
 
+          {/* Video section for mobile/tablet */}
+          {isMobile && (
+            <div className="min-h-[50vh] flex flex-col justify-center items-center py-4 scroll-snap-start mb-6 relative">
+              <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-white/95 rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
+                <div className="relative w-full aspect-video flex items-center justify-center">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain"
+                  >
+                    <source src="/images/images/svg video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* About section */}
           <div className="min-h-[50vh] flex flex-col justify-center py-4 scroll-snap-start mb-6 relative opacity-100 visible">
             <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-white/95 rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
@@ -358,122 +221,41 @@ export const HeroSection = (_props: HeroSectionProps) => {
           </div>
         </div>
 
-        {/* Right side - Keyboard */}
-        <div
-          ref={keyboardWrapRef}
-          className={`
-            relative w-full
-            ${isMobile ? 'h-auto pt-4 pb-4 flex flex-col items-center justify-center bg-[#f9fafb]' : 'h-screen flex flex-col justify-center items-center pl-2 sm:pl-8 overflow-hidden'}
-          `}
-        >
-          {/* University info */}
-          <div className={`${isMobile ? 'static mb-4' : 'absolute top-5'} z-[5] max-w-[400px] flex items-center p-2 sm:p-4`}>
-            <img
-              src="/images/dsu.png"
-              alt="DSU Logo"
-              className="w-10 h-10 sm:w-16 sm:h-16 object-contain mr-2 sm:mr-4"
-            />
-            <div className="flex flex-col">
-              <h3 className="text-base sm:text-xl font-semibold m-0 text-black">Dayananda Sagar University</h3>
-              <p className="text-xs sm:text-sm mt-1 mb-0 text-[#333]">School of Engineering, Harohalli</p>
+        {/* Right side - Video (Desktop only) */}
+        {!isMobile && (
+          <div
+            ref={keyboardWrapRef}
+            className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden"
+          >
+            {/* University info */}
+            <div className="absolute top-8 left-2 z-[5] max-w-[400px] flex items-center p-2 sm:p-4">
+              <img
+                src="/images/dsu.png"
+                alt="DSU Logo"
+                className="w-12 h-12 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
+              />
+              <div className="flex flex-col">
+                <h3 className="text-[17px] sm:text-[20px] font-semibold m-0 text-black">Dayananda Sagar University</h3>
+                <p className="text-[13px] sm:text-[15px] mt-1 mb-0 text-[#333]">School of Engineering, Harohalli</p>
+              </div>
+            </div>
+
+            {/* Desktop view - Video */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-[90%] h-[90%] object-contain"
+              >
+                <source src="/images/images/svg video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
-
-          {/* Mobile view - Text-based keys */}
-          {isMobile && (
-            <div className="w-full pb-2">
-              <div className="relative w-full flex flex-row items-center justify-center gap-2 sm:gap-5 py-3 px-2">
-                {keyboardLetters.map((letter, index) => (
-                  <div
-                    key={index}
-                    ref={el => keysRef.current[index] = el}
-                    className={`relative w-12 h-12 sm:w-[60px] sm:h-[60px] rounded-xl flex justify-center items-center shadow-md origin-bottom transition-transform duration-200 cursor-pointer z-[2] border border-black/10 ${letterColors[letter]}`}
-                    onMouseEnter={() => handleKeyHover(index, true)}
-                    onMouseLeave={() => handleKeyHover(index, false)}
-                  >
-                    <span className="text-3xl sm:text-4xl font-medium text-black text-center select-none">{letter}</span>
-                    <div className={`absolute bottom-[-6px] left-0 w-full h-[6px] bg-black/30 rounded-b-xl z-[-1]`}></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Desktop view - SVG keys */}
-          {!isMobile && (
-            <div className="relative w-full h-full">
-              {displayedSvgs.map((svgPath, index) => (
-                <img
-                  key={index}
-                  src={svgPath}
-                  alt={`Key ${index}`}
-                  ref={el => keysRef.current[index] = el}
-                  className={`absolute w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] lg:w-[700px] lg:h-[700px] object-contain ${getSvgPositionClass(index)}`}
-                  style={{
-                    filter: 'drop-shadow(0px 12px 8px rgba(0,0,0,0.3))',
-                    transition: 'transform 0.2s ease-out, filter 0.2s ease-out',
-                    transformOrigin: 'center center'
-                  }}
-                  onMouseEnter={() => handleKeyHover(index, true)}
-                  onMouseLeave={() => handleKeyHover(index, false)}
-                />
-              ))}
-
-              {/* Cursor SVG */}
-              <svg
-                ref={cursorRef}
-                className="absolute top-[20%] left-[35%] -translate-x-1/2 -translate-y-1/2 z-10 filter drop-shadow-md pointer-events-none will-change-transform opacity-95"
-                width="64"
-                height="64"
-                viewBox="0 0 24.00 24.00"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.1,4.46l7.21,15.92A1.17,1.17,0,0,0,12.5,20l1.26-6.23L20,12.5a1.17,1.17,0,0,0,.39-2.19L4.46,3.1A1,1,0,0,0,3.1,4.46Z"
-                  style={{ fill: '#ffffff', strokeWidth: 2 }}
-                />
-                <path
-                  d="M3.1,4.46l7.21,15.92A1.17,1.17,0,0,0,12.5,20l1.26-6.23L20,12.5a1.17,1.17,0,0,0,.39-2.19L4.46,3.1A1,1,0,0,0,3.1,4.46Z"
-                  style={{ fill: 'none', stroke: '#000000', strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: 2 }}
-                />
-              </svg>
-
-              {/* Message Box */}
-              <div className="absolute bottom-[90px] right-[150px] z-[5] pointer-events-none">
-                <svg width={80} height={80} viewBox="0 0 80 80">
-                  <circle cx="40" cy="40" r="35" fill="#FFFFFF" stroke="#000000" strokeWidth="1" />
-                  <g ref={messageBoxRef}>
-                    <rect x="20" y="30" width="40" height="20" rx="4" fill="#FFFFFF" stroke="#000000" strokeWidth="1" />
-                    <g className="message-dots">
-                      <circle className="dot dot-1" cx="30" cy="40" r="2.5" fill="#000000" />
-                      <circle className="dot dot-2" cx="40" cy="40" r="2.5" fill="#000000" />
-                      <circle className="dot dot-3" cx="50" cy="40" r="2.5" fill="#000000" />
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
-          )}
-        </div>
+        )}
       </div>
     </section>
   );
-};
-
-// Helper function for absolute position classes (desktop)
-const getSvgPositionClass = (index: number): string => {
-  // Only use on desktop - positions shifted more left and upward, with more varied rotations, shifted left by 10px
-  const positions = [
-    'top-[-50px] left-[-260px] -rotate-15', // D
-    'top-[180px] left-[140px] rotate-20', // E
-    'top-[-70px] left-[340px] -rotate-10', // V
-    'top-[280px] left-[-110px] rotate-25', // H
-    'top-[110px] left-[290px] -rotate-18', // A
-    'top-[380px] left-[-10px] rotate-16', // C
-    'top-[130px] left-[440px] -rotate-22', // K
-    'top-[10px] left-[-110px] rotate-18', // 2 (Placeholder, adjusted)
-    'top-[-40px] left-[90px] -rotate-30', // . (Placeholder, adjusted)
-    'top-[330px] left-[340px] rotate-28', // 0 (Placeholder, adjusted)
-  ];
-  return positions[index % positions.length];
 };
