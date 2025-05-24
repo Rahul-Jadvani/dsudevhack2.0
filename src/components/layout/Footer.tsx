@@ -16,7 +16,7 @@ export const Footer = () => {
               <p className="footer-text">📧 Email: dsudevhack@dsu.edu.in</p>
               <div className="student-coordinators">
                 <h4 className="footer-subheading">Student Coordinators</h4>
-                <p className="footer-text">👨‍🎓 Mr. Utkarsh Kumar Jha</p>
+                <p className="footer-text">👨‍🎓 Mr. Utkarsh Priye (Jha)</p>
                 <p className="footer-text">📱 +91 9939635206</p>
                 <p className="footer-text">👨‍🎓 Mr. Rithvik</p>
                 <p className="footer-text">📱 +91 8299686568</p>
@@ -27,7 +27,7 @@ export const Footer = () => {
             <div className="footer-section">
               <h3 className="footer-heading">Follow Us</h3>
               <div className="social-links">
-                <a href="#" className="social-link" aria-label="Discord" title="Discord">
+                <a href="https://discord.gg/uBcyhfmhx4" className="social-link" aria-label="Discord" title="Discord">
                   <FaDiscord size={24} />
                 </a>
                 <a href="https://www.instagram.com/dsudevhack/" className="social-link" aria-label="Instagram" title="Instagram">

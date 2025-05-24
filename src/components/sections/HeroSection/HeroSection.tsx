@@ -9,7 +9,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = (_props: HeroSectionProps) => {
-  // Scroll pinning refs
+  // Animation refs
   const sectionRef = useRef<HTMLElement>(null);
   const keyboardWrapRef = useRef<HTMLDivElement>(null);
   const contentWrapRef = useRef<HTMLDivElement>(null);
@@ -185,8 +185,14 @@ export const HeroSection = (_props: HeroSectionProps) => {
                     muted
                     playsInline
                     className="w-full h-full object-contain"
+                    style={{ 
+                      filter: 'brightness(1.05) contrast(1.05) saturate(1.1)',
+                      imageRendering: 'crisp-edges',
+                      WebkitBackfaceVisibility: 'hidden',
+                      backfaceVisibility: 'hidden'
+                    }}
                   >
-                    <source src="/images/images/svg video.mp4" type="video/mp4" />
+                    <source src="/images/images/new svg.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -254,8 +260,14 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 muted
                 playsInline
                 className="w-[90%] h-[90%] object-contain"
+                style={{ 
+                  filter: 'brightness(1.05) contrast(1.05) saturate(1.1)',
+                  imageRendering: 'crisp-edges',
+                  WebkitBackfaceVisibility: 'hidden',
+                  backfaceVisibility: 'hidden'
+                }}
               >
-                <source src="/images/images/svg video.mp4" type="video/mp4" />
+                <source src="/images/images/new svg.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
