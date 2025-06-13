@@ -1,3 +1,21 @@
+@media (min-width: 768px) {
+    .footer-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 40vh;
+        }
+}
+
+@media (min-width: 320px) {
+    .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 30vh;
+    }
+}
+
 
 .footer {
     background-color: #0a192f;
