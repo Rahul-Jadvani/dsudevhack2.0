@@ -18,7 +18,7 @@ export const Footer = () => {
                 <h4 className="footer-subheading">Student Coordinators</h4>
                 <p className="footer-text">Utkarsh Priye (Jha)</p>
                 <p className="footer-text">+91 9939635206</p>
-                <p className="footer-text">Rithvik Vasundh</p>
+                <p className="footer-text">Ritvik Vasundh</p>
                 <p className="footer-text">+91 8299686568</p>
               </div>
             </div>
