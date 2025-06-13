@@ -1,9 +1,3 @@
-.footer-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 100vh;
-}
 
 .footer {
     background-color: #0a192f;
@@ -23,7 +17,7 @@
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: clamp(1.5rem, 3vw, 2.5rem);
     margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
@@ -52,7 +46,7 @@
     }
 
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 2fr);
         gap: 1rem;
         margin-bottom: 1rem;
     }
