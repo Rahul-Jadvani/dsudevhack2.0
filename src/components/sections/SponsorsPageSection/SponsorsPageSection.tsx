@@ -44,14 +44,7 @@ export const SponsorsPageSection = () => {
           </div>
 
           {/* Become a Sponsor Button - keeping the original class */}
-          <div className="mt-16 text-center">
-            <button
-              type="button"
-              className="sponsor-button group"
-            >
-              <span className="relative z-10">Become a Sponsor</span>
-            </button>
-          </div>
+         
         </div>
       </div>
     </section>
