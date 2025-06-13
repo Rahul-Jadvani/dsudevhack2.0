@@ -7,7 +7,7 @@
         }
 }
 
-@media (min-width: 320px) {
+@media (min-width: 280px) {
     .footer-wrapper {
         display: flex;
         flex-direction: column;
