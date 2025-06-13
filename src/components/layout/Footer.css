@@ -7,12 +7,12 @@
         }
 }
 
-@media (min-width: 280px) {
+@media (min-width: 240px) {
     .footer-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        min-height: 30vh;
+        min-height: 35vh;
     }
 }
 
