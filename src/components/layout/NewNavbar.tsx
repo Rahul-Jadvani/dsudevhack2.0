@@ -8,7 +8,7 @@ export const NewNavbar = () => {
 
   const navItems = [
     { name: 'Prizes', path: '/', sectionId: 'prizes' },
-    { name: 'Themes', path: '/', sectionId: 'themes' },
+    { name: 'Themes', path: '/', sectionId: 'tracks' },
     { name: 'Timeline', path: '/', sectionId: 'timeline' },
     { name: 'Sponsors', path: '/', sectionId: 'sponsors' },
     { name: 'Archives', path: 'https://dsudevhack.tech/', sectionId: 'archives' },
@@ -87,7 +87,7 @@ export const NewNavbar = () => {
                 <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'prizes' })}>
                   Prizes
                 </Link>
-                <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'themes' })}>
+                <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'tracks' })}>
                   Themes
                 </Link>
               </div>

@@ -1,30 +1,40 @@
 import './NewSponsorsSection.css';
 import './NewSponsorsGrid.css';
-import { useEffect, useRef } from 'react';
+
+interface SponsorLogo {
+  name: string;
+  logoUrl: string;
+  bgColor?: string;
+}
 
 export const NewSponsorsSection = () => {
-  const letterRefs = useRef<(HTMLSpanElement | null)[]>([]);
-  const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
-    // Add animation delay to each letter
-    letterRefs.current.forEach((letter, index) => {
-      if (letter) {
-        letter.style.animationDelay = `${index * 0.07}s`;
-      }
-    });
+  // Platinum/Track Sponsor (1 box)
+  const platinumRowSponsors: SponsorLogo[] = [];
 
-    // Add animation delay to glitch lines
-    lineRefs.current.forEach((line, index) => {
-      if (line) {
-        line.style.animationDelay = `${index * 0.3}s`;
-        line.style.left = `${Math.random() * 100}%`;
-        line.style.width = `${Math.random() * 30 + 10}%`;
-        line.style.height = `${Math.random() * 1 + 1}px`;
-        line.style.opacity = `${Math.random() * 0.5 + 0.5}`;
-      }
-    });
-  }, []);
+  // Gold Sponsors (4 boxes)
+  const topRowSponsors: SponsorLogo[] = [
+    {
+     name: "AIC DSU Innovation Foundation",
+      logoUrl: "/sponsors/aic-dsu.png",
+    }
+  ];
+
+  // Silver Sponsors (5 boxes)
+  const middleRowSponsors: SponsorLogo[] = [
+    {
+      name: "ETH India",
+      logoUrl: "/sponsors/ethindia-light.svg",
+    },
+  ];
+
+  // Community Partners (2 boxes)
+  const bottomRowSponsors: SponsorLogo[] = [
+    {
+      name: "Devfolio",
+      logoUrl: "/sponsors/Devfolio_Logo-White.png",
+    },
+  ];
 
 
 
@@ -35,220 +45,194 @@ export const NewSponsorsSection = () => {
           Our Sponsors
         </h2>
 
-        {/* Coming Soon Animation Container */}
-        <div className="bg-[#0a1525]/90 backdrop-blur-md rounded-none border-y border-[#7B61FF]/30 p-12 mb-12 max-w-5xl mx-auto relative overflow-hidden">
-          {/* Glitch lines */}
-          {[...Array(10)].map((_, i) => (
-            <div
-              key={i}
-              ref={el => lineRefs.current[i] = el}
-              className="absolute bg-[#7B61FF] animate-glitch-line"
-            ></div>
-          ))}
 
-          {/* Noise overlay */}
-          <div className="absolute inset-0 bg-noise opacity-5 mix-blend-overlay"></div>
 
-          {/* Coming Soon Text */}
-          <div className="flex flex-col items-center justify-center mb-12 relative">
-            <div className="text-xs md:text-sm font-mono text-[#7B61FF] tracking-widest mb-2 animate-blink">
-              // SPONSORS_STATUS
-            </div>
-
-            {/* Desktop view - single line */}
-            <div className="hidden md:flex flex-wrap justify-center mb-2 relative">
-              {Array.from("COMING SOON").map((letter, index) => (
-                <span
-                  key={index}
-                  ref={el => letterRefs.current[index] = el}
-                  className={`text-7xl font-black ${letter === " " ? "mx-3" : "mx-1"} inline-block animate-glitch-text coming-soon-letter`}
-                >
-                  {letter}
-                </span>
-              ))}
-            </div>
-
-            {/* Mobile view - stacked words */}
-            <div className="flex md:hidden flex-col items-center justify-center mb-2 relative">
-              <div className="flex justify-center">
-                {Array.from("COMING").map((letter, index) => (
-                  <span
-                    key={`mobile-1-${index}`}
-                    ref={el => letterRefs.current[index] = el}
-                    className="text-5xl font-black mx-1 inline-block animate-glitch-text coming-soon-letter"
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-center mt-2">
-                {Array.from("SOON").map((letter, index) => (
-                  <span
-                    key={`mobile-2-${index}`}
-                    ref={el => letterRefs.current[index + 7] = el}
-                    className="text-5xl font-black mx-1 inline-block animate-glitch-text coming-soon-letter"
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="h-1 w-40 bg-gradient-to-r from-transparent via-[#7B61FF] to-transparent my-6 animate-width-pulse"></div>
+        {/* New Sponsors Grid Layout */}
+        <div className="sponsors-grid-container mb-12">
+          {/* Platinum Sponsors heading */}
+          <div className="sponsors-grid-heading">
+            <h4>Platinum Sponsors</h4>
           </div>
 
-          {/* Description Text */}
-          <div className="relative z-10">
-            <p className="text-center text-gray-300 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-              We're in the process of finalizing our sponsors for this event.
-              <br className="hidden md:block" />
-              <span className="text-[#7B61FF] font-medium">Check back soon for updates!</span>
-            </p>
-
-            <div className="flex justify-center mt-8">
-              <div className="px-4 py-2 border border-[#7B61FF]/50 text-xs font-mono text-[#7B61FF] tracking-wider animate-pulse-subtle">
-                LOADING_SPONSORS...
+          {/* Platinum row - 1 extra large sponsor */}
+          <div className="sponsors-platinum-row">
+            {platinumRowSponsors.length > 0 ? (
+              platinumRowSponsors.map((sponsor, index) => (
+                <div
+                  key={`platinum-${index}`}
+                  className="sponsor-platinum-box"
+                >
+                  <div className="sponsor-name-label">
+                    <span data-sponsor-el="left">{sponsor.name}</span>
+                    <span data-sponsor-el="arrow">[↗]</span>
+                  </div>
+                  <div className="sponsor-logo-wrapper">
+                    <img
+                      src={sponsor.logoUrl}
+                      alt={sponsor.name}
+                      onError={(e) => {
+                        // Fallback for missing images
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://via.placeholder.com/200?text=' + sponsor.name;
+                      }}
+                    />
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="sponsor-platinum-box flex flex-col items-center justify-center">
+                <div className="text-4xl font-bold text-center">
+                  {Array.from("COMING SOON").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block mx-1 animate-pulse"
+                      style={{
+                        animation: `pulse 2s cubic-bezier(0.4, 0, 0.6, 1) ${index * 0.1}s infinite`,
+                        textShadow: '0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)'
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
+          </div>
+
+          {/* Gold Sponsors heading */}
+          <div className="sponsors-grid-heading">
+            <h4>Gold Sponsors</h4>
+          </div>
+
+          {/* Top row - 3 large sponsors */}
+          <div className="sponsors-top-row">
+            {topRowSponsors.map((sponsor, index) => (
+              <div
+                key={`top-${index}`}
+                className="sponsor-top-box"
+              >
+                <div className="sponsor-name-label">
+                  <span data-sponsor-el="left">{sponsor.name}</span>
+                  <span data-sponsor-el="arrow">[↗]</span>
+                </div>
+                <div className="sponsor-logo-wrapper">
+                  <img
+                    src={sponsor.logoUrl}
+                    alt={sponsor.name}
+                    onError={(e) => {
+                      // Fallback for missing images
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://via.placeholder.com/150?text=' + sponsor.name;
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Silver Sponsors heading */}
+          <div className="sponsors-grid-heading">
+            <h4>Silver Sponsors</h4>
+          </div>
+
+          {/* Middle row - 7 smaller sponsors */}
+          <div className="sponsors-middle-row">
+            {middleRowSponsors.length > 0 ? (
+              middleRowSponsors.map((sponsor, index) => (
+                <div
+                  key={`middle-${index}`}
+                  className="sponsor-middle-box"
+                >
+                  <div className="sponsor-name-label">
+                    <span data-sponsor-el="left">{sponsor.name}</span>
+                    <span data-sponsor-el="arrow">[↗]</span>
+                  </div>
+                  <div className="sponsor-logo-wrapper">
+                    <img
+                      src={sponsor.logoUrl}
+                      alt={sponsor.name}
+                      onError={(e) => {
+                        // Fallback for missing images
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://via.placeholder.com/100?text=' + sponsor.name;
+                      }}
+                    />
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="sponsor-middle-box flex flex-col items-center justify-center col-span-full">
+                <div className="text-3xl font-bold text-center">
+                  {Array.from("COMING SOON").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block mx-1 animate-pulse"
+                      style={{
+                        animation: `pulse 2s cubic-bezier(0.4, 0, 0.6, 1) ${index * 0.1}s infinite`,
+                        textShadow: '0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)'
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Community Partners heading */}
+          <div className="sponsors-grid-heading">
+            <h4>Platform partner</h4>
+          </div>
+
+          {/* Bottom row - 7 smaller sponsors */}
+          <div className="sponsors-bottom-row">
+            {bottomRowSponsors.length > 0 ? (
+              bottomRowSponsors.map((sponsor, index) => (
+                <div
+                  key={`bottom-${index}`}
+                  className="sponsor-bottom-box"
+                >
+                  <div className="sponsor-name-label">
+                    <span data-sponsor-el="left">{sponsor.name}</span>
+                    <span data-sponsor-el="arrow">[↗]</span>
+                  </div>
+                  <div className="sponsor-logo-wrapper">
+                    <img
+                      src={sponsor.logoUrl}
+                      alt={sponsor.name}
+                      onError={(e) => {
+                        // Fallback for missing images
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://via.placeholder.com/100?text=' + sponsor.name;
+                      }}
+                    />
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="sponsor-bottom-box flex flex-col items-center justify-center col-span-full">
+                <div className="text-3xl font-bold text-center">
+                  {Array.from("COMING SOON").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block mx-1 animate-pulse"
+                      style={{
+                        animation: `pulse 2s cubic-bezier(0.4, 0, 0.6, 1) ${index * 0.1}s infinite`,
+                        textShadow: '0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)'
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Custom CSS for animations */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
-          @keyframes glitchText {
-            0%, 100% {
-              color: #f8f9fa;
-              transform: translateY(0);
-              filter: drop-shadow(0 0 5px rgba(123, 97, 255, 0.5));
-            }
-            10% {
-              transform: translateY(-2px);
-              color: #7B61FF;
-              filter: drop-shadow(0 0 10px rgba(123, 97, 255, 0.8));
-            }
-            20% {
-              transform: translateY(0);
-            }
-            30% {
-              transform: translateX(1px);
-            }
-            40% {
-              transform: translateX(-1px);
-              color: #f8f9fa;
-            }
-            50% {
-              transform: translateY(1px);
-              filter: drop-shadow(0 0 15px rgba(123, 97, 255, 0.8));
-            }
-            60% {
-              transform: translateY(0);
-              color: #7B61FF;
-            }
-            70% {
-              transform: translateX(-1px);
-            }
-            80% {
-              transform: translateX(1px);
-            }
-            90% {
-              transform: translateY(-1px);
-              color: #f8f9fa;
-            }
-          }
 
-          @keyframes glitchLine {
-            0% {
-              transform: translateX(0);
-              opacity: 0;
-            }
-            10% {
-              opacity: 0.8;
-            }
-            20% {
-              transform: translateX(5px);
-            }
-            30% {
-              transform: translateX(-5px);
-            }
-            40% {
-              transform: translateX(0);
-              opacity: 0;
-            }
-            100% {
-              opacity: 0;
-            }
-          }
 
-          @keyframes blink {
-            0%, 100% {
-              opacity: 1;
-            }
-            50% {
-              opacity: 0.3;
-            }
-          }
-
-          @keyframes widthPulse {
-            0%, 100% {
-              width: 40%;
-              opacity: 0.8;
-            }
-            50% {
-              width: 60%;
-              opacity: 0.5;
-            }
-          }
-
-          @keyframes pulseSubtle {
-            0%, 100% {
-              opacity: 0.8;
-            }
-            50% {
-              opacity: 0.5;
-            }
-          }
-
-          .animate-glitch-text {
-            animation: glitchText 4s ease-in-out infinite;
-          }
-
-          .animate-glitch-line {
-            animation: glitchLine 3s ease-out infinite;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 1px;
-            width: 100px;
-            background: #7B61FF;
-            opacity: 0;
-          }
-
-          .animate-blink {
-            animation: blink 2s ease-in-out infinite;
-          }
-
-          .animate-width-pulse {
-            animation: widthPulse 4s ease-in-out infinite;
-          }
-
-          .animate-pulse-subtle {
-            animation: pulseSubtle 2s ease-in-out infinite;
-          }
-
-          .bg-noise {
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-          }
-
-          .coming-soon-letter {
-            text-shadow: 0 0 5px rgba(123, 97, 255, 0.8);
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          }
-          `
-        }} />
-
-        {/* Become a Sponsor button */}
-      
       </div>
     </section>
   );

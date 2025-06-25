@@ -18,26 +18,33 @@ export const LoadingPage = ({
   const [exitAnimation, setExitAnimation] = useState(false);
 
   useEffect(() => {
+    let mounted = true;
+    
     const interval = setInterval(() => {
+      if (!mounted) return;
+      
       setProgress(prev => {
-        const newProgress = prev + 10; // Increased from 5 to 10 for faster progress
+        const newProgress = prev + 10;
         if (newProgress >= 100) {
           clearInterval(interval);
-
-          // Start exit animation and immediately complete
-          setExitAnimation(true);
-
-          // No delay - immediately complete
-          setIsVisible(false);
-          onComplete();
-
+          if (mounted) {
+            // Use setTimeout to prevent render phase updates
+            setTimeout(() => {
+              setExitAnimation(true);
+              setIsVisible(false);
+              onComplete();
+            }, 0);
+          }
           return 100;
         }
         return newProgress;
       });
-    }, loadingTime / 40); // Reduced from loadingTime/20 to loadingTime/40 for faster updates
+    }, loadingTime / 40);
 
-    return () => clearInterval(interval);
+    return () => {
+      mounted = false;
+      clearInterval(interval);
+    };
   }, [loadingTime, onComplete]);
 
   const getCurrentDate = () => {

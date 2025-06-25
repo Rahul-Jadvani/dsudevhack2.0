@@ -111,7 +111,7 @@ export const TimeCapsuleSection = () => {
               Explore the history of DSU DevHack . Click to open the time capsule and journey through our past events.
             </p>
             <button type="button" className="time-capsule-button">
-              Open Time Capsule <span className="time-capsule-button-arrow">→</span>
+              {isOpen ? 'Close' : 'Open'} Time Capsule <span className="time-capsule-button-arrow">→</span>
             </button>
           </div>
         </motion.div>
