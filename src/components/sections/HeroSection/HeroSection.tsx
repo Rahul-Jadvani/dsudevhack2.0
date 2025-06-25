@@ -141,7 +141,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 </div>
               </div>
             )}
-            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-white/95 rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-40">
+            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-40">
               <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
                   <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>
@@ -177,7 +177,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
           {/* Video section for mobile/tablet */}
           {isMobile && (
             <div className="min-h-[50vh] flex flex-col justify-center items-center py-2 scroll-snap-start mb-4 relative">
-              <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-white/95 rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
+              <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
                 <div className="relative w-full aspect-video flex items-center justify-center">
                   <video
                     autoPlay
@@ -202,7 +202,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
           {/* About section */}
           <div className="min-h-[50vh] flex flex-col justify-center py-4 scroll-snap-start mb-6 relative opacity-100 visible">
-            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-white/95 rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
+            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
               <div className="flex lg:items-start lg:flex-row flex-col-reverse items-center gap-3 sm:gap-6">
                 <div className="flex-1">
                   <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-black">About DSU DEVHACK 2025</h2>
@@ -224,7 +224,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
           {/* Why Participate section */}
           <div className="min-h-[50vh] flex flex-col justify-center py-4 scroll-snap-start mb-6 relative opacity-100 visible">
-            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-white/95 rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
+            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
               <div className="flex items-center lg:items-start lg:flex-row flex-col-reverse gap-3 sm:gap-6">
                 <div className="flex-1">
                   <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-black">Why Participate?</h2>
@@ -253,13 +253,13 @@ export const HeroSection = (_props: HeroSectionProps) => {
             className="relative w-full h-screen flex flex-col justify-start items-center overflow-hidden"
           >
             {/* Desktop view - Video */}
-            <div className="relative w-full h-full flex items-start justify-center">
+            <div className="relative w-full h-full flex items-start justify-center ">
               <video
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-[90%] h-[90%] object-contain"
+                className="w-[80%] h-[80%] object-contain "
                 style={{ 
                   filter: 'brightness(1.05) contrast(1.05) saturate(1.1)',
                   imageRendering: 'crisp-edges',
