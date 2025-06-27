@@ -64,6 +64,19 @@ export const NewSponsorsSection = () => {
     }
   ];
 
+  const getAltText = (name: string) => {
+    switch (name) {
+      case "ETH India":
+        return "ETHINDIA LOGO";
+      case "Devfolio":
+        return "DEVFOLIO LOGO";
+      case "AIC DSU Innovation Foundation":
+        return "AIC DSU INNOVATION FOUNDATION LOGO";
+      default:
+        return `${name} LOGO`;
+    }
+  };
+
   return (
     <section id="sponsors" className="new-sponsors-section">
       <div className="container mx-auto px-4 py-8">
@@ -99,7 +112,7 @@ export const NewSponsorsSection = () => {
                     <div className="sponsor-logo-wrapper">
                       <img
                         src={sponsor.logoUrl}
-                        alt={sponsor.name}
+                        alt={getAltText(sponsor.name)}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = 'https://via.placeholder.com/200?text=' + sponsor.name;
@@ -155,7 +168,7 @@ export const NewSponsorsSection = () => {
                   <div className="sponsor-logo-wrapper">
                     <img
                       src={sponsor.logoUrl}
-                      alt={sponsor.name}
+                      alt={getAltText(sponsor.name)}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = 'https://via.placeholder.com/150?text=' + sponsor.name;
@@ -193,7 +206,7 @@ export const NewSponsorsSection = () => {
                   <div className="sponsor-logo-wrapper">
                     <img
                       src={sponsor.logoUrl}
-                      alt={sponsor.name}
+                      alt={getAltText(sponsor.name)}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = 'https://via.placeholder.com/100?text=' + sponsor.name;
@@ -231,7 +244,7 @@ export const NewSponsorsSection = () => {
                   <div className="sponsor-logo-wrapper">
                     <img
                       src={sponsor.logoUrl}
-                      alt={sponsor.name}
+                      alt={getAltText(sponsor.name)}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = 'https://via.placeholder.com/100?text=' + sponsor.name;
