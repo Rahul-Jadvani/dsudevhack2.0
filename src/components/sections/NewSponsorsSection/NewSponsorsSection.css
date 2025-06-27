@@ -10,11 +10,28 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.sponsors-title.typewriter {
+  animation: typingSponsor 0.9s steps(12, end) forwards;
+}
+
+@keyframes typingSponsor {
+  from {
+    width: 0;
+  }
+  to {
+    width: 13ch; /* Adjust based on text length */
+  }
+}
+
+
 .sponsors-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
   color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
 }
 
 /* Sponsor box styling */

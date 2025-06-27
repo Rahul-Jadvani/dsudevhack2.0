@@ -15,18 +15,6 @@ export const NewTimeline: React.FC = () => {
     // Get all timeline columns
     const columns = timelineRef.current.querySelectorAll('.timeline-column');
 
-    // Check if we're in a problematic resolution range (1024x621 or similar)
-    const isProblematicResolution =
-      (window.innerWidth >= 961 && window.innerWidth <= 1100) ||
-      (window.innerHeight >= 600 && window.innerHeight <= 700);
-
-    // If we're in a problematic resolution, make sure all columns are visible
-    if (isProblematicResolution) {
-      columns.forEach((column) => {
-        gsap.set(column, { opacity: 1, y: 0 });
-      });
-    }
-
     // Add pulse animation to arrows
     const arrows = timelineRef.current.querySelectorAll('.timeline-arrow');
     arrows.forEach((arrow) => {
@@ -40,32 +28,30 @@ export const NewTimeline: React.FC = () => {
       });
     });
 
-    // Simple scroll animation for columns - only if not in problematic resolution
-    if (!isProblematicResolution) {
-      columns.forEach((column, i) => {
-        // Simple fade-in and slide-up animation on scroll
-        gsap.fromTo(
-          column,
-          {
-            y: 30,
-            opacity: 0
+    // Simple scroll animation for columns
+    columns.forEach((column, i) => {
+      // Simple fade-in and slide-up animation on scroll
+      gsap.fromTo(
+        column,
+        {
+          y: 30,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: column,
+            start: 'top 85%',
+            end: 'bottom 15%',
+            toggleActions: 'play none none reverse',
           },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            ease: 'power1.out',
-            scrollTrigger: {
-              trigger: column,
-              start: 'top 85%',
-              end: 'bottom 15%',
-              toggleActions: 'play none none reverse',
-            },
-            delay: i * 0.1 // Slight stagger effect
-          }
-        );
-      });
-    }
+          delay: i * 0.1 // Slight stagger effect
+        }
+      );
+    })
 
     // Add hover effects to all columns regardless of resolution
     columns.forEach((column) => {
@@ -233,6 +219,7 @@ export const NewTimeline: React.FC = () => {
     <div className="new-timeline-container" ref={timelineRef}>
       <h2 className="new-timeline-heading">Timeline</h2>
 
+      {/* First row */}
       <div className="new-timeline-grid">
         {/* Column 1 */}
         <div className="timeline-column">
@@ -250,8 +237,8 @@ export const NewTimeline: React.FC = () => {
 
           <div className="timeline-items">
             <div className="timeline-item">
-              <div className="timeline-label">Start teaming up with your buddies to hack!</div>
-              <div className="timeline-date">August         (tentative)</div>
+              <div className="timeline-label">The Race Begins — Register. Team Up. Get Set to Hack!</div>
+              <div className="timeline-date">1st July 2025</div>
             </div>
           </div>
         </div>
@@ -267,13 +254,13 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Registration ends</h3>
+            <h3>Idea submissions start</h3>
           </div>
 
           <div className="timeline-items">
             <div className="timeline-item">
-              <div className="timeline-label">final chance to register and form your teams!</div>
-              <div className="timeline-date">september (tentative)</div>
+              <div className="timeline-label">Time to Spark Ideas — Let the Innovation Flow!</div>
+              <div className="timeline-date">25th July  2025</div>
             </div>
           </div>
         </div>
@@ -289,13 +276,13 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Online Idea Submission Deadline</h3>
+            <h3>Registration Deadline</h3>
           </div>
 
           <div className="timeline-items">
             <div className="timeline-item">
-              <div className="timeline-label">This will be your final chance to submit your 3 page ppt!</div>
-              <div className="timeline-date">September (tentative)</div>
+              <div className="timeline-label">Last Call to Enter the Arena!</div>
+              <div className="timeline-date">18th August 2025</div>
             </div>
           </div>
         </div>
@@ -311,23 +298,45 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Team shortlisting</h3>
+            <h3>Idea Submission Deadline</h3>
           </div>
 
           <div className="timeline-items">
             <div className="timeline-item">
-              <div className="timeline-label">Announcing the shortlisted teams for the final round!</div>
-              <div className="timeline-date">September (tentative)</div>
+              <div className="timeline-label">Ideas Lock In — Let the Best Concepts Win!</div>
+              <div className="timeline-date">20th August 2025</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="new-timeline-grid mt-8">
+      {/* Second row */}
+      <div className="new-timeline-grid">
         {/* Column 5 */}
         <div className="timeline-column">
           <div className="timeline-id">
             05
+          </div>
+          <div className="timeline-arrow">
+            <svg className="timeline-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M12 5L19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          <div className="timeline-title">
+            <h3>shortlisted Teams announcement</h3>
+          </div>
+
+          <div className="timeline-items">
+            <div className="timeline-item">
+              <div className="timeline-label">And the Chosen Ones Are... Meet the Finalists!</div>
+              <div className="timeline-date">1st September 2025</div>
+            </div>
+          </div>
+        </div>
+        {/* Column 6 */}
+        <div className="timeline-column">
+          <div className="timeline-id">
+            06
           </div>
           <div className="timeline-arrow">
             <svg className="timeline-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -340,35 +349,13 @@ export const NewTimeline: React.FC = () => {
 
           <div className="timeline-items">
             <div className="timeline-item">
-              <div className="timeline-label">Join with over 150+ innovative minds and start building.</div>
-              <div className="timeline-date">September (tentative)</div>
+              <div className="timeline-label">The Code War Begins — Hack Like There’s No Tomorrow!</div>
+              <div className="timeline-date">12th September</div>
             </div>
           </div>
         </div>
 
         {/* Column 6 */}
-        <div className="timeline-column">
-          <div className="timeline-id">
-            06
-          </div>
-          <div className="timeline-arrow">
-            <svg className="timeline-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19M12 5L19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-          <div className="timeline-title">
-            <h3>Mid-term Submission</h3>
-          </div>
-
-          <div className="timeline-items">
-            <div className="timeline-item">
-              <div className="timeline-label">Initial submission on GitHub for progress review.</div>
-              <div className="timeline-date">September (tentative)</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Column 7 */}
         <div className="timeline-column">
           <div className="timeline-id">
             07
@@ -379,18 +366,18 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Final Submission Deadline</h3>
+            <h3>Final Submission</h3>
           </div>
 
           <div className="timeline-items">
             <div className="timeline-item">
-              <div className="timeline-label">Submit your completed project with documentation.</div>
-              <div className="timeline-date">September (tentative)</div>
+              <div className="timeline-label">One Last Push — Deliver Your Innovation!</div>
+              <div className="timeline-date">13th September 2025</div>
             </div>
           </div>
         </div>
 
-        {/* Column 8 */}
+        {/* Column 7 */}
         <div className="timeline-column">
           <div className="timeline-id">
             08
@@ -401,16 +388,18 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Final Evaluation Round</h3>
+            <h3>Final Evaluation Result</h3>
           </div>
 
           <div className="timeline-items">
             <div className="timeline-item">
-              <div className="timeline-label">We'll review your project and let you know the results.</div>
-              <div className="timeline-date">September (tentative)</div>
+              <div className="timeline-label">The Verdict is In — Witness the Best Rise!</div>
+              <div className="timeline-date">13th September 2025</div>
             </div>
           </div>
         </div>
+
+        
       </div>
 
 

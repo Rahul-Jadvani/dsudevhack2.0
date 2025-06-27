@@ -25,10 +25,11 @@ const App = () => {
   const [showContent, setShowContent] = useState(false);
 
   const handleLoadingComplete = () => {
-    // Show the curtain transition immediately when loading completes
-    setShowCurtain(true);
-    // Keep the loading page visible until curtain is ready
-    setIsLoading(false);
+    // Use setTimeout to ensure this runs after the current render cycle
+    setTimeout(() => {
+      setShowCurtain(true);
+      setIsLoading(false);
+    }, 0);
   };
 
   const handleCurtainComplete = () => {
