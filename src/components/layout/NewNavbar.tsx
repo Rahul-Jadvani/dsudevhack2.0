@@ -10,6 +10,7 @@ export const NewNavbar = () => {
     { name: 'Prizes', path: '/', sectionId: 'prizes' },
     { name: 'Themes', path: '/', sectionId: 'tracks' },
     { name: 'Timeline', path: '/', sectionId: 'timeline' },
+    { name: 'Team', path: '/', sectionId: 'organising-team' },
     { name: 'Sponsors', path: '/', sectionId: 'sponsors' },
     { name: 'Archives', path: 'https://dsudevhack.tech/', sectionId: 'archives' },
     { name: 'FAQ', path: '/', sectionId: 'faq' },
@@ -47,7 +48,7 @@ export const NewNavbar = () => {
         </div>
         <div className="mobile-header-main">
           <div className="card-image">
-            <img src="/images/hb-logo.png" alt="DSU Logo" />
+            <img src="/images/logos/logoo 1.png" alt="DSU Logo" />
           </div>
           <div className="mobile-header-title">
             <span>DSU DEVHACK </span>
@@ -59,7 +60,7 @@ export const NewNavbar = () => {
             {mobileMenuOpen ? (
               <div className="mobile-menu-x">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             ) : (
@@ -95,6 +96,9 @@ export const NewNavbar = () => {
                 <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'timeline' })}>
                   Timeline
                 </Link>
+                <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'organising-team' })}>
+                  Team
+                </Link>
                 <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'sponsors' })}>
                   Sponsors
                 </Link>
@@ -123,7 +127,7 @@ export const NewNavbar = () => {
         <div className="desktop-navbar">
           <div className="desktop-navbar-content">
             <div className="card-image">
-              <img src="/images/hb-logo.png" alt="DSU Logo" />
+              <img src="/images/logos/logoo 1.png" alt="DSU Logo" />
             </div>
             <div className="desktop-navbar-left">
               <span className="desktop-title">DSU DEVHACK </span>
@@ -153,7 +157,7 @@ export const NewNavbar = () => {
           </Link>
         ))}
         <Link to="https://dsudevhack.tech"
-         className="nav-register">
+          className="nav-register">
           <div className="button-text__wrap">
             <div className="text-wrap__innner">
               <span className="p-medium u--fw-med">Register</span>
