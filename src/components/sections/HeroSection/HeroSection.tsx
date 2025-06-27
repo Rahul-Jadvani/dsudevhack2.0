@@ -185,7 +185,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                     muted
                     playsInline
                     className="w-full h-full object-contain"
-                    style={{ 
+                    style={{
                       filter: 'brightness(1.05) contrast(1.05) saturate(1.1)',
                       imageRendering: 'crisp-edges',
                       WebkitBackfaceVisibility: 'hidden',
@@ -260,7 +260,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 muted
                 playsInline
                 className="w-[80%] h-[80%] object-contain "
-                style={{ 
+                style={{
                   filter: 'brightness(1.05) contrast(1.05) saturate(1.1)',
                   imageRendering: 'crisp-edges',
                   WebkitBackfaceVisibility: 'hidden',
