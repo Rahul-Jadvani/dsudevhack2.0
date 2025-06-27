@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './HeroSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,6 +104,17 @@ export const HeroSection = (_props: HeroSectionProps) => {
     };
   }, [isMobile]);
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+}, []);
+
   return (
     <section
       id="hero"
@@ -141,7 +153,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 </div>
               </div>
             )}
-            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-40">
+            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-40 items-center justify-center">
               <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
                   <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>
@@ -161,16 +173,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   </div>
                 ))}
               </div>
-
-              <button
-                type="button"
-                className="px-5 py-3 sm:px-8 sm:py-4 bg-[#000f1d] text-[#f2f3f5] font-medium text-base sm:text-lg border-2 border-black rounded-none cursor-pointer flex items-center justify-center transition-all duration-300 relative overflow-hidden mx-auto z-[1] pr-[48px] sm:pr-[60px] max-w-[210px] sm:max-w-[250px] w-full group"
-              >
-                Register Now
-                <div className="flex items-center justify-center bg-[#4da2ff] h-full w-[36px] sm:w-[50px] absolute transition-all duration-300 z-[2] right-0 top-0 bottom-0 text-lg sm:text-xl group-hover:bg-[#3b82f6] group-hover:right-auto group-hover:left-0 group-hover:rotate-0">
-                  →
-                </div>
-              </button>
+              <div 
+                className="apply-button devfolio-button mx-auto"
+                data-hackathon-slug="dsudevhack2" 
+                data-button-theme="dark"
+              ></div>
             </div>
           </div>
 
@@ -182,15 +189,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   <img
                     src="/images/images/new-svg-unscreen.gif"
                     alt="DSU DEVHACK"
-                    className="w-full h-full object-contain"
-                    style={{
-                      filter: 'brightness(1.05) contrast(1.05) saturate(1.1)',
-                    style={{ 
-                      filter: 'brightness(1.05) contrast(1.05) saturate(1.1',
-                      imageRendering: 'crisp-edges',
-                      WebkitBackfaceVisibility: 'hidden',
-                      backfaceVisibility: 'hidden'
-                    }}
+                    className="w-full h-full object-contain hero-gif"
                   />
                 </div>
               </div>
@@ -256,7 +255,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 alt="DSU DEVHACK"
                 className="w-[80%] h-[80%] object-contain"
                 style={{ 
-                  filter: 'brightness(1.05) contrast(1.05) saturate(1.1',
+                  filter: 'brightness(1.05) contrast(1.05) saturate(1.1)',
                   imageRendering: 'crisp-edges',
                   WebkitBackfaceVisibility: 'hidden',
                   backfaceVisibility: 'hidden'

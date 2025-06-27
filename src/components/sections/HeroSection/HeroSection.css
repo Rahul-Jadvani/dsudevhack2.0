@@ -1,5 +1,17 @@
 @import '../common/SectionStyles.css';
 
+.devfolio-button {
+  height: 44px;
+  width: 312px;
+}
+
+.hero-gif {
+  filter: brightness(1.05) contrast(1.05) saturate(1.1);
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 .hero-section {
   position: relative;
   min-height: 60vh; /* Increased to ensure all cards are visible */
@@ -42,8 +54,7 @@
   z-index: 2;
   overflow-y: auto;
   height: 100vh;
-  max-height: 100vh; /* Ensure it doesn't exceed viewport height */
-  scrollbar-width: none; /* Firefox */
+  max-height: 100vh; /* Ensure it doesn't exceed viewport height */ /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scroll-padding: 2rem; /* Add padding for scroll snap */
 }
