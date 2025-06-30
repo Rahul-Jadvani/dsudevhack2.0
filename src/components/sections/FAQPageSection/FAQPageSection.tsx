@@ -73,41 +73,40 @@ export const FAQPageSection = () => {
 
           <div className="py-8 max-w-5xl mx-auto">
             <div className="faq-container">
-            {faqItems.map((item, index) => (
-              <div key={index} className="faq-item-wrapper">
-                <div className="faq-item">
-                  <button
-                    type="button"
-                    className="faq-question"
-                    onClick={() => toggleItem(index)}
-                  >
-                    <span>{item.question}</span>
-                    <div className={`faq-toggle ${activeIndex === index ? 'active' : ''}`}>
-                      <div className="dots-container">
-                        <div className="dot top"></div>
-                        <div className="dot left"></div>
-                        <div className="dot center"></div>
-                        <div className="dot right"></div>
-                        <div className="dot bottom"></div>
+              {faqItems.map((item, index) => (
+                <div key={index} className="faq-item-wrapper">
+                  <div className="faq-item">
+                    <button
+                      type="button"
+                      className="faq-question"
+                      onClick={() => toggleItem(index)}
+                    >
+                      <span>{item.question}</span>
+                      <div className={`faq-toggle ${activeIndex === index ? 'active' : ''}`}>
+                        <div className="dots-container">
+                          <div className="dot top"></div>
+                          <div className="dot left"></div>
+                          <div className="dot center"></div>
+                          <div className="dot right"></div>
+                          <div className="dot bottom"></div>
+                        </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
 
-                  <div className={`faq-answer ${activeIndex === index ? 'active' : ''}`}>
-                    {typeof item.answer === 'string' ? (
-                      <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
-                    ) : (
-                      <p>{item.answer}</p>
-                    )}
+                    <div className={`faq-answer ${activeIndex === index ? 'active' : ''}`}>
+                      {typeof item.answer === 'string' ? (
+                        <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
+                      ) : (
+                        <p>{item.answer}</p>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
-
   );
 };
