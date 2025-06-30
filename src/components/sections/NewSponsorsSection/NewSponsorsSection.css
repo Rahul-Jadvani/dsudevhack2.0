@@ -18,8 +18,10 @@
   from {
     width: 0;
   }
+
   to {
-    width: 13ch; /* Adjust based on text length */
+    width: 13ch;
+    /* Adjust based on text length */
   }
 }
 
@@ -29,9 +31,9 @@
   font-weight: 700;
   margin-bottom: 2rem;
   color: white;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
 }
 
 /* Sponsor box styling */
@@ -44,9 +46,12 @@
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: #0f172a !important; /* Default blue background */
-  cursor: pointer; /* Add cursor pointer to indicate interactivity */
-  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  background-color: #0f172a !important;
+  /* Default blue background */
+  cursor: pointer;
+  /* Add cursor pointer to indicate interactivity */
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight on mobile */
 }
 
 /* Track sponsor hover effect */
@@ -216,7 +221,8 @@
     height: 180px;
   }
 
-  .tertiary-sponsor, .community-sponsor {
+  .tertiary-sponsor,
+  .community-sponsor {
     height: 150px;
   }
 }
@@ -238,7 +244,8 @@
     height: 150px;
   }
 
-  .tertiary-sponsor, .community-sponsor {
+  .tertiary-sponsor,
+  .community-sponsor {
     height: 130px;
   }
 
@@ -264,7 +271,8 @@
     height: 130px;
   }
 
-  .tertiary-sponsor, .community-sponsor {
+  .tertiary-sponsor,
+  .community-sponsor {
     height: 110px;
   }
 
@@ -276,6 +284,7 @@
 
 /* Touch device specific styles */
 @media (hover: none) {
+
   /* Apply hover styles to all boxes by default for touch devices */
   .main-sponsor.touch-device {
     border-color: rgba(243, 232, 255, 0.3);

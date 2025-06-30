@@ -86,7 +86,7 @@ export const NewSponsorsSection = () => {
 
         <div className="sponsors-grid-container mb-12">
           <div className="sponsors-grid-heading">
-            <h4>Platinum Sponsors</h4>
+            <h4 className=''>Platinum Sponsors</h4>
           </div>
 
           <div className="sponsors-platinum-row">
@@ -125,7 +125,7 @@ export const NewSponsorsSection = () => {
             ) : (
               <div className="sponsor-platinum-box flex flex-col items-center justify-center">
                 <div className="text-4xl font-bold text-center">
-                  {Array.from("COMING SOON").map((letter, index) => (
+                  {Array.from(`COMING SOON`).map((letter, index) => (
                     <span
                       key={index}
                       className="inline-block mx-1 animate-pulse"
@@ -143,7 +143,7 @@ export const NewSponsorsSection = () => {
           </div>
 
           <div className="sponsors-grid-heading">
-            <h4>Gold Sponsors</h4>
+            <h4> Gold Sponsors</h4>
           </div>
 
           <div className="sponsors-top-row">

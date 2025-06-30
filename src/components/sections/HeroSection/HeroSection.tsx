@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './HeroSection.css';
+import RightSection from '../../../rightanimation/Rightsection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,7 +57,10 @@ export const HeroSection = (_props: HeroSectionProps) => {
   useEffect(() => {
     if (!sectionRef.current || !keyboardWrapRef.current || !contentWrapRef.current) return;
 
-    if (!isMobile && window.innerWidth > 992) {
+    // Guard for pin-keyboard and hero-section
+    const pinKeyboard = document.getElementById('pin-keyboard');
+    const heroSection = document.querySelector('.hero-section');
+    if (!isMobile && window.innerWidth > 992 && pinKeyboard && heroSection) {
       gsap.timeline({
         scrollTrigger: {
           trigger: "#pin-keyboard",
@@ -71,31 +75,41 @@ export const HeroSection = (_props: HeroSectionProps) => {
       });
     }
 
-    const allContentSections = gsap.utils.toArray('.hero-content-section');
-    gsap.set(allContentSections, { clearProps: "all" });
+    // Guard for about-section
+    const aboutSection = document.querySelector('.about-section');
+    if (aboutSection) {
+      gsap.set('.about-section', { opacity: 1, visibility: 'visible' });
+    }
+    // Guard for why-section
+    const whySection = document.querySelector('.why-section');
+    if (whySection) {
+      gsap.set('.why-section', { opacity: 1, visibility: 'visible' });
+    }
 
-    gsap.set('.about-section', { opacity: 1, visibility: 'visible' });
-    gsap.set('.why-section', { opacity: 1, visibility: 'visible' });
-
+    // Animate hero-content-section if present
     const contentSections = gsap.utils.toArray('.hero-content-section');
-    contentSections.forEach((section: any, index: number) => {
-      if (index > 0) {
-        gsap.set(section, { opacity: 0.7, y: 30 });
-      }
-      gsap.to(section, {
-        opacity: 1,
-        y: 0,
-        duration: 0.3,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 90%",
-          end: "top 40%",
-          toggleActions: "play none none reverse",
-          once: false,
-          markers: false,
+    if (contentSections.length > 0) {
+      gsap.set(contentSections, { clearProps: "all" });
+      contentSections.forEach((section, index) => {
+        const el = section as HTMLElement;
+        if (index > 0) {
+          gsap.set(el, { opacity: 0.7, y: 30 });
         }
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            end: "top 40%",
+            toggleActions: "play none none reverse",
+            once: false,
+            markers: false,
+          }
+        });
       });
-    });
+    }
 
     ScrollTrigger.refresh();
 
@@ -119,7 +133,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative min-h-[60vh] w-full overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
+      className="hero-section relative min-h-[60vh] w-full overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
     >
       {/* Grid Background */}
       <div className="absolute inset-0 grid grid-cols-[repeat(24,minmax(0,1fr))] grid-rows-[repeat(24,minmax(0,1fr))] gap-[1px] pointer-events-none aspect-square">
@@ -246,11 +260,12 @@ export const HeroSection = (_props: HeroSectionProps) => {
         {!isMobile && (
           <div
             ref={keyboardWrapRef}
+            id="pin-keyboard"
             className="relative w-full h-screen flex flex-col justify-start items-center overflow-hidden"
           >
             {/* Desktop view - Video */}
-            <div className="relative w-full h-full flex items-start justify-center ">
-              <img
+            <div className='fixed left-14'>
+              {/* <img
                 src="/images/images/new-svg-unscreen.gif"
                 alt="DSU DEVHACK"
                 className="w-[80%] h-[80%] object-contain"
@@ -260,7 +275,8 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   WebkitBackfaceVisibility: 'hidden',
                   backfaceVisibility: 'hidden'
                 }}
-              />
+              /> */}
+              <RightSection/>
             </div>
           </div>
         )}
