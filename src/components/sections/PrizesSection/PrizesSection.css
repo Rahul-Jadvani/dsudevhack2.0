@@ -203,7 +203,7 @@
 }
 
 .prize-amount {
-    font-size: clamp(1.525rem, 5vw, 2.925rem);
+    font-size: clamp(1.525rem, 5vw, 4.5rem);
     font-weight: 800;
     color: #111827;
     text-shadow: none;
@@ -1382,4 +1382,7 @@
     .coming-soon-title {
         font-size: 1.25rem;
     }
+  .prize-amount {
+        font-size: 3.3rem;
+      }
 }
