@@ -39,7 +39,12 @@ export const NewSponsorsSection = () => {
     };
   }, []);
 
-  const platinumRowSponsors: SponsorLogo[] = [];
+  const platinumRowSponsors: SponsorLogo[] = [
+    {
+      name: "GitHub",
+      logoUrl: "/sponsors/GitHub Logos/PNG/GitHub_Lockup_Light.png",
+    }
+  ];
 
   const topRowSponsors: SponsorLogo[] = [
     {
