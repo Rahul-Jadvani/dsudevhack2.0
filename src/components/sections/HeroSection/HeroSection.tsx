@@ -188,7 +188,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 ))}
               </div>
               <div 
-                className="apply-button devfolio-button mx-auto ml-16"
+                className="apply-button devfolio-button mx-auto ml-44"
                 data-hackathon-slug="dsudevhack2" 
                 data-button-theme="dark"
               ></div>
