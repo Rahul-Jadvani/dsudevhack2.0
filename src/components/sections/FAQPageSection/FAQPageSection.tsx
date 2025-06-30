@@ -15,12 +15,12 @@ export const FAQPageSection = () => {
       answer: "DSU DEVHACK is a national-level hackathon initiative of a private university in India to help various departments and private organizations find solutions to their pressing problems through students. Participants will have the chance to build innovative projects while competing for prizes, mentorship, and exclusive developer opportunities."
     },
     {
-      question: "At which level is this hackathon conducted?",
-      answer: "The DSU DEVHACK Hackathon is conducted at the national level."
-    },
-    {
       question: "Is the hackathon offline and how long does it last?",
       answer: "Yes, the DSU DEVHACK Hackathon is a 36-hour offline event held at Dayanada sagar university kanakpura road Bangalore , giving participants an immersive and collaborative experience." 
+    },
+    {
+      question: "At which level is this hackathon conducted?",
+      answer: "The DSU DEVHACK Hackathon is conducted at the national level."
     },
     {
       question: "How many members can participate in a team?",
