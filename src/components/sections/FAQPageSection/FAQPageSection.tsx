@@ -19,6 +19,10 @@ export const FAQPageSection = () => {
       answer: "The DSU DEVHACK Hackathon is conducted at the national level."
     },
     {
+      question: "Is the hackathon offline and how long does it last?",
+      answer: "Yes, the DSU DEVHACK Hackathon is a 36-hour offline event held at Dayanada sagar university kanakpura road Bangalore , giving participants an immersive and collaborative experience." 
+    },
+    {
       question: "How many members can participate in a team?",
       answer: "A team can have only 3 members."
     },
@@ -40,7 +44,7 @@ export const FAQPageSection = () => {
     },
     {
       question: "I have a question related to the hackathon which is not listed above. What should I do?",
-      answer: "Feel free to reach out to us. Just drop a mail to <a href='mailto:dsudevhack@dsu.edu.in'>dsudevhack@dsu.edu.in</a>. You can also contact the student coordinator at <strong>+91-8154852286</strong>."
+      answer: "Feel free to reach out to us. Just drop a mail to <a href='mailto:dsudevhack@dsu.edu.in'>dsudevhack@dsu.edu.in</a>. You can also contact the student coordinator at <strong>+91-9939635206 or +91-8299686568</strong>."
     },
   ];
 

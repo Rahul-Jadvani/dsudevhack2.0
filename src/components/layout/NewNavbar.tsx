@@ -8,13 +8,13 @@ export const NewNavbar = () => {
 
   const navItems = [
     { name: 'Prizes', path: '/', sectionId: 'prizes' },
-    { name: 'Themes', path: '/', sectionId: 'tracks' },
+    { name: 'Tracks', path: '/', sectionId: 'tracks' },
     { name: 'Timeline', path: '/', sectionId: 'timeline' },
     { name: 'Team', path: '/', sectionId: 'organising-team' },
     { name: 'Sponsors', path: '/', sectionId: 'sponsors' },
     { name: 'Archives', path: 'https://dsudevhack.tech/', sectionId: 'archives' },
     { name: 'FAQ', path: '/', sectionId: 'faq' },
-    { name: 'Discord', path: '/discord', sectionId: 'discord' }
+    { name: 'Discord', path: 'https://discord.gg/rs3dPP5PcM', sectionId: 'discord' }
   ];
 
   const toggleMobileMenu = () => {
@@ -89,7 +89,7 @@ export const NewNavbar = () => {
                   Prizes
                 </Link>
                 <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'tracks' })}>
-                  Themes
+                  Tracks
                 </Link>
               </div>
               <div className="mobile-menu-row">
@@ -104,18 +104,33 @@ export const NewNavbar = () => {
                 </Link>
               </div>
               <div className="mobile-menu-row">
-                <Link to="https://dsudevhack.tech/" className="mobile-menu-item" onClick={() => handleNavClick({ path: 'https://dsudevhack.tech/', sectionId: 'archives' })}>
-                  Archives
-                </Link>
-                <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'faq' })}>
+  <a
+    href="https://dsudevhack.tech/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mobile-menu-item"
+  >
+    Archives
+  </a>
+
+  <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'faq' })}>
                   FAQ
                 </Link>
-              </div>
+
+  <a
+    href="https://www.instagram.com/p/DLiSQKwzqnr/?igsh=dTdpNmIwdzl6ZmEz"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mobile-menu-item"
+  >
+    Instagram
+  </a>
+</div>
               <div className="mobile-menu-row">
-                <Link to="/discord" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/discord', sectionId: 'discord' })}>
+                <Link to="https://discord.gg/rs3dPP5PcM" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/discord', sectionId: 'discord' })}>
                   Discord
                 </Link>
-                <Link to="https://dsudevhack.tech" className="mobile-menu-item register">
+                <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'hero' })}>
                   Register
                 </Link>
               </div>
@@ -156,25 +171,25 @@ export const NewNavbar = () => {
             </div>
           </Link>
         ))}
-        <Link to="https://dsudevhack.tech"
-          className="nav-register">
-          <div className="button-text__wrap">
-            <div className="text-wrap__innner">
-              <span className="p-medium u--fw-med">Register</span>
-            </div>
-          </div>
-          <div className="nav-register-arrow">
-            <svg
-              className="arrow-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 12h14m-5-5l5 5-5 5" />
-            </svg>
-          </div>
-        </Link>
+        <a href="#hero" className="nav-register">
+  <div className="button-text__wrap">
+    <div className="text-wrap__innner">
+      <span className="p-medium u--fw-med">Register</span>
+    </div>
+  </div>
+  <div className="nav-register-arrow">
+    <svg
+      className="arrow-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 12h14m-5-5l5 5-5 5" />
+    </svg>
+  </div>
+</a>
+
 
       </nav>
     </>
