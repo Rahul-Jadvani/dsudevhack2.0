@@ -23,9 +23,12 @@ export const Footer = () => {
                 <p className="footer-text">Jiya Patel - +91 7383232239</p>
             </div>
 
-            {/* Follow Us */}
+            {/* Faculty Coordinator & Follow Us */}
             <div className="footer-section">
-              <h3 className="footer-heading">Follow Us</h3>
+              <h3 className="footer-heading">Faculty Coordinator</h3>
+              <p className="footer-text">Dr. Bipin Kumar Rai <br></br><br/> +91 9454285149</p>
+              <p className="footer-text">Professor, CSE</p>
+              <h3 className="footer-heading" style={{ marginTop: '1.5em' }}>Follow Us</h3>
               <div className="social-links">
                 <a href="https://discord.gg/uBcyhfmhx4" className="social-link" aria-label="Discord" title="Discord">
                   <FaDiscord size={24} />
