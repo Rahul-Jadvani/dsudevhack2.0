@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './HeroSection.css';
+// import './HeroSection.css';
 import RightSection from '../../../rightanimation/Rightsection';
 import Squares from '@/blocks/Backgrounds/Squares/Squares';
 
@@ -134,7 +134,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
     <section
       id="hero"
       ref={sectionRef}
-      className="hero-section relative h-[100vh] w-[100vw] overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
+      className="hero-section relative h-[100vh] -top-24 w-[100vw] overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
     >
       {/* Squares Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-4">
@@ -154,10 +154,10 @@ export const HeroSection = (_props: HeroSectionProps) => {
           className={`relative w-full py-0 px-2 sm:pl-12 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto scrollbar-none scroll-p-8 -z-1`}
         >
           {/* First content section */}
-          <div className="min-h-[60vh] flex flex-col justify-center py-6 scroll-snap-start mb-2 relative">
+          <div className="min-h-[80vh] flex flex-col justify-center py-6 scroll-snap-start relative">
             {/* University info for desktop */}
             {!isMobile && (
-              <div className="absolute top-12 left-12 z-[5] max-w-[400px] flex items-center p-2 sm:p-4">
+              <div className="absolute top-0 left-12 max-w-[400px] flex items-center p-2 sm:p-4">
                 <img
                   src="/images/dsu.png"
                   alt="DSU Logo"
@@ -172,8 +172,8 @@ export const HeroSection = (_props: HeroSectionProps) => {
             <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible md:mt-40 mt-20 flex flex-col items-center justify-center">
               <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
-                  <h1 className="text-6xl sm:text-8xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>
-                  <h1 className="text-6xl sm:text-8xl font-extrabold leading-tight m-0 text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">DEVHACK 2.0</h1>
+                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>
+                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">DEVHACK 2.0</h1>
                 </div>
               </div>
               <p className="text-base sm:text-xl mb-6 text-[#333333] leading-relaxed font-bold text-center">National-level hybrid hackathon for undergraduate engineering students</p>
@@ -231,7 +231,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
           </div>
 
             {/* Why Participate section */}
-          <div className="min-h-[50vh] flex flex-col justify-center py-4 scroll-snap-start mb-40 relative opacity-100 visible" id="why-section">
+          <div className="min-h-[50vh] flex flex-col justify-center py-4 scroll-snap-start mb-56 relative opacity-100 visible" id="why-section">
             <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
               <div className="flex items-center lg:items-start lg:flex-row flex-col-reverse gap-3 sm:gap-6">
                 <div className="flex-1">
@@ -259,7 +259,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
           <div
             ref={keyboardWrapRef}
             id="pin-keyboard"
-            className="relative w-full h-screen flex flex-col justify-start items-center overflow-hidden"
+            className="realtive w-full h-screen flex flex-col justify-start items-center overflow-hidden z-1"
           >
             {/* Desktop view - Video */}
             <div className="fixed left-4 top-40" style={{ width: '320px', maxWidth: '40vw' }}>

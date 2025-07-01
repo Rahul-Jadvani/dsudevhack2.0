@@ -1,5 +1,5 @@
 import { MainLayout } from '../components/layout/MainLayout';
-import { HeroSection } from '../components/sections/HeroSection';
+import { HeroSection } from '../components/sections/HeroSection'
 import { OverviewSection } from '../components/sections/OverviewSection';
 import { TracksSection } from '../components/sections/TracksSection';
 import { PrizesSection } from '../components/sections/PrizesSection';
