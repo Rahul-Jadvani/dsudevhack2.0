@@ -134,7 +134,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
     <section
       id="hero"
       ref={sectionRef}
-      className="hero-section relative min-h-[60vh] w-full overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
+      className="hero-section relative h-[100vh] w-[100vw] overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
     >
       {/* Squares Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-4">
@@ -215,10 +215,10 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 <div className="flex-1">
                   <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-black">About DSU DEVHACK 2025</h2>
                   <p className="text-base sm:text-lg leading-relaxed mb-3 sm:mb-6 text-[#333333]">
-                    DSU DEVHACK 2025 is a national-level hackathon pushing the boundaries of innovation in AI, ML, IoT, Blockchain, Cybersecurity, and Cloud at DSU Harohalli, Banglore, Karnataka. 🛠
+                    DSU DEVHACK 2025 is a national-level hackathon pushing the boundaries of innovation in AI, ML, IoT, Blockchain, Cybersecurity, and Cloud at DSU Harohalli, Banglore, Karnataka.
                   </p>
                   <p className="text-base sm:text-lg leading-relaxed mb-3 sm:mb-6 text-[#333333]">
-                    This event gathers brilliant minds nationwide to create revolutionary solutions. It provides a platform for developers, designers, and enthusiasts to transform ideas, showcase skills, and network. 🤝
+                    This event gathers brilliant minds nationwide to create revolutionary solutions. It provides a platform for developers, designers, and enthusiasts to transform ideas, showcase skills, and network.
                   </p>
                 </div>
                 {/* <img
