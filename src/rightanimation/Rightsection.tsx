@@ -56,7 +56,7 @@ const RightSection: React.FC = () => {
                                 transform="rotate(30 92.5 75)"
                               ></path></svg><img
                         src="images/67acdc4f394bcf4f3e3669c8_key-o-1-bg.png"
-                        loading="eager"
+                        loading="lazy"
                         alt=""
                         className="key-gradient key-base-right"
                       />
@@ -153,7 +153,7 @@ const RightSection: React.FC = () => {
                         ></path></svg
                       ><img
                         src="images/67acdc4f394bcf4f3e3669cb_key-e-bg.png"
-                        loading="eager"
+                        loading="lazy"
                         alt=""
                         className="key-gradient key-base-right"
                       />
@@ -203,7 +203,7 @@ const RightSection: React.FC = () => {
                       </svg
                       ><img
                         src="images/67acdc4f394bcf4f3e3669cc_key-r-bg.png"
-                        loading="eager"
+                        loading="lazy"
                         alt=""
                         className="key-gradient key-base-right"
                       />
@@ -252,7 +252,7 @@ const RightSection: React.FC = () => {
                       ></path></svg
                       ><img
                         src="images/67acdc4f394bcf4f3e3669cc_key-r-bg.png"
-                        loading="eager"
+                        loading="lazy"
                         alt=""
                         className="key-gradient key-base-right"
                       />
@@ -307,7 +307,7 @@ const RightSection: React.FC = () => {
                       ></path>           </svg
                       ><img
                         src="images/67acdc4f394bcf4f3e3669ca_key-l-bg.png"
-                        loading="eager"
+                        loading="lazy"
                         alt=""
                         className="key-gradient key-base-right"
                       />
@@ -357,7 +357,7 @@ const RightSection: React.FC = () => {
                         </svg
                       ><img
                         src="images/67acdc4f394bcf4f3e3669c8_key-o-1-bg.png"
-                        loading="eager"
+                        loading="lazy"
                         alt=""
                         className="key-gradient key-base-right"
                       />
@@ -415,7 +415,7 @@ const RightSection: React.FC = () => {
                         </svg
                       ><img
                         src="images/67acdc4f394bcf4f3e3669c9_key-w-bg.png"
-                        loading="eager"
+                        loading="lazy"
                         alt=""
                         className="key-gradient key-base-right"
                       />

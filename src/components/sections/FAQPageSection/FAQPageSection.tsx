@@ -104,7 +104,7 @@ export const FAQPageSection = () => {
               </button>
               <div
                 id={`faq-answer-${idx}`}
-                className={`transition-all duration-500 ease-in-out px-5 ${activeIndex === idx ? ' min-h-[110px] sm:min-h-[220px] h-full py-4 opacity-100' : 'max-h-0 py-0 opacity-0'} overflow-hidden text-gray-700 text-base h-full md:text-md bg-gray-50 w-full`}
+                className={`transition-all duration-500 ease-in-out px-5 ${activeIndex === idx ? ' min-h-[110px] xs:min-h-[240px] h-full py-4 opacity-100' : 'max-h-0 py-0 opacity-0'} overflow-hidden text-gray-700 text-base h-full md:text-md bg-gray-50 w-full`}
                 aria-labelledby={`faq-question-${idx}`}
                 ref={el => (answerRefs.current[idx] = el)}
                 style={activeIndex === idx ? { maxHeight: answerRefs.current[idx]?.scrollHeight } : {}}
@@ -122,3 +122,5 @@ export const FAQPageSection = () => {
     </section>
   );
 }; 
+
+export default FAQPageSection
