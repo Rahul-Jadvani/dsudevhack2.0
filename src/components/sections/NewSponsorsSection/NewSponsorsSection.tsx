@@ -118,6 +118,7 @@ export const NewSponsorsSection = () => {
                       <img
                         src={sponsor.logoUrl}
                         alt={getAltText(sponsor.name)}
+                        loading="lazy"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = 'https://via.placeholder.com/200?text=' + sponsor.name;
@@ -174,6 +175,7 @@ export const NewSponsorsSection = () => {
                     <img
                       src={sponsor.logoUrl}
                       alt={getAltText(sponsor.name)}
+                      loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = 'https://via.placeholder.com/150?text=' + sponsor.name;
@@ -212,6 +214,7 @@ export const NewSponsorsSection = () => {
                     <img
                       src={sponsor.logoUrl}
                       alt={getAltText(sponsor.name)}
+                      loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = 'https://via.placeholder.com/100?text=' + sponsor.name;
@@ -250,6 +253,7 @@ export const NewSponsorsSection = () => {
                     <img
                       src={sponsor.logoUrl}
                       alt={getAltText(sponsor.name)}
+                      loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = 'https://via.placeholder.com/100?text=' + sponsor.name;

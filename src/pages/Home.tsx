@@ -29,8 +29,8 @@ export const Home = () => {
         <PrizesSection />
         <TracksSection />
         <TimelineSection />
-        <OrganisingTeamSection />
         <NewSponsorsSection />
+        <OrganisingTeamSection />
         <FAQPageSection />
 
         <Footer />
