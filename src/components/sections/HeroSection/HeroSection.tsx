@@ -139,7 +139,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
       {/* Squares Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-4">
         <Squares
-          speed={0.2}
+          speed={0.8}
           squareSize={typeof window !== "undefined" && window.innerWidth < 768 ? 50 : 40}
           direction="diagonal"
           borderColor="lightblue"
@@ -231,7 +231,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
           </div>
 
             {/* Why Participate section */}
-          <div className="min-h-[50vh] flex flex-col justify-center py-4 scroll-snap-start mb-56 relative opacity-100 visible" id="why-section">
+          <div className="min-h-[50vh] flex flex-col justify-center py-4 scroll-snap-start sm:mb-56 relative opacity-100 visible" id="why-section">
             <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
               <div className="flex items-center lg:items-start lg:flex-row flex-col-reverse gap-3 sm:gap-6">
                 <div className="flex-1">
