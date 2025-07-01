@@ -273,26 +273,27 @@
   overflow: hidden;
   padding: 0 1rem;
   color: #333333;
-  transition: all 0.3s ease-in-out;
+  transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.4s cubic-bezier(0.4,0,0.2,1);
   opacity: 0;
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 400;
+  will-change: max-height, opacity, padding;
 }
 
 .faq-answer.active {
-  max-height: 1000px;
+  max-height: 10000px;
   padding: 0.75rem 1rem 1rem;
   opacity: 1;
   margin-top: 0;
   background-color: #f5f5f5;
   border-top: 2px solid #000000;
+  transition: max-height 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* Mobile specific styles for FAQ answers */
 @media (max-width: 768px) {
   .faq-answer.active {
-    max-height: 2000px;
+    max-height: 20000px;
     padding: 1rem 1rem 1.5rem;
     word-wrap: break-word;
     overflow-wrap: break-word;

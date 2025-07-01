@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './HeroSection.css';
 import RightSection from '../../../rightanimation/Rightsection';
+import Squares from '@/blocks/Backgrounds/Squares/Squares';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,24 +136,25 @@ export const HeroSection = (_props: HeroSectionProps) => {
       ref={sectionRef}
       className="hero-section relative min-h-[60vh] w-full overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
     >
-      {/* Grid Background */}
-      <div className="absolute inset-0 grid grid-cols-[repeat(24,minmax(0,1fr))] grid-rows-[repeat(24,minmax(0,1fr))] gap-[1px] pointer-events-none aspect-square">
-        {Array.from({ length: 576 }).map((_, index) => (
-          <div
-            key={index}
-            className="w-full h-full aspect-square border border-black/10 bg-gradient-to-br from-white to-gray-50"
-          />
-        ))}
+      {/* Squares Background */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none -z-4">
+        <Squares
+          speed={0.2}
+          squareSize={typeof window !== "undefined" && window.innerWidth < 768 ? 50 : 40}
+          direction="diagonal"
+          borderColor="lightblue"
+          hoverFillColor="#ab00ff"
+        />
       </div>
 
       <div className="flex flex-col-reverse items-center lg:justify-between lg:flex-row relative w-full justify-start">
         {/* Left side - Scrollable content */}
         <div
           ref={contentWrapRef}
-          className={`relative w-full py-0 pl-8 sm:pl-12 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto scrollbar-none scroll-p-8 -z-1`}
+          className={`relative w-full py-0 px-2 sm:pl-12 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto scrollbar-none scroll-p-8 -z-1`}
         >
           {/* First content section */}
-          <div className="min-h-[60vh] flex flex-col justify-center py-6 scroll-snap-start mb-8 relative">
+          <div className="min-h-[60vh] flex flex-col justify-center py-6 scroll-snap-start mb-2 relative">
             {/* University info for desktop */}
             {!isMobile && (
               <div className="absolute top-12 left-12 z-[5] max-w-[400px] flex items-center p-2 sm:p-4">
@@ -170,8 +172,8 @@ export const HeroSection = (_props: HeroSectionProps) => {
             <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-40 flex flex-col items-center justify-center">
               <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
-                  <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>
-                  <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight m-0 text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">DEVHACK 2.0</h1>
+                  <h1 className="text-6xl sm:text-8xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>
+                  <h1 className="text-6xl sm:text-8xl font-extrabold leading-tight m-0 text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">DEVHACK 2.0</h1>
                 </div>
               </div>
               <p className="text-base sm:text-xl mb-6 text-[#333333] leading-relaxed text-center">National-level hybrid hackathon for undergraduate engineering students</p>
@@ -199,16 +201,10 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
           {/* Video section for mobile/tablet */}
           {isMobile && (
-            <div className="min-h-[35vh] flex flex-col justify-center items-center py-1 scroll-snap-start mb-2 relative">
-              <div className="max-w-full w-full sm:w-[600px] p-1.5 sm:p-3 bg-transparent rounded-xl mb-2 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
-                <div className="relative w-full aspect-[4/3] flex items-center justify-center">
-                  <img
-                    src="/images/images/new-svg-unscreen.gif"
-                    alt="DSU DEVHACK"
-                    className="w-full h-full object-contain hero-gif"
-                  />
-                </div>
-              </div>
+            <div className='-z-1 scale-[0.7] bottom-20 right-24 flex flex-col items-center justify-center w-full relative'>
+              <RightSection/>
+              {/* Add spacing below the animation to push content down */}
+              <div style={{ height: '220px' }} />
             </div>
           )}
 

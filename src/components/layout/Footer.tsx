@@ -26,7 +26,7 @@ export const Footer = () => {
             {/* Faculty Coordinator & Follow Us */}
             <div className="footer-section">
               <h3 className="footer-heading">Faculty Coordinator</h3>
-              <p className="footer-text">Dr. Bipin Kumar Rai <br></br><br/> +91 9454285149</p>
+              <p className="footer-text">Dr. Bipin Kumar Rai</p>
               <p className="footer-text">Professor, CSE</p>
               <h3 className="footer-heading" style={{ marginTop: '1.5em' }}>Follow Us</h3>
               <div className="social-links">
