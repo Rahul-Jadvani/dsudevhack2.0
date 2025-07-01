@@ -27,12 +27,16 @@
     width: 100%;
     margin-bottom: 0;
     position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 clamp(1rem, 3vw, 2rem);
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-grid {

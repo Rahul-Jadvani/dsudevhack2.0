@@ -30,8 +30,7 @@ export const Footer = () => {
                 <a href="https://discord.gg/uBcyhfmhx4" className="social-link" aria-label="Discord" title="Discord">
                   <FaDiscord size={24} />
                 </a>
-                <a href="https://www.instagram.com/p/DLiSQKwzqnr/?igsh=dTdpNmIwdzl6ZmEz" className="social-link" aria-label="Instagram" title="Instagram" target="_blank" 
-  rel="noopener noreferrer">
+                <a href="https://www.instagram.com/p/DLiSQKwzqnr/?igsh=dTdpNmIwdzl6ZmEz" className="social-link" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
                   <FaInstagram size={24} />
                 </a>
                 <a href="https://maps.app.goo.gl/sK8xbJDBUnqXm8nd9" className="social-link" aria-label="Google Maps" title="Google Maps">

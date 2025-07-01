@@ -278,7 +278,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   backfaceVisibility: 'hidden'
                 }}
               /> */}
-              <div style={{ transform: 'scale(0.8)', transformOrigin: 'top left', width: '100%' }}>
+              <div className="scale-[0.7] xl:scale-[0.6] origin-top-left w-full">
                 <RightSection />
               </div>
             </div>
