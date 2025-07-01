@@ -130,7 +130,7 @@ export const NewNavbar = () => {
                 <Link to="https://discord.gg/rs3dPP5PcM" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/discord', sectionId: 'discord' })}>
                   Discord
                 </Link>
-                <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'hero' })}>
+                <Link to="https://dsudevhack2.devfolio.co/application" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'hero' })}>
                   Register
                 </Link>
               </div>
@@ -171,7 +171,7 @@ export const NewNavbar = () => {
             </div>
           </Link>
         ))}
-        <a href="#hero" className="nav-register">
+        <a href="https://dsudevhack2.devfolio.co/application" className="nav-register">
   <div className="button-text__wrap">
     <div className="text-wrap__innner">
       <span className="p-medium u--fw-med">Register</span>
