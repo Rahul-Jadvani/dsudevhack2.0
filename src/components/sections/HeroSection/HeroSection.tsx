@@ -167,7 +167,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 </div>
               </div>
             )}
-            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-40 items-center justify-center">
+            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-40 flex flex-col items-center justify-center">
               <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
                   <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>
@@ -177,7 +177,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
               <p className="text-base sm:text-xl mb-6 text-[#333333] leading-relaxed text-center">National-level hybrid hackathon for undergraduate engineering students</p>
 
               {/* Countdown timer */}
-              <div className="flex justify-between mb-6 max-w-[350px] sm:max-w-[400px] mx-auto">
+              <div className="flex justify-between mb-6 max-w-[350px] sm:max-w-[400px] mx-auto gap-4">
                 {["Days", "Hours", "Mins", "Secs"].map((label, idx) => (
                   <div key={label} className="flex flex-col items-center rounded-lg p-1 sm:p-2 min-w-[55px] sm:min-w-[75px] text-[#333] shadow-sm bg-[#84b7f2]">
                     <span className="text-xl sm:text-2xl font-bold mb-1">
@@ -187,11 +187,13 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   </div>
                 ))}
               </div>
-              <div 
-                className="apply-button devfolio-button mx-auto ml-44"
-                data-hackathon-slug="dsudevhack2" 
-                data-button-theme="dark"
-              ></div>
+              <div className="w-full flex justify-center">
+                <div 
+                  className="apply-button devfolio-button"
+                  data-hackathon-slug="dsudevhack2" 
+                  data-button-theme="dark"
+                ></div>
+              </div>
             </div>
           </div>
 
@@ -264,7 +266,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
             className="relative w-full h-screen flex flex-col justify-start items-center overflow-hidden"
           >
             {/* Desktop view - Video */}
-            <div className='fixed left-14'>
+            <div className="fixed left-4 top-40" style={{ width: '320px', maxWidth: '40vw' }}>
               {/* <img
                 src="/images/images/new-svg-unscreen.gif"
                 alt="DSU DEVHACK"
@@ -276,7 +278,9 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   backfaceVisibility: 'hidden'
                 }}
               /> */}
-              <RightSection/>
+              <div style={{ transform: 'scale(0.8)', transformOrigin: 'top left', width: '100%' }}>
+                <RightSection />
+              </div>
             </div>
           </div>
         )}

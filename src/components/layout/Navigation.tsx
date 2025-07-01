@@ -154,7 +154,7 @@ export const Navigation = () => {
             )
           )}
           <Link
-            to="/register"
+            to="http://dsudevhack2.devfolio.co"
             className="nav-item ml-auto px-6 py-3 bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors whitespace-nowrap"
           >
             Register

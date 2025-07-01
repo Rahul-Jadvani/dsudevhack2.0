@@ -14,13 +14,13 @@ export const Footer = () => {
             <div className="footer-section">
               <h3 className="footer-heading">Contact Us</h3>
               <p className="footer-text">📧 Email: dsudevhack@dsu.edu.in</p>
-              <div className="student-coordinators">
-                <h4 className="footer-subheading">Student Coordinators</h4>
-                <p className="footer-text">Utkarsh Priye (Jha)</p>
-                <p className="footer-text">+91 9939635206</p>
-                <p className="footer-text">Ritvik Vasundh</p>
-                <p className="footer-text">+91 8299686568</p>
+              {/* Student Coordinators */}
               </div>
+              <div className="footer-section">
+                <h3 className="footer-heading">Student Coordinators</h3>
+                <p className="footer-text">Utkarsh Priye - +91 9939635206</p>
+                <p className="footer-text">Ritvik Vasundh - +91 8299686568</p>
+                <p className="footer-text">Jiya Patel - +91 7383232239</p>
             </div>
 
             {/* Follow Us */}
@@ -45,12 +45,7 @@ export const Footer = () => {
               <ul className="venue-links">
                 <li>
                   <Link to="https://maps.app.goo.gl/sK8xbJDBUnqXm8nd9" className="venue-link">
-                    Dayananda Sagar University Harohalli
-                  </Link>
-                </li>
-                <li>
-                  <Link to="https://maps.app.goo.gl/sK8xbJDBUnqXm8nd9" className="venue-link">
-                    Bangalore, Karnataka 562112
+                    Dayananda Sagar University Devarakaggalahalli, Harohalli, Kanakapura Road, Bengaluru South District-562112, Karnataka, India
                   </Link>
                 </li>
               </ul>

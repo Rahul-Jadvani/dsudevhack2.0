@@ -156,7 +156,7 @@ export const NewNavbar = () => {
             </div>
           </Link>
         ))}
-        <Link to="https://dsudevhack.tech"
+        <Link to="http://dsudevhack2.devfolio.co"
           className="nav-register">
           <div className="button-text__wrap">
             <div className="text-wrap__innner">

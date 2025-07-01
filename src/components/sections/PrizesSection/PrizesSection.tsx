@@ -249,7 +249,7 @@ export const PrizesSection = () => {
 
           <div className="divider"></div>
 
-          <div className="coming-soon-container"
+          {/* <div className="coming-soon-container"
             ref={containerRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}>
@@ -279,7 +279,7 @@ export const PrizesSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Add padding at the bottom to prevent content from being hidden behind the fixed navbar */}
           <div className="pb-16"></div>
