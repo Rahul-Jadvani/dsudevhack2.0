@@ -3,7 +3,7 @@
 .time-capsule-section {
   composes: section-container;
   background-color: #f5f2e7;
-  padding: 6rem 0;
+  padding: 2rem 0;
   position: relative;
   overflow: hidden;
 }
