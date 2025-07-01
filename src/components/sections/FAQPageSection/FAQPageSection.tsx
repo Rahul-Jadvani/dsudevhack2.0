@@ -108,11 +108,6 @@ export const FAQPageSection = () => {
               </div>
             ))}
           </div>
-
-
-
-
-
         </div>
       </div>
     </section>
