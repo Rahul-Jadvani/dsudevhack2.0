@@ -65,7 +65,7 @@ export const TracksSection = () => {
       color: 'blue',
       description: 'Decentralize the web: blockchain, smart contracts, and dApps.',
       bgClass: 'web3-bg',
-      icon: <span className="track-icon-emoji">⛓️</span>,
+      icon: <img src="/images/images/blockchain.webp" alt="Web3 + Blockchain" className="track-icon-img" />,
       sponsor: 'Block Innovators',
     },
     {
