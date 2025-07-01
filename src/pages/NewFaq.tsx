@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import '../components/sections/FAQPageSection/FAQPageSection.css';
 
 interface FAQItem {
   question: string;
