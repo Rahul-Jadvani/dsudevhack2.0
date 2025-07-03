@@ -70,7 +70,8 @@ body {
   transition: transform 0.45s cubic-bezier(0.15, 0.5, 0.05, 1);
 }
 .nav-link:hover .p-medium {
-  transform: translate(0px, -95%);
+  /* transform: translate(0px, 100%); */
+  font-size: 1.4rem;
 }
 
 .nav-link:nth-of-type(1):hover,
@@ -217,6 +218,7 @@ body {
 .desktop-title {
   font-size: 1.7rem; /* Increased font size */
   font-weight: 600;
+  font-family: "Orbitron", Arial, Helvetica, sans-serif;
 }
 
 .desktop-navbar-right {
@@ -232,7 +234,7 @@ body {
 }
 
 .desktop-date-tag {
-  color: #4FB3FF;
+  color: #4fb3ff;
   font-family: monospace;
   font-size: 1rem; /* Increased font size */
 }
@@ -240,6 +242,7 @@ body {
 .desktop-date {
   font-size: 1rem; /* Increased font size */
   font-weight: 500;
+  font-family: "Orbitron", Arial, Helvetica, sans-serif;
 }
 
 .code.eyebrow {
@@ -270,12 +273,12 @@ body {
   z-index: 50;
   height: 60px;
   overflow-x: auto;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .nav::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, Opera */
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .nav-link {
@@ -405,7 +408,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  background-color:#000f1d;
+  background-color: #000f1d;
   color: #f2f3f5;
   font-weight: 500;
   height: 70px;
@@ -426,13 +429,13 @@ body {
 }
 
 .nav-register::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background:#000f1d;
+  background: #000f1d;
   transition: width 0.3s ease;
   z-index: -1;
 }
@@ -550,7 +553,7 @@ body {
   }
 
   .mobile-date-bar .code {
-    color: #4FB3FF;
+    color: #4fb3ff;
   }
 
   .mobile-date-bar .date-text {
@@ -597,7 +600,7 @@ body {
     gap: 4px;
     width: 60px; /* Increased from 50px to match navbar height */
     height: 60px; /* Increased from 50px to match navbar height */
-    background-color: #4FB3FF;
+    background-color: #4fb3ff;
     border: 3.5px solid #000;
     padding: 12px;
     cursor: pointer;
@@ -650,14 +653,14 @@ body {
     flex-direction: column;
     width: 100%;
     overflow-y: auto;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
     border: 4px solid #000; /* Increased from 2px to 4px for a thicker border */
     border-top: none; /* Remove top border as it's handled by the first row */
   }
 
   .mobile-menu-grid::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, Opera */
+    display: none; /* Chrome, Safari, Opera */
   }
 
   .mobile-menu-row {
@@ -693,7 +696,7 @@ body {
   }
 
   .mobile-menu-item.register {
-    background-color: #4FB3FF;
+    background-color: #4fb3ff;
     color: #fff;
   }
 
@@ -720,7 +723,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #4FB3FF;
+    background-color: #4fb3ff;
     width: 30px;
     height: 30px;
   }

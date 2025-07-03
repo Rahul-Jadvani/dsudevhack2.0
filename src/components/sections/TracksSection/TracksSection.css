@@ -1,4 +1,4 @@
-@import '../common/SectionStyles.css';
+@import "../common/SectionStyles.css";
 
 .tracks-section {
   composes: section-container;
@@ -9,7 +9,7 @@
 
 .tracks-title {
   composes: section-title;
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-family: "Orbitron", Arial, Helvetica, sans-serif;
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -58,10 +58,11 @@
 
 /* Grid background pattern - more visible */
 .track-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(90deg, #b0b0b0 2px, transparent 1px), linear-gradient(#b0b0b0 2px, transparent 1px);
+  background-image: linear-gradient(90deg, #b0b0b0 2px, transparent 1px),
+    linear-gradient(#b0b0b0 2px, transparent 1px);
   background-size: 32px 32px;
   opacity: 0.6;
   z-index: 0;
@@ -71,7 +72,7 @@
 .track-header {
   display: flex;
   align-items: center;
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-family: "Orbitron", Arial, Helvetica, sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
   background: #fff;
@@ -240,7 +241,7 @@
 .track-desc {
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: #111;
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-family: "Orbitron", Arial, Helvetica, sans-serif;
   padding: 0;
   margin-bottom: 0.5rem;
   z-index: 1;

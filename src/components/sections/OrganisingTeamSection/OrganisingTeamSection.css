@@ -1,109 +1,109 @@
 .organising-team-section {
-    background-color: #f5f2e7;
-    padding-top: 6rem;
-    padding-bottom: 9rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f5f2e7;
+  padding-top: 6rem;
+  padding-bottom: 9rem;
+  font-family: "Orbitron", Arial, Helvetica, sans-serif;
 }
 
 .dark .organising-team-section {
-    background-color: #111827;
+  background-color: #111827;
 }
 
 /* Single light colors for animated team cards - following website palette */
 .bg-card-blue {
-    background-image: url('/images/members/sir.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("/images/members/sir.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg-card-purple {
-    background-image: url('/images/members/Ritvik.JPG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("/images/members/Ritvik.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg-card-cyan {
-    background-image: url('/images/members/sir.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("/images/members/sir.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg-card-yellow {
-    background-image: url('/images/members/sir.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("/images/members/sir.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg-card-orange {
-    background-image: url('/images/members/sir.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("/images/members/sir.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg-card-pink {
-    background-image: url('/images/members/sir.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("/images/members/sir.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Custom border utilities */
 .border-3 {
-    border-width: 3px;
+  border-width: 3px;
 }
 
 /* Custom transition delays */
 .transition-delay-200 {
-    transition-delay: 200ms;
+  transition-delay: 200ms;
 }
 
 .transition-delay-400 {
-    transition-delay: 400ms;
+  transition-delay: 400ms;
 }
 
 .transition-delay-600 {
-    transition-delay: 600ms;
+  transition-delay: 600ms;
 }
 
 /* Custom border radius for animated boxes */
 .rounded-custom {
-    border-radius: 10% 13% 42% 0% / 10% 12% 75% 0%;
+  border-radius: 10% 13% 42% 0% / 10% 12% 75% 0%;
 }
 
 /* Smooth animation utilities */
 .animate-smooth {
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-smooth-slow {
-    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (max-width: 768px) {
-    .carousel-one-card-mobile {
-        width: 94vw !important;
-        min-width: 94vw !important;
-        max-width: 94vw !important;
-        height: 80vw !important;
-        min-height: 350px !important;
-        max-height: 90vh !important;
-        margin: 0 3vw !important;
-        box-sizing: border-box;
-    }
+  .carousel-one-card-mobile {
+    width: 94vw !important;
+    min-width: 94vw !important;
+    max-width: 94vw !important;
+    height: 80vw !important;
+    min-height: 350px !important;
+    max-height: 90vh !important;
+    margin: 0 3vw !important;
+    box-sizing: border-box;
+  }
 
-    .carousel-one-card-container-mobile {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        overflow: hidden !important;
-        padding: 0 !important;
-        margin: 0 auto !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .carousel-one-card-container-mobile {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

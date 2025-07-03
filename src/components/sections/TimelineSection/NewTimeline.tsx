@@ -231,8 +231,8 @@ export const NewTimeline: React.FC = () => {
               <path d="M5 12H19M12 5L19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          <div className="timeline-title">
-            <h3>Registration starts</h3>
+          <div className="timeline-title ">
+            <h3 className="m-0 p-0 text-xs">Registration starts</h3>
           </div>
 
           <div className="timeline-items">
@@ -254,7 +254,7 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Idea submissions start</h3>
+            <h3>Idea Submissions start</h3>
           </div>
 
           <div className="timeline-items">
@@ -276,7 +276,7 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Registration Deadline</h3>
+            <h3 className="m-0 p-0 text-xs">Registration Deadline</h3>
           </div>
 
           <div className="timeline-items">
@@ -298,7 +298,7 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Idea Submission Deadline</h3>
+            <h3 className="m-0 p-0 text-xs">Idea Submission Deadline</h3>
           </div>
 
           <div className="timeline-items">
@@ -344,7 +344,7 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Hacking Period Starts</h3>
+            <h3 className="m-0 p-0 text-xs">Hacking Period Starts</h3>
           </div>
 
           <div className="timeline-items">
@@ -366,7 +366,7 @@ export const NewTimeline: React.FC = () => {
             </svg>
           </div>
           <div className="timeline-title">
-            <h3>Final Submission</h3>
+            <h3 className="m-0 p-0 text-xs">Final Submission</h3>
           </div>
 
           <div className="timeline-items">

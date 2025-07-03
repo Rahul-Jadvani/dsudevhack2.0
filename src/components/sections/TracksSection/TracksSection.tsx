@@ -1,6 +1,6 @@
-import './TracksSection.css';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import "./TracksSection.css";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface Track {
   name: string;
@@ -20,7 +20,7 @@ const TrackCard = ({ track, index }: { track: Track; index: number }) => {
       className={`track-card ${track.bgClass}`}
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-      transition={{ duration: 1.1, delay: index * 0.12, ease: 'easeOut' }}
+      transition={{ duration: 1.1, delay: index * 0.12, ease: "easeOut" }}
     >
       <div className="track-header">
         <span className={`track-arrow arrow-${track.bgClass}`}>→</span>
@@ -28,7 +28,9 @@ const TrackCard = ({ track, index }: { track: Track; index: number }) => {
       </div>
       <div className="track-content-box">
         <div className="track-icon">{track.icon}</div>
-        {track.description && <div className="track-desc">{track.description}</div>}
+        {track.description && (
+          <div className="track-desc">{track.description}</div>
+        )}
       </div>
     </motion.div>
   );
@@ -37,52 +39,89 @@ const TrackCard = ({ track, index }: { track: Track; index: number }) => {
 export const TracksSection = () => {
   const tracks: Track[] = [
     {
-      name: 'Sustainability',
-      color: 'green',
-      description: 'Innovate for a greener future: energy, environment, and sustainable solutions.',
-      bgClass: 'sustainability-bg',
-      icon: <img src="/images/sus.png" alt="Sustainability" className="track-icon-img" />,
-      sponsor: 'Eco Foundation',
+      name: "Sustainability",
+      color: "green",
+      description:
+        "Innovate for a greener future: energy, environment, and sustainable solutions.",
+      bgClass: "sustainability-bg",
+      icon: (
+        <img
+          src="/images/sus.png"
+          alt="Sustainability"
+          className="track-icon-img"
+        />
+      ),
+      sponsor: "Eco Foundation",
     },
     {
-      name: 'Healthcare',
-      color: 'red',
-      description: 'Transform healthcare with technology: patient care, data, and wellness.',
-      bgClass: 'healthcare-bg',
-      icon: <img src="/images/healthcare.png" alt="Healthcare" className="track-icon-img" />,
-      sponsor: 'HealthTech Partners',
+      name: "Healthcare",
+      color: "red",
+      description:
+        "Transform healthcare with technology: patient care, data, and wellness.",
+      bgClass: "healthcare-bg",
+      icon: (
+        <img
+          src="/images/healthcare.png"
+          alt="Healthcare"
+          className="track-icon-img"
+        />
+      ),
+      sponsor: "HealthTech Partners",
     },
     {
-      name: 'AI/ML',
-      color: 'purple',
-      description: 'Build intelligent systems: machine learning, automation, and smart apps.',
-      bgClass: 'aiml-bg',
-      icon: <img src="/images/ai ml.png" alt="AI/ML" className="track-icon-img" />,
-      sponsor: 'AI Alliance',
+      name: "AI/ML",
+      color: "purple",
+      description:
+        "Build intelligent systems: machine learning, automation, and smart apps.",
+      bgClass: "aiml-bg",
+      icon: (
+        <img src="/images/ai ml.png" alt="AI/ML" className="track-icon-img" />
+      ),
+      sponsor: "AI Alliance",
     },
     {
-      name: 'Web3 + Blockchain',
-      color: 'blue',
-      description: 'Decentralize the web: blockchain, smart contracts, and dApps.',
-      bgClass: 'web3-bg',
-      icon: <img src="/images/images/blockchain.webp" alt="Web3 + Blockchain" className="track-icon-img" />,
-      sponsor: 'Block Innovators',
+      name: "Web3 + Blockchain",
+      color: "blue",
+      description:
+        "Decentralize the web: blockchain, smart contracts, and dApps.",
+      bgClass: "web3-bg",
+      icon: (
+        <img
+          src="/images/images/blockchain.webp"
+          alt="Web3 + Blockchain"
+          className="track-icon-img"
+        />
+      ),
+      sponsor: "Block Innovators",
     },
     {
-      name: 'IoT and Smart Cities',
-      color: 'teal',
-      description: 'Connect the world: IoT devices, smart infrastructure, and urban tech.',
-      bgClass: 'iot-bg',
-      icon: <img src="/images/iot.png" alt="IoT and Smart Cities" className="track-icon-img" />,
-      sponsor: 'Smart City Group',
+      name: "IoT and Smart Cities",
+      color: "teal",
+      description:
+        "Connect the world: IoT devices, smart infrastructure, and urban tech.",
+      bgClass: "iot-bg",
+      icon: (
+        <img
+          src="/images/iot.png"
+          alt="IoT and Smart Cities"
+          className="track-icon-img"
+        />
+      ),
+      sponsor: "Smart City Group",
     },
     {
-      name: 'Open Innovation',
-      color: 'orange',
-      description: 'Create without limits: any tech, any idea, any impact.',
-      bgClass: 'open-bg',
-      icon: <img src="/images/open innovation.png" alt="Open Innovation" className="track-icon-img" />,
-      sponsor: 'OpenX',
+      name: "Open Innovation",
+      color: "orange",
+      description: "Create without limits: any tech, any idea, any impact.",
+      bgClass: "open-bg",
+      icon: (
+        <img
+          src="/images/open innovation.png"
+          alt="Open Innovation"
+          className="track-icon-img"
+        />
+      ),
+      sponsor: "OpenX",
     },
   ];
 

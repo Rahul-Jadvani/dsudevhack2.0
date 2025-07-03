@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import './HeroSection.css';
-import RightSection from '../../../rightanimation/Rightsection';
-import Squares from '@/blocks/Backgrounds/Squares/Squares';
+import RightSection from "../../../rightanimation/Rightsection";
+import Squares from "@/blocks/Backgrounds/Squares/Squares";
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface HeroSectionProps {
-  theme?: 'light' | 'dark';
+  theme?: "light" | "dark";
 }
 
 export const HeroSection = (_props: HeroSectionProps) => {
@@ -17,20 +17,25 @@ export const HeroSection = (_props: HeroSectionProps) => {
   const keyboardWrapRef = useRef<HTMLDivElement>(null);
   const contentWrapRef = useRef<HTMLDivElement>(null);
 
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
   const [isMobile, setIsMobile] = useState(false);
 
   // Update screen size
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const targetDate = new Date('2025-09-12T00:00:00');
+      const targetDate = new Date("2025-09-12T00:00:00");
       const now = new Date();
       const difference = targetDate.getTime() - now.getTime();
 
@@ -40,9 +45,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
       return {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        hours: Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        ),
         minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        seconds: Math.floor((difference % (1000 * 60)) / 1000),
       };
     };
 
@@ -56,11 +63,16 @@ export const HeroSection = (_props: HeroSectionProps) => {
   }, []);
 
   useEffect(() => {
-    if (!sectionRef.current || !keyboardWrapRef.current || !contentWrapRef.current) return;
+    if (
+      !sectionRef.current ||
+      !keyboardWrapRef.current ||
+      !contentWrapRef.current
+    )
+      return;
 
     // Guard for pin-keyboard and hero-section
-    const pinKeyboard = document.getElementById('pin-keyboard');
-    const heroSection = document.querySelector('.hero-section');
+    const pinKeyboard = document.getElementById("pin-keyboard");
+    const heroSection = document.querySelector(".hero-section");
     if (!isMobile && window.innerWidth > 992 && pinKeyboard && heroSection) {
       gsap.timeline({
         scrollTrigger: {
@@ -72,23 +84,23 @@ export const HeroSection = (_props: HeroSectionProps) => {
           pinSpacing: true,
           scrub: 1,
           markers: false,
-        }
+        },
       });
     }
 
     // Guard for about-section
-    const aboutSection = document.querySelector('.about-section');
+    const aboutSection = document.querySelector(".about-section");
     if (aboutSection) {
-      gsap.set('.about-section', { opacity: 1, visibility: 'visible' });
+      gsap.set(".about-section", { opacity: 1, visibility: "visible" });
     }
     // Guard for why-section
-    const whySection = document.querySelector('.why-section');
+    const whySection = document.querySelector(".why-section");
     if (whySection) {
-      gsap.set('.why-section', { opacity: 1, visibility: 'visible' });
+      gsap.set(".why-section", { opacity: 1, visibility: "visible" });
     }
 
     // Animate hero-content-section if present
-    const contentSections = gsap.utils.toArray('.hero-content-section');
+    const contentSections = gsap.utils.toArray(".hero-content-section");
     if (contentSections.length > 0) {
       gsap.set(contentSections, { clearProps: "all" });
       contentSections.forEach((section, index) => {
@@ -107,7 +119,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
             toggleActions: "play none none reverse",
             once: false,
             markers: false,
-          }
+          },
         });
       });
     }
@@ -115,20 +127,20 @@ export const HeroSection = (_props: HeroSectionProps) => {
     ScrollTrigger.refresh();
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [isMobile]);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
     return () => {
       document.body.removeChild(script);
-    }
-}, []);
+    };
+  }, []);
 
   return (
     <section
@@ -140,7 +152,9 @@ export const HeroSection = (_props: HeroSectionProps) => {
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-4">
         <Squares
           speed={0.8}
-          squareSize={typeof window !== "undefined" && window.innerWidth < 768 ? 50 : 40}
+          squareSize={
+            typeof window !== "undefined" && window.innerWidth < 768 ? 50 : 40
+          }
           direction="diagonal"
           borderColor="lightblue"
           hoverFillColor="#ab00ff"
@@ -157,42 +171,65 @@ export const HeroSection = (_props: HeroSectionProps) => {
           <div className="min-h-[80vh] flex flex-col justify-center py-6 scroll-snap-start relative">
             {/* University info for desktop */}
             {!isMobile && (
-              <div className="absolute top-0 left-12 max-w-[400px] flex items-center p-2 sm:p-4">
+              <div className="absolute top-0 left-12 max-w-[450px] flex items-center  sm:p-4">
                 <img
                   src="/images/dsu.png"
                   alt="DSU Logo"
-                  className="w-12 h-12 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
+                  className="w-14 h-14 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
                 />
                 <div className="flex flex-col gap-1 sm:gap-2">
-                  <h3 className="text-[17px] sm:text-[20px] font-semibold m-0 text-black">Dayananda Sagar University</h3>
-                  <p className="text-[13px] sm:text-[15px] mt-1 mb-0 text-[#333]">School of Engineering, Harohalli</p>
+                  <h1 className="text-[17px] sm:text-[20px] font-semibold m-0 text-black font-bold">
+                    Dayananda Sagar University
+                  </h1>
+                  <p className="text-[13px] sm:text-[15px] mt-1 mb-0 text-[#333]">
+                    School of Engineering, Harohalli
+                  </p>
                 </div>
               </div>
             )}
-            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible md:mt-40 mt-20 flex flex-col items-center justify-center">
+            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-20 flex flex-col items-center justify-center">
               <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
-                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-black text-center max-w-full">DSU</h1>
-                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">DEVHACK 2.0</h1>
+                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-black text-center max-w-full">
+                    DSU
+                  </h1>
+                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">
+                    DEVHACK 2.0
+                  </h1>
                 </div>
               </div>
-              <p className="text-base sm:text-xl mb-6 text-[#333333] leading-relaxed font-bold text-center">National-level hybrid hackathon for undergraduate engineering students</p>
+              <p className="text-base sm:text-xl mb-6 text-[#333333] leading-relaxed font-bold text-center">
+                National-level hybrid hackathon for undergraduate engineering
+                students
+              </p>
 
               {/* Countdown timer */}
               <div className="flex justify-between mb-6 max-w-[350px] sm:max-w-[400px] mx-auto gap-4">
                 {["Days", "Hours", "Mins", "Secs"].map((label, idx) => (
-                  <div key={label} className="flex flex-col items-center rounded-lg p-1 sm:p-2 min-w-[55px] sm:min-w-[75px] text-[#333] shadow-sm bg-[#84b7f2]">
+                  <div
+                    key={label}
+                    className="flex flex-col items-center rounded-lg p-1 sm:p-2 min-w-[55px] sm:min-w-[75px] text-[#333] shadow-sm bg-[#84b7f2]"
+                  >
                     <span className="text-xl sm:text-2xl font-bold mb-1">
-                      {[timeLeft.days, timeLeft.hours, timeLeft.minutes, timeLeft.seconds][idx]}
+                      {
+                        [
+                          timeLeft.days,
+                          timeLeft.hours,
+                          timeLeft.minutes,
+                          timeLeft.seconds,
+                        ][idx]
+                      }
                     </span>
-                    <span className="text-xs sm:text-sm uppercase tracking-wider">{label}</span>
+                    <span className="text-xs sm:text-sm uppercase tracking-wider">
+                      {label}
+                    </span>
                   </div>
                 ))}
               </div>
               <div className="w-full flex justify-center">
-                <div 
+                <div
                   className="apply-button devfolio-button"
-                  data-hackathon-slug="dsudevhack2" 
+                  data-hackathon-slug="dsudevhack2"
                   data-button-theme="dark"
                 ></div>
               </div>
@@ -201,57 +238,17 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
           {/* Video section for mobile/tablet */}
           {isMobile && (
-            <div className='-z-1 scale-[0.7] bottom-20 right-24 flex flex-col items-center justify-center w-full relative'>
-              <RightSection/>
-              {/* Add spacing below the animation to push content down */}
-              <div style={{ height: '220px' }} />
+            <div className="-z-1 scale-[0.7] bottom-20 flex right-44 justify-end items-center relative w-full">
+              <RightSection />
+              {/* <div style={{ height: "220px" }} /> */}
             </div>
           )}
 
           {/* About section */}
-          <div className="min-h-[35vh] flex flex-col justify-center py-1.5 scroll-snap-start mb-3 relative opacity-100 visible">
-            <div className="max-w-full w-full sm:w-[600px] p-1.5 sm:p-3 bg-transparent rounded-xl mb-2 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
-              <div className="flex lg:items-start lg:flex-row flex-col-reverse items-center gap-2 sm:gap-3">
-                <div className="flex-1">
-                  <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-black">About DSU DEVHACK 2025</h2>
-                  <p className="text-base sm:text-lg leading-relaxed mb-3 sm:mb-6 text-[#333333]">
-                    DSU DEVHACK 2025 is a national-level hackathon pushing the boundaries of innovation in AI, ML, IoT, Blockchain, Cybersecurity, and Cloud at DSU Harohalli, Banglore, Karnataka.
-                  </p>
-                  <p className="text-base sm:text-lg leading-relaxed mb-3 sm:mb-6 text-[#333333]">
-                    This event gathers brilliant minds nationwide to create revolutionary solutions. It provides a platform for developers, designers, and enthusiasts to transform ideas, showcase skills, and network.
-                  </p>
-                </div>
-                {/* <img
-                  src="/images/hb-logo.png"
-                  alt="DSU Campus"
-                  className="w-28 h-28 sm:w-48 sm:h-48 object-cover transition-transform duration-300 hover:scale-105"
-                /> */}
-              </div>
-            </div>
-          </div>
+          {/* REMOVED: About section for extraction */}
 
-            {/* Why Participate section */}
-          <div className="min-h-[50vh] flex flex-col justify-center py-4 scroll-snap-start sm:mb-56 relative opacity-100 visible" id="why-section">
-            <div className="max-w-full w-full sm:w-[600px] p-3 sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible">
-              <div className="flex items-center lg:items-start lg:flex-row flex-col-reverse gap-3 sm:gap-6">
-                <div className="flex-1">
-                  <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-black">Why Participate?</h2>
-                  <div className="text-base sm:text-lg leading-relaxed mb-3 sm:mb-6 text-[#333333] space-y-1 sm:space-y-3">
-                    <p>Showcase your technical skills and creativity</p>
-                    <p>Network with industry professionals and peers</p>
-                    <p>Win exciting prizes and recognition</p>
-                    <p>Learn new technologies and methodologies</p>
-                    <p>Build solutions that address real-world challenges</p>
-                  </div>
-                </div>
-                {/* <img
-                  src="/images/hb-logo.png"
-                  alt="DSU Campus"
-                  className="w-28 h-28 sm:w-48 sm:h-48 object-cover transition-transform duration-300 hover:scale-105"
-                /> */}
-              </div>
-            </div>
-          </div>
+          {/* Why Participate section */}
+          {/* REMOVED: Why Participate section for extraction */}
         </div>
 
         {/* Right side - Video (Desktop only) */}
@@ -259,10 +256,13 @@ export const HeroSection = (_props: HeroSectionProps) => {
           <div
             ref={keyboardWrapRef}
             id="pin-keyboard"
-            className="realtive w-full h-screen flex flex-col justify-start items-center overflow-hidden z-1"
+            className="relative w-full h-screen flex flex-col justify-start items-center overflow-hidden z-1"
           >
             {/* Desktop view - Video */}
-            <div className="fixed left-4 top-40" style={{ width: '320px', maxWidth: '40vw' }}>
+            <div
+              className="fixed right-20 top-40"
+              style={{ width: "1000px", maxWidth: "40vw" }}
+            >
               {/* <img
                 src="/images/images/new-svg-unscreen.gif"
                 alt="DSU DEVHACK"
@@ -274,7 +274,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   backfaceVisibility: 'hidden'
                 }}
               /> */}
-              <div className="scale-[0.7] xl:scale-[0.6] origin-top-left w-full">
+              <div className="scale-[0.7] xl:scale-[0.7] origin-top-left w-full ">
                 <RightSection />
               </div>
             </div>
@@ -283,4 +283,4 @@ export const HeroSection = (_props: HeroSectionProps) => {
       </div>
     </section>
   );
-}; 
+};

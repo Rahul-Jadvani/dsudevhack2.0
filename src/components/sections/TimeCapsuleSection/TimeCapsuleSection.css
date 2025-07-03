@@ -1,4 +1,4 @@
-@import '../common/SectionStyles.css';
+@import "../common/SectionStyles.css";
 
 .time-capsule-section {
   composes: section-container;
@@ -21,7 +21,7 @@
 
 .time-capsule-title {
   composes: section-title;
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-family: "Orbitron", Arial, Helvetica, sans-serif;
   font-size: 4rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -63,14 +63,14 @@
 }
 
 .time-capsule-closed::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: linear-gradient(#333 1px, transparent 1px),
-                    linear-gradient(90deg, #333 1px, transparent 1px);
+    linear-gradient(90deg, #333 1px, transparent 1px);
   background-size: 20px 20px;
   opacity: 0.05;
   z-index: 0;
@@ -104,7 +104,7 @@
   font-weight: 800;
   color: #111;
   margin-bottom: 0.5rem;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .dark .time-capsule-year {
@@ -206,7 +206,7 @@
 }
 
 .time-capsule-reel::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
@@ -269,7 +269,7 @@
   font-weight: 800;
   color: #111;
   margin-bottom: 0.5rem;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .dark .time-capsule-item-year {

@@ -1,4 +1,4 @@
-@import '../common/SectionStyles.css';
+@import "../common/SectionStyles.css";
 
 .sponsors-section {
   composes: section-container;
@@ -7,7 +7,7 @@
 
 /* Add a subtle pattern background */
 .sponsors-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -34,13 +34,13 @@
 }
 
 .sponsors-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #60A5FA, #A78BFA);
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
   border-radius: 2px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .light .sponsors-title::after {
-  background: linear-gradient(90deg, #3B82F6, #8B5CF6) !important;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6) !important;
   height: 6px !important;
 }
 
@@ -102,13 +102,17 @@
 
 /* Sponsor card glow effect */
 .sponsor-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.1), transparent 70%);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(96, 165, 250, 0.1),
+    transparent 70%
+  );
   opacity: 0;
   transition: none;
   z-index: -1;
@@ -169,7 +173,7 @@
 }
 
 .sponsor-card:hover .sponsor-name {
-  color: #60A5FA;
+  color: #60a5fa;
 }
 
 .light .sponsor-name {
@@ -177,7 +181,7 @@
 }
 
 .light .sponsor-card:hover .sponsor-name {
-  color: #93C5FD;
+  color: #93c5fd;
 }
 
 /* Category headers */
@@ -190,13 +194,13 @@
 }
 
 .category-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #60A5FA, transparent);
+  background: linear-gradient(90deg, #60a5fa, transparent);
   border-radius: 1.5px;
 }
 
@@ -207,7 +211,7 @@
 }
 
 .light .category-title::after {
-  background: linear-gradient(90deg, #3B82F6, transparent);
+  background: linear-gradient(90deg, #3b82f6, transparent);
   height: 4px; /* Slightly thicker underline for better visibility */
 }
 
@@ -326,7 +330,7 @@
   overflow: hidden;
   background: transparent;
   border: 2px solid rgba(96, 165, 250, 0.5);
-  color: #60A5FA;
+  color: #60a5fa;
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: 8px;
@@ -335,13 +339,13 @@
 }
 
 .sponsor-button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, #60A5FA, #A78BFA);
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
   transition: none;
   z-index: -1;
 }
@@ -358,26 +362,26 @@
 /* Removed animation keyframes */
 
 /* SPONSORS */
-[data-sponsor-el]{
+[data-sponsor-el] {
   transition: transform 0.45s cubic-bezier(0.15, 0.5, 0.05, 1);
   display: inline-block;
   position: relative;
 }
 
-.sponsors-grid__item:hover .sponsors-top{
+.sponsors-grid__item:hover .sponsors-top {
   color: #fff;
   transition: color 0.2s ease;
 }
 
-.sponsors-grid__item:hover [data-sponsor-el="left"]{
+.sponsors-grid__item:hover [data-sponsor-el="left"] {
   transform: translate(-40%, 0px);
 }
 
-.sponsors-grid__item:hover [data-sponsor-el="right"]{
+.sponsors-grid__item:hover [data-sponsor-el="right"] {
   transform: translate(75%, 0px);
 }
 
-.sponsors-grid__item:hover [data-sponsor-el="arrow"]{
+.sponsors-grid__item:hover [data-sponsor-el="arrow"] {
   transform: translate(35%, -25%);
 }
 
@@ -397,7 +401,7 @@
 }
 
 .sponsors-grid__item:hover::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 5%;
@@ -612,7 +616,7 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
-  font-family: monospace;
+  font-family: "Orbitron", Arial, Helvetica, sans-serif;
 }
 
 .flex-row {
@@ -627,7 +631,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
   background-size: 20px 20px;
   z-index: -1;
   opacity: 0.3;
@@ -694,7 +701,10 @@
 }
 
 .light .grid-bg {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
 }
 
 .light .h-large {

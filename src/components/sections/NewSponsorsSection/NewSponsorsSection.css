@@ -25,7 +25,6 @@
   }
 }
 
-
 .sponsors-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -41,7 +40,8 @@
   position: relative;
   border-radius: 0;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease,
+    background-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -284,7 +284,6 @@
 
 /* Touch device specific styles */
 @media (hover: none) {
-
   /* Apply hover styles to all boxes by default for touch devices */
   .main-sponsor.touch-device {
     border-color: rgba(243, 232, 255, 0.3);
@@ -482,4 +481,10 @@
     width: 18px;
     height: 18px;
   }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }

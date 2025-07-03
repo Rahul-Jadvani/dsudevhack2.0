@@ -1,8 +1,8 @@
-import './NewSponsorsSection.css';
-import './NewSponsorsGrid.css';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import "./NewSponsorsSection.css";
+import "./NewSponsorsGrid.css";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,19 +23,19 @@ export const NewSponsorsSection = () => {
 
     ScrollTrigger.create({
       trigger: heading,
-      start: 'top 80%',
+      start: "top 80%",
       onEnter: () => {
-        heading.classList.remove('typewriter');
+        heading.classList.remove("typewriter");
         void heading.offsetWidth;
-        heading.classList.add('typewriter');
+        heading.classList.add("typewriter");
       },
       onLeaveBack: () => {
-        heading.classList.remove('typewriter');
-      }
+        heading.classList.remove("typewriter");
+      },
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -43,30 +43,30 @@ export const NewSponsorsSection = () => {
     {
       name: "GitHub",
       logoUrl: "/sponsors/GitHub Logos/PNG/GitHub_Lockup_Light.png",
-    }
+    },
   ];
 
   const topRowSponsors: SponsorLogo[] = [
     {
       name: "AIC DSU Innovation Foundation",
       logoUrl: "/sponsors/aic-dsu.png",
-    }
+    },
   ];
 
   const middleRowSponsors: SponsorLogo[] = [
     {
       name: "ETH India",
       logoUrl: "/sponsors/ethindia-light.svg",
-      website: "https://ethindia.co"
-    }
+      website: "https://ethindia.co",
+    },
   ];
 
   const bottomRowSponsors: SponsorLogo[] = [
     {
       name: "Devfolio",
       logoUrl: "/sponsors/Devfolio_Logo-White.png",
-      website: "https://devfolio.co"
-    }
+      website: "https://devfolio.co",
+    },
   ];
 
   const getAltText = (name: string) => {
@@ -91,13 +91,13 @@ export const NewSponsorsSection = () => {
 
         <div className="sponsors-grid-container mb-12">
           <div className="sponsors-grid-heading">
-            <h4 className=''>Platinum Sponsors</h4>
+            <h4 className="">Platinum Sponsors</h4>
           </div>
 
           <div className="sponsors-platinum-row">
             {platinumRowSponsors.length > 0 ? (
               platinumRowSponsors.map((sponsor, index) => {
-                const Wrapper = sponsor.website ? 'a' : 'div';
+                const Wrapper = sponsor.website ? "a" : "div";
                 return (
                   <Wrapper
                     key={`platinum-${index}`}
@@ -106,7 +106,7 @@ export const NewSponsorsSection = () => {
                       ? {
                           href: sponsor.website,
                           target: "_blank",
-                          rel: "noopener noreferrer"
+                          rel: "noopener noreferrer",
                         }
                       : {})}
                   >
@@ -121,7 +121,9 @@ export const NewSponsorsSection = () => {
                         loading="lazy"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = 'https://via.placeholder.com/200?text=' + sponsor.name;
+                          target.src =
+                            "https://via.placeholder.com/200?text=" +
+                            sponsor.name;
                         }}
                       />
                     </div>
@@ -136,8 +138,11 @@ export const NewSponsorsSection = () => {
                       key={index}
                       className="inline-block mx-1 animate-pulse"
                       style={{
-                        animation: `pulse 2s cubic-bezier(0.4, 0, 0.6, 1) ${index * 0.1}s infinite`,
-                        textShadow: '0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)'
+                        animation: `pulse 2s cubic-bezier(0.4, 0, 0.6, 1) ${
+                          index * 0.1
+                        }s infinite`,
+                        textShadow:
+                          "0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)",
                       }}
                     >
                       {letter}
@@ -152,9 +157,9 @@ export const NewSponsorsSection = () => {
             <h4> Gold Sponsors</h4>
           </div>
 
-          <div className="sponsors-top-row">
+          <div className="sponsors-top-row ">
             {topRowSponsors.map((sponsor, index) => {
-              const Wrapper = sponsor.website ? 'a' : 'div';
+              const Wrapper = sponsor.website ? "a" : "div";
               return (
                 <Wrapper
                   key={`top-${index}`}
@@ -163,7 +168,7 @@ export const NewSponsorsSection = () => {
                     ? {
                         href: sponsor.website,
                         target: "_blank",
-                        rel: "noopener noreferrer"
+                        rel: "noopener noreferrer",
                       }
                     : {})}
                 >
@@ -178,7 +183,9 @@ export const NewSponsorsSection = () => {
                       loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = 'https://via.placeholder.com/150?text=' + sponsor.name;
+                        target.src =
+                          "https://via.placeholder.com/150?text=" +
+                          sponsor.name;
                       }}
                     />
                   </div>
@@ -193,7 +200,7 @@ export const NewSponsorsSection = () => {
 
           <div className="sponsors-middle-row">
             {middleRowSponsors.map((sponsor, index) => {
-              const Wrapper = sponsor.website ? 'a' : 'div';
+              const Wrapper = sponsor.website ? "a" : "div";
               return (
                 <Wrapper
                   key={`middle-${index}`}
@@ -202,7 +209,7 @@ export const NewSponsorsSection = () => {
                     ? {
                         href: sponsor.website,
                         target: "_blank",
-                        rel: "noopener noreferrer"
+                        rel: "noopener noreferrer",
                       }
                     : {})}
                 >
@@ -217,7 +224,9 @@ export const NewSponsorsSection = () => {
                       loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = 'https://via.placeholder.com/100?text=' + sponsor.name;
+                        target.src =
+                          "https://via.placeholder.com/100?text=" +
+                          sponsor.name;
                       }}
                     />
                   </div>
@@ -232,7 +241,7 @@ export const NewSponsorsSection = () => {
 
           <div className="sponsors-bottom-row">
             {bottomRowSponsors.map((sponsor, index) => {
-              const Wrapper = sponsor.website ? 'a' : 'div';
+              const Wrapper = sponsor.website ? "a" : "div";
               return (
                 <Wrapper
                   key={`bottom-${index}`}
@@ -241,7 +250,7 @@ export const NewSponsorsSection = () => {
                     ? {
                         href: sponsor.website,
                         target: "_blank",
-                        rel: "noopener noreferrer"
+                        rel: "noopener noreferrer",
                       }
                     : {})}
                 >
@@ -256,7 +265,9 @@ export const NewSponsorsSection = () => {
                       loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = 'https://via.placeholder.com/100?text=' + sponsor.name;
+                        target.src =
+                          "https://via.placeholder.com/100?text=" +
+                          sponsor.name;
                       }}
                     />
                   </div>

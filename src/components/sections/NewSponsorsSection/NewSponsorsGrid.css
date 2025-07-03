@@ -1,4 +1,4 @@
-/* New Sponsors Grid CSS based on the reference image */
+New Sponsors Grid CSS based on the reference image
 .sponsors-grid-container {
   width: 100%;
   display: flex;
@@ -32,7 +32,7 @@
 }
 
 .sponsors-grid-heading h4::before {
-  content: '//';
+  content: "//";
   position: absolute;
   left: 0;
   color: rgba(59, 130, 246, 0.7);
@@ -76,7 +76,8 @@
   transition: all 0.3s ease;
 
   @keyframes pulse {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 1;
       transform: scale(1);
     }
@@ -93,7 +94,7 @@
 }
 
 .sponsor-platinum-box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -117,7 +118,7 @@
 }
 
 .sponsors-grid-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -150,7 +151,7 @@
 }
 
 .sponsor-top-box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -210,7 +211,7 @@
 
 .sponsor-middle-box::before,
 .sponsor-bottom-box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -339,7 +340,7 @@
 .sponsor-top-box::after,
 .sponsor-middle-box::after,
 .sponsor-bottom-box::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 5%;
@@ -372,10 +373,9 @@
 .sponsor-middle-box:hover,
 .sponsor-bottom-box:hover {
   transform: translateY(-8px) rotateX(5deg);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
-  box-shadow:
-    0 15px 30px rgba(0, 0, 0, 0.3),
-    0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Add subtle shadow to create paper-like depth */
@@ -383,7 +383,8 @@
 .sponsor-middle-box,
 .sponsor-bottom-box {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease;
 }
 
 /* Responsive adjustments */
