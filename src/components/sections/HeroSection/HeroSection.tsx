@@ -165,7 +165,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
         {/* Left side - Scrollable content */}
         <div
           ref={contentWrapRef}
-          className={`relative w-full py-0 px-2 sm:pl-12 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto -z-1`}
+          className={`relative w-full py-0 px-2 sm:pl-12 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto scrollbar-none scroll-p-8 -z-1`}
         >
           {/* First content section */}
           <div className="min-h-[80vh] flex flex-col justify-center py-6 scroll-snap-start relative">
@@ -228,7 +228,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
               </div>
               <div className="w-full flex justify-center">
                 <div
-                  className="apply-button devfolio-button mt-4"
+                  className="apply-button devfolio-button mt-10"
                   data-hackathon-slug="dsudevhack2"
                   data-button-theme="dark"
                 ></div>
