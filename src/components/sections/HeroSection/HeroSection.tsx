@@ -228,7 +228,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
               </div>
               <div className="w-full flex justify-center">
                 <div
-                  className="apply-button devfolio-button mt-10"
+                  className="apply-button devfolio-button"
                   data-hackathon-slug="dsudevhack2"
                   data-button-theme="dark"
                 ></div>
@@ -238,7 +238,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
           {/* Video section for mobile/tablet */}
           {isMobile && (
-            <div className="-z-1 scale-[0.6] bottom-40 flex right-44 justify-end items-center relative w-full">
+            <div className="-z-1 scale-[0.7] bottom-20 flex right-44 justify-end items-center relative w-full">
               <RightSection />
               {/* <div style={{ height: "220px" }} /> */}
             </div>
@@ -261,7 +261,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
           >
             {/* Desktop view - Video */}
             <div
-              className="relative right-60 top-30"
+              className="relative right-60 top-32"
               style={{ width: "1000px", maxWidth: "40vw" }}
             >
               {/* <img
