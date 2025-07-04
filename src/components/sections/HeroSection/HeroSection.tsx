@@ -238,7 +238,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
           {/* Video section for mobile/tablet */}
           {isMobile && (
-            <div className="-z-1 scale-[0.7] bottom-36 flex right-44 justify-end items-center relative w-full">
+            <div className="-z-1 scale-[0.7] botoom-28 xs:bottom-36 flex right-44 justify-end items-center relative w-full">
               <RightSection />
               {/* <div style={{ height: "220px" }} /> */}
             </div>
