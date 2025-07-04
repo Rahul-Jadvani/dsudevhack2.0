@@ -12,12 +12,14 @@ import { Footer } from "../components/layout/Footer";
 import { useTheme } from "../lib/theme-context";
 import Themes from "../components/themes";
 import AboutWhySection from "../components/sections/AboutWhySection";
+import SplashCursor from '../blocks/Animations/SplashCursor/SplashCursor';
 
 export const Home = () => {
   const { theme } = useTheme();
 
   return (
     <MainLayout>
+      <SplashCursor></SplashCursor>
       {/* Sections with KeyboardCanvas */}
       <div className="relative">
         <HeroSection theme={theme} />
