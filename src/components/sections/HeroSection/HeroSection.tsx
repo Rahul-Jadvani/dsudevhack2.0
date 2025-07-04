@@ -168,7 +168,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
           className={`relative w-full py-0 px-2 sm:pl-12 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto scrollbar-none scroll-p-8 -z-1`}
         >
           {/* First content section */}
-          <div className="min-h-[70vh] flex flex-col justify-center py-6 scroll-snap-start relative">
+          <div className="min-h-[70vh] sm:min-h-[80vh] flex flex-col justify-center py-6 scroll-snap-start relative">
             {/* University info for desktop */}
             {!isMobile && (
               <div className="hidden absolute top-0 left-12 max-w-[450px] md:flex items-center  sm:p-4">
