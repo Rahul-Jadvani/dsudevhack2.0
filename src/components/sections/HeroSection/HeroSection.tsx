@@ -188,7 +188,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
               </div>
             )}
             <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center">
-              <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
+              <div className="flex flex-col items-center max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
                   <h1 className="text-4xl sm:text-8xl font-extrabold leading-tight text-black text-center max-w-full">
                     DSU
@@ -238,7 +238,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
           {/* Video section for mobile/tablet */}
           {isMobile && (
-            <div className="-z-1 scale-[0.7] bottom-20 flex right-44 justify-end items-center relative w-full">
+            <div className="-z-1 scale-[0.7] bottom-32 flex right-44 justify-end items-center relative w-full">
               <RightSection />
               {/* <div style={{ height: "220px" }} /> */}
             </div>
