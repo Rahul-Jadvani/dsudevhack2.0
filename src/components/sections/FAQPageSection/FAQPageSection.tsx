@@ -59,10 +59,10 @@ export const FAQPageSection = () => {
   };
 
   return (
-    <section id="faq" className="w-full bg-gray-50 py-16 mb-60 md:mb-0 px-2 md:px-0">
+    <section id="faq" className="w-full h-[194vh] sm:h-[114vh] bg-gray-50 py-16 mb-60 md:mb-0 px-2 md:px-0">
       <div className="max-w-5xl w-full mx-auto flex flex-col items-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-10 text-gray-900 mt-16">FAQ</h1>
-        <ul className="flex flex-col gap-4 w-full" role="list">
+        <ul className="flex flex-col gap-4 mb-4 w-full" role="list">
           {faqItems.map((item, idx) => (
             <li
               key={idx}
@@ -104,7 +104,7 @@ export const FAQPageSection = () => {
               </button>
               <div
                 id={`faq-answer-${idx}`}
-                className={`transition-all duration-500 ease-in-out px-5 ${activeIndex === idx ? ' min-h-[400px] xs:min-h-[400px] h-full py-4 opacity-100' : 'max-h-0 py-0 opacity-0'} overflow-hidden text-gray-700 text-base h-full md:text-md bg-gray-50 w-full`}
+                className={`transition-all duration-500 ease-in-out px-5 ${activeIndex === idx ? ' min-h-[240px] xs:min-h-[400px] h-full py-4 opacity-100' : 'max-h-0 py-0 opacity-0'} overflow-hidden text-gray-700 text-base h-full md:text-md bg-gray-50 w-full`}
                 aria-labelledby={`faq-question-${idx}`}
                 ref={el => (answerRefs.current[idx] = el)}
                 style={activeIndex === idx ? { maxHeight: answerRefs.current[idx]?.scrollHeight } : {}}
