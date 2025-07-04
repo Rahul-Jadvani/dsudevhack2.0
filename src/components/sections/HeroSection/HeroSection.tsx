@@ -146,7 +146,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
     <section
       id="hero"
       ref={sectionRef}
-      className="hero-section relative h-[100vh] -top-20 w-[100vw] overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
+      className="hero-section relative p-16 h-[100vh] -top-20 w-[100vw] overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
     >
       {/* Squares Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-4">
@@ -256,11 +256,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
           <div
             ref={keyboardWrapRef}
             id="pin-keyboard"
-            className="relative w-full h-screen flex flex-col justify-start items-center overflow-hidden z-1"
+            className="relative w-full h-screen flex flex-col justify-start items-center overflow-hidden -z-6"
           >
             {/* Desktop view - Video */}
             <div
-              className="fixed right-20 top-40"
+              className="fixed right-60 top-40"
               style={{ width: "1000px", maxWidth: "40vw" }}
             >
               {/* <img
