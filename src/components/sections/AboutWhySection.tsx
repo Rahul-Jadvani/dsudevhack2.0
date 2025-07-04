@@ -12,7 +12,7 @@ const AboutWhySection = () => {
         <Iridescence
   color={[0.5, 0.5, 1]}
   mouseReact={true}
-  amplitude={0.4}
+  amplitude={0.8}
   speed={0.5}
 />
       </div>
