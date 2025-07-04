@@ -145,24 +145,24 @@ export const OrganisingTeamSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     {/* Faculty Coordinator */}
                     <motion.div
-                        initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.35, ease: 'easeOut', delay: 0.05 }}
                     >
-                        <AnimatedTeamCard member={team.professorCoordinator} delay={0.1} cardIndex={0} />
+                        <AnimatedTeamCard member={team.professorCoordinator} delay={0.05} cardIndex={0} />
                     </motion.div>
 
                     {/* Student Coordinators */}
                     {team.studentCoordinators.map((member, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                            viewport={{ once: false }}
-                            transition={{ duration: 0.6, delay: 0.2 + (idx * 0.1) }}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.35, ease: 'easeOut', delay: 0.1 + (idx * 0.05) }}
                         >
-                            <AnimatedTeamCard member={member} delay={0.2 + (idx * 0.1)} cardIndex={1 + idx} />
+                            <AnimatedTeamCard member={member} delay={0.1 + (idx * 0.05)} cardIndex={1 + idx} />
                         </motion.div>
                     ))}
 
@@ -170,23 +170,23 @@ export const OrganisingTeamSection = () => {
                     {team.webTeamHeads.map((member, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                            viewport={{ once: false }}
-                            transition={{ duration: 0.6, delay: 0.5 }}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.35, ease: 'easeOut', delay: 0.25 }}
                         >
-                            <AnimatedTeamCard member={member} delay={0.5} cardIndex={4} />
+                            <AnimatedTeamCard member={member} delay={0.25} cardIndex={4} />
                         </motion.div>
                     ))}
 
                     {/* Design Team Head */}
                     <motion.div
-                        initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.35, ease: 'easeOut', delay: 0.3 }}
                     >
-                        <AnimatedTeamCard member={team.designTeamHead} delay={0.6} cardIndex={5} />
+                        <AnimatedTeamCard member={team.designTeamHead} delay={0.3} cardIndex={5} />
                     </motion.div>
                 </div>
 

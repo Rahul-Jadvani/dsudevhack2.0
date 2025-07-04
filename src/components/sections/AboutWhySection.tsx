@@ -6,7 +6,7 @@ import React from "react";
 
 const AboutWhySection = () => {
   return (
-    <section className="about-why-section w-full h-full py-12 mb-20 mt-0 bg-white relative overflow-hidden">
+    <section className="about-why-section w-full h-full py-12 mb-20 sm:mt-0 bg-white relative overflow-hidden">
       {/* LetterGlitch as background */}
       <div className="absolute inset-0 w-full h-full -z-1 pointer-events-none">
         <LetterGlitch
