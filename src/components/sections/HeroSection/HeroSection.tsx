@@ -178,7 +178,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   className="w-14 h-14 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
                 />
                 <div className="flex flex-col gap-1 sm:gap-2">
-                  <h1 className="text-[17px] sm:text-[20px] font-semibold m-0 text-black font-bold">
+                  <h1 className="text-[17px] sm:text-[20px] m-0 text-black font-bold">
                     Dayananda Sagar University
                   </h1>
                   <p className="text-[13px] sm:text-[15px] mt-1 mb-0 text-[#333]">
@@ -228,7 +228,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
               </div>
               <div className="w-full flex justify-center">
                 <div
-                  className="apply-button devfolio-button"
+                  className="apply-button devfolio-button mt-4"
                   data-hackathon-slug="dsudevhack2"
                   data-button-theme="dark"
                 ></div>
