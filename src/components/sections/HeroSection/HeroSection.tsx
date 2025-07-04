@@ -146,7 +146,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative sm:top-0 -top-20 h-[112vh] w-[100vw] overflow-hidden bg-gradient-to-b from-white to-gray-100"
+      className="relative sm:top-0 -top-20 h-[112vh] sm:h-[104vh] w-[100vw] overflow-hidden bg-gradient-to-b from-white to-gray-100"
     >
       {/* Squares Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-4">
