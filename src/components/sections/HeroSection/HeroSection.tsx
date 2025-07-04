@@ -146,7 +146,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
     <section
       id="hero"
       ref={sectionRef}
-      className="hero-section relative h-[100vh] -top-20 w-[100vw] overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-0"
+      className="relative sm:top-0 -top-20 h-screen w-[100vw] overflow-hidden bg-gradient-to-b from-white to-gray-100"
     >
       {/* Squares Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-4">
@@ -165,32 +165,52 @@ export const HeroSection = (_props: HeroSectionProps) => {
         {/* Left side - Scrollable content */}
         <div
           ref={contentWrapRef}
-          className={`relative w-full py-0 px-2 sm:pl-12 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto -z-1`}
+          className={`relative w-full py-0 px-2 sm:pl-12 items-center h-[calc(100dvh)] max-h-screen overflow-y-auto scrollbar-none scroll-p-8 -z-1`}
         >
           {/* First content section */}
-          <div className="min-h-[80vh] flex flex-col justify-center scroll-snap-start relative">
+          <div className="min-h-[80vh] flex flex-col justify-center py-6 scroll-snap-start relative">
             {/* University info for desktop */}
-            {!isMobile && (
-              <div className="absolute top-0 left-12 max-w-[450px] flex items-center  sm:p-4">
-                <img
-                  src="/images/dsu.png"
-                  alt="DSU Logo"
-                  className="w-14 h-14 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
-                />
-                <div className="flex flex-col gap-1 sm:gap-2">
-                  <h1 className="text-[17px] sm:text-[20px] m-0 text-black font-bold">
-                    Dayananda Sagar University
-                  </h1>
-                  <p className="text-[13px] sm:text-[15px] mt-1 mb-0 text-[#333]">
-                    School of Engineering, Harohalli
-                  </p>
-                </div>
+            <div
+              className={
+                !isMobile
+                  ? "absolute top-0 left-12 max-w-[450px] flex items-center sm:p-4"
+                  : "relative w-full flex items-center justify-center mb-4 mt-2"
+              }
+            >
+              <img
+                src="/images/dsu.png"
+                alt="DSU Logo"
+                className={
+                  !isMobile
+                    ? "w-14 h-14 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
+                    : "w-12 h-12 object-contain mr-2"
+                }
+              />
+              <div className="flex flex-col gap-1 sm:gap-2">
+                <h1
+                  className={
+                    !isMobile
+                      ? "text-[17px] sm:text-[20px] m-0 text-black font-bold"
+                      : "text-[16px] m-0 text-black font-bold"
+                  }
+                >
+                  Dayananda Sagar University
+                </h1>
+                <p
+                  className={
+                    !isMobile
+                      ? "text-[13px] sm:text-[15px] mt-1 mb-4 text-[#333]"
+                      : "text-[12px] mt-1 text-[#333] mb-4"
+                  }
+                >
+                  School of Engineering, Harohalli
+                </p>
               </div>
-            )}
-            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-20 flex flex-col items-center justify-center">
+            </div>
+            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center">
               <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
-                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-black text-center max-w-full">
+                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight text-black text-center max-w-full">
                     DSU
                   </h1>
                   <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">
@@ -228,7 +248,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
               </div>
               <div className="w-full flex justify-center">
                 <div
-                  className="apply-button devfolio-button mb-12"
+                  className="apply-button devfolio-button mt-10"
                   data-hackathon-slug="dsudevhack2"
                   data-button-theme="dark"
                 ></div>
@@ -238,7 +258,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 
           {/* Video section for mobile/tablet */}
           {isMobile && (
-            <div className="-z-1 scale-[0.7] bottom-20 flex right-44 justify-end items-center relative w-full">
+            <div className="-z-1 scale-[0.6] bottom-40 flex right-44 justify-end items-center relative w-full">
               <RightSection />
               {/* <div style={{ height: "220px" }} /> */}
             </div>
@@ -255,12 +275,13 @@ export const HeroSection = (_props: HeroSectionProps) => {
         {!isMobile && (
           <div
             ref={keyboardWrapRef}
-            id="pin-keyboard"
+            // (gsap animation removed, keep static id for styling/position)
+            // id="pin-keyboard"
             className="relative w-full h-screen flex flex-col justify-start items-center overflow-hidden -z-6"
           >
             {/* Desktop view - Video */}
             <div
-              className="fixed right-60 top-40"
+              className="relative right-60 top-30"
               style={{ width: "1000px", maxWidth: "40vw" }}
             >
               {/* <img
