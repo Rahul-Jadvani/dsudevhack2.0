@@ -170,47 +170,27 @@ export const HeroSection = (_props: HeroSectionProps) => {
           {/* First content section */}
           <div className="min-h-[80vh] flex flex-col justify-center py-6 scroll-snap-start relative">
             {/* University info for desktop */}
-            <div
-              className={
-                !isMobile
-                  ? "absolute top-0 left-12 max-w-[450px] flex items-center sm:p-4"
-                  : "relative w-full flex items-center justify-center mb-4 mt-2"
-              }
-            >
-              <img
-                src="/images/dsu.png"
-                alt="DSU Logo"
-                className={
-                  !isMobile
-                    ? "w-14 h-14 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
-                    : "w-12 h-12 object-contain mr-2"
-                }
-              />
-              <div className="flex flex-col gap-1 sm:gap-2">
-                <h1
-                  className={
-                    !isMobile
-                      ? "text-[17px] sm:text-[20px] m-0 text-black font-bold"
-                      : "text-[16px] m-0 text-black font-bold"
-                  }
-                >
-                  Dayananda Sagar University
-                </h1>
-                <p
-                  className={
-                    !isMobile
-                      ? "text-[13px] sm:text-[15px] mt-1 mb-4 text-[#333]"
-                      : "text-[12px] mt-1 text-[#333] mb-4"
-                  }
-                >
-                  School of Engineering, Harohalli
-                </p>
+            {!isMobile && (
+              <div className="absolute top-0 left-12 max-w-[450px] flex items-center  sm:p-4">
+                <img
+                  src="/images/dsu.png"
+                  alt="DSU Logo"
+                  className="w-14 h-14 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
+                />
+                <div className="flex flex-col gap-1 sm:gap-2">
+                  <h1 className="text-[17px] sm:text-[20px] m-0 text-black font-bold">
+                    Dayananda Sagar University
+                  </h1>
+                  <p className="text-[13px] sm:text-[15px] mt-1 mb-0 text-[#333]">
+                    School of Engineering, Harohalli
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center">
+            )}
+            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl mb-4 transition-transform duration-300 hover:-translate-y-1 relative overflow-visible mt-20 flex flex-col items-center justify-center">
               <div className="flex flex-col items-center mb-3 max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
-                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight text-black text-center max-w-full">
+                  <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-black text-center max-w-full">
                     DSU
                   </h1>
                   <h1 className="text-5xl sm:text-8xl font-extrabold leading-tight m-0 text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">
