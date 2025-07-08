@@ -199,7 +199,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 </div>
               </div>
               <p className="text-base sm:text-xl mb-6 text-[#333333] leading-relaxed font-bold text-center">
-                National-level hybrid hackathon for undergraduate engineering
+                National-level hackathon for undergraduate engineering
                 students
               </p>
 
