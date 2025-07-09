@@ -50,7 +50,12 @@ export const TracksSection = () => {
         //   alt="Sustainability"
         //   className="track-icon-img"
         // />
-        <iframe src='https://my.spline.design/earthdayandnight-AOLgLYwXdGaIeAMTeyApMdzS/' frameBorder='0' width='350px' height='350px'></iframe>
+        <iframe
+          src="https://my.spline.design/earthdayandnight-AOLgLYwXdGaIeAMTeyApMdzS/"
+          frameBorder="0"
+          width="350px"
+          height="350px"
+        ></iframe>
       ),
       sponsor: "Eco Foundation",
     },
@@ -61,11 +66,17 @@ export const TracksSection = () => {
         "Transform healthcare with technology: patient care, data, and wellness.",
       bgClass: "healthcare-bg",
       icon: (
-        <img
-          src="/images/healthcare.png"
-          alt="Healthcare"
-          className="track-icon-img"
-        />
+        // <img
+        //   src="/images/healthcare.png"
+        //   alt="Healthcare"
+        //   className="track-icon-img"
+        // />
+        <iframe
+          src="https://my.spline.design/bloodcells-NpRMZRHGGOBZnDM13QIxMja0/"
+          frameborder="0"
+          width="350px"
+          height="350px"
+        ></iframe>
       ),
       sponsor: "HealthTech Partners",
     },
@@ -92,11 +103,17 @@ export const TracksSection = () => {
         "Decentralize the web: blockchain, smart contracts, and dApps.",
       bgClass: "web3-bg",
       icon: (
-        <img
-          src="/images/images/blockchain.webp"
-          alt="Web3 + Blockchain"
-          className="track-icon-img"
-        />
+        // <img
+        //   src="/images/images/blockchain.webp"
+        //   alt="Web3 + Blockchain"
+        //   className="track-icon-img"
+        // />\
+        <iframe
+          src="https://my.spline.design/unchained-O4mUaLzP8IlGKJrh77gaxh9S/"
+          frameborder="0"
+          width="350px"
+          height="350px"
+        ></iframe>
       ),
       sponsor: "Block Innovators",
     },
@@ -112,7 +129,12 @@ export const TracksSection = () => {
         //   alt="IoT and Smart Cities"
         //   className="track-icon-img"
         // />
-        <iframe src='https://my.spline.design/pushittothelimit-SCcnJNYpCCCE74TGJj3d21RE/' frameBorder='0' width='350px' height='350px'></iframe>
+        <iframe
+          src="https://my.spline.design/pushittothelimit-SCcnJNYpCCCE74TGJj3d21RE/"
+          frameBorder="0"
+          width="350px"
+          height="350px"
+        ></iframe>
       ),
       sponsor: "Smart City Group",
     },
@@ -127,7 +149,12 @@ export const TracksSection = () => {
         //   alt="Open Innovation"
         //   className="track-icon-img"
         // />
-        <iframe src='https://my.spline.design/animatedshapeblend-oA2JQsJaRoY5txFD1PWlMkLe/' frameBorder='0' width='350px' height='350px'></iframe>
+        <iframe
+          src="https://my.spline.design/animatedshapeblend-oA2JQsJaRoY5txFD1PWlMkLe/"
+          frameBorder="0"
+          width="350px"
+          height="350px"
+        ></iframe>
       ),
       sponsor: "OpenX",
     },
