@@ -45,11 +45,12 @@ export const TracksSection = () => {
         "Innovate for a greener future: energy, environment, and sustainable solutions.",
       bgClass: "sustainability-bg",
       icon: (
-        <img
-          src="/images/sus.png"
-          alt="Sustainability"
-          className="track-icon-img"
-        />
+        // <img
+        //   src="/images/sus.png"
+        //   alt="Sustainability"
+        //   className="track-icon-img"
+        // />
+        <iframe src='https://my.spline.design/earthdayandnight-AOLgLYwXdGaIeAMTeyApMdzS/' frameBorder='0' width='350px' height='350px'></iframe>
       ),
       sponsor: "Eco Foundation",
     },
@@ -73,9 +74,14 @@ export const TracksSection = () => {
       color: "purple",
       description:
         "Build intelligent systems: machine learning, automation, and smart apps.",
-      bgClass: "aiml-bg",
+      bgClass: "-bg",
       icon: (
-        <img src="/images/ai ml.png" alt="AI/ML" className="track-icon-img" />
+        <iframe
+          src="https://my.spline.design/r4xbot-AheHfiei5XHE3juDSWHuL0cH/"
+          frameBorder="0"
+          width="350px"
+          height="350px"
+        ></iframe>
       ),
       sponsor: "AI Alliance",
     },
@@ -101,11 +107,12 @@ export const TracksSection = () => {
         "Connect the world: IoT devices, smart infrastructure, and urban tech.",
       bgClass: "iot-bg",
       icon: (
-        <img
-          src="/images/iot.png"
-          alt="IoT and Smart Cities"
-          className="track-icon-img"
-        />
+        // <img
+        //   src="/images/iot.png"
+        //   alt="IoT and Smart Cities"
+        //   className="track-icon-img"
+        // />
+        <iframe src='https://my.spline.design/pushittothelimit-SCcnJNYpCCCE74TGJj3d21RE/' frameBorder='0' width='350px' height='350px'></iframe>
       ),
       sponsor: "Smart City Group",
     },
@@ -115,11 +122,12 @@ export const TracksSection = () => {
       description: "Create without limits: any tech, any idea, any impact.",
       bgClass: "open-bg",
       icon: (
-        <img
-          src="/images/open innovation.png"
-          alt="Open Innovation"
-          className="track-icon-img"
-        />
+        // <img
+        //   src="/images/open innovation.png"
+        //   alt="Open Innovation"
+        //   className="track-icon-img"
+        // />
+        <iframe src='https://my.spline.design/animatedshapeblend-oA2JQsJaRoY5txFD1PWlMkLe/' frameBorder='0' width='350px' height='350px'></iframe>
       ),
       sponsor: "OpenX",
     },

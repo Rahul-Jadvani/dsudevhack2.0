@@ -1,6 +1,6 @@
-import './PrizesSection.css';
-import { motion, useInView } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import "./PrizesSection.css";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 
 type PrizeCard = {
   place: string;
@@ -11,16 +11,16 @@ type PrizeCard = {
 
 const getCellColor = (x: number, y: number) => {
   const colors = [
-    '#22c55e', // green (from place-1)
-    '#0ea5e9', // blue (from place-2)
-    '#06b6d4', // cyan (from place-3)
-    '#eab308', // yellow (from place-4)
-    '#bcb6ff', // purple (from defi-bg)
-    '#ffd6f6', // pink (from infra-bg)
-    '#b6e2c6', // green (from ai-bg)
-    '#b6d6ff', // blue (from crypto-bg)
-    '#fff7b6', // yellow (from degen-bg)
-    '#ffe2b6', // orange (from payments-bg)
+    "#22c55e", // green (from place-1)
+    "#0ea5e9", // blue (from place-2)
+    "#06b6d4", // cyan (from place-3)
+    "#eab308", // yellow (from place-4)
+    "#bcb6ff", // purple (from defi-bg)
+    "#ffd6f6", // pink (from infra-bg)
+    "#b6e2c6", // green (from ai-bg)
+    "#b6d6ff", // blue (from crypto-bg)
+    "#fff7b6", // yellow (from degen-bg)
+    "#ffe2b6", // orange (from payments-bg)
   ];
 
   // Use position to determine color for consistency
@@ -30,7 +30,9 @@ const getCellColor = (x: number, y: number) => {
 
 export const PrizesSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [gridCells, setGridCells] = useState<{ x: number; y: number; isActive: boolean }[]>([]);
+  const [gridCells, setGridCells] = useState<
+    { x: number; y: number; isActive: boolean }[]
+  >([]);
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
@@ -67,23 +69,25 @@ export const PrizesSection = () => {
       setGridCells(newCells);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleMouseMove = () => {
     if (!isHovering) {
       setIsHovering(true);
       // Randomly activate 10% of cells
-      setGridCells(prevCells => {
+      setGridCells((prevCells) => {
         const totalCells = prevCells.length;
         const cellsToActivate = Math.floor(totalCells * 0.1);
         const shuffledCells = [...prevCells].sort(() => Math.random() - 0.5);
 
-        return prevCells.map(cell => {
-          const isActive = shuffledCells.slice(0, cellsToActivate).some(
-            activeCell => activeCell.x === cell.x && activeCell.y === cell.y
-          );
+        return prevCells.map((cell) => {
+          const isActive = shuffledCells
+            .slice(0, cellsToActivate)
+            .some(
+              (activeCell) => activeCell.x === cell.x && activeCell.y === cell.y
+            );
           return { ...cell, isActive };
         });
       });
@@ -92,7 +96,9 @@ export const PrizesSection = () => {
 
   const handleMouseLeave = () => {
     setIsHovering(false);
-    setGridCells(prevCells => prevCells.map(cell => ({ ...cell, isActive: false })));
+    setGridCells((prevCells) =>
+      prevCells.map((cell) => ({ ...cell, isActive: false }))
+    );
   };
 
   const prizes: PrizeCard[] = [
@@ -100,19 +106,19 @@ export const PrizesSection = () => {
       place: "1st place",
       amount: "₹1,00,000",
       color: "yellow",
-      image: "https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a0e_prize-1-diamond.svg"
+      image:"/images/prizes/firstprize.png",
     },
     {
       place: "2nd place",
       amount: "₹50,000",
       color: "blue",
-      image: "/images/prizes/2nd (2).png"
+      image: "/images/prizes/secondprize.png",
     },
     {
       place: "3rd place",
       amount: "₹25,000",
       color: "cyan",
-      image: "/images/prizes/3rd.png"
+      image: "/images/prizes/thirdprize.png",
     },
   ];
 
@@ -123,16 +129,15 @@ export const PrizesSection = () => {
         <div className="header-content">
           <div className="header-title">DSU Hackathon '25</div>
           <div className="header-date">
-            <span className="date-tag">&lt;date&gt;</span> September, 2025 <span className="date-tag">&lt;/date&gt;</span>
+            <span className="date-tag">&lt;date&gt;</span> September, 2025{" "}
+            <span className="date-tag">&lt;/date&gt;</span>
           </div>
         </div>
       </div>
 
       <section id="prizes" className="prizes-section">
         <div className="container mx-auto px-4 md:px-8 lg:px-4 xl:px-2 max-w-full">
-          <h1 className="prizes-heading">
-            Prizes
-          </h1>
+          <h1 className="prizes-heading">Prizes</h1>
 
           <div className="divider"></div>
 
@@ -140,94 +145,195 @@ export const PrizesSection = () => {
             {prizes.map((prize, index) => {
               const ref = useRef(null);
               const isInView = useInView(ref, { once: false, amount: 0.2 });
-              let placeClass = '';
-              if (prize.place.startsWith('1st')) placeClass = 'place-1';
-              else if (prize.place.startsWith('2nd')) placeClass = 'place-2';
-              else if (prize.place.startsWith('3rd')) placeClass = 'place-3';
-              else if (prize.place.startsWith('4th')) placeClass = 'place-4';
+              let placeClass = "";
+              if (prize.place.startsWith("1st")) placeClass = "place-1";
+              else if (prize.place.startsWith("2nd")) placeClass = "place-2";
+              else if (prize.place.startsWith("3rd")) placeClass = "place-3";
+              else if (prize.place.startsWith("4th")) placeClass = "place-4";
               return (
                 <motion.div
                   ref={ref}
                   className={`prize-card`}
                   initial={{ opacity: 0, y: 60 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-                  transition={{ duration: 0.8, delay: index * 0.08, ease: 'easeOut' }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }
+                  }
+                  transition={{
+                    duration: 0.8,
+                    delay: index * 0.08,
+                    ease: "easeOut",
+                  }}
                   key={index}
                 >
                   <div className={`prize-header ${placeClass}`}>
                     <span className="prize-header-group">
                       <span className="prize-hash">#</span>
-                      <span className={`prize-place ${placeClass}`}>{prize.place}</span>
-                      <span className="prize-bracket">{' }'}</span>
+                      <span className={`prize-place ${placeClass}`}>
+                        {prize.place}
+                      </span>
+                      <span className="prize-bracket">{" }"}</span>
                     </span>
                   </div>
                   <div className="prize-content">
                     {prize.place === "1st place" ? (
                       <div className="prizes-image">
                         <div className="cover-img u--abs u--center">
-                          <img src={prize.image} loading="lazy" alt="" className="cover" />
+                          <img
+                            src={prize.image}
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          />
                           <div className="star size-3 prize-1-1">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                           <div className="star size-1 prize-1-2">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                         </div>
                         <div className="cover-img u--abs">
-                          <img src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a07_prize-1-coin-bottom.svg" loading="lazy" alt="" className="cover" />
+                          {/* <img
+                            src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a07_prize-1-coin-bottom.svg"
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          /> */}
                         </div>
                         <div className="cover-img u--abs u--center">
-                          <img src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a0a_prize-1-coin-top.svg" loading="lazy" alt="" className="cover" />
+                          {/* <img
+                            src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a0a_prize-1-coin-top.svg"
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          /> */}
                           <div className="star size-2 prize-1-3">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                           <div className="star size-1 prize-1-4">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                         </div>
                         <div className="cover-img u--abs">
-                          <img src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a0c_prize-1-bills.svg" loading="lazy" alt="" className="cover" />
+                          {/* <img
+                            src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a0c_prize-1-bills.svg"
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          /> */}
                         </div>
                       </div>
                     ) : prize.place === "2nd place" ? (
                       <div className="prizes-image">
                         <div className="cover-img u--abs">
-                          <img src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a0b_prize-3-bottom.svg" loading="lazy" alt="" className="cover" />
+                          <img
+                            // src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a0b_prize-3-bottom.svg"
+                            src={prize.image}
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          />
+                         
                         </div>
                         <div className="cover-img u--abs u--center">
-                          <img src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a1e_prize-30-middle.svg" loading="lazy" alt="" className="cover" />
+                          {/* <img
+                            src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a1e_prize-30-middle.svg"
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          /> */}
                           <div className="star size-2 prize-3-3">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                         </div>
                         <div className="cover-img u--abs u--center">
-                          <img src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a0d_prize-3-top.svg" loading="lazy" alt="" className="cover" />
+                          {/* <img
+                            src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a0d_prize-3-top.svg"
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          /> */}
                           <div className="star size-3 prize-3-1">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                           <div className="star size-1">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                         </div>
                       </div>
                     ) : prize.place === "3rd place" ? (
                       <div className="prizes-image">
                         <div className="cover-img u--abs">
-                          <img src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a1f_prize-4-bottom.svg" loading="lazy" alt="" className="cover" />
+                          <img
+                            // src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a1f_prize-4-bottom.svg"
+                            src={prize.image}
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          />
                         </div>
                         <div className="cover-img u--abs u--center">
-                          <img src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a1c_prize-4-middle.svg" loading="lazy" alt="" className="cover" />
+                          {/* <img
+                            src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a1c_prize-4-middle.svg"
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          /> */}
                           <div className="star size-3 prize-4-1">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                           <div className="star size-1 prize-4-2">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                         </div>
                         <div className="cover-img u--abs u--center">
-                          <img src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a20_prize-4-top.svg" loading="lazy" alt="" className="cover" />
+                          {/* <img
+                            src="https://cdn.prod.website-files.com/67acdc4f394bcf4f3e3669b6/67acdc4f394bcf4f3e366a20_prize-4-top.svg"
+                            loading="lazy"
+                            alt=""
+                            className="cover"
+                          /> */}
                           <div className="star size-1 prize-4-3">
-                            <img src="/images/starry.png" alt="star glow" className="star-image" />
+                            <img
+                              src="/images/starry.png"
+                              alt="star glow"
+                              className="star-image"
+                            />
                           </div>
                         </div>
                       </div>
@@ -288,4 +394,3 @@ export const PrizesSection = () => {
     </>
   );
 };
-
