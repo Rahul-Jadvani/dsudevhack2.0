@@ -45,17 +45,11 @@ export const TracksSection = () => {
         "Innovate for a greener future: energy, environment, and sustainable solutions.",
       bgClass: "sustainability-bg",
       icon: (
-        // <img
-        //   src="/images/sus.png"
-        //   alt="Sustainability"
-        //   className="track-icon-img"
-        // />
-        <iframe
-          src="https://my.spline.design/earthdayandnight-AOLgLYwXdGaIeAMTeyApMdzS/"
-          frameBorder="0"
-          width="350px"
-          height="350px"
-        ></iframe>
+        <img
+          src="/images/sus.png"
+          alt="Sustainability"
+          className="track-icon-img"
+        />
       ),
       sponsor: "Eco Foundation",
     },
@@ -66,17 +60,11 @@ export const TracksSection = () => {
         "Transform healthcare with technology: patient care, data, and wellness.",
       bgClass: "healthcare-bg",
       icon: (
-        // <img
-        //   src="/images/healthcare.png"
-        //   alt="Healthcare"
-        //   className="track-icon-img"
-        // />
-        <iframe
-          src="https://my.spline.design/bloodcells-NpRMZRHGGOBZnDM13QIxMja0/"
-          frameborder="0"
-          width="350px"
-          height="350px"
-        ></iframe>
+        <img
+          src="/images/healthcare.png"
+          alt="Healthcare"
+          className="track-icon-img"
+        />
       ),
       sponsor: "HealthTech Partners",
     },
@@ -85,14 +73,9 @@ export const TracksSection = () => {
       color: "purple",
       description:
         "Build intelligent systems: machine learning, automation, and smart apps.",
-      bgClass: "-bg",
+      bgClass: "aiml-bg",
       icon: (
-        <iframe
-          src="https://my.spline.design/r4xbot-AheHfiei5XHE3juDSWHuL0cH/"
-          frameBorder="0"
-          width="350px"
-          height="350px"
-        ></iframe>
+        <img src="/images/ai ml.png" alt="AI/ML" className="track-icon-img" />
       ),
       sponsor: "AI Alliance",
     },
@@ -103,17 +86,11 @@ export const TracksSection = () => {
         "Decentralize the web: blockchain, smart contracts, and dApps.",
       bgClass: "web3-bg",
       icon: (
-        // <img
-        //   src="/images/images/blockchain.webp"
-        //   alt="Web3 + Blockchain"
-        //   className="track-icon-img"
-        // />\
-        <iframe
-          src="https://my.spline.design/unchained-O4mUaLzP8IlGKJrh77gaxh9S/"
-          frameborder="0"
-          width="350px"
-          height="350px"
-        ></iframe>
+        <img
+          src="/images/images/blockchain.webp"
+          alt="Web3 + Blockchain"
+          className="track-icon-img"
+        />
       ),
       sponsor: "Block Innovators",
     },
@@ -124,17 +101,11 @@ export const TracksSection = () => {
         "Connect the world: IoT devices, smart infrastructure, and urban tech.",
       bgClass: "iot-bg",
       icon: (
-        // <img
-        //   src="/images/iot.png"
-        //   alt="IoT and Smart Cities"
-        //   className="track-icon-img"
-        // />
-        <iframe
-          src="https://my.spline.design/pushittothelimit-SCcnJNYpCCCE74TGJj3d21RE/"
-          frameBorder="0"
-          width="350px"
-          height="350px"
-        ></iframe>
+        <img
+          src="/images/iot.png"
+          alt="IoT and Smart Cities"
+          className="track-icon-img"
+        />
       ),
       sponsor: "Smart City Group",
     },
@@ -144,17 +115,11 @@ export const TracksSection = () => {
       description: "Create without limits: any tech, any idea, any impact.",
       bgClass: "open-bg",
       icon: (
-        // <img
-        //   src="/images/open innovation.png"
-        //   alt="Open Innovation"
-        //   className="track-icon-img"
-        // />
-        <iframe
-          src="https://my.spline.design/animatedshapeblend-oA2JQsJaRoY5txFD1PWlMkLe/"
-          frameBorder="0"
-          width="350px"
-          height="350px"
-        ></iframe>
+        <img
+          src="/images/open innovation.png"
+          alt="Open Innovation"
+          className="track-icon-img"
+        />
       ),
       sponsor: "OpenX",
     },
