@@ -106,19 +106,19 @@ export const PrizesSection = () => {
       place: "1st place",
       amount: "₹1,00,000",
       color: "yellow",
-      image:"/images/prizes/firstprize.png",
+      image:"/images/prizes/1.svg",
     },
     {
       place: "2nd place",
       amount: "₹50,000",
       color: "blue",
-      image: "/images/prizes/secondprize.png",
+      image: "/images/prizes/2.svg",
     },
     {
       place: "3rd place",
       amount: "₹25,000",
       color: "cyan",
-      image: "/images/prizes/thirdprize.png",
+      image: "/images/prizes/3.svg",
     },
   ];
 
