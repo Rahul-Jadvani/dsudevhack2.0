@@ -18,28 +18,29 @@ export const Home = () => {
   const { theme } = useTheme();
 
   return (
-    <MainLayout>
-      <SplashCursor></SplashCursor>
-      {/* Sections with KeyboardCanvas */}
-      <div className="relative">
-        <HeroSection theme={theme} />
-      </div>
+    <>
+      <MainLayout>
+        <SplashCursor />
+        {/* Sections with KeyboardCanvas */}
+        <div className="relative">
+          <HeroSection theme={theme} />
+        </div>
 
-      {/* About & Why Participate Section */}
-      <AboutWhySection />
+        {/* About & Why Participate Section */}
+        <AboutWhySection />
 
-      {/* All other sections without KeyboardCanvas */}
-      <div className="relative w-full">
-        <TimeCapsuleSection />
-        <PrizesSection />
-        <TracksSection />
-        <TimelineSection />
-        <NewSponsorsSection />
-        <OrganisingTeamSection />
-        <FAQPageSection />
-
-        <Footer />
-      </div>
-    </MainLayout>
+        {/* All other sections without KeyboardCanvas */}
+        <div className="relative w-full">
+          <TimeCapsuleSection />
+          <PrizesSection />
+          <TracksSection />
+          <TimelineSection />
+          <NewSponsorsSection />
+          <OrganisingTeamSection />
+          <FAQPageSection />
+        </div>
+      </MainLayout>
+      <Footer />
+    </>
   );
 };

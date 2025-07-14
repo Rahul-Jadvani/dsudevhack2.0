@@ -59,7 +59,7 @@ export const FAQPageSection = () => {
   };
 
   return (
-    <section id="faq" className="w-full h-[194vh] sm:h-[124vh] bg-gray-50 py-16 mb-60 md:mb-0 px-2 md:px-0">
+    <section id="faq" className="w-full bg-gray-50 py-8 px-2 md:px-0">
       <div className="max-w-5xl w-full mx-auto flex flex-col items-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-10 text-gray-900 mt-16">FAQ</h1>
         <ul className="flex flex-col gap-4 mb-4 w-full" role="list">
