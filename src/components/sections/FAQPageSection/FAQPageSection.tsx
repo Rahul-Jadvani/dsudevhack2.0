@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState, useRef } from 'react';
 
 interface FAQItem {
@@ -8,7 +8,25 @@ interface FAQItem {
 
 export const FAQPageSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [maxHeights, setMaxHeights] = useState<{[key: number]: number}>({});
   const answerRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    if (activeIndex !== null && answerRefs.current[activeIndex]) {
+      const updateMaxHeight = () => {
+        const element = answerRefs.current[activeIndex];
+        if (element) {
+          setMaxHeights(prev => ({
+            ...prev,
+            [activeIndex]: element.scrollHeight
+          }));
+        }
+      };
+      updateMaxHeight();
+      window.addEventListener('resize', updateMaxHeight);
+      return () => window.removeEventListener('resize', updateMaxHeight);
+    }
+  }, [activeIndex]);
 
   const faqItems: FAQItem[] = [
     {
@@ -59,7 +77,7 @@ export const FAQPageSection = () => {
   };
 
   return (
-    <section id="faq" className="w-full bg-gray-50 py-8 px-2 md:px-0">
+    <section id="faq" className="w-full bg-gray-50 py-6 md:py-8 px-3 md:px-0">
       <div className="max-w-5xl w-full mx-auto flex flex-col items-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-10 text-gray-900 mt-16">FAQ</h1>
         <ul className="flex flex-col gap-4 mb-4 w-full" role="list">
@@ -70,7 +88,7 @@ export const FAQPageSection = () => {
               role="listitem"
             >
               <button
-                className={`w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-lg md:text-xl transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 ${activeIndex === idx ? 'bg-gray-100' : 'bg-white'}`}
+                className={`w-full flex justify-between items-start md:items-center px-4 md:px-5 py-3 md:py-4 text-left font-semibold text-base md:text-xl transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 ${activeIndex === idx ? 'bg-gray-100' : 'bg-white'}`}
                 aria-expanded={activeIndex === idx}
                 aria-controls={`faq-answer-${idx}`}
                 id={`faq-question-${idx}`}
@@ -104,10 +122,10 @@ export const FAQPageSection = () => {
               </button>
               <div
                 id={`faq-answer-${idx}`}
-                className={`transition-all duration-500 ease-in-out px-5 ${activeIndex === idx ? ' min-h-[140px] xs:min-h-[400px] h-full py-4 opacity-100' : 'max-h-0 py-0 opacity-0'} overflow-hidden text-gray-700 text-base h-full md:text-md bg-gray-50 w-full`}
+                className={`transition-all duration-500 ease-in-out px-4 md:px-5 ${activeIndex === idx ? 'py-4 opacity-100' : 'max-h-0 py-0 opacity-0'} overflow-y-auto text-gray-700 text-base md:text-lg bg-gray-50 w-full leading-relaxed`}
                 aria-labelledby={`faq-question-${idx}`}
                 ref={el => (answerRefs.current[idx] = el)}
-                style={activeIndex === idx ? { maxHeight: answerRefs.current[idx]?.scrollHeight } : {}}
+                style={{ maxHeight: activeIndex === idx ? `${maxHeights[idx] || 0}px` : '0px', transition: 'max-height 0.5s ease-in-out' }}
               >
                 {typeof item.answer === 'string' ? (
                   <p dangerouslySetInnerHTML={{ __html: item.answer }} />

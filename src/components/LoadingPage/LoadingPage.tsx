@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import './LoadingPage.css';
+import { useState, useEffect, useRef, useMemo } from "react";
+import "./LoadingPage.css";
 
 interface LoadingPageProps {
   onComplete: () => void;
@@ -10,73 +10,82 @@ interface LoadingPageProps {
 export const LoadingPage = ({
   onComplete,
   initialProgress = 0,
-  loadingTime = 1000
+  loadingTime = 1000,
 }: LoadingPageProps) => {
   const [progress, setProgress] = useState(initialProgress);
   const [isVisible, setIsVisible] = useState(true);
-
   const [exitAnimation, setExitAnimation] = useState(false);
 
+  const mounted = useRef(true);
+
+  /* faster interval: only 10 ticks (increments of 10) */
   useEffect(() => {
-    let mounted = true;
-    
+    const step = 10;
+    const intervalMs = (loadingTime * 0.15) / (100 / step);
     const interval = setInterval(() => {
-      if (!mounted) return;
-      
-      setProgress(prev => {
-        const newProgress = prev + 10;
-        if (newProgress >= 100) {
+      if (!mounted.current) return;
+
+      setProgress((prev) => {
+        const next = prev + step;
+        if (next >= 100) {
           clearInterval(interval);
-          if (mounted) {
-            // Use setTimeout to prevent render phase updates
-            setTimeout(() => {
-              setExitAnimation(true);
-              setIsVisible(false);
-              onComplete();
-            }, 0);
-          }
+          // Allow final paint, then exit
+          requestAnimationFrame(() => {
+            setExitAnimation(true);
+            setIsVisible(false);
+            onComplete();
+          });
           return 100;
         }
-        return newProgress;
+        return next;
       });
-    }, loadingTime / 40);
+    }, intervalMs);
 
     return () => {
-      mounted = false;
+      mounted.current = false;
       clearInterval(interval);
     };
   }, [loadingTime, onComplete]);
 
-  const getCurrentDate = () => {
-    return "August-September";
-  };
-
-  // Create an array of 10 segments for the progress bar (changed from 20 to match the new increment of 10)
-  const segments = Array.from({ length: 10 }, (_, i) => {
-    const segmentProgress = (i + 1) * 10;
-    return {
-      filled: progress >= segmentProgress,
-      active: progress >= segmentProgress - 10 && progress < segmentProgress
-    };
-  });
+  /* memoised segment data (re‑computes only when progress changes) */
+  const segments = useMemo(() => {
+    return Array.from({ length: 10 }, (_, i) => {
+      const segmentProgress = (i + 1) * 10;
+      return {
+        filled: progress >= segmentProgress,
+        active: progress >= segmentProgress - 10 && progress < segmentProgress,
+      };
+    });
+  }, [progress]);
 
   if (!isVisible) return null;
 
   return (
-    <div className={`loading-page-container ${exitAnimation ? 'exit' : ''}`}>
-      <div className={`loading-modal ${exitAnimation ? 'exit' : ''}`}>
+    <div className={`loading-page-container ${exitAnimation ? "exit" : ""}`}>
+      <div className={`loading-modal ${exitAnimation ? "exit" : ""}`}>
         <div className="loading-header">
           <div className="loading-date">
-            <span className="loading-date-tag">&lt;date&gt;</span> {getCurrentDate()} <span className="loading-date-tag">&lt;/date&gt;</span>
+            <span className="loading-date-tag">&lt;date&gt;</span>{" "}
+            August-September{" "}
+            <span className="loading-date-tag">&lt;/date&gt;</span>
           </div>
-          <button type="button" className="loading-close-button">×</button>
+          <button type="button" className="loading-close-button">
+            ×
+          </button>
         </div>
+
         <div className="loading-content">
           <div className="loading-progress-container">
             <div className="loading-progress-header">
               <div className="loading-progress-text">
                 <div className="loading-progress-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       d="M3 8H13 M8 3L13 8L8 13"
                       stroke="white"
@@ -90,12 +99,15 @@ export const LoadingPage = ({
               </div>
               <div className="loading-progress-percentage">{progress}%</div>
             </div>
+
             <div className="loading-progress-bar">
-              {segments.map((segment, index) => (
+              {segments.map((s, i) => (
                 <div
-                  key={index}
-                  className={`loading-progress-bar-segment ${segment.filled ? (segment.active ? 'active' : '') : 'empty'}`}
-                ></div>
+                  key={i}
+                  className={`loading-progress-bar-segment ${
+                    s.filled ? (s.active ? "active" : "") : "empty"
+                  }`}
+                />
               ))}
             </div>
           </div>

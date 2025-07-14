@@ -44,6 +44,7 @@ const AnimatedTeamCard: React.FC<AnimatedTeamCardProps> = ({ member, delay = 0, 
                 <img
                     src={member.imageSrc || "/images/memb.png"}
                     alt={member.name}
+                    loading="lazy"      
                     className="w-20 h-20 rounded-full object-cover border-3 border-white shadow-lg"
                 />
             </div>
@@ -87,6 +88,7 @@ const AnimatedTeamCard: React.FC<AnimatedTeamCardProps> = ({ member, delay = 0, 
                         src="/images/logos/logoo9.png"
                         alt="Logo"
                         className="w-full h-full object-contain"
+                        loading="lazy"
                     />
                 </div>
             </div>

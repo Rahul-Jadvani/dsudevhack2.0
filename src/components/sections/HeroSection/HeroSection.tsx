@@ -175,6 +175,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 <img
                   src="/images/dsu.png"
                   alt="DSU Logo"
+                  loading="lazy"  
                   className="w-14 h-14 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
                 />
                 <div className="flex flex-col gap-1 sm:gap-2">

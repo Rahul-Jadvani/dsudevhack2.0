@@ -1,6 +1,8 @@
 import "./TracksSection.css";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
+
+
 
 interface Track {
   name: string;
@@ -13,7 +15,14 @@ interface Track {
 
 const TrackCard = ({ track, index }: { track: Track; index: number }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0.1 });
+  const [isMounted, setIsMounted] = useState(false);
+
+useEffect(() => {
+  if (isInView && !isMounted) {
+    setIsMounted(true);
+  }
+}, [isInView, isMounted]);
   return (
 <motion.div
   ref={ref}
@@ -21,11 +30,10 @@ const TrackCard = ({ track, index }: { track: Track; index: number }) => {
   initial={{ opacity: 0, y: 40 }}
   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
   transition={{
-    type: "spring",
-    stiffness: 110,
-    damping: 16,
-    mass: 0.5,
-    delay: index * 0.005
+    type: "tween",
+    duration: 0.3,
+  delay: index * 0.005,
+  ease: "easeOut"
   }}
 >
 
@@ -57,6 +65,7 @@ export const TracksSection = () => {
           src="/images/sus.png"
           alt="Sustainability"
           className="track-icon-img"
+          loading="lazy"
         />
       ),
       sponsor: "Eco Foundation",
@@ -72,6 +81,7 @@ export const TracksSection = () => {
           src="/images/healthcare.png"
           alt="Healthcare"
           className="track-icon-img"
+          loading="lazy"
         />
       ),
       sponsor: "HealthTech Partners",
@@ -83,7 +93,7 @@ export const TracksSection = () => {
         "Build intelligent systems: machine learning, automation, and smart apps.",
       bgClass: "aiml-bg",
       icon: (
-        <img src="/images/ai ml.png" alt="AI/ML" className="track-icon-img" />
+        <img src="/images/ai ml.png" alt="AI/ML" className="track-icon-img" loading="lazy" />
       ),
       sponsor: "AI Alliance",
     },
@@ -98,6 +108,7 @@ export const TracksSection = () => {
           src="/images/images/blockchain.webp"
           alt="Web3 + Blockchain"
           className="track-icon-img"
+          loading="lazy"
         />
       ),
       sponsor: "Block Innovators",
@@ -113,7 +124,8 @@ export const TracksSection = () => {
           src="/images/iot.png"
           alt="IoT and Smart Cities"
           className="track-icon-img"
-        />
+          loading="lazy"
+          />
       ),
       sponsor: "Smart City Group",
     },
@@ -127,6 +139,7 @@ export const TracksSection = () => {
           src="/images/open innovation.png"
           alt="Open Innovation"
           className="track-icon-img"
+          loading="lazy"
         />
       ),
       sponsor: "OpenX",

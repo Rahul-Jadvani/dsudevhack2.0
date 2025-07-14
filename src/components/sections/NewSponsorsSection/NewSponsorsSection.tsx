@@ -68,6 +68,20 @@ export const NewSponsorsSection = () => {
       website: "https://devfolio.co",
     },
   ];
+   // 🆕 Media Partners
+   const mediaPartners: SponsorLogo[] = [
+    { name: "Le Gras Boulevard", 
+      logoUrl: "/sponsors/Le Gras Blvd.png",
+      website: "https://linktr.ee/legrasblvd" },
+    { name: "Eventopia", 
+      logoUrl: "/sponsors/Eventopia-Logo-04.png",
+      website: "https://eventopia.in" },
+  ];
+
+  // 🆕 Community Partners
+  const communityPartners: SponsorLogo[] = [
+    { name: "Apex Circle", logoUrl: "/sponsors/apex.png", },
+  ];
 
   const getAltText = (name: string) => {
     switch (name) {
@@ -234,6 +248,88 @@ export const NewSponsorsSection = () => {
               );
             })}
           </div>
+
+          <div className="sponsors-grid-heading">
+            <h4>Media Partners</h4>
+          </div>
+
+             <div className="sponsors-bottom-row">
+             {bottomRowSponsors.map((sponsor, index) => {
+               const Wrapper = sponsor.website ? "a" : "div";
+               return (
+                 <Wrapper
+                   key={`bottom-${index}`}
+                   className="sponsor-bottom-box"
+                   {...(sponsor.website
+                     ? {
+                         href: sponsor.website,
+                         target: "_blank",
+                         rel: "noopener noreferrer",
+                       }
+                     : {})}
+                 >
+                   <div className="sponsor-name-label">
+                     <span data-sponsor-el="left">{sponsor.name}</span>
+                     <span data-sponsor-el="arrow">[↗]</span>
+                   </div>
+                   <div className="sponsor-logo-wrapper">
+                     <img
+                       src={sponsor.logoUrl}
+                       alt={getAltText(sponsor.name)}
+                       loading="lazy"
+                       onError={(e) => {
+                         const target = e.target as HTMLImageElement;
+                         target.src =
+                           "https://via.placeholder.com/100?text=" +
+                           sponsor.name;
+                       }}
+                     />
+                   </div>
+                 </Wrapper>
+               );
+             })}
+           </div>
+
+          <div className="sponsors-grid-heading">
+            <h4 className="">Community Partners</h4>
+          </div>
+
+     <div className="sponsors-bottom-row">
+     {communityPartners.map((sponsor, index) => {
+       const Wrapper = sponsor.website ? "a" : "div";
+       return (
+         <Wrapper
+           key={`bottom-${index}`}
+           className="sponsor-bottom-box"
+           {...(sponsor.website
+             ? {
+                 href: sponsor.website,
+                 target: "_blank",
+                 rel: "noopener noreferrer",
+               }
+             : {})}
+         >
+           <div className="sponsor-name-label">
+             <span data-sponsor-el="left">{sponsor.name}</span>
+             <span data-sponsor-el="arrow">[↗]</span>
+           </div>
+           <div className="sponsor-logo-wrapper">
+             <img
+               src={sponsor.logoUrl}
+               alt={getAltText(sponsor.name)}
+               loading="lazy"
+               onError={(e) => {
+                 const target = e.target as HTMLImageElement;
+                 target.src =
+                   "https://via.placeholder.com/100?text=" +
+                   sponsor.name;
+               }}
+             />
+           </div>
+         </Wrapper>
+       );
+     })}
+   </div>
 
           <div className="sponsors-grid-heading">
             <h4>Platform partner</h4>

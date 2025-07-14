@@ -7,12 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./lib/theme-context";
 import { Home } from "./pages/Home";
 import { Register } from "./pages/Register";
-import { Sponsors } from "./pages/Sponsors";
-import { Tracks } from "./pages/Tracks";
-import { NewFaq } from "./pages/NewFaq";
-import { Insights } from "./pages/Insights";
-import { HeaderDemo } from "./pages/HeaderDemo";
-import NotFound from "./pages/NotFound";
 import { LoadingPage } from "./components/LoadingPage";
 import CurtainTransition from "./components/transitions/CurtainTransition";
 import { NewNavbar } from "./components/layout/NewNavbar";
@@ -69,13 +63,6 @@ const App = () => {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/register" element={<Register />} />
-                  <Route path="/sponsors" element={<Sponsors />} />
-                  <Route path="/tracks" element={<Tracks />} />
-                  <Route path="/faq" element={<NewFaq />} />
-                  <Route path="/insights" element={<Insights />} />
-                  <Route path="/header-demo" element={<HeaderDemo />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>
             )}

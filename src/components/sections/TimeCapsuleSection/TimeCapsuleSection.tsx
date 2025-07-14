@@ -104,6 +104,7 @@ export const TimeCapsuleSection = () => {
             src="/images/images.jpeg"
             alt="DevHack History"
             className="time-capsule-image"
+            loading="lazy"
           />
           <div className="time-capsule-content">
             <h3 className="time-capsule-year">2024</h3>
@@ -135,7 +136,8 @@ export const TimeCapsuleSection = () => {
                   src={item.imageUrl}
                   alt={item.title}
                   className="time-capsule-item-image"
-                />
+                  loading="lazy"
+                                  />
                 <h5 className="time-capsule-item-title">{item.title}</h5>
                 <p className="time-capsule-item-description">{item.description}</p>
               </div>

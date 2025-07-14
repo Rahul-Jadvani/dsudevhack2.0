@@ -121,6 +121,15 @@ export const PrizesSection = () => {
       image: "/images/prizes/3.svg",
     },
   ];
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false, amount: 0.1 });
+   const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    if (isInView && !isMounted) {
+      setIsMounted(true);
+    }
+  }, [isInView, isMounted]);
 
   return (
     <>
@@ -159,9 +168,10 @@ export const PrizesSection = () => {
                     isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }
                   }
                   transition={{
+                    type: "tween",
                     duration: 0.1,
-                    delay: index * 0.1,
-                    ease: "easeOut",
+                  delay: index * 0.01,
+                  ease: "easeOut"
                   }}
                   key={index}
                 >
@@ -182,10 +192,10 @@ export const PrizesSection = () => {
         <img src={prize.image} loading="lazy" alt="" className="h-full w-full object-contain" />
 
         <div className="star size-3 prize-1-1">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"/>
         </div>
         <div className="star size-1 prize-1-2">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"/>
         </div>
       </div>
 
@@ -193,10 +203,10 @@ export const PrizesSection = () => {
       <div className="absolute inset-0" />
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="star size-2 prize-1-3">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"/>
         </div>
         <div className="star size-1 prize-1-4">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"/>
         </div>
       </div>
       <div className="absolute inset-0" />
@@ -209,16 +219,16 @@ export const PrizesSection = () => {
 
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="star size-2 prize-3-3">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
         </div>
       </div>
 
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="star size-3 prize-3-1">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image"   loading="lazy" />
         </div>
         <div className="star size-1">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
         </div>
       </div>
     </div>
@@ -230,16 +240,16 @@ export const PrizesSection = () => {
 
       <div className="absolute inset-0 z-20 flex items-center justify-center">
         <div className="star size-3 prize-4-1">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
         </div>
         <div className="star size-1 prize-4-2">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
         </div>
       </div>
 
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="star size-1 prize-4-3">
-          <img src="/images/starry.png" alt="star glow" className="star-image" />
+          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"  />
         </div>
       </div>
     </div>
