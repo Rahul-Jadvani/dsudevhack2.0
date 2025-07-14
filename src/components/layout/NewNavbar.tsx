@@ -10,8 +10,8 @@ export const NewNavbar = () => {
     { name: 'Prizes', path: '/', sectionId: 'prizes' },
     { name: 'Tracks', path: '/', sectionId: 'tracks' },
     { name: 'Timeline', path: '/', sectionId: 'timeline' },
-    { name: 'Team', path: '/', sectionId: 'organising-team' },
     { name: 'Sponsors', path: '/', sectionId: 'sponsors' },
+    { name: 'Team', path: '/', sectionId: 'organising-team' },
     { name: 'Archives', path: 'https://dsudevhack.tech/', sectionId: 'archives' },
     { name: 'FAQ', path: '/', sectionId: 'faq' },
     { name: 'Discord', path: 'https://discord.gg/rs3dPP5PcM', sectionId: 'discord' }
@@ -96,36 +96,36 @@ export const NewNavbar = () => {
                 <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'timeline' })}>
                   Timeline
                 </Link>
-                <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'organising-team' })}>
-                  Team
-                </Link>
                 <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'sponsors' })}>
                   Sponsors
                 </Link>
+                <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'organising-team' })}>
+                  Team
+                </Link>
               </div>
               <div className="mobile-menu-row">
-  <a
-    href="https://dsudevhack.tech/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mobile-menu-item"
-  >
-    Archives
-  </a>
+                <a
+                  href="https://dsudevhack.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mobile-menu-item"
+                >
+                  Archives
+                </a>
 
-  <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'faq' })}>
+                <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'faq' })}>
                   FAQ
                 </Link>
 
-  <a
-    href="https://www.instagram.com/p/DLiSQKwzqnr/?igsh=dTdpNmIwdzl6ZmEz"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mobile-menu-item"
-  >
-    Instagram
-  </a>
-</div>
+                <a
+                  href="https://www.instagram.com/p/DLiSQKwzqnr/?igsh=dTdpNmIwdzl6ZmEz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mobile-menu-item"
+                >
+                  Instagram
+                </a>
+              </div>
               <div className="mobile-menu-row">
                 <Link to="https://discord.gg/rs3dPP5PcM" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/discord', sectionId: 'discord' })}>
                   Discord
