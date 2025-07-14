@@ -80,7 +80,9 @@ export const NewSponsorsSection = () => {
 
   // 🆕 Community Partners
   const communityPartners: SponsorLogo[] = [
-    { name: "Apex Circle", logoUrl: "/sponsors/apex.png", },
+    { name: "Apex Circle", logoUrl: "/sponsors/apex.png", 
+      website: "https://bento.me/apex-circle-official"
+    },
   ];
 
   const getAltText = (name: string) => {
@@ -254,7 +256,7 @@ export const NewSponsorsSection = () => {
           </div>
 
              <div className="sponsors-bottom-row">
-             {bottomRowSponsors.map((sponsor, index) => {
+             {mediaPartners.map((sponsor, index) => {
                const Wrapper = sponsor.website ? "a" : "div";
                return (
                  <Wrapper
