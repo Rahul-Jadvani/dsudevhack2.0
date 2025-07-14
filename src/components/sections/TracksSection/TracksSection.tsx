@@ -15,13 +15,21 @@ const TrackCard = ({ track, index }: { track: Track; index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.2 });
   return (
-    <motion.div
-      ref={ref}
-      className={`track-card ${track.bgClass}`}
-      initial={{ opacity: 0, y: 60 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-      transition={{ duration: 1.1, delay: index * 0.12, ease: "easeOut" }}
-    >
+<motion.div
+  ref={ref}
+  className={`track-card ${track.bgClass}`}
+  initial={{ opacity: 0, y: 40 }}
+  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+  transition={{
+    type: "spring",
+    stiffness: 110,
+    damping: 16,
+    mass: 0.5,
+    delay: index * 0.005
+  }}
+>
+
+
       <div className="track-header">
         <span className={`track-arrow arrow-${track.bgClass}`}>→</span>
         <span className="track-name">{track.name}</span>
