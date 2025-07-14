@@ -147,18 +147,28 @@ const TabButton = ({
 );
 
 export const OrganisingTeamSection = () => {
-    // Animation on in-view
+    // Animation on in-view with mobile-friendly settings
     const controls = useAnimation();
-    const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.15 });
+    const [ref, inView] = useInView({ 
+        triggerOnce: true, // Only trigger once to prevent disappearing
+        threshold: 0.1, // Lower threshold for better mobile experience
+        rootMargin: "50px" // Add margin to trigger earlier
+    });
 
     // Tab state
     const [activeTab, setActiveTab] = React.useState<'web' | 'design' | 'marketing' | 'sponsorship'>('web');
 
     React.useEffect(() => {
         if (inView) {
-            controls.start({ opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } });
-        } else {
-            controls.start({ opacity: 0, y: 60 });
+            controls.start({ 
+                opacity: 1, 
+                y: 0, 
+                transition: { 
+                    duration: 0.5, 
+                    ease: 'easeOut',
+                    when: "beforeChildren"
+                } 
+            });
         }
     }, [inView, controls]);
 
@@ -195,10 +205,17 @@ export const OrganisingTeamSection = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
                     {/* Faculty Coordinator */}
                     <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{type: "tween", duration: 0.35, ease: 'easeOut', delay: 0.05 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ 
+                            opacity: 1, 
+                            scale: 1,
+                            transition: {
+                                type: "spring",
+                                duration: 0.5,
+                                delay: 0.05
+                            }
+                        }}
+                        viewport={{ once: true, margin: "-50px" }}
                     >
                         <AnimatedTeamCard member={team.professorCoordinator} delay={0.05} cardIndex={0} />
                     </motion.div>
@@ -207,10 +224,17 @@ export const OrganisingTeamSection = () => {
                     {team.studentCoordinators.map((member, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            transition={{type: "tween", duration: 0.35, ease: 'easeOut', delay: 0.1 + (idx * 0.05) }}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ 
+                                opacity: 1, 
+                                scale: 1,
+                                transition: {
+                                    type: "spring",
+                                    duration: 0.5,
+                                    delay: 0.1 + (idx * 0.05)
+                                }
+                            }}
+                            viewport={{ once: true, margin: "-50px" }}
                         >
                             <AnimatedTeamCard member={member} delay={0.1 + (idx * 0.05)} cardIndex={1 + idx} />
                         </motion.div>
@@ -220,10 +244,17 @@ export const OrganisingTeamSection = () => {
                     {team.webTeamHeads.map((member, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            transition={{type: "tween", duration: 0.35, ease: 'easeOut', delay: 0.25 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ 
+                                opacity: 1, 
+                                scale: 1,
+                                transition: {
+                                    type: "spring",
+                                    duration: 0.5,
+                                    delay: 0.25
+                                }
+                            }}
+                            viewport={{ once: true, margin: "-50px" }}
                         >
                             <AnimatedTeamCard member={member} delay={0.25} cardIndex={4} />
                         </motion.div>
@@ -231,10 +262,17 @@ export const OrganisingTeamSection = () => {
 
                     {/* Design Team Head */}
                     <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{type: "tween", duration: 0.35, ease: 'easeOut', delay: 0.3 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ 
+                            opacity: 1, 
+                            scale: 1,
+                            transition: {
+                                type: "spring",
+                                duration: 0.5,
+                                delay: 0.3
+                            }
+                        }}
+                        viewport={{ once: true, margin: "-50px" }}
                     >
                         <AnimatedTeamCard member={team.designTeamHead} delay={0.3} cardIndex={5} />
                     </motion.div>
@@ -283,23 +321,26 @@ export const OrganisingTeamSection = () => {
                     {/* Team Members Grid */}
                     <motion.div
                         key={activeTab}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{type: "tween", duration: 0.3, ease: 'easeOut' }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ type: "tween", duration: 0.3, ease: 'easeOut' }}
                         className="team-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
                     >
                         {getCurrentTeamMembers().map((member, index) => (
                             <motion.div
                                 key={`${activeTab}-${member.label}-${index}`}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    type: "tween",
-                                    duration: 0.4,
-                                    ease: 'easeOut',
-                                    delay: index * 0.08,
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ 
+                                    opacity: 1, 
+                                    scale: 1,
+                                    transition: {
+                                        type: "spring",
+                                        duration: 0.5,
+                                        delay: index * 0.05
+                                    }
                                 }}
+                                viewport={{ once: true, margin: "-50px" }}
                             >
                                 <AnimatedTeamCard
                                     member={{
@@ -319,4 +360,4 @@ export const OrganisingTeamSection = () => {
             </div>
         </motion.section>
     );
-}; 
+};
