@@ -210,7 +210,7 @@ export const OrganisingTeamSection = () => {
                             opacity: 1, 
                             scale: 1,
                             transition: {
-                                type: "spring",
+                                type: "tween",
                                 duration: 0.5,
                                 delay: 0.05
                             }
@@ -229,7 +229,7 @@ export const OrganisingTeamSection = () => {
                                 opacity: 1, 
                                 scale: 1,
                                 transition: {
-                                    type: "spring",
+                                    type: "tween",
                                     duration: 0.5,
                                     delay: 0.1 + (idx * 0.05)
                                 }
@@ -249,7 +249,7 @@ export const OrganisingTeamSection = () => {
                                 opacity: 1, 
                                 scale: 1,
                                 transition: {
-                                    type: "spring",
+                                    type: "tween",
                                     duration: 0.5,
                                     delay: 0.25
                                 }
@@ -267,7 +267,7 @@ export const OrganisingTeamSection = () => {
                             opacity: 1, 
                             scale: 1,
                             transition: {
-                                type: "spring",
+                                type: "tween",
                                 duration: 0.5,
                                 delay: 0.3
                             }
@@ -335,7 +335,7 @@ export const OrganisingTeamSection = () => {
                                     opacity: 1, 
                                     scale: 1,
                                     transition: {
-                                        type: "spring",
+                                        type: "tween",
                                         duration: 0.5,
                                         delay: index * 0.05
                                     }

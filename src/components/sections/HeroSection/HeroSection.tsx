@@ -227,13 +227,27 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   </div>
                 ))}
               </div>
-              <div className="w-full flex justify-center">
-                <div
-                  className="apply-button devfolio-button"
-                  data-hackathon-slug="dsudevhack2"
-                  data-button-theme="dark"
-                ></div>
-              </div>
+         <a
+               href="https://dsudevhack2.devfolio.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                
+  className="relative mx-auto flex w-full max-w-[210px] items-center justify-center rounded-none border-2 border-black bg-[#000f1d] px-5 py-3 text-base font-medium text-[#f2f3f5] transition-none sm:max-w-[250px] sm:px-8 sm:py-4 sm:text-lg group overflow-hidden z-[1] pr-[48px] sm:pr-[60px]"
+>
+  <span className="relative z-10">Register Now</span>
+
+  {/* Arrow element */}
+  <div className="absolute right-0 top-0 bottom-0 z-[2] flex h-full w-[36px]  items-center justify-center bg-[#4da2ff] text-lg group-hover:left-0 group-hover:right-auto group-hover:bg-[#3b82f6] sm:w-[50px] sm:text-xl">
+    <span className="inline-block rotate-[-60deg] group-hover:rotate-0">
+      →
+    </span>
+  </div>
+
+  {/* Hover effect background */}
+  <div className="absolute left-0 top-0 h-full w-0 bg-[#000f1d] group-hover:w-full"></div>
+</a>
+
+
             </div>
           </div>
 
