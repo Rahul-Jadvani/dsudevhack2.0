@@ -234,7 +234,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 
   className="relative mx-auto flex w-full max-w-[210px] items-center justify-center rounded-none border-2 border-black bg-[#000f1d] px-5 py-3 text-base font-medium text-[#f2f3f5] transition-none sm:max-w-[250px] sm:px-8 sm:py-4 sm:text-lg group overflow-hidden z-[1] pr-[48px] sm:pr-[60px]"
 >
-  <span className="relative z-10">Register Now</span>
+  <span className="relative z-10">Register</span>
 
   {/* Arrow element */}
   <div className="absolute right-0 top-0 bottom-0 z-[2] flex h-full w-[36px]  items-center justify-center bg-[#4da2ff] text-lg group-hover:left-0 group-hover:right-auto group-hover:bg-[#3b82f6] sm:w-[50px] sm:text-xl">
