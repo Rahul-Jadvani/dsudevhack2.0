@@ -3,9 +3,28 @@ import { useState } from 'react';
 import './NewNavbar.css';
 
 export const NewNavbar = () => {
+  // ✅ Move this OUTSIDE the NewNavbar function
+  const MLHBadge = () => (
+    <a
+      id="mlh-trust-badge"
+      href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg"
+        alt="Major League Hacking 2026 Hackathon Season"
+        style={{ width: '100%' }}
+      />
+    </a>
+  );
+  
+
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  
+  // MLH Trust Badge
+ 
   const navItems = [
     { name: 'Prizes', path: '/', sectionId: 'prizes' },
     { name: 'Tracks', path: '/', sectionId: 'tracks' },
@@ -39,6 +58,7 @@ export const NewNavbar = () => {
 
   return (
     <>
+      <MLHBadge />
       <header data-nav-bar-height="" className="header">
         {/* Mobile header - only visible on small screens */}
         <div className="mobile-date-bar">
@@ -118,7 +138,7 @@ export const NewNavbar = () => {
                 </Link>
 
                 <a
-                  href="https://www.instagram.com/p/DLiSQKwzqnr/?igsh=dTdpNmIwdzl6ZmEz"
+                  href="https://www.instagram.com/p/DLiSQKwzqnr/?igshid=dTdpNmIwdzl6ZmEz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mobile-menu-item"

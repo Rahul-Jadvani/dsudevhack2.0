@@ -30,6 +30,23 @@ export const FAQPageSection = () => {
 
   const faqItems: FAQItem[] = [
     {
+      question: "Does DSU DevHack 2.0 follow the MLH Code of Conduct?",
+      answer: (
+        <span>
+          Yes, DSU DevHack 2.0 strictly follows the{" "}
+          <a
+            href="https://mlh.io/code-of-conduct"
+            className="text-blue-600 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MLH Code of Conduct
+          </a>
+          . As an official Member Event of the MLH 2026 Hackathon Season, we are committed to maintaining a safe, inclusive, and respectful environment for all participants.
+        </span>
+      )
+    },
+    {
       question: "What is DSU DevHack 2.0?",
       answer: `DSU DevHack 2.0 is the second edition of Dayananda Sagar University's national-level innovation hackathon, aimed at bringing together the brightest minds from across the country to solve real-world problems through technology. With tracks spanning AI/ML, Web3, IoT, Sustainability, Healthcare, and Open Innovation, the hackathon serves as a launchpad for impactful student-led solutions.`
     },
