@@ -3,7 +3,6 @@ import { useState } from 'react';
 import './NewNavbar.css';
 
 export const NewNavbar = () => {
-  // ✅ Move this OUTSIDE the NewNavbar function
   const MLHBadge = () => (
     <a
       id="mlh-trust-badge"
@@ -22,9 +21,6 @@ export const NewNavbar = () => {
 
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  // MLH Trust Badge
- 
   const navItems = [
     { name: 'Prizes', path: '/', sectionId: 'prizes' },
     { name: 'Tracks', path: '/', sectionId: 'tracks' },
@@ -44,7 +40,6 @@ export const NewNavbar = () => {
     setMobileMenuOpen(false);
 
     if (location.pathname !== item.path) {
-      // Will navigate to a different page
       return;
     }
 
@@ -138,7 +133,7 @@ export const NewNavbar = () => {
                 </Link>
 
                 <a
-                  href="https://www.instagram.com/p/DLiSQKwzqnr/?igshid=dTdpNmIwdzl6ZmEz"
+                  href="https://www.instagram.com/p/DLiSQKwzqnr/?igsh=dTdpNmIwdzl6ZmEz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mobile-menu-item"
