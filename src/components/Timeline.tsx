@@ -353,7 +353,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
 
         <div className="relative z-10">
-          <h2 className="text-2xl md:text-5xl font-bold text-white text-center mt-16 mb-2" style={{ fontFamily: 'Nunito Sans, sans-serif' }}>Timeline</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mt-16 mb-2" style={{ fontFamily: 'Nunito Sans, sans-serif' }}>Timeline</h2>
           {data.map((item, index) => {
             // Extract subtitle and date from item.content
             let subtitle = '';
