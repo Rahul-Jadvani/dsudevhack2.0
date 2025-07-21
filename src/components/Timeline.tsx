@@ -35,13 +35,13 @@ const TimelineCard = ({ title, subtitle, date, color, className = "" }: { title:
   // Extract day and month from date string
   const extractDateInfo = (dateStr: string) => {
     // Handle different date formats
+    if (dateStr.includes('1st September')) return { day: '1', month: 'SEP' };
+    if (dateStr.includes('12th September')) return { day: '12', month: 'SEP' };
+    if (dateStr.includes('13th September')) return { day: '13', month: 'SEP' };
     if (dateStr.includes('1st')) return { day: '1', month: 'JUL' };
     if (dateStr.includes('25th')) return { day: '25', month: 'JUL' };
     if (dateStr.includes('18th')) return { day: '18', month: 'AUG' };
     if (dateStr.includes('20th')) return { day: '20', month: 'AUG' };
-    if (dateStr.includes('1st September')) return { day: '1', month: 'SEP' };
-    if (dateStr.includes('12th September')) return { day: '12', month: 'SEP' };
-    if (dateStr.includes('13th September')) return { day: '13', month: 'SEP' };
     return { day: '25', month: 'SEP' }; // fallback
   };
 
