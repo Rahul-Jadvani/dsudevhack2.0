@@ -72,7 +72,7 @@ export const FAQPageSection = () => {
     },
     {
       question: "What are the restrictions on team formation for the event?",
-      answer: `Teams should be formed with members from the same college. Each student can be part of only one team, and multiple registrations by the same individual are not allowed.`
+      answer: `Teams can include members from different colleges. Each student can be part of only one team, and multiple registrations by the same individual are not allowed.`
     },
     {
       question: "What are the perks and benefits of participating in the hackathon?",
