@@ -200,8 +200,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
                 </div>
               </div>
               <p className="text-sm sm:text-base mb-6 text-[#333333] leading-relaxed font-bold text-center">
-  National-level hackathon for undergraduate engineering students<br />
-  on SEPTEMBER 12-13TH 2025
+  National-level hackathon for undergraduate engineering students
 </p>
              
 

@@ -82,6 +82,10 @@ export const FAQPageSection = () => {
       question: "I have a question related to the hackathon which is not listed above. What should I do?",
       answer: `For any additional queries, feel free to reach out to us at <a href="mailto:dsudevhack@dsu.edu.in" class="text-blue-600 underline">dsudevhack@dsu.edu.in</a> or contact our team at <strong>+91-9939635206, +91 82996 86568</strong>. We'll be happy to assist you!`
     },
+    {
+       question: "Can I reuse old projects or code?",
+  answer: `No. All work must be original and built during the hackathon. Pre-existing projects or code (even partially reused) are not allowed and will lead to disqualification.`
+    },
   ];
 
   const handleToggle = (idx: number) => {
