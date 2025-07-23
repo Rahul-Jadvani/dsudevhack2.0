@@ -51,6 +51,10 @@ export const NewSponsorsSection = () => {
       name: "AIC DSU Innovation Foundation",
       logoUrl: "/sponsors/aic-dsu.png",
     },
+    {
+      name: ".xyz",
+      logoUrl: "/sponsors/xyz-white-logo.svg",
+    },
   ];
 
   const middleRowSponsors: SponsorLogo[] = [
@@ -59,10 +63,7 @@ export const NewSponsorsSection = () => {
       logoUrl: "/sponsors/ethindia-light.svg",
       website: "https://ethindia.co",
     },
-    {
-      name: ".xyz",
-      logoUrl: "/sponsors/xyz-white-logo.svg",
-    },
+    
   ];
 
   const bottomRowSponsors: SponsorLogo[] = [
