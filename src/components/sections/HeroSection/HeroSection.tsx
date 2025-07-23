@@ -191,18 +191,19 @@ export const HeroSection = (_props: HeroSectionProps) => {
             <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center">
               <div className="flex flex-col items-center max-w-full overflow-visible">
                 <div className="flex flex-col items-center max-w-full overflow-hidden">
-                  <h1 className="text-4xl sm:text-8xl font-extrabold leading-tight text-black text-center max-w-full">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black text-center max-w-full">
                     DSU
                   </h1>
-                  <h1 className="text-4xl sm:text-8xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">
                     DEVHACK 2.0
                   </h1>
                 </div>
               </div>
-              <p className="text-base sm:text-xl mb-6 text-[#333333] leading-relaxed font-bold text-center">
-                National-level hackathon for undergraduate engineering
-                students
-              </p>
+              <p className="text-sm sm:text-base mb-6 text-[#333333] leading-relaxed font-bold text-center">
+  National-level hackathon for undergraduate engineering students<br />
+  on SEPTEMBER 12-13TH 2025
+</p>
+             
 
               {/* Countdown timer */}
               <div className="flex justify-between mb-6 max-w-[350px] sm:max-w-[400px] mx-auto gap-4">
