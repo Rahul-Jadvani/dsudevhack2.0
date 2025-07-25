@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './NewNavbar.css';
 
 export const NewNavbar = () => {
@@ -17,9 +17,52 @@ export const NewNavbar = () => {
     />
   </a>  
   );
-  
 
+  const CustomBadge = () => (
+    <Link
+      to="/"
+      className="group relative flex flex-col items-center bg-[#CB5946] hover:bg-[#b54837] text-white w-[100px] px-2 pb-3 pt-0 text-center shadow-md transition-all duration-200"
+      onClick={() => handleNavClick({ path: '/', sectionId: 'timeline' })} // or 'idea-submissions-start'
+      style={{
+        position: 'fixed',
+        top: '70px',
+        right: '120px',
+        zIndex: 1000,
+      }}
+    >
+      {/* LIVE GIF on top */}
+      <img
+        src="/images/live.gif"
+        alt="Live"
+        className="w-[98px] h-[68px] mb-2"
+      />
+  
+      {/* Download Text */}
+      <span className="text-sm font-bold uppercase tracking-widest leading-tight">
+        Download
+      </span>
+      <span className="text-sm font-bold uppercase tracking-widest leading-tight">
+        Template
+      </span>
+      <span className="text-sm font-bold uppercase tracking-widest leading-tight">
+        Here
+      </span>
+  
+      {/* Triangle */}
+      <div className="absolute bottom-[-18px] w-0 h-0 border-l-[45px] border-r-[45px] border-t-[22px] border-l-transparent border-r-transparent border-t-[#CB5946] group-hover:border-t-[#b54837]" />
+    </Link>
+  );
+    
+  
   const location = useLocation();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navItems = [
     { name: 'Prizes', path: '/', sectionId: 'prizes' },
@@ -54,6 +97,7 @@ export const NewNavbar = () => {
   return (
     <>
       <MLHBadge />
+      {!isMobile && !mobileMenuOpen && <CustomBadge />}
       <header data-nav-bar-height="" className="header">
         {/* Mobile header - only visible on small screens */}
         <div className="mobile-date-bar">
@@ -147,6 +191,11 @@ export const NewNavbar = () => {
                 </Link>
                 <Link to="https://dsudevhack2.devfolio.co/application" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'hero' })}>
                   Register
+                </Link>
+              </div>
+              <div className="mobile-menu-row">
+              <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'timeline' })}>
+                  Download Template
                 </Link>
               </div>
             </div>
