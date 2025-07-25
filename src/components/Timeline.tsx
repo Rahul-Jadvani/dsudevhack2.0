@@ -5,11 +5,8 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { motion } from "framer-motion";
+
 import React, { useEffect, useRef, useState } from "react";
 import styled from 'styled-components';
 
@@ -112,7 +109,7 @@ const StyledWrapper = styled.div`
     background-position:
       -100px 100px,
       -100px 100px;
-    transform: rotate3d(0.5, 1, 0, 30deg);
+    transform: scale(1.05);
   }
 
   .content-box {
@@ -397,6 +394,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       }
                     >
                       <img
+                      loading="lazy"
                         src={`/images/time circles/${index + 1}.png`}
                         alt={`Timeline ${index + 1}`}
                         className="h-full w-full object-contain transition-all duration-300"
@@ -430,6 +428,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       }
                     >
                       <img
+                      loading="lazy"
                         src={`/images/time circles/${index + 1}.png`}
                         alt={`Timeline ${index + 1}`}
                         className="h-full w-full object-contain transition-all duration-300"
