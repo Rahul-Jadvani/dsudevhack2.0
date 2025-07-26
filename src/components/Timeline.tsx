@@ -357,9 +357,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             let date = '';
             if (React.isValidElement(item.content)) {
               const children = item.content.props.children;
-              if (Array.isArray(children) && children.length > 1) {
-                subtitle = children[0]?.props?.children || '';
-                date = children[1]?.props?.children || '';
+              if (Array.isArray(children)) {
+                // Find the first string child for subtitle, last string child for date
+                subtitle = children.find(child => typeof child === 'object' && child?.props?.className?.includes('font-semibold'))?.props?.children || '';
+                // Find the last string child (date)
+                for (let i = children.length - 1; i >= 0; i--) {
+                  if (typeof children[i] === 'object' && children[i]?.props?.className?.includes('text-blue-500')) {
+                    date = children[i]?.props?.children || '';
+                    break;
+                  }
+                }
               }
             }
             // Alternate left/right for desktop
@@ -394,7 +401,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       }
                     >
                       <img
-                      loading="lazy"
+                        loading="lazy"
                         src={`/images/time circles/${index + 1}.png`}
                         alt={`Timeline ${index + 1}`}
                         className="h-full w-full object-contain transition-all duration-300"
@@ -428,7 +435,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       }
                     >
                       <img
-                      loading="lazy"
+                        loading="lazy"
                         src={`/images/time circles/${index + 1}.png`}
                         alt={`Timeline ${index + 1}`}
                         className="h-full w-full object-contain transition-all duration-300"
