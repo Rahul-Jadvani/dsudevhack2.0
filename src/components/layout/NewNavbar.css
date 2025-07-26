@@ -28,6 +28,37 @@ body {
   -ms-overflow-style: none;
 }
 
+/* Flowing Menu Responsive Styles */
+.desktop-flowing-menu {
+  display: block;
+  width: 100%;
+}
+
+.mobile-flowing-menu {
+  display: none;
+  width: 100%;
+}
+
+/* For tablets and mobile */
+@media (max-width: 1024px) {
+  .desktop-flowing-menu {
+    display: block;
+  }
+  .mobile-flowing-menu {
+    display: none;
+  }
+}
+
+/* For mobile only */
+@media (max-width: 640px) {
+  .desktop-flowing-menu {
+    display: none;
+  }
+  .mobile-flowing-menu {
+    display: block;
+  }
+}
+
 /* NAVBAR THEME */
 [data-theme-nav="dark"] .nav-inner__left {
   background: var(--color--blue-900);

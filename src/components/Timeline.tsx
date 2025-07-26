@@ -116,7 +116,6 @@ const StyledWrapper = styled.div`
     background: var(--card-color, #8ed500);
     transition: all 0.5s ease-in-out;
     padding: 40px 25px 20px 25px;
-    transform-style: preserve-3d;
   }
 
   .content-box .card-title {
@@ -125,7 +124,6 @@ const StyledWrapper = styled.div`
     font-size: 25px;
     font-weight: 900;
     transition: all 0.5s ease-in-out;
-    transform: translate3d(0px, 0px, 50px);
   }
 
   @media (min-width: 768px) {
@@ -134,9 +132,7 @@ const StyledWrapper = styled.div`
     }
   }
 
-  .content-box .card-title:hover {
-    transform: translate3d(0px, 0px, 60px);
-  }
+
 
   .content-box .card-content {
     margin-top: 10px;
@@ -144,7 +140,6 @@ const StyledWrapper = styled.div`
     font-weight: 700;
     color: #141414;
     transition: all 0.5s ease-in-out;
-    transform: translate3d(0px, 0px, 30px);
   }
 
   @media (min-width: 768px) {
@@ -153,12 +148,7 @@ const StyledWrapper = styled.div`
     }
   }
 
-  .content-box .card-content:hover {
-    transform: translate3d(0px, 0px, 60px);
-  }
-
-
-
+  
   .date-box {
     position: absolute;
     top: 20px;
@@ -168,7 +158,6 @@ const StyledWrapper = styled.div`
     background: #141414;
     border: 1px solid var(--card-color, #8ed500);
     padding: 10px;
-    transform: translate3d(0px, 0px, 80px);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
   }
 
