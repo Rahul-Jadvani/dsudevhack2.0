@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 import { motion } from "framer-motion";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styled from 'styled-components';
 
 interface TimelineEntry {

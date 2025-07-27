@@ -181,7 +181,6 @@ export const NewNavbar = () => {
               <span className="desktop-date-tag">&lt;date&gt;</span>
               <span className="desktop-date">12,13th September, 2025</span>
               <span className="desktop-date-tag">&lt;/date&gt;</span>
-              
             </div>
           </div>
           <div className="desktop-flowing-menu w-full">

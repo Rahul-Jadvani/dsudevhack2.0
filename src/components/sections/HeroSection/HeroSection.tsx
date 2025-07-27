@@ -171,22 +171,23 @@ export const HeroSection = (_props: HeroSectionProps) => {
           <div className="min-h-[70vh] sm:min-h-[90vh] flex flex-col justify-center py-6 scroll-snap-start relative">
             {/* University info for desktop */}
             {!isMobile && (
-              <div className="hidden absolute top-0 left-12 max-w-[450px] md:flex items-center  sm:p-4">
-                <img
-                  src="/images/dsu.png"
-                  alt="DSU Logo"
-                  loading="lazy"  
-                  className="w-14 h-14 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-4"
-                />
-                <div className="flex flex-col gap-1 sm:gap-2">
-                  <h1 className="text-[17px] sm:text-[20px] m-0 text-black font-bold">
-                    Dayananda Sagar University
-                  </h1>
-                  <p className="text-[13px] sm:text-[15px] mt-1 mb-0 text-[#333]">
-                    School of Engineering, Harohalli
-                  </p>
-                </div>
+              <div className="hidden absolute top-6 left-12 max-w-[450px] md:flex items-center sm:p-2">
+              <img
+                src="/images/dsu.png"
+                alt="DSU Logo"
+                loading="lazy"  
+                className="w-14 h-14 sm:w-20 sm:h-20 object-contain mr-2 sm:mr-3"
+              />
+              <div className="flex flex-col gap-[2px]">
+                <h1 className="text-[17px] sm:text-[20px] m-0 text-black font-bold leading-tight">
+                  Dayananda Sagar University
+                </h1>
+                <p className="text-[13px] sm:text-[15px] m-0 text-[#333] leading-snug">
+                  School of Engineering, Harohalli
+                </p>
               </div>
+            </div>
+            
             )}
             <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center">
               <div className="flex flex-col items-center max-w-full overflow-visible">
