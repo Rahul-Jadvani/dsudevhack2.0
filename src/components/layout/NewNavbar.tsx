@@ -185,11 +185,11 @@ export const NewNavbar = () => {
           </div>
           <div className="desktop-flowing-menu w-full">
             <div className="h-px bg-black w-full" />
-            <FlowingMenu />
+            <FlowingMenu handleNavClick={handleNavClick} />
           </div>
         </div>
         <div className="mobile-flowing-menu w-full">
-          <FlowingMenu />
+          <FlowingMenu handleNavClick={handleNavClick} />
         </div>
       </header>
 
