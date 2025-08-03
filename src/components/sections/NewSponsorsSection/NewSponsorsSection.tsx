@@ -63,6 +63,10 @@ export const NewSponsorsSection = () => {
       logoUrl: "/sponsors/ethindia-light.svg",
       website: "https://ethindia.co",
     },
+    {
+      name: "Interview buddy",
+      logoUrl: "/sponsors/interview.jpg",
+    },
     
   ];
 
