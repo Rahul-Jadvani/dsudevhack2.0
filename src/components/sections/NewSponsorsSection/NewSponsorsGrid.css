@@ -132,7 +132,7 @@ New Sponsors Grid CSS based on the reference image
 /* Top row - 4 large sponsors */
 .sponsors-top-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   border-bottom: 1px solid #0a0e1a;
 }
@@ -182,7 +182,7 @@ New Sponsors Grid CSS based on the reference image
 /* Middle row - 5 smaller sponsors */
 .sponsors-middle-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   border-bottom: 1px solid #0a0e1a;
 }
@@ -238,9 +238,9 @@ New Sponsors Grid CSS based on the reference image
 
 /* Bottom row hover effects */
 .sponsor-bottom-box:hover {
-  background-color: rgba(34, 197, 94, 0.15); /* Green color */
-  border-color: rgba(34, 197, 94, 0.8);
-  box-shadow: 0 15px 30px rgba(34, 197, 94, 0.3);
+  background-color: rgba(245, 246, 242, 0.348); /* Green color */
+  border-color: rgba(192, 195, 193, 0.8);
+  box-shadow: 0 15px 30px rgba(232, 241, 235, 0.3);
 }
 
 /* Sponsor name label */
