@@ -55,6 +55,10 @@ export const NewSponsorsSection = () => {
       name: ".xyz",
       logoUrl: "/sponsors/xyz-white-logo.svg",
     },
+    {
+      name: "CodeCrafters.io",
+      logoUrl: "/sponsors/CodeCraft.png",
+    }
   ];
 
   const middleRowSponsors: SponsorLogo[] = [
