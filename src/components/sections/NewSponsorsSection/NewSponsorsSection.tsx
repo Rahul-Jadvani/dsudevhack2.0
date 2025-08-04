@@ -70,6 +70,7 @@ export const NewSponsorsSection = () => {
     {
       name: "Interview buddy",
       logoUrl: "/sponsors/interview.jpg",
+      website: "https://InterviewBuddy.net",
     },
     
   ];
