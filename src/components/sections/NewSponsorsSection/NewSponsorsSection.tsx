@@ -100,7 +100,7 @@ export const NewSponsorsSection = () => {
     {
       name:"HACKX Community",
       logoUrl:"/sponsors/hackx.jpg",
-      website:"https://chat.whatsapp.com/IBSwLrewTFNE60s6jpAL1w"
+      website:"https://bento.me/hackx-community"
     }
   ];
 
