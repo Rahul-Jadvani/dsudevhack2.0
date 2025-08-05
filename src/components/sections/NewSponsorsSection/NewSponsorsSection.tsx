@@ -97,6 +97,10 @@ export const NewSponsorsSection = () => {
     { name: "Apex Circle", logoUrl: "/sponsors/apex.png", 
       website: "https://bento.me/apex-circle-official"
     },
+    {
+      name:"HACKX Community",
+      logoUrl:"/sponsors/hackx.jpg"
+    }
   ];
 
   const getAltText = (name: string) => {
