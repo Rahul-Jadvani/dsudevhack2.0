@@ -470,3 +470,233 @@
 .track-card:hover .track-icon-emoji {
   animation: pulse 1.5s ease-in-out infinite;
 }
+
+
+.track-prizes-screenshot-grid {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.track-prize-screenshot-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.track-prizes-screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin: 4rem 0;
+  border: 2px solid #111827;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background: #f8f9fa;
+  position: relative;
+  overflow: visible;
+  transform: none;
+  backface-visibility: visible;
+  perspective: none;
+  will-change: auto;
+}
+
+@media (max-width: 1280px) {
+  .track-prizes-screenshot-grid {
+    grid-template-columns: 1fr; /* force single column */
+  }
+}
+
+@media (max-width: 1024px) {
+  .track-prizes-screenshot-grid {
+    grid-template-columns: 1fr; /* force single column */
+  }
+
+
+  .track-prize-label-text {
+      font-size: 0.9rem;
+  }
+
+  .track-prize-desc {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .track-prizes-screenshot-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 3rem 0;
+      padding: 0.5rem;
+  }
+}
+
+.track-prize-screenshot-card {
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+  height: 320px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transform: none;
+  backface-visibility: visible;
+  will-change: auto;
+}
+
+.track-prize-screenshot-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.track-prize-label-text {
+  color: #222;
+  font-weight: 600;
+  font-size: 0.95rem;
+  z-index: 2;
+  position: relative;
+  font-family: monospace;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  max-width: 100%;
+  transition: all 0.3s ease;
+}
+
+.track-prize-screenshot-card:hover .track-prize-label-text {
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+.dark .track-prize-screenshot-card:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.dark .track-prize-screenshot-card:hover .track-prize-label-text {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.track-prize-rect-top {
+  background-color: transparent;
+  background-image: none;
+  padding: 1rem 1rem 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 220px;
+  position: relative;
+  border: 1.5px solid #111827;
+  border-bottom: 1.5px solid #111827;
+  width: 100%;
+  box-sizing: border-box;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: visible;
+}
+
+.dark .track-prize-rect-top {
+  border-color: #374151;
+}
+
+.track-prize-rect-bottom {
+  background: #f8f9fa;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-top: none;
+  min-height: 100px;
+  height: 40%;
+  margin: 0;
+  border: 1.5px solid #111827;
+  border-top: none;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+}
+
+.dark .track-prize-rect-bottom {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.track-prize-label-tilechain {
+  display: inline-block;
+  position: relative;
+  padding: 0.4rem;
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="19" height="19" fill="%23b57cf6" stroke="%23111827" stroke-width="1"/></svg>');
+  background-size: 20px 20px;
+  background-position: 0 100%;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 0;
+  margin-bottom: 14px;
+  z-index: 2;
+}
+
+.track-prize-label-tilebox {
+  background: orange;
+  padding: 0.25em 0.7em;
+  margin: 0;
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.track-prize-desc {
+  color: #222;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.track-prize-svg-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+  margin-top: auto;
+}
+
+.track-prize-svg-placeholder img {
+  max-width: 85%;
+  max-height: 130px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.track-prize-screenshot-card:hover .track-prize-svg-placeholder img {
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+  transform: scale(1.05);
+}
+
+.dark .track-prize-screenshot-card:hover .track-prize-svg-placeholder img {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+}

@@ -33,6 +33,8 @@ export const HeroSection = (_props: HeroSectionProps) => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+
+
   useEffect(() => {
     const calculateTimeLeft = () => {
       const targetDate = new Date("2025-09-12T00:00:00");
@@ -142,6 +144,47 @@ export const HeroSection = (_props: HeroSectionProps) => {
     };
   }, []);
 
+
+  const formatIndianNumber = (num: number) => {
+    const x = num.toString();
+    let lastThree = x.substring(x.length - 3);
+    let otherNumbers = x.substring(0, x.length - 3);
+    if (otherNumbers !== "") lastThree = "," + lastThree;
+    return otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+  };
+  
+  const [prize, setPrize] = useState(200000); // 2 Lakh start
+  const [highlight, setHighlight] = useState(false);
+  
+  useEffect(() => {
+    let rafId = 0;
+    const from = 200000;
+    const to = 1000000;
+    const duration = 2500; // 2.5 seconds duration
+  
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+    const start = performance.now();
+  
+    const step = (now: number) => {
+      const elapsed = Math.min(now - start, duration);
+      const progress = elapsed / duration;
+      const eased = easeOutCubic(progress);
+      const current = Math.floor(from + (to - from) * eased);
+      setPrize(current);
+  
+      if (elapsed < duration) {
+        rafId = requestAnimationFrame(step);
+      } else {
+        setHighlight(true);
+        setTimeout(() => setHighlight(false), 900);
+      }
+    };
+  
+    rafId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+  
+
   return (
     <section
       id="hero"
@@ -191,11 +234,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
             )}
             <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center">
               <div className="flex flex-col items-center max-w-full overflow-visible">
-                <div className="flex flex-col items-center max-w-full overflow-hidden">
-                  <h1 className="text-2xl sm:text-5xl  font-extrabold leading-tight text-black text-center max-w-full">
+                <div className="flex flex-col items-center max-w-full overflow-hidden pt-12">
+                  <h1 className="text-xl sm:text-4xl  font-extrabold leading-tight text-black text-center max-w-full">
                     DSU
                   </h1>
-                  <h1 className="text-2xl sm:text-5xl  font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">
+                  <h1 className="text-xl sm:text-4xl  font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full">
                     DEVHACK 2.0
                   </h1>
                 </div>
@@ -228,6 +271,27 @@ export const HeroSection = (_props: HeroSectionProps) => {
                   </div>
                 ))}
               </div>
+              <div className="mb-6 text-center">
+              <span
+  aria-live="polite"
+  className={
+    "text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-blue-600 " +
+    (highlight
+      ? "scale-105 transition-transform duration-400 ease-out drop-shadow-md"
+      : "transition-transform duration-300")
+  }
+>
+  ₹{formatIndianNumber(prize)}+
+</span>
+<p className="mt-1 text-lg sm:text-xl font-semibold text-gray-700">
+  Prize Pool
+</p>
+
+</div>
+
+
+
+<div className="mb-20 sm:mb-6"> 
          <a
                href="https://dsudevhack2.devfolio.co/"
                 target="_blank"
@@ -247,7 +311,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
   {/* Hover effect background */}
   <div className="absolute left-0 top-0 h-full w-0 bg-[#000f1d] group-hover:w-full"></div>
 </a>
-
+</div>
 
             </div>
           </div>
