@@ -306,7 +306,7 @@ export const PrizesSection = () => {
          
 
 
-          <div className="prizes-grid mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 p-4 items-start">
+          <div className="prizes-grid mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 p-4 items-start">
   {extraPrizes.map((prize, index) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.2 });
@@ -317,7 +317,7 @@ export const PrizesSection = () => {
       <motion.div
       ref={ref}
       key={index}
-      className={`prize-card relative flex flex-col justify-between min-h-[220px] p-4 rounded-md border border-black shadow-sm border-solid max-h-[max-content]`}
+      className={`prize-card relative flex flex-col justify-between min-h-[220px] p-4 rounded-md border border-black shadow-sm border-solid max-h-[max-content] box-border`}
       style={{ backgroundColor: '#f0f0f0' }}
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
