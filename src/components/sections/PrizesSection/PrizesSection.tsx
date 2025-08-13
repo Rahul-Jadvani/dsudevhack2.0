@@ -140,7 +140,7 @@ export const PrizesSection = () => {
     {
       place: "InterviewBuddy",
       amount: "15% Discount Coupons for 1:1 Expert-Driven Sessions for all Participants .Al Interview vouchers to Winners",
-      image: "$239",
+      image: "$279",
     },
     
     {
