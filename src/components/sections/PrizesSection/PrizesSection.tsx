@@ -121,6 +121,40 @@ export const PrizesSection = () => {
       image: "/images/prizes/3.svg",
     },
   ];
+  const extraPrizes = [
+    {
+      place: "Consolation Prize",
+      amount: "Consolation prize for participants",
+      image: "$292",
+    },
+    {
+      place: ".xyz 1-year Domain",
+      amount: "1-year domain for all onsite hackers.(280 prizes)",
+      image: "$4200",
+    },
+    {
+      place: "Codecrafters VIP",
+      amount: "VIP Codecrafters membership for winners(9 prizes,3780 USD)",
+      image: "$3,780",
+    },
+    {
+      place: "InterviewBuddy",
+      amount: "15% Discount Coupons for 1:1 Expert-Driven Sessions for all Participants .Al Interview vouchers to Winners",
+      image: "$239",
+    },
+    
+    {
+      place: "ETHIndia",
+      amount: "winner of this track receives $100 in prize from ETHIndia",
+      image: "$100",
+    },
+    {
+      place: "Goodies",
+      amount: "Goodies for all participants",
+      image: "$500",
+    },
+  ];
+  
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.1 });
    const [isMounted, setIsMounted] = useState(false);
@@ -266,42 +300,65 @@ export const PrizesSection = () => {
             })}
           </div>
 
-          <div className="divider"></div>
+      
 
-          {/* <div className="coming-soon-container"
-            ref={containerRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}>
-            {gridCells.map((cell, index) => (
-              <div
-                key={index}
-                className={`grid-cell ${cell.isActive ? 'active' : ''}`}
-                style={{
-                  left: `${cell.x * 48}px`,
-                  top: `${cell.y * 48}px`,
-                  '--cell-color': getCellColor(cell.x, cell.y)
-                } as React.CSSProperties}
-              />
-            ))}
-            <div className="coming-soon-content">
-              <div className="coming-soon-section">
-                <h2 className="coming-soon-title">Track Prizes</h2>
-                <div className="coming-soon-message">
-                  Coming Soon
-                </div>
-              </div>
-              <div className="coming-soon-divider"></div>
-              <div className="coming-soon-section">
-                <h2 className="coming-soon-title">Participant Benefits</h2>
-                <div className="coming-soon-message">
-                  Coming Soon
-                </div>
-              </div>
-            </div>
-          </div> */}
+        
+         
 
-          {/* Add padding at the bottom to prevent content from being hidden behind the fixed navbar */}
-          <div className="pb-16"></div>
+
+          <div className="prizes-grid mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1 p-4 items-start">
+  {extraPrizes.map((prize, index) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false, amount: 0.2 });
+
+    const placeClass = "place-extra";
+
+    return (
+      <motion.div
+      ref={ref}
+      key={index}
+      className={`prize-card relative flex flex-col justify-between min-h-[220px] p-4 rounded-md border border-black shadow-sm border-solid max-h-[max-content]`}
+      style={{ backgroundColor: '#f0f0f0' }}
+      initial={{ opacity: 0, y: 60 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+      transition={{
+        type: "tween",
+        duration: 0.1,
+        delay: index * 0.05,
+        ease: "easeOut",
+      }}
+    >
+      {/* Rest of your card content remains the same */}
+      <div className={`prize-header ${placeClass}`}>
+        <span className="prize-header-group">
+          <span className="prize-hash">#</span>
+          <span className={`prize-place ${placeClass} text-sm`}>
+            {prize.place}
+          </span>
+          <span className="prize-bracket">{" }"}</span>
+        </span>
+      </div>
+    
+      <div className="prize-content flex items-center justify-center text-2xl font-bold">
+        {prize.image}
+      </div>
+    
+      <div className="prize-footer text-center text-sm mt-2 w-[250px] h-[75px] flex items-center justify-center">
+  {prize.amount}
+</div>
+
+
+    
+      {/* Row divider after every 4th card */}
+      {((index + 1) % 4 === 0) && (
+        <span className="absolute bottom-[-12px] left-[-12px] w-[calc(100%+24px)] h-[1px] bg-black"></span>
+      )}
+    </motion.div>
+    );
+  })}
+</div>
+
+
         </div>
       </section>
     </>

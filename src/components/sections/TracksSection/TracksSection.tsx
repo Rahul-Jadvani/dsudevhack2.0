@@ -151,7 +151,7 @@ export const TracksSection = () => {
   const trackPrizes = [
     {
       amount: "$100",
-      image:"/sponsors/ethindia-light.svg",
+      image:"/sponsors/etherum.png",
       description:
         "Winner of this track receives ETHIndia prize, 1-year domain for all onsite hackers, VIP CodeCrafters membership for all winners. Total of 280 prizes worth $4200 USD.",
      details:"Winner of this track receives ETHIndia prize, 1-year domain for all onsite hackers, VIP CodeCrafters membership for all winners. Total of 280 prizes worth $4200 USD.",
