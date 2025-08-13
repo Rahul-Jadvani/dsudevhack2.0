@@ -306,7 +306,7 @@ export const PrizesSection = () => {
          
 
 
-          <div className="prizes-grid mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1 p-4 items-start">
+          <div className="prizes-grid mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 p-4 items-start">
   {extraPrizes.map((prize, index) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.2 });
@@ -344,7 +344,7 @@ export const PrizesSection = () => {
       </div>
     
       <div className="prize-footer text-center text-sm mt-2 
-                md:w-[250px] md:h-[75px] 
+                 md:h-[75px] 
                 flex items-center justify-center">
   {prize.amount}
 </div>
