@@ -343,9 +343,12 @@ export const PrizesSection = () => {
         {prize.image}
       </div>
     
-      <div className="prize-footer text-center text-sm mt-2 w-[250px] h-[75px] flex items-center justify-center">
+      <div className="prize-footer text-center text-sm mt-2 
+                md:w-[250px] md:h-[75px] 
+                flex items-center justify-center">
   {prize.amount}
 </div>
+
 
 
     
