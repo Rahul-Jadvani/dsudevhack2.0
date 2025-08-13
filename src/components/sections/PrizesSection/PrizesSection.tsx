@@ -121,13 +121,14 @@ export const PrizesSection = () => {
       color: "cyan",
       image: "/images/prizes/3.svg",
     },
+    {
+      place:"Consolation prizes",
+      amount:"₹25,000",
+      color:"yellow",
+      image:"/images/prizes/consolation1.png",
+    }
   ];
   const extraPrizes = [
-    {
-      place: "Consolation Prize",
-      amount: "Consolation prize for participants by DSU",
-      image: "₹25,000",
-    },
     {
       place: ".xyz 1-year Domain",
       amount: "1-year domain for all onsite hackers.(280 prizes)",
@@ -137,6 +138,11 @@ export const PrizesSection = () => {
       place: "Codecrafters VIP",
       amount: "VIP Codecrafters membership for winners(9 prizes,3780 USD)",
       image: "$3,780",
+    },
+    {
+      place: "Goodies",
+      amount: "Goodies for all participants",
+      image: "$500",
     },
     {
       place: "InterviewBuddy",
@@ -150,16 +156,17 @@ export const PrizesSection = () => {
       image: "$100",
     },
     {
-      place: "Goodies",
-      amount: "Goodies for all participants",
-      image: "$500",
-    },
+      place:"Ethereum",
+      amount:"sponsor specific prize.Click to know more->",
+      image:"$100",
+    }
+    
   ];
   
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.1 });
    const [isMounted, setIsMounted] = useState(false);
-  
+   const [modalContent, setModalContent] = useState(false);
   useEffect(() => {
     if (isInView && !isMounted) {
       setIsMounted(true);
@@ -168,22 +175,17 @@ export const PrizesSection = () => {
 
   return (
     <>
-      {/* Header bar */}
-      <div className="fixed-header">
-        <div className="header-content">
-          <div className="header-title">DSU Hackathon '25</div>
-          <div className="header-date">
-            <span className="date-tag">&lt;date&gt;</span> September, 2025{" "}
-            <span className="date-tag">&lt;/date&gt;</span>
-          </div>
-        </div>
-      </div>
+      
 
       <section id="prizes" className="prizes-section">
-        <div className="container mx-auto px-4 md:px-8 lg:px-4 xl:px-2 max-w-full">
-          <h1 className="prizes-heading">Prizes</h1>
+      <div className="container mx-auto px-4 md:px-8 lg:px-4 xl:px-2 max-w-full">
+  <div className="md:py-4"> {/* Reduced padding for tablet only */}
+    <h1 className="prizes-heading text-3xl md:text-4xl lg:text-5xl font-bold">
+      Prizes
+    </h1>
+    <div className="divider md:mt-2 md:mb-4"></div> {/* Adjusted margins for tablet */}
+  </div>
 
-          <div className="divider"></div>
 
           <div className="prizes-grid">
             {prizes.map((prize, index) => {
@@ -193,7 +195,7 @@ export const PrizesSection = () => {
               if (prize.place.startsWith("1st")) placeClass = "place-1";
               else if (prize.place.startsWith("2nd")) placeClass = "place-2";
               else if (prize.place.startsWith("3rd")) placeClass = "place-3";
-              else if (prize.place.startsWith("4th")) placeClass = "place-4";
+              else if (prize.place.startsWith("Consolation")) placeClass = "consolation-prize";
               return (
                 <motion.div
                   ref={ref}
@@ -210,16 +212,16 @@ export const PrizesSection = () => {
                   }}
                   key={index}
                 >
-                  <div className={`prize-header ${placeClass}`}>
+                  <div className={`prize-header ${placeClass} lg:text-sm`}>
                     <span className="prize-header-group">
                       <span className="prize-hash">#</span>
-                      <span className={`prize-place ${placeClass}`}>
-                        {prize.place}
-                      </span>
+                      <span className={`prize-place ${placeClass} ${prize.place.startsWith("Consolation") ? "text-sm md:text-base" : ""}`}>
+            {prize.place}
+          </span>
                       <span className="prize-bracket">{" }"}</span>
                     </span>
                   </div>
-             <div className="prize-content">
+             <div className="prize-content  bg-[#fdf2e9]">
   {prize.place === "1st place" ? (
     <div className="relative mx-auto h-[clamp(200px,50vw,300px)] w-full rounded-lg transition-transform duration-300 origin-center hover:scale-105 ">
       {/* main image + two stars */}
@@ -269,7 +271,7 @@ export const PrizesSection = () => {
     </div>
   ) : prize.place === "3rd place" ? (
     <div className="relative mx-auto h-[clamp(200px,50vw,300px)] w-full rounded-lg transition-transform duration-300 origin-center hover:scale-105">
-      <div className="absolute inset-0 items-center justify-center pl-[25px] lg:pl-[55px]">
+      <div className="absolute inset-0 items-center justify-center pl-[25px] lg:pl-[55px] ">
         <img src={prize.image} loading="lazy" alt="" className="h-full w-full object-contain scale-[0.99]" />
       </div>
 
@@ -288,6 +290,27 @@ export const PrizesSection = () => {
         </div>
       </div>
     </div>
+      ) : prize.place === "Consolation prizes" ? (
+        <div className="relative mx-auto h-[clamp(200px,50vw,300px)] w-full rounded-lg transition-transform duration-300 origin-center hover:scale-105">
+          <div className="absolute inset-0 items-center justify-center pl-[25px]  bg-[#fdf2e9] ">
+            <img src={prize.image} loading="lazy" alt="" className="h-full w-full object-contain scale-[0.49]" />
+          </div>
+    
+          <div className="absolute inset-0 z-20 flex items-center justify-center">
+            <div className="star size-3 prize-4-1">
+              <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
+            </div>
+            <div className="star size-1 prize-4-2">
+              <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
+            </div>
+          </div>
+    
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="star size-1 prize-4-3">
+              <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"  />
+            </div>
+          </div>
+        </div>
   ) : (
     <img src={prize.image} alt={prize.place} className="max-h-[200px] w-full object-contain" />
   )}
@@ -306,26 +329,17 @@ export const PrizesSection = () => {
         
          
 
-
-          <div className="prizes-grid mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 p-4 items-start">
+          <div className="prizes-grid mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 p-4 items-start"> 
   {extraPrizes.map((prize, index) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.2 });
 
     const placeClass = "place-extra";
 
-    // Array of pastel colors
     const pastelColors = [
-      "#FFD1DC", // pastel pink
-      "#C1F0F6", // pastel cyan
-      "#FFFACD", // pastel yellow
-      "#D4F4DD", // pastel green
-      "#E2D4F1", // pastel purple
-      "#FADCD9", // pastel coral
-      "#FFE4C4", // pastel peach
+      "#FFD1DC", "#C1F0F6", "#FFFACD", "#D4F4DD", "#E2D4F1", "#FADCD9", "#FFE4C4",
     ];
 
-    // Function to darken color
     const darkenColor = (color, percent) => {
       const num = parseInt(color.replace("#", ""), 16);
       const amt = Math.round(2.55 * percent);
@@ -335,15 +349,14 @@ export const PrizesSection = () => {
       return `#${(1 << 24 | R << 16 | G << 8 | B).toString(16).slice(1)}`;
     };
 
-    // Pick color based on index
     const bgColor = pastelColors[index % pastelColors.length];
-    const textColor = darkenColor(bgColor, 20); // Darken by 40%
+    const textColor = darkenColor(bgColor, 20);
 
     return (
       <motion.div
         ref={ref}
         key={index}
-        className={`prize-card relative flex flex-col justify-between min-h-[220px] p-4 rounded-md border border-black shadow-sm border-solid max-h-[max-content] box-border`}
+        className="prize-card relative flex flex-col justify-between min-h-[220px] p-4 rounded-md border border-black shadow-sm border-solid max-h-[max-content] box-border"
         style={{ backgroundColor: bgColor }}
         initial={{ opacity: 0, y: 60 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
@@ -352,6 +365,12 @@ export const PrizesSection = () => {
           duration: 0.1,
           delay: index * 0.05,
           ease: "easeOut",
+        }}
+        // Show modal only for last card
+        onClick={() => {
+          if (index === extraPrizes.length - 1) {
+            setModalContent(true);
+          }
         }}
       >
         {/* Prize Header */}
@@ -383,6 +402,28 @@ export const PrizesSection = () => {
     );
   })}
 </div>
+
+{/* Modal */}
+{modalContent && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="relative bg-white p-6 rounded-lg max-w-md w-full">
+      <button
+        onClick={() => setModalContent(null)}
+        className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xl font-bold"
+      >
+        ×
+      </button>
+
+      <p className="text-lg font-medium mb-3">
+        Select this track if you're building on Ethereum to be eligible for the prizes!
+      </p>
+      <p className="text-base font-semibold text-gray-700">
+        $100: Best hack built on Ethereum
+      </p>
+    </div>
+  </div>
+)}
+
 
 
 
