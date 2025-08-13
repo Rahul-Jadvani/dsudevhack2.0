@@ -73,6 +73,7 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.159.0",
+    "tinycolor2": "^1.6.0",
     "vaul": "^0.9.3",
     "vite_react_shadcn_ts": "file:",
     "zod": "^3.23.8"

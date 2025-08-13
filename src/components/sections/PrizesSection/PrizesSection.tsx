@@ -1,6 +1,7 @@
 import "./PrizesSection.css";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import tinycolor from "tinycolor2";
 
 type PrizeCard = {
   place: string;
@@ -125,7 +126,7 @@ export const PrizesSection = () => {
     {
       place: "Consolation Prize",
       amount: "Consolation prize for participants",
-      image: "$292",
+      image: "₹25,000",
     },
     {
       place: ".xyz 1-year Domain",
@@ -313,53 +314,76 @@ export const PrizesSection = () => {
 
     const placeClass = "place-extra";
 
+    // Array of pastel colors
+    const pastelColors = [
+      "#FFD1DC", // pastel pink
+      "#C1F0F6", // pastel cyan
+      "#FFFACD", // pastel yellow
+      "#D4F4DD", // pastel green
+      "#E2D4F1", // pastel purple
+      "#FADCD9", // pastel coral
+      "#FFE4C4", // pastel peach
+    ];
+
+    // Function to darken color
+    const darkenColor = (color, percent) => {
+      const num = parseInt(color.replace("#", ""), 16);
+      const amt = Math.round(2.55 * percent);
+      const R = Math.max(0, (num >> 16) - amt);
+      const G = Math.max(0, ((num >> 8) & 0x00FF) - amt);
+      const B = Math.max(0, (num & 0x0000FF) - amt);
+      return `#${(1 << 24 | R << 16 | G << 8 | B).toString(16).slice(1)}`;
+    };
+
+    // Pick color based on index
+    const bgColor = pastelColors[index % pastelColors.length];
+    const textColor = darkenColor(bgColor, 20); // Darken by 40%
+
     return (
       <motion.div
-      ref={ref}
-      key={index}
-      className={`prize-card relative flex flex-col justify-between min-h-[220px] p-4 rounded-md border border-black shadow-sm border-solid max-h-[max-content] box-border`}
-      style={{ backgroundColor: '#f0f0f0' }}
-      initial={{ opacity: 0, y: 60 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-      transition={{
-        type: "tween",
-        duration: 0.1,
-        delay: index * 0.05,
-        ease: "easeOut",
-      }}
-    >
-      {/* Rest of your card content remains the same */}
-      <div className={`prize-header ${placeClass}`}>
-        <span className="prize-header-group">
-          <span className="prize-hash">#</span>
-          <span className={`prize-place ${placeClass} text-sm`}>
-            {prize.place}
+        ref={ref}
+        key={index}
+        className={`prize-card relative flex flex-col justify-between min-h-[220px] p-4 rounded-md border border-black shadow-sm border-solid max-h-[max-content] box-border`}
+        style={{ backgroundColor: bgColor }}
+        initial={{ opacity: 0, y: 60 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+        transition={{
+          type: "tween",
+          duration: 0.1,
+          delay: index * 0.05,
+          ease: "easeOut",
+        }}
+      >
+        {/* Prize Header */}
+        <div className={`prize-header ${placeClass}`}>
+          <span className="prize-header-group">
+            <span className="prize-hash">#</span>
+            <span className={`prize-place ${placeClass} text-sm`} style={{ backgroundColor: textColor }}>
+              {prize.place}
+            </span>
+            <span className="prize-bracket">{" }"}</span>
           </span>
-          <span className="prize-bracket">{" }"}</span>
-        </span>
-      </div>
-    
-      <div className="prize-content flex items-center justify-center text-2xl font-bold">
-        {prize.image}
-      </div>
-    
-      <div className="prize-footer text-center text-sm mt-2 
-                 md:h-[75px] 
-                flex items-center justify-center">
-  {prize.amount}
-</div>
+        </div>
 
+        {/* Prize Content */}
+        <div className="prize-content flex items-center justify-center text-2xl font-bold">
+          {prize.image}
+        </div>
 
+        {/* Prize Footer */}
+        <div className="prize-footer text-center text-sm mt-2 md:h-[75px] flex items-center justify-center">
+          {prize.amount}
+        </div>
 
-    
-      {/* Row divider after every 4th card */}
-      {((index + 1) % 4 === 0) && (
-        <span className="absolute bottom-[-12px] left-[-12px] w-[calc(100%+24px)] h-[1px] bg-black"></span>
-      )}
-    </motion.div>
+        {/* Row divider after every 4th card */}
+        {((index + 1) % 4 === 0) && (
+          <span className="absolute bottom-[-12px] left-[-12px] w-[calc(100%+24px)] h-[1px] bg-black"></span>
+        )}
+      </motion.div>
     );
   })}
 </div>
+
 
 
         </div>
