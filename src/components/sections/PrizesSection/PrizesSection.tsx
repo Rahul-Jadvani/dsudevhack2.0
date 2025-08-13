@@ -125,7 +125,7 @@ export const PrizesSection = () => {
   const extraPrizes = [
     {
       place: "Consolation Prize",
-      amount: "Consolation prize for participants",
+      amount: "Consolation prize for participants by DSU",
       image: "₹25,000",
     },
     {
