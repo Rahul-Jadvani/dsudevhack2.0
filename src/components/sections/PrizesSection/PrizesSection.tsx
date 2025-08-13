@@ -136,7 +136,12 @@ export const PrizesSection = () => {
     },
     {
       place: "Codecrafters VIP",
-      amount: "VIP Codecrafters membership for winners(9 prizes,3780 USD)",
+      amount: (
+        <>
+          VIP Codecrafters membership for winners<br />
+          (9 prizes, 3,780 USD)
+        </>
+      ),
       image: "$3,780",
     },
     {
@@ -384,10 +389,9 @@ export const PrizesSection = () => {
           </span>
         </div>
 
-        {/* Prize Content */}
-        <div className="prize-content flex items-center justify-center text-2xl font-bold">
-          {prize.image}
-        </div>
+        <div className="prize-content flex items-center justify-center text-4xl font-extrabold text-black">
+  {prize.image}
+</div>
 
         {/* Prize Footer */}
         <div className="prize-footer text-center text-sm mt-2 md:h-[75px] flex items-center justify-center">
