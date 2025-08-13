@@ -157,7 +157,7 @@ export const PrizesSection = () => {
     },
     {
       place:"Ethereum",
-      amount:"sponsor specific prize.Click to know more->",
+      amount:"sponsor specific prize. Click to know more",
       image:"$100",
     }
     

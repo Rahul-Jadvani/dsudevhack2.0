@@ -171,73 +171,7 @@ export const TracksSection = () => {
         </div>
       </section>
 
-      <h2 className="track-prizes-heading text-center text-4xl font-extrabold mb-6">
-  Sponsor Specific Prizes
-</h2>
-
-
-<div className="track-prizes-screenshot-grid grid grid-cols-1 gap-4 !grid-cols-1">
-  {trackPrizes.map((trackPrize, index) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.2 });
-
-    return (
-      <motion.div
-        ref={ref}
-        className="track-prize-screenshot-card cursor-pointer flex flex-col bg-white shadow-lg rounded-lg p-4 h-auto"
-
-        initial={{ opacity: 0, y: 60 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-        transition={{
-          duration: 0.8,
-          delay: index * 0.08,
-          ease: "easeOut",
-        }}
-        key={index}
-        onClick={() => setModalContent(trackPrize.details)}
-      >
-        {/* Image */}
-        <div className="flex items-center justify-center w-full h-40 bg-black rounded-md overflow-hidden mb-3">
-          <img
-            src={trackPrize.image}
-            alt={trackPrize.amount}
-            className="max-h-full max-w-full object-contain"
-          />
-        </div>
-
-        {/* Money */}
-        <div className="text-3xl font-extrabold text-gray-900 text-center">
-          {trackPrize.amount}
-        </div>
-      </motion.div>
-    );
-  })}
-</div>
-
-
-{/* Modal */}
-{modalContent && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div className="relative bg-white p-6 rounded-lg max-w-md w-full">
-      {/* X Close Button */}
-      <button
-        onClick={() => setModalContent(null)}
-        className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xl font-bold"
-      >
-        ×
-      </button>
-
-      {/* Content */}
-      <p className="text-lg font-medium mb-3">
-        Select this track if you're building on Ethereum to be eligible for the prizes!
-      </p>
-      <p className="text-base font-semibold text-gray-700">
-        $100: Best hack built on Ethereum
-      </p>
-    </div>
-  </div>
-)}
-
+    
 
     </>
   );
