@@ -151,7 +151,7 @@
   align-items: center;
 }
 
-.prize-header.place-1 {
+.prize-header.place-1,.prize-header.place-extra {
   background-color: #e5fbe5;
   background-image: repeating-linear-gradient(
       0deg,
