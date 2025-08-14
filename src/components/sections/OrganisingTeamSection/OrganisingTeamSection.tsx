@@ -12,7 +12,7 @@ const team = {
         name: "Dr. Bipin Kumar Rai",
         designation: "Professor, CSE",
         instagram: "https://instagram.com/your_instagram_handle",
-        linkedin: "https://linkedin.com/in/your_linkedin_handle",
+        linkedin: "https://www.linkedin.com/in/dr-bipin-kumar-rai-b3a41690/",
         imageSrc: "/images/members/sir.jpg"
     },
     studentCoordinators: [
