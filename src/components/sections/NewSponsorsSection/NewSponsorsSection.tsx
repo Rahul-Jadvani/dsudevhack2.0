@@ -103,7 +103,7 @@ export const NewSponsorsSection = () => {
       website:"https://bento.me/hackx-community"
     },
     { name: "theDevArmy",
-     logoUrl: "https://thedevarmy.com/branding", 
+     logoUrl: "/sponsors/devarmy.png", 
      },
   ];
 
