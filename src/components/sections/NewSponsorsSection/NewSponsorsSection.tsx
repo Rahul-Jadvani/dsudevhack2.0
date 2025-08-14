@@ -101,7 +101,10 @@ export const NewSponsorsSection = () => {
       name:"HACKX Community",
       logoUrl:"/sponsors/hackx.jpg",
       website:"https://bento.me/hackx-community"
-    }
+    },
+    { name: "theDevArmy",
+     logoUrl: "https://thedevarmy.com/branding", 
+     },
   ];
 
   const getAltText = (name: string) => {
