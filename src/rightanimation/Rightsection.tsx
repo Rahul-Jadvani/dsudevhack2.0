@@ -10,12 +10,21 @@ const RightSection: React.FC = () => {
   useEffect(() => {
     // Only inject if not already present
     if (!document.getElementById("rightsection-anim-script")) {
-      const script = document.createElement("script");
-      script.id = "rightsection-anim-script";
-      script.src = "/rightanimation/34059.js";
-      script.async = true;
-      document.body.appendChild(script);
-      // No cleanup: we want the animation to persist
+      // Wait for GSAP to be available before loading the script
+      const waitForGSAP = () => {
+        if (typeof window.gsap !== 'undefined') {
+          const script = document.createElement("script");
+          script.id = "rightsection-anim-script";
+          script.src = "/rightanimation/34059.js";
+          script.async = true;
+          document.body.appendChild(script);
+        } else {
+          // Check again in 100ms
+          setTimeout(waitForGSAP, 100);
+        }
+      };
+      
+      waitForGSAP();
     }
   }, []);
 

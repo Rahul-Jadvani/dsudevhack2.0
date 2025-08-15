@@ -361,10 +361,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             // Alternate left/right for desktop
             const isLeft = index % 2 === 0;
             return (
-              <>
+              <React.Fragment key={index}>
                 {/* Desktop: alternating layout (unchanged) */}
                 <div
-                  key={index}
                   ref={el => desktopItemRefs.current[index] = el}
                   className={`relative w-full hidden md:flex flex-row items-center pt-10 md:pt-24 md:gap-0 group timeline-node-hover`}
                   style={{ cursor: 'pointer' }}
@@ -435,7 +434,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     <TimelineCard title={item.title} subtitle={subtitle} date={date} color={cardColors[index % cardColors.length]} className="group-hover:shadow-2xl group-hover:scale-105" />
                   </div>
                 </div>
-              </>
+              </React.Fragment>
             );
           })}
           {/* Vertical bar: centered on desktop, left on mobile (adjust left for more space) */}

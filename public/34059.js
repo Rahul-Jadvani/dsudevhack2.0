@@ -758,22 +758,38 @@ function initFooter() {
     }
   }, 100);
 }
-gsap.registerPlugin(
-  ScrollTrigger,
-  SplitText,
-  CustomEase,
-  Flip,
-  ScrambleTextPlugin
-),
-  CustomEase.create("sui-sine", "0.525, 0, 0, 1"),
-  CustomEase.create("sui-wiggle", "0.33, 0.00, 0.67, 1.00");
+// Only register available plugins
+if (typeof ScrollTrigger !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+// Check and register other plugins if available
+if (typeof gsap.SplitText !== 'undefined') {
+  gsap.registerPlugin(gsap.SplitText);
+}
+if (typeof gsap.CustomEase !== 'undefined') {
+  gsap.registerPlugin(gsap.CustomEase);
+}
+if (typeof gsap.Flip !== 'undefined') {
+  gsap.registerPlugin(gsap.Flip);
+}
+if (typeof gsap.ScrambleTextPlugin !== 'undefined') {
+  gsap.registerPlugin(gsap.ScrambleTextPlugin);
+}
+
+// Only create custom eases if CustomEase plugin is available
+if (typeof gsap.CustomEase !== 'undefined') {
+  gsap.CustomEase.create("sui-sine", "0.525, 0, 0, 1");
+  gsap.CustomEase.create("sui-wiggle", "0.33, 0.00, 0.67, 1.00");
+}
+
 const lenis = new Lenis({ autoRaf: !0 });
-lenis.on("scroll", ScrollTrigger.update),
-  gsap.ticker.add((e) => {
-    lenis.raf(1e3 * e);
-  }),
-  gsap.ticker.lagSmoothing(0),
-  gsap.defaults({ ease: "sui-sine", duration: 0.525 });
+lenis.on("scroll", ScrollTrigger.update);
+gsap.ticker.add((e) => {
+  lenis.raf(1e3 * e);
+});
+gsap.ticker.lagSmoothing(0);
+gsap.defaults({ ease: "sui-sine", duration: 0.525 });
+
 let resizeTimer,
   isMobile = window.innerWidth < 480,
   isMobileLandscape = window.innerWidth < 768,
@@ -783,20 +799,20 @@ window.addEventListener("resize", handleResize);
 let prefersRM = prefersReducedMotion();
 document.fonts.ready.then(() => {
   prefersRM || (initSplit(), initTextAnimations(), createGhostLoader());
-}),
-  initLoader(),
-  initHeroInteractions(),
-  isMobileLandscape && initMobileMenu(),
-  prefersRM || initWiggles(),
-  initDetectScrollingDirection(),
-  initCheckSectionThemeScroll(),
-  prefersRM || initMagneticEffect(),
-  prefersRM || initParallax(),
-  prefersRM || animateTracksGrid(),
-  prefersRM || initTracksLotties(),
-  prefersRM || initPrizeCardReveals(),
-  prefersRM || initStars(),
-  initSponsorFlip(),
-  initCanvasGrid(),
-  initFaq(),
-  initFooter();
+});
+initLoader();
+initHeroInteractions();
+isMobileLandscape && initMobileMenu();
+prefersRM || initWiggles();
+initDetectScrollingDirection();
+initCheckSectionThemeScroll();
+prefersRM || initMagneticEffect();
+prefersRM || initParallax();
+prefersRM || animateTracksGrid();
+prefersRM || initTracksLotties();
+prefersRM || initPrizeCardReveals();
+prefersRM || initStars();
+initSponsorFlip();
+initCanvasGrid();
+initFaq();
+initFooter();

@@ -63,16 +63,16 @@ const team = {
     webTeam: [
         { emoji: "🧑‍🎓", label: "Sachin Baluragi", role: "Web Team Co-Head", instagram: "https://www.instagram.com/_iamthehonouredone/profilecard/?igsh=N29xOGhpeXkzbG01", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/Sachin.jpg" },
         { emoji: "🧑‍🎓", label: "S Shreenidhi", role: "Web Dev", instagram: "https://www.instagram.com/sreenidhi_s.29?igsh=OHBvMjMzYWMyNGgz", linkedin: "http://www.linkedin.com/in/shreenidhi-s29", imageSrc: "/images/members/S Shreenidhi.jpg" },
-        { emoji: "🧑‍🎓", label: "G Nithesh", role: "Web Dev", instagram: "https://www.instagram.com/__nithesh__03?igsh=MXZ1NzZuMGtndHNodw%3D%3D&utm_source=qr", linkedin: "http://www.linkedin.com/in/g-nithesh-495380311", imageSrc: "/images/members/G Nithesh.HEIC" },
+        { emoji: "🧑‍🎓", label: "G Nithesh", role: "Web Dev", instagram: "https://www.instagram.com/__nithesh__03?igsh=MXZ1NzZuMGtndHNodw%3D%3D&utm_source=qr", linkedin: "http://www.linkedin.com/in/g-nithesh-495380311", imageSrc: "/images/members/G Nithesh.jpg" },
         { emoji: "🧑‍🎓", label: "Manavi P", role: "Web Dev", instagram: "https://www.instagram.com/_._manavi_._/", linkedin: "https://www.linkedin.com/in/manavi-p-576a8b279/", imageSrc: "/images/members/Manavi.jpg" },
+        { emoji: "🧑‍🎓", label: "Mayur", role: "Design Team", instagram: "https://instagram.com/your_instagram_handle", linkedin: "https://www.linkedin.com/in/mayur-adithya-2324aa31b", imageSrc: "/images/members/Mayur.jpg" },
     ],
     designTeam: [
         { emoji: "🎨", label: "Mayur", role: "Design Team", instagram: "https://instagram.com/your_instagram_handle", linkedin: "https://www.linkedin.com/in/mayur-adithya-2324aa31b", imageSrc: "/images/members/Mayur.jpg" },
         { emoji: "🎨", label: "Niharika Trivedi", role: "Design Team", instagram: "https://www.instagram.com/niharika__trivedi?igsh=MTVpNWQxemdjcjNxYw%3D%3D&utm_source=qr", linkedin: "https://www.linkedin.com/", imageSrc: "/images/members/Niharika.jpg" },
-        { emoji: "🎨", label: "Moulya", role: "Design Team", instagram: "https://www.instagram.com/prasad.moulya", linkedin: "https://in.linkedin.com/in/moulya-b-9435632b5", imageSrc: "/images/members/moulya.jpg" },
-        { emoji: "🎨", label: "Moulika", role: "Design Team", instagram: "https://www.instagram.com/moulika.k.reddy", linkedin: "https://www.linkedin.com/in/moulika-k-ba8694335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/moulika.jpg" },
-        { emoji: "🎨", label: "Raksha", role: "Design Team", instagram: "https://www.instagram.com/_.raksha.umashankar._", linkedin: "https://www.linkedin.com/in/moulika-k-ba8694335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/raksha.JPG" },
-        { emoji: "🎨", label: "Trisha", role: "Design Team", instagram: "https://www.instagram.com/trishaaa.10.___", linkedin: "https://www.linkedin.com/feed/", imageSrc: "/images/members/Trisha.PNG" },
+        { emoji: "🎨", label: "Moulya B", role: "Design Team", instagram: "https://www.instagram.com/prasad.moulya", linkedin: "https://in.linkedin.com/in/moulya-b-9435632b5", imageSrc: "/images/members/moulya.jpg" },
+        { emoji: "🎨", label: "Moulika K", role: "Design Team", instagram: "https://www.instagram.com/moulika.k.reddy", linkedin: "https://www.linkedin.com/in/moulika-k-ba8694335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/moulika.jpg" },
+        { emoji: "🎨", label: "Raksha U ", role: "Design Team", instagram: "https://www.instagram.com/_.raksha.umashankar._", linkedin: "https://www.linkedin.com/in/moulika-k-ba8694335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/raksha.JPG" },
         { emoji: "🎨", label: "Aastha", role: "Design Team", instagram: "https://www.instagram.com/aastha_6696", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/aastha.jpg" },
     ],
     marketingTeam: [
@@ -85,7 +85,11 @@ const team = {
         { emoji: "🤝", label: "Utkarsh Priye (Jha)", role: "Sponsorship Team", instagram: "https://www.instagram.com/codex_ukj", linkedin: "https://www.linkedin.com/in/utkarsh-priye-jha", imageSrc: "/images/members/Utkarsh.jpg" },
         { emoji: "🤝", label: "Ritvik Vasundh", role: "Sponsorship Team", instagram: "https://www.instagram.com/ritvik.you/", linkedin: "https://www.linkedin.com/in/ritvikvasundh/", imageSrc: "/images/members/Ritvik.JPG" },
         { emoji: "🤝", label: "Trisha", role: "Sponsorship Team", instagram: "https://www.instagram.com/trishaaa.10.___", linkedin: "https://www.linkedin.com/feed/", imageSrc: "/images/members/Trisha.PNG" },
-        { emoji: "🤝", label: "Ahmad", role: "Sponsorship Team", instagram: "https://www.instagram.com/ahhmaddx_", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/ahmad.jpg" }
+        { emoji: "🤝", label: "Ahmad", role: "Sponsorship Team", instagram: "https://www.instagram.com/ahhmaddx_", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/ahmad.jpg" },
+        { emoji: "🤝", label: "Aastha", role: "Sponsorship Team", instagram: "https://www.instagram.com/aastha_6696", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/aastha.jpg" },
+    ],
+    contentTeam: [
+        { emoji: "✍️", label: "Chinmayi Palled", role: "Content Team", instagram: "https://www.instagram.com/chinmayipalled/", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/chinmayi.jpeg" },
     ]
 };
 
@@ -156,7 +160,7 @@ export const OrganisingTeamSection = () => {
     });
 
     // Tab state
-    const [activeTab, setActiveTab] = React.useState<'web' | 'design' | 'marketing' | 'sponsorship'>('web');
+    const [activeTab, setActiveTab] = React.useState<'web' | 'design' | 'marketing' | 'sponsorship' | 'content'>('web');
 
     React.useEffect(() => {
         if (inView) {
@@ -183,6 +187,8 @@ export const OrganisingTeamSection = () => {
                 return team.marketingTeam;
             case 'sponsorship':
                 return team.sponsorshipTeam;
+            case 'content':
+                return team.contentTeam;
             default:
                 return team.webTeam;
         }
@@ -314,6 +320,13 @@ export const OrganisingTeamSection = () => {
                                 icon=""
                             >
                                 Sponsorship Team
+                            </TabButton>
+                            <TabButton
+                                isActive={activeTab === 'content'}
+                                onClick={() => setActiveTab('content')}
+                                icon=""
+                            >
+                                Content Team
                             </TabButton>
                         </div>
                     </div>
