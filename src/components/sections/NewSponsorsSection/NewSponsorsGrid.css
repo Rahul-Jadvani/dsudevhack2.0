@@ -132,7 +132,7 @@ New Sponsors Grid CSS based on the reference image
 /* Top row - 4 large sponsors */
 .sponsors-top-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   border-bottom: 1px solid #0a0e1a;
 }

@@ -33,7 +33,7 @@ export const NewNavbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navItems = [
     { name: 'Prizes', path: '/', sectionId: 'prizes' },
-    { name: 'Tracks', path: '/', sectionId: 'tracks' },
+    { name: 'Themes', path: '/', sectionId: 'tracks' },
     { name: 'Timeline', path: '/', sectionId: 'timeline' },
     { name: 'Sponsors', path: '/', sectionId: 'sponsors' },
     { name: 'Team', path: '/', sectionId: 'organising-team' },
@@ -114,7 +114,7 @@ export const NewNavbar = () => {
                   Prizes
                 </Link>
                 <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'tracks' })}>
-                  Tracks
+                  Themes
                 </Link>
               </div>
               <div className="mobile-menu-row">

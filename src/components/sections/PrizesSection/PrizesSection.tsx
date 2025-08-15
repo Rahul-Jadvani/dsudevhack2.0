@@ -125,17 +125,17 @@ export const PrizesSection = () => {
       place:"Consolation prizes",
       amount:"₹25,000",
       color:"yellow",
-      image:"/images/prizes/consolation1.png",
+      image:"/images/gift.png",
     }
   ];
   const extraPrizes = [
     {
-      place: ".xyz 1-year Domain",
+      place: ".xyz",
       amount: "1-year domain for all onsite hackers.(280 prizes)",
       image: "$4200",
     },
     {
-      place: "Codecrafters VIP",
+      place: "Codecrafters",
       amount: (
         <>
           VIP Codecrafters membership for winners<br />
@@ -145,10 +145,16 @@ export const PrizesSection = () => {
       image: "$3,780",
     },
     {
+      place: "Trae AI",
+      amount: "1 Month of Trae AI Pro to All Onsite Hackers",
+      image: "$750",
+    },
+    {
       place: "Goodies",
-      amount: "Goodies for all participants",
+      amount: "Goodies for all onsite hackers",
       image: "$500",
     },
+    
     {
       place: "InterviewBuddy",
       amount: "15% Discount Coupons for 1:1 Expert-Driven Sessions for all Participants .Al Interview vouchers to Winners",
@@ -157,26 +163,42 @@ export const PrizesSection = () => {
     
     {
       place: "ETHIndia",
-      amount: "winner of this track receives $100 in prize from ETHIndia",
+      amount: "winner of this track receives $100 in prize from ETHIndia.Click to know more",
       image: "$100",
     },
-    {
-      place:"Ethereum",
-      amount:"sponsor specific prize. Click to know more",
-      image:"$100",
-    }
+   
     
   ];
   
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.1 });
    const [isMounted, setIsMounted] = useState(false);
-   const [modalContent, setModalContent] = useState(false);
+  const [modalContent, setModalContent] = useState<string | null>(null);
   useEffect(() => {
     if (isInView && !isMounted) {
       setIsMounted(true);
     }
   }, [isInView, isMounted]);
+  const trackPrizes = [
+    {
+      amount: "$100",
+      image: "/sponsors/ethindia-light.svg",
+      description: " Select this track if you're building on Ethereum to be eligible for the prizes!",
+      details: " $100: Best hack built on Ethereum"
+    },
+    {
+      amount: " ",
+      image: "/sponsors/kroolol.png",
+      description: `View Challenge Details:\nhttps://docs.google.com/document/d/16rCYjqjEdT-kWE7JlsBuH9hePBiL1hJliG4Sg5Fv9OQ/edit?tab=t.0`,
+      details: `offers: Top 5 teams will be offered full-time roles in Kroolo.
+  Based on certain factors:
+  - Flawless product thinking (devil is in the detail)
+  - Code like silicon valley engineers (full stack)
+  - Great communication
+  - Available for full-time immediately`
+    }
+  ]
+  
 
   return (
     <>
@@ -217,15 +239,15 @@ export const PrizesSection = () => {
                   }}
                   key={index}
                 >
-                  <div className={`prize-header ${placeClass} lg:text-sm`}>
-                    <span className="prize-header-group">
-                      <span className="prize-hash">#</span>
-                      <span className={`prize-place ${placeClass} ${prize.place.startsWith("Consolation") ? "text-sm md:text-base" : ""}`}>
-            {prize.place}
-          </span>
-                      <span className="prize-bracket">{" }"}</span>
-                    </span>
-                  </div>
+                <div className={`prize-header ${placeClass} h-[70px] flex items-center`}>
+  <span className="prize-header-group">
+    <span className="prize-hash">#</span>
+    <span className={`prize-place ${placeClass} ${prize.place.startsWith("Consolation") ? "text-base" : "text-lg"}`}>
+      {prize.place}
+    </span>
+    <span className="prize-bracket">{" }"}</span>
+  </span>
+</div>
              <div className="prize-content  bg-[#fdf2e9]">
   {prize.place === "1st place" ? (
     <div className="relative mx-auto h-[clamp(200px,50vw,300px)] w-full rounded-lg transition-transform duration-300 origin-center hover:scale-105 ">
@@ -298,7 +320,7 @@ export const PrizesSection = () => {
       ) : prize.place === "Consolation prizes" ? (
         <div className="relative mx-auto h-[clamp(200px,50vw,300px)] w-full rounded-lg transition-transform duration-300 origin-center hover:scale-105">
           <div className="absolute inset-0 items-center justify-center pl-[25px]  bg-[#fdf2e9] ">
-            <img src={prize.image} loading="lazy" alt="" className="h-full w-full object-contain scale-[0.49]" />
+            <img src={prize.image} loading="lazy" alt="" className="h-full w-full object-contain scale-[0.37]" />
           </div>
     
           <div className="absolute inset-0 z-20 flex items-center justify-center">
@@ -371,10 +393,13 @@ export const PrizesSection = () => {
           delay: index * 0.05,
           ease: "easeOut",
         }}
-        // Show modal only for last card
+        // Scroll to sponsor prizes when last card is clicked
         onClick={() => {
           if (index === extraPrizes.length - 1) {
-            setModalContent(true);
+            const sponsorPrizesSection = document.getElementById('sponsor-prizes');
+            if (sponsorPrizesSection) {
+              sponsorPrizesSection.scrollIntoView({ behavior: 'smooth' });
+            }
           }
         }}
       >
@@ -407,7 +432,52 @@ export const PrizesSection = () => {
   })}
 </div>
 
-{/* Modal */}
+
+<h2 id="sponsor-prizes" className="track-prizes-heading text-center text-4xl font-extrabold mb-6">
+  Sponsor Specific Prizes
+</h2>
+
+
+<div className="track-prizes-screenshot-grid grid grid-cols-1 gap-4 !grid-cols-2">
+  {trackPrizes.map((trackPrize, index) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false, amount: 0.2 });
+
+    return (
+      <motion.div
+        ref={ref}
+        className="track-prize-screenshot-card cursor-pointer flex flex-col bg-white shadow-lg rounded-lg p-4 h-auto"
+
+        initial={{ opacity: 0, y: 60 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+        transition={{
+          duration: 0.8,
+          delay: index * 0.08,
+          ease: "easeOut",
+        }}
+        key={index}
+        onClick={() => setModalContent(trackPrize.details)}
+      >
+        {/* Image */}
+        <div className="flex items-center justify-center w-full h-40 bg-black rounded-md overflow-hidden mb-3">
+          <img
+            src={trackPrize.image}
+            alt={trackPrize.amount}
+            loading="lazy"
+            className="max-h-full max-w-full object-contain"
+          />
+        </div>
+
+        {/* Money */}
+        <div className="text-5xl font-extrabold text-gray-900 text-center pt-4">
+          {trackPrize.amount}
+        </div>
+      </motion.div>
+    );
+  })}
+</div>
+
+
 {modalContent && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div className="relative bg-white p-6 rounded-lg max-w-md w-full">
@@ -418,15 +488,41 @@ export const PrizesSection = () => {
         ×
       </button>
 
-      <p className="text-lg font-medium mb-3">
-        Select this track if you're building on Ethereum to be eligible for the prizes!
-      </p>
-      <p className="text-base font-semibold text-gray-700">
-        $100: Best hack built on Ethereum
-      </p>
+      <div className="space-y-4">
+        <p className="text-2xl font-bold text-gray-900 text-center">
+          {trackPrizes.find(prize => prize.details === modalContent)?.amount}
+        </p>
+        
+        <p className="text-lg font-medium text-gray-700">
+  {trackPrizes.find(prize => prize.details === modalContent)?.description
+    .split('\n')
+    .map((line, i) => (
+      <span key={i}>
+        {i > 0 && <br />}
+        {line.startsWith('http') ? (
+          <a 
+            href={line} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            {line}
+          </a>
+        ) : (
+          line
+        )}
+      </span>
+    ))}
+</p>
+        
+        <p className="text-base text-gray-600 whitespace-pre-line">
+          {modalContent}
+        </p>
+      </div>
     </div>
   </div>
 )}
+
 
 
 

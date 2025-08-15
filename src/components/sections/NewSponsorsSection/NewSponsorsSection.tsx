@@ -38,12 +38,19 @@ export const NewSponsorsSection = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
+  const diamondSponsors: SponsorLogo[] = [
+    {
+      name:"Kroolo",
+      logoUrl:"/sponsors/kroolol.png",
+      website:"https://kroolo.com"
+    }
+  ];
 
   const platinumRowSponsors: SponsorLogo[] = [
     {
       name: "GitHub",
       logoUrl: "/sponsors/GitHub Logos/PNG/GitHub_Lockup_Light.png",
-    },
+    }
   ];
 
   const topRowSponsors: SponsorLogo[] = [
@@ -58,6 +65,11 @@ export const NewSponsorsSection = () => {
     {
       name: "CodeCrafters.io",
       logoUrl: "/sponsors/CodeCraft.png",
+    },
+    {
+      name: "Trae",
+      logoUrl: "/sponsors/trae.png",
+      website: "https://www.trae.ai/"
     }
   ];
 
@@ -102,9 +114,16 @@ export const NewSponsorsSection = () => {
       logoUrl:"/sponsors/hackx.jpg",
       website:"https://bento.me/hackx-community"
     },
-    { name: "theDevArmy",
-     logoUrl: "/sponsors/devarmy.png", 
-     },
+    {
+      name:"Code Junction",
+      logoUrl:"/sponsors/CJ.svg",
+      website:"https://coding-junction.in/"
+    }
+  ];
+  const titlesponsor: SponsorLogo[] = [
+    { name: "Vultr",
+      logoUrl: "/sponsors/vultr.png", 
+    },
   ];
 
   const getAltText = (name: string) => {
@@ -126,6 +145,71 @@ export const NewSponsorsSection = () => {
         <h2 className="sponsors-title text-center mb-12" ref={titleRef}>
           Our Sponsors
         </h2>
+
+    <div className="sponsors-grid-container mb-12">
+          <div className="sponsors-grid-heading">
+            <h4 className="">Diamond Sponsors</h4>
+          </div>
+
+          <div className="sponsors-platinum-row">
+            {diamondSponsors.length > 0 ? (
+              diamondSponsors.map((sponsor, index) => {
+                const Wrapper = sponsor.website ? "a" : "div";
+                return (
+                  <Wrapper
+                    key={`platinum-${index}`}
+                    className="sponsor-platinum-box"
+                    {...(sponsor.website
+                      ? {
+                          href: sponsor.website,
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        }
+                      : {})}
+                  >
+                    <div className="sponsor-name-label">
+                      <span data-sponsor-el="left">{sponsor.name}</span>
+                      <span data-sponsor-el="arrow">[↗]</span>
+                    </div>
+                    <div className="sponsor-logo-wrapper">
+                      <img
+                        src={sponsor.logoUrl}
+                        alt={getAltText(sponsor.name)}
+                        loading="lazy"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src =
+                            "https://via.placeholder.com/200?text=" +
+                            sponsor.name;
+                        }}
+                      />
+                    </div>
+                  </Wrapper>
+                );
+              })
+            ) : (
+              <div className="sponsor-platinum-box flex flex-col items-center justify-center">
+                <div className="text-4xl font-bold text-center">
+                  {Array.from(`COMING SOON`).map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block mx-1 animate-pulse"
+                      style={{
+                        animation: `pulse 2s cubic-bezier(0.4, 0, 0.6, 1) ${
+                          index * 0.1
+                        }s infinite`,
+                        textShadow:
+                          "0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)",
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
 
         <div className="sponsors-grid-container mb-12">
           <div className="sponsors-grid-heading">
@@ -320,6 +404,48 @@ export const NewSponsorsSection = () => {
 
      <div className="sponsors-bottom-row">
      {communityPartners.map((sponsor, index) => {
+       const Wrapper = sponsor.website ? "a" : "div";
+       return (
+         <Wrapper
+           key={`bottom-${index}`}
+           className="sponsor-bottom-box"
+           {...(sponsor.website
+             ? {
+                 href: sponsor.website,
+                 target: "_blank",
+                 rel: "noopener noreferrer",
+               }
+             : {})}
+         >
+           <div className="sponsor-name-label">
+             <span data-sponsor-el="left">{sponsor.name}</span>
+             <span data-sponsor-el="arrow">[↗]</span>
+           </div>
+           <div className="sponsor-logo-wrapper">
+             <img
+               src={sponsor.logoUrl}
+               alt={getAltText(sponsor.name)}
+               loading="lazy"
+               onError={(e) => {
+                 const target = e.target as HTMLImageElement;
+                 target.src =
+                   "https://via.placeholder.com/100?text=" +
+                   sponsor.name;
+               }}
+             />
+           </div>
+         </Wrapper>
+       );
+     })}
+   </div>
+
+
+   <div className="sponsors-grid-heading">
+            <h4 className="">Title sponsor</h4>
+          </div>
+
+     <div className="sponsors-bottom-row">
+     {titlesponsor.map((sponsor, index) => {
        const Wrapper = sponsor.website ? "a" : "div";
        return (
          <Wrapper
