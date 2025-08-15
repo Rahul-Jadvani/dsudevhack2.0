@@ -438,7 +438,8 @@ export const PrizesSection = () => {
 </h2>
 
 
-<div className="track-prizes-screenshot-grid grid grid-cols-1 gap-4 !grid-cols-2">
+<div className="track-prizes-screenshot-grid grid grid-cols-1 lg:grid-cols-2 gap-4">
+
   {trackPrizes.map((trackPrize, index) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.2 });
@@ -479,49 +480,51 @@ export const PrizesSection = () => {
 
 
 {modalContent && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div className="relative bg-white p-6 rounded-lg max-w-md w-full">
-      <button
-        onClick={() => setModalContent(null)}
-        className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xl font-bold"
-      >
-        ×
-      </button>
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="relative bg-white p-4 sm:p-6 rounded-lg w-full max-w-sm sm:max-w-md max-h-[80vh] overflow-y-auto">
+    <button
+  onClick={() => setModalContent(null)}
+  className="absolute top-2 left-2 text-gray-500 hover:text-gray-800 text-xl font-bold"
+>
+  ×
+</button>
+
 
       <div className="space-y-4">
-        <p className="text-2xl font-bold text-gray-900 text-center">
+        <p className="text-xl sm:text-2xl font-bold text-gray-900 text-center">
           {trackPrizes.find(prize => prize.details === modalContent)?.amount}
         </p>
         
-        <p className="text-lg font-medium text-gray-700">
-  {trackPrizes.find(prize => prize.details === modalContent)?.description
-    .split('\n')
-    .map((line, i) => (
-      <span key={i}>
-        {i > 0 && <br />}
-        {line.startsWith('http') ? (
-          <a 
-            href={line} 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            {line}
-          </a>
-        ) : (
-          line
-        )}
-      </span>
-    ))}
-</p>
+        <p className="text-sm sm:text-lg font-medium text-gray-700">
+          {trackPrizes.find(prize => prize.details === modalContent)?.description
+            .split('\n')
+            .map((line, i) => (
+              <span key={i}>
+                {i > 0 && <br />}
+                {line.startsWith('http') ? (
+                  <a 
+                    href={line} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    {line}
+                  </a>
+                ) : (
+                  line
+                )}
+              </span>
+            ))}
+        </p>
         
-        <p className="text-base text-gray-600 whitespace-pre-line">
+        <p className="text-xs sm:text-base text-gray-600 whitespace-pre-line">
           {modalContent}
         </p>
       </div>
     </div>
   </div>
 )}
+
 
 
 
