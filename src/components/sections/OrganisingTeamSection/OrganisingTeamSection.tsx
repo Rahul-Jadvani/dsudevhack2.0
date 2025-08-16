@@ -6,6 +6,48 @@ import { useInView } from "react-intersection-observer";
 import "./OrganisingTeamSection.css";
 import AnimatedTeamCard from "./AnimatedTeamCard";
 import FacultyCard from "./FacultyCard";
+import PatronCard from "./PatronCard";
+const chief=[
+  { 
+    imageSrc : "/images/one.jpg", 
+    name: "Dr. D. Hemachandra Sagar",
+    designation: "Chancellor, DSU",
+  },
+  { 
+    imageSrc: "/images/two.jpeg", 
+    name: "Dr. D. Premachandra Sagar", 
+    designation: "Pro Chancellor, DSU" 
+  },
+
+]
+  const patrons = [
+   
+    { 
+      imageSrc: "/images/three.jpg", 
+      name: "Dr. B. S. Satyanarayana",   
+      designation: "Vice Chancellor, DSU" 
+    },
+    { 
+      imageSrc: "/images/four.jpg", 
+      name: "Prof. R Janardhan",    
+      designation: "Pro Vice Chancellor, DSU" 
+    },
+    { 
+      imageSrc: "/images/five.jpg", 
+      name: "Dr. Prakash S",   
+      designation: "Pro Vice Chancellor, DSU" 
+    },
+    { 
+      imageSrc: "/images/six.jpg", 
+      name: "Dr. C.Puttamadappa", 
+      designation: "Registrar, DSU" 
+    },
+    { 
+      imageSrc: "/images/seven.jpeg", 
+      name: "Dr.Udaya Kumar Reddy K.R", 
+      designation: "Professor & Dean-SoE" 
+    },
+  ];
 
 const team = {
   professorCoordinator: {
@@ -325,13 +367,25 @@ export const OrganisingTeamSection = () => {
         ) : (
           <>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 organising-team-title" style={{ marginTop: '2.5rem' }}>
-              Patrons
+              Chief Patrons
             </h2>
 
-            {/* Circular Gallery for Patrons */}
-            <div style={{ height: '600px', position: 'relative' }}>
-              <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02}/>
-            </div>
+            <div className="flex flex-wrap justify-center gap-8 p-8  pb-0 ">
+      {chief.map((patron, index) => (
+        <PatronCard patron={patron} key={index} index={index} />
+      ))}
+    </div>
+    <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 organising-team-title" style={{ marginTop: '2.5rem' }}>
+               Patrons
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 p-8">
+  {patrons.map((patron, index) => (
+    <PatronCard patron={patron} key={index} index={index} />
+  ))}
+</div>
+
+            
           </>
         )}
       </div>

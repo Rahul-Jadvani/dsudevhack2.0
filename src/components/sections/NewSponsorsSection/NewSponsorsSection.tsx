@@ -41,7 +41,7 @@ export const NewSponsorsSection = () => {
   const diamondSponsors: SponsorLogo[] = [
     {
       name:"Kroolo",
-      logoUrl:"/sponsors/kroolol.png",
+      logoUrl:"/sponsors/kroolo.png",
       website:"https://kroolo.com"
     }
   ];
@@ -118,6 +118,10 @@ export const NewSponsorsSection = () => {
       name:"Code Junction",
       logoUrl:"/sponsors/CJ.svg",
       website:"https://coding-junction.in/"
+    },
+    {
+      name:"theDevArmy",
+      logoUrl:"/sponsors/thedev.png",
     }
   ];
   const titlesponsor: SponsorLogo[] = [
@@ -146,14 +150,14 @@ export const NewSponsorsSection = () => {
           Our Sponsors
         </h2>
 
-    <div className="sponsors-grid-container mb-12">
+        {/* <div className="sponsors-grid-container mb-12">
           <div className="sponsors-grid-heading">
-            <h4 className="">Diamond Sponsors</h4>
+            <h4 className="">Title Sponsors</h4>
           </div>
 
           <div className="sponsors-platinum-row">
-            {diamondSponsors.length > 0 ? (
-              diamondSponsors.map((sponsor, index) => {
+            {titlesponsor.length > 0 ? (
+              titlesponsor.map((sponsor, index) => {
                 const Wrapper = sponsor.website ? "a" : "div";
                 return (
                   <Wrapper
@@ -189,6 +193,71 @@ export const NewSponsorsSection = () => {
               })
             ) : (
               <div className="sponsor-platinum-box flex flex-col items-center justify-center">
+                <div className="text-4xl font-bold text-center">
+                  {Array.from(`COMING SOON`).map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block mx-1 animate-pulse"
+                      style={{
+                        animation: `pulse 2s cubic-bezier(0.4, 0, 0.6, 1) ${
+                          index * 0.1
+                        }s infinite`,
+                        textShadow:
+                          "0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)",
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          </div> */}
+
+    <div className="sponsors-grid-container mb-12">
+          <div className="sponsors-grid-heading">
+            <h4 className="">Diamond Sponsors</h4>
+          </div>
+
+          <div className="sponsors-diamond-row ">
+            {diamondSponsors.length > 0 ? (
+              diamondSponsors.map((sponsor, index) => {
+                const Wrapper = sponsor.website ? "a" : "div";
+                return (
+                  <Wrapper
+                    key={`diamond-${index}`}
+                    className="sponsor-diamond-box"
+                    {...(sponsor.website
+                      ? {
+                          href: sponsor.website,
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        }
+                      : {})}
+                  >
+                    <div className="sponsor-n-label">
+                      <span data-sponsor-el="left">{sponsor.name}</span>
+                      <span data-sponsor-el="arrow">[↗]</span>
+                    </div>
+                    <div className="sponsor-logo-wrapper ">
+                      <img
+                        src={sponsor.logoUrl}
+                        alt={getAltText(sponsor.name)}
+                        loading="lazy"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src =
+                            "https://via.placeholder.com/200?text=" +
+                            sponsor.name;
+                        }}
+                      />
+                    </div>
+                  </Wrapper>
+                );
+              })
+            ) : (
+              <div className="sponsor-diamond-box flex flex-col items-center justify-center ">
                 <div className="text-4xl font-bold text-center">
                   {Array.from(`COMING SOON`).map((letter, index) => (
                     <span
@@ -440,7 +509,8 @@ export const NewSponsorsSection = () => {
    </div>
 
 
-   
+
+
           <div className="sponsors-grid-heading">
             <h4>Platform partner</h4>
           </div>

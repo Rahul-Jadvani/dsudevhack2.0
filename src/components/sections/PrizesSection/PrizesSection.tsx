@@ -131,15 +131,14 @@ export const PrizesSection = () => {
   const extraPrizes = [
     {
       place: ".xyz",
-      amount: "1-year domain for all onsite hackers.(280 prizes)",
+      amount: "1-year domain for all onsite hackers.",
       image: "$4200",
     },
     {
       place: "Codecrafters",
       amount: (
         <>
-          VIP Codecrafters membership for winners<br />
-          (9 prizes, 3,780 USD)
+          VIP Codecrafters membership for winners
         </>
       ),
       image: "$3,780",
@@ -181,10 +180,10 @@ export const PrizesSection = () => {
   }, [isInView, isMounted]);
   const trackPrizes = [
     {
-      amount: " ",
-      image: "/sponsors/kroolol.png",
-      description: `View Challenge Details:\nhttps://docs.google.com/document/d/16rCYjqjEdT-kWE7JlsBuH9hePBiL1hJliG4Sg5Fv9OQ/edit?tab=t.0`,
-      details: `offers: Top 5 teams will be offered full-time roles in Kroolo.
+      amount: "Direct hiring opportunities",
+      image: "/sponsors/kroolo.png",
+      pdfLink: "/kroolo.pdf",
+      details: `𝗢𝗳𝗳𝗲𝗿𝘀: Top 5 teams will be offered full-time roles in Kroolo.
   Based on certain factors:
   - Flawless product thinking (devil is in the detail)
   - Code like silicon valley engineers (full stack)
@@ -460,14 +459,18 @@ export const PrizesSection = () => {
         onClick={() => setModalContent(trackPrize.details)}
       >
         {/* Image */}
-        <div className="flex items-center justify-center w-full h-40 bg-black rounded-md overflow-hidden mb-3">
-          <img
-            src={trackPrize.image}
-            alt={trackPrize.amount}
-            loading="lazy"
-            className="max-h-full max-w-full object-contain"
-          />
-        </div>
+        <div
+  className={`flex items-center justify-center w-full h-40 rounded-md overflow-hidden mb-3 
+    ${index === 0 ? "bg-white" : "bg-black"}`}
+>
+  <img
+    src={trackPrize.image}
+    alt={trackPrize.amount}
+    loading="lazy"
+    className="max-h-full max-w-full object-contain"
+  />
+</div>
+
 
         {/* Money */}
         <div className="text-5xl font-extrabold text-gray-900 text-center pt-4">
@@ -495,27 +498,35 @@ export const PrizesSection = () => {
           {trackPrizes.find(prize => prize.details === modalContent)?.amount}
         </p>
         
-        <p className="text-sm sm:text-lg font-medium text-gray-700">
-          {trackPrizes.find(prize => prize.details === modalContent)?.description
-            .split('\n')
-            .map((line, i) => (
-              <span key={i}>
-                {i > 0 && <br />}
-                {line.startsWith('http') ? (
-                  <a 
-                    href={line} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
-                  >
-                    {line}
-                  </a>
-                ) : (
-                  line
-                )}
-              </span>
-            ))}
-        </p>
+        <div className="text-sm sm:text-lg font-medium text-gray-700 text-center">
+  {(() => {
+    const prize = trackPrizes.find(prize => prize.details === modalContent);
+
+    if (prize?.pdfLink) {
+      return (
+        <a
+          href={prize.pdfLink}
+          download
+          className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
+        >
+          📄 more information
+        </a>
+      );
+    }
+
+    if (prize?.description) {
+      return prize.description.split('\n').map((line, i) => (
+        <span key={i}>
+          {i > 0 && <br />}
+          {line}
+        </span>
+      ));
+    }
+
+    return null;
+  })()}
+</div>
+
         
         <p className="text-xs sm:text-base text-gray-600 whitespace-pre-line">
           {modalContent}
