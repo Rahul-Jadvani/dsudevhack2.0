@@ -181,12 +181,6 @@ export const PrizesSection = () => {
   }, [isInView, isMounted]);
   const trackPrizes = [
     {
-      amount: "$100",
-      image: "/sponsors/ethindia-light.svg",
-      description: " Select this track if you're building on Ethereum to be eligible for the prizes!",
-      details: " $100: Best hack built on Ethereum"
-    },
-    {
       amount: " ",
       image: "/sponsors/kroolol.png",
       description: `View Challenge Details:\nhttps://docs.google.com/document/d/16rCYjqjEdT-kWE7JlsBuH9hePBiL1hJliG4Sg5Fv9OQ/edit?tab=t.0`,
@@ -196,7 +190,13 @@ export const PrizesSection = () => {
   - Code like silicon valley engineers (full stack)
   - Great communication
   - Available for full-time immediately`
-    }
+    },{
+      amount: "$100",
+      image: "/sponsors/ethindia-light.svg",
+      description: " Select this track if you're building on Ethereum to be eligible for the prizes!",
+      details: " $100: Best hack built on Ethereum"
+    },
+   
   ]
   
 
