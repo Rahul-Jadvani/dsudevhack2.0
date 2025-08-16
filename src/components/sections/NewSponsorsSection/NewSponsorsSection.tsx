@@ -440,47 +440,7 @@ export const NewSponsorsSection = () => {
    </div>
 
 
-   <div className="sponsors-grid-heading">
-            <h4 className="">Title sponsor</h4>
-          </div>
-
-     <div className="sponsors-bottom-row">
-     {titlesponsor.map((sponsor, index) => {
-       const Wrapper = sponsor.website ? "a" : "div";
-       return (
-         <Wrapper
-           key={`bottom-${index}`}
-           className="sponsor-bottom-box"
-           {...(sponsor.website
-             ? {
-                 href: sponsor.website,
-                 target: "_blank",
-                 rel: "noopener noreferrer",
-               }
-             : {})}
-         >
-           <div className="sponsor-name-label">
-             <span data-sponsor-el="left">{sponsor.name}</span>
-             <span data-sponsor-el="arrow">[↗]</span>
-           </div>
-           <div className="sponsor-logo-wrapper">
-             <img
-               src={sponsor.logoUrl}
-               alt={getAltText(sponsor.name)}
-               loading="lazy"
-               onError={(e) => {
-                 const target = e.target as HTMLImageElement;
-                 target.src =
-                   "https://via.placeholder.com/100?text=" +
-                   sponsor.name;
-               }}
-             />
-           </div>
-         </Wrapper>
-       );
-     })}
-   </div>
-
+   
           <div className="sponsors-grid-heading">
             <h4>Platform partner</h4>
           </div>
