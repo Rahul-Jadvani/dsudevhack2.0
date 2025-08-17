@@ -47,6 +47,11 @@ const chief=[
       name: "Dr.Udaya Kumar Reddy K.R", 
       designation: "Professor & Dean-SoE" 
     },
+    {
+      imageSrc: "/images/eight.jpg", 
+      name: "Dr. Girisha G S", 
+      designation: "Chairperson, CSE" 
+    }
   ];
 
 const team = {
@@ -379,7 +384,7 @@ export const OrganisingTeamSection = () => {
                Patrons
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 p-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-8">
   {patrons.map((patron, index) => (
     <PatronCard patron={patron} key={index} index={index} />
   ))}
