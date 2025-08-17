@@ -182,7 +182,7 @@ export const PrizesSection = () => {
     {
       amount: "Direct hiring opportunities",
       image: "/sponsors/kroolo.png",
-      pdfLink: "/kroolo.pdf",
+      pdfLink: "/Kroolo.pdf",
       details: `𝗢𝗳𝗳𝗲𝗿𝘀: Top 5 teams will be offered full-time roles in Kroolo.
   Based on certain factors:
   - Flawless product thinking (devil is in the detail)
@@ -506,10 +506,11 @@ export const PrizesSection = () => {
       return (
         <a
           href={prize.pdfLink}
-          download
+          download="Kroolo.pdf"   // force PDF filename
+          type="application/pdf"      // ensures correct MIME type
           className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
         >
-          📄 more information
+          📄 More Information (PDF)
         </a>
       );
     }
