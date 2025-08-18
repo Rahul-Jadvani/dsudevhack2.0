@@ -88,6 +88,10 @@ export const Footer = () => {
               ></iframe>
             </div>
           </div>
+          <div className="footer-department text-center lg:text-right">
+  <strong className="text-lg font-bold">Department of Computer Science</strong>
+</div>
+
 
           {/* Bottom Bar */}
           <div className="footer-bottom">
