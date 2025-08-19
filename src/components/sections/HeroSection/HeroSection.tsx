@@ -235,6 +235,19 @@ export const HeroSection = (_props: HeroSectionProps) => {
            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center mt-16 sm:mt-0">
   <div className="flex flex-col items-center max-w-full overflow-visible">
     <div className="flex flex-col items-center max-w-full overflow-hidden pt-12">
+    <div className="w-full flex justify-center md:justify-start absolute top-6 md:top-12 md:left-[-14px] sm:p-2 max-w-[450px]">
+    <img
+  src="/images/vultr1.png"
+  alt="Vultr Logo"
+  loading="lazy"
+  className="w-[81px] sm:w-24 md:w-40 object-contain"
+/>
+
+</div>
+
+    <h1 className="text-xl sm:text-5xl font-extrabold leading-tight text-blue-800 text-center max-w-full">
+  PRESENTS
+</h1>
       <h1 className="text-xl sm:text-6xl font-extrabold leading-tight text-black text-center max-w-full">
         DSU
       </h1>
@@ -249,7 +262,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
              
 
               {/* Countdown timer */}
-              <div className="flex justify-between mb-6 max-w-[350px] sm:max-w-[400px] mx-auto gap-4">
+              <div className="flex justify-between mb-6 max-w-[350px] sm:max-w-[400px] mx-auto gap-4 -mt-3 sm:mt-0">
                 {["Days", "Hours", "Mins", "Secs"].map((label, idx) => (
                   <div
                     key={label}
@@ -275,7 +288,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
               <span
   aria-live="polite"
   className={
-    "text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-blue-600 " +
+    "inline-block text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-blue-600 -mt-3 sm:mt-0 " +
     (highlight
       ? "scale-105 transition-transform duration-400 ease-out drop-shadow-md"
       : "transition-transform duration-300")
@@ -283,15 +296,17 @@ export const HeroSection = (_props: HeroSectionProps) => {
 >
   ₹{formatIndianNumber(prize)}+
 </span>
-<p className="mt-1 text-lg sm:text-xl font-semibold text-gray-700">
+<p className="-mt-1 text-lg sm:text-xl font-semibold text-gray-700">
   Prize Pool
 </p>
+
+
 
 </div>
 
 
 
-<div className="mb-20 sm:mb-6"> 
+{/* <div className="mb-20 sm:mb-6"> 
          <a
                href="https://dsudevhack2.devfolio.co/"
                 target="_blank"
@@ -301,24 +316,24 @@ export const HeroSection = (_props: HeroSectionProps) => {
 >
   <span className="relative z-10">Register</span>
 
-  {/* Arrow element */}
+  
   <div className="absolute right-0 top-0 bottom-0 z-[2] flex h-full w-[36px]  items-center justify-center bg-[#4da2ff] text-lg group-hover:left-0 group-hover:right-auto group-hover:bg-[#3b82f6] sm:w-[50px] sm:text-xl">
     <span className="inline-block rotate-[-60deg] group-hover:rotate-0">
       →
     </span>
   </div>
 
-  {/* Hover effect background */}
+  
   <div className="absolute left-0 top-0 h-full w-0 bg-[#000f1d] group-hover:w-full"></div>
 </a>
-</div>
+</div> */}
 
             </div>
           </div>
 
           {/* Video section for mobile/tablet */}
           {isMobile && (
-            <div className="-z-1 scale-[0.7] bottom-32 sm:bottom-36 flex right-44 justify-end items-center relative w-full">
+      <div className="-z-1 scale-[0.4] relative w-full flex right-24 justify-end items-center -mt-[95px] sm:mt-0">
               <RightSection />
               {/* <div style={{ height: "220px" }} /> */}
             </div>

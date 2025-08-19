@@ -150,19 +150,19 @@ export const NewSponsorsSection = () => {
           Our Sponsors
         </h2>
 
-        {/* <div className="sponsors-grid-container mb-12">
+         <div className="sponsors-grid-container mb-12">
           <div className="sponsors-grid-heading">
             <h4 className="">Title Sponsors</h4>
           </div>
 
-          <div className="sponsors-platinum-row">
+          <div className="sponsors-title-row">
             {titlesponsor.length > 0 ? (
               titlesponsor.map((sponsor, index) => {
                 const Wrapper = sponsor.website ? "a" : "div";
                 return (
                   <Wrapper
                     key={`platinum-${index}`}
-                    className="sponsor-platinum-box"
+                    className="sponsor-title-box"
                     {...(sponsor.website
                       ? {
                           href: sponsor.website,
@@ -171,7 +171,7 @@ export const NewSponsorsSection = () => {
                         }
                       : {})}
                   >
-                    <div className="sponsor-name-label">
+                    <div className="sponsor-title-label">
                       <span data-sponsor-el="left">{sponsor.name}</span>
                       <span data-sponsor-el="arrow">[↗]</span>
                     </div>
@@ -192,7 +192,7 @@ export const NewSponsorsSection = () => {
                 );
               })
             ) : (
-              <div className="sponsor-platinum-box flex flex-col items-center justify-center">
+              <div className="sponsor-title-box flex flex-col items-center justify-center">
                 <div className="text-4xl font-bold text-center">
                   {Array.from(`COMING SOON`).map((letter, index) => (
                     <span
@@ -213,7 +213,7 @@ export const NewSponsorsSection = () => {
               </div>
             )}
           </div>
-          </div> */}
+          </div> 
 
     <div className="sponsors-grid-container mb-12">
           <div className="sponsors-grid-heading">

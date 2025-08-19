@@ -91,7 +91,7 @@ export const TracksSection = () => {
       bgClass: "aiml-bg",
       icon: (
         <img
-          src="/images/ai ml.png"
+          src="/images/ai.png"
           alt="AI/ML"
           className="track-icon-img"
           loading="lazy"
@@ -147,16 +147,7 @@ export const TracksSection = () => {
       sponsor: "OpenX",
     },
   ];
-  const [modalContent, setModalContent] = useState(null);
-  const trackPrizes = [
-    {
-      amount: "$100",
-      image:"/sponsors/etherum.png",
-      description:
-        "Winner of this track receives ETHIndia prize, 1-year domain for all onsite hackers, VIP CodeCrafters membership for all winners. Total of 280 prizes worth $4200 USD.",
-     details:"Winner of this track receives ETHIndia prize, 1-year domain for all onsite hackers, VIP CodeCrafters membership for all winners. Total of 280 prizes worth $4200 USD.",
-    },
-  ];
+
 
   return (
     <>
