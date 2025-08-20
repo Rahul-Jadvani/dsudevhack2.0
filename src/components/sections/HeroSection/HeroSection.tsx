@@ -235,7 +235,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center mt-16 sm:mt-0">
   <div className="flex flex-col items-center max-w-full overflow-visible">
     <div className="flex flex-col items-center max-w-full overflow-hidden pt-12">
+<<<<<<< HEAD
     <div className="w-full flex justify-center md:justify-start absolute top-8 md:-right-14 pb-6 sm:pb-0 sm:p-2 max-w-[700px]">
+=======
+    <div className="w-full flex justify-center md:justify-start absolute top-8 md:top-8 md:-right-11 pb-6 sm:pb-0 sm:p-2 max-w-[500px]"> 
+>>>>>>> 5d322e8 (title update)
   <img
     src="/images/vultr1.png"
     alt="Vultr Logo"
@@ -244,12 +248,20 @@ export const HeroSection = (_props: HeroSectionProps) => {
   />
 </div>
 
+<<<<<<< HEAD
 <h1 className="text-sm sm:text-xl font-extrabold leading-tight text-blue-800 text-center max-w-full mt-5 sm:mt-4 md:mt-16">
   presents
 </h1>
 
 
 {/* <h1 className="text-xl sm:text-4xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-1">
+=======
+<h1 className="text-sm sm:text-xl font-extrabold leading-tight text-blue-800 text-center max-w-full mt-3 sm:mt-0 md:mt-7">
+  presents
+</h1>
+
+<h1 className="text-xl sm:text-4xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-1">
+>>>>>>> 5d322e8 (title update)
   DSU
 </h1> */}
 
