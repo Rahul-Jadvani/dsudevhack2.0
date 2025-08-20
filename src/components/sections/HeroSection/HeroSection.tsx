@@ -235,18 +235,21 @@ export const HeroSection = (_props: HeroSectionProps) => {
            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center mt-16 sm:mt-0">
   <div className="flex flex-col items-center max-w-full overflow-visible">
     <div className="flex flex-col items-center max-w-full overflow-hidden pt-12">
-    <div className="w-full flex justify-center md:justify-start absolute top-6 md:top-12 md:left-[-14px] pb-6 sm:pb-0 sm:p-2 max-w-[450px]">
+    <div className="w-full flex justify-center md:justify-start absolute top-8 md:top-2 md:-right-11 pb-6 sm:pb-0 sm:p-2 max-w-[500px]">
   <img
     src="/images/vultr1.png"
     alt="Vultr Logo"
     loading="lazy"
-    className="w-[85px] sm:w-24 md:w-40 object-contain -ml-2 sm:ml-0"
+    className="w-[90px] sm:w-28 md:w-56 object-contain -ml-2 sm:ml-0"
   />
 </div>
 
-<h1 className="text-sm sm:text-3xl font-extrabold leading-tight text-blue-800 text-center max-w-full mt-3 sm:mt-0">
-  PRESENTS
+
+
+<h1 className="text-sm sm:text-xl font-extrabold leading-tight text-blue-800 text-center max-w-full mt-3 sm:mt-0 md:mt-4">
+  presents
 </h1>
+
 
 
       <h1 className="text-xl sm:text-6xl font-extrabold leading-tight text-black text-center max-w-full">
