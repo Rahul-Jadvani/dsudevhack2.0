@@ -248,7 +248,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
   presents
 </h1>
 
-<h1 className="text-xl sm:text-3xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-2">
+<h1 className="text-xl sm:text-4xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-2">
   DSU
 </h1>
 
