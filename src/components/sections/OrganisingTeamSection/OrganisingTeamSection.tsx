@@ -124,6 +124,8 @@ const team = {
   marketingTeam: [
     { emoji: "📢", label: "Ahmad", role: "Marketing Team", instagram: "https://www.instagram.com/ahhmaddx_", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/ahmad.jpg" },
     { emoji: "📢", label: "Vivan", role: "Marketing Team", instagram: "https://www.instagram.com/vivan_rajiv_336?igsh=ZXJ2bWVnM24wM2g0", linkedin: "https://www.linkedin.com/in/vivan-rajiv-yenagimath-950b4a2b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/vivan_rajiv_336.jpg" },
+    { emoji: "📢", label: "Chinmayi Palled", role: "Content Creator", instagram: "https://www.instagram.com/chinmayipalled/", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/chinmayi.jpeg" },
+
   ],
   sponsorshipTeam: [
     { emoji: "🤝", label: "Utkarsh Priye (Jha)", role: "Sponsorship Team", instagram: "https://www.instagram.com/codex_ukj", linkedin: "https://www.linkedin.com/in/utkarsh-priye-jha", imageSrc: "/images/members/Utkarsh.jpg" },
@@ -132,9 +134,7 @@ const team = {
     { emoji: "🤝", label: "Aastha", role: "Sponsorship Team", instagram: "https://www.instagram.com/aastha_6696", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/aastha.jpg" },
 
   ],
-  contentTeam: [
-    { emoji: "✍️", label: "Chinmayi Palled", role: "Content Team", instagram: "https://www.instagram.com/chinmayipalled/", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/chinmayi.jpeg" },
-  ]
+
 };
 
 // Social Media Icons Component
@@ -327,9 +327,7 @@ export const OrganisingTeamSection = () => {
                   <TabButton isActive={activeTab === 'sponsorship'} onClick={() => setActiveTab('sponsorship')} icon="">
                     Sponsorship Team
                   </TabButton>
-                  <TabButton isActive={activeTab === 'content'} onClick={() => setActiveTab('content')} icon="">
-                    Content Team
-                  </TabButton>
+
                 </div>
               </div>
 
