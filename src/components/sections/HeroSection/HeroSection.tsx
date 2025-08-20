@@ -235,7 +235,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center mt-16 sm:mt-0">
   <div className="flex flex-col items-center max-w-full overflow-visible">
     <div className="flex flex-col items-center max-w-full overflow-hidden pt-12">
-    <div className="w-full flex justify-center md:justify-start absolute top-8 md:top-9 md:-right-11 pb-6 sm:pb-0 sm:p-2 max-w-[500px]"> 
+    <div className="w-full flex justify-center md:justify-start absolute top-8 md:top-8 md:-right-11 pb-6 sm:pb-0 sm:p-2 max-w-[500px]"> 
   <img
     src="/images/vultr1.png"
     alt="Vultr Logo"
@@ -244,11 +244,11 @@ export const HeroSection = (_props: HeroSectionProps) => {
   />
 </div>
 
-<h1 className="text-sm sm:text-xl font-extrabold leading-tight text-blue-800 text-center max-w-full mt-3 sm:mt-0 md:mt-8">
+<h1 className="text-sm sm:text-xl font-extrabold leading-tight text-blue-800 text-center max-w-full mt-3 sm:mt-0 md:mt-7">
   presents
 </h1>
 
-<h1 className="text-xl sm:text-4xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-2">
+<h1 className="text-xl sm:text-4xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-1">
   DSU
 </h1>
 
