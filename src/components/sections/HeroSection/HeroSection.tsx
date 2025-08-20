@@ -253,11 +253,16 @@ export const HeroSection = (_props: HeroSectionProps) => {
   presents
 </h1>
 
+<<<<<<< HEAD
 
 {/* <h1 className="text-xl sm:text-4xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-1">
 =======
 <h1 className="text-sm sm:text-xl font-extrabold leading-tight text-blue-800 text-center max-w-full mt-3 sm:mt-0 md:mt-7">
   presents
+=======
+<h1 className="text-xl sm:text-4xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-2">
+  DSU
+>>>>>>> 53c580f (title update)
 </h1>
 
 <h1 className="text-xl sm:text-4xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-1">
