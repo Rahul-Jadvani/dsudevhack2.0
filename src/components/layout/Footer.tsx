@@ -89,7 +89,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="footer-department text-center lg:text-right">
-  <strong className="text-lg font-bold">Department of Computer Science</strong>
+  <strong className="text-lg font-bold">Organised by Department of Computer Science and Engineering </strong>
 </div>
 
 
