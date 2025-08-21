@@ -208,7 +208,6 @@ export const OrganisingTeamSection = () => {
       case 'design': return team.designTeam;
       case 'marketing': return team.marketingTeam;
       case 'sponsorship': return team.sponsorshipTeam;
-      case 'content': return team.contentTeam;
       default: return team.webTeam;
     }
   };
