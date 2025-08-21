@@ -244,7 +244,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
   />
 </div>
 
-<h1 className="text-sm sm:text-xl font-extrabold leading-tight text-blue-800 text-center max-w-full mt-4 sm:mt-4 md:mt-16">
+<h1 className="text-sm sm:text-xl font-extrabold leading-tight text-blue-800 text-center max-w-full mt-4 sm:mt-4 md:mt-16 lg:mt-20">
   presents
 </h1>
 {/* <h1 className="text-xl sm:text-4xl font-extrabold leading-tight text-black text-center max-w-full md:-mt-2">
@@ -252,7 +252,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 </h1> */}
 
 
-<h1 className="text-3xl sm:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full md:mt-2">
+<h1 className="text-3xl sm:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full md:mt-6">
  DSU DEVHACK 2.0
 </h1>
 
