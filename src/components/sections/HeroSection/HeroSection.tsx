@@ -235,12 +235,12 @@ export const HeroSection = (_props: HeroSectionProps) => {
            <div className="max-w-full w-full sm:w-[600px] sm:p-6 bg-transparent rounded-xl transition-transform duration-300 hover:-translate-y-1 relative overflow-visible flex flex-col items-center justify-center mt-16 sm:mt-0">
   <div className="flex flex-col items-center max-w-full overflow-visible">
     <div className="flex flex-col items-center max-w-full overflow-hidden pt-12">
-    <div className="w-full flex justify-center md:justify-start absolute top-2 right-6 md:-right-14 pb-6 sm:pb-0 sm:p-2 max-w-[700px]">
+    <div className="w-full flex justify-center md:justify-start absolute top-2 right-6 md:-right-16 pb-6 sm:pb-0 sm:p-2 max-w-[700px]">
   <img
     src="/images/vultr1.png"
     alt="Vultr Logo"
     loading="lazy"
-    className="w-[190px] sm:w-36 md:w-80 object-contain -ml-2 sm:ml-0"
+    className="w-[190px] sm:w-36 md:w-80 lg:w-96 object-contain -ml-2 sm:ml-0"
   />
 </div>
 
@@ -252,7 +252,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
 </h1> */}
 
 
-<h1 className="text-3xl sm:text-5xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full md:mt-2">
+<h1 className="text-3xl sm:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7B61FF] to-[#00D2FF] text-center max-w-full md:mt-2">
  DSU DEVHACK 2.0
 </h1>
 
