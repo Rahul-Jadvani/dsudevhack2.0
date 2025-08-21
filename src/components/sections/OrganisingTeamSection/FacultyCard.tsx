@@ -1,55 +1,41 @@
 import React from 'react';
 
-interface TeamMember {
-    name: string;
-    role: string;
-    contact?: string;
-    designation?: string;
-    instagram: string;
-    linkedin: string;
-    imageSrc?: string;
+interface FacultyMember {
+  imageSrc: string;
+  name: string;
+  designation: string;
 }
 
 interface FacultyCardProps {
-    member: TeamMember;
-    cardIndex?: number;
+  faculty: FacultyMember;
+  index: number;
 }
 
-const FacultyCard: React.FC<FacultyCardProps> = ({ member, cardIndex = 0 }) => {
-    // Function to determine color class based on card index (6 different colors)
-    const getColorClass = (index: number) => {
-        const colors = [
-            'bg-card-blue',      // Faculty Coordinator
-            'bg-card-purple',    // Student Coordinator 1
-            'bg-card-cyan',      // Student Coordinator 2
-            'bg-card-yellow',    // Student Coordinator 3
-            'bg-card-orange',    // Web Team Head
-            'bg-card-pink'       // Marketing & Cultural Head
-        ];
-        return colors[index % colors.length];
-    };
-
-    return (
-        <div className="relative w-full h-[300px] rounded-[1.6em] overflow-hidden shadow-lg">
-            {/* Background Image */}
-            <div 
-                className={`absolute inset-0 z-0 bg-cover bg-center bg-no-repeat ${member.imageSrc ? '' : getColorClass(cardIndex)}`}
-                style={member.imageSrc ? { backgroundImage: `url('${member.imageSrc}')` } : {}}
-            />
-
-            
-
-            {/* Member Info - Always Visible */}
-            <div className="absolute bottom-4 left-4 z-20">
-                <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg max-w-xs min-w-[180px] w-fit border border-white/20 shadow-md">
-                    <h3 className="text-xl font-bold text-black mb-1">{member.name}</h3>
-                    <p className="text-base text-black mb-0.5">{member.role}</p>
-                    {member.contact && <p className="text-sm text-black">{member.contact}</p>}
-                    {member.designation && <p className="text-sm text-black">{member.designation}</p>}
-                </div>
-            </div>
-        </div>
-    );
+const FacultyCard: React.FC<FacultyCardProps> = ({ faculty, index }) => {
+  return (
+    <div 
+      className="faculty-card"
+      style={{
+        animationDelay: `${index * 0.1}s`
+      }}
+    >
+      <div className="faculty-image-container">
+        <img 
+          src={faculty.imageSrc} 
+          alt={faculty.name}
+          className="faculty-image"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f3f4f6'/%3E%3Ctext x='100' y='100' font-family='Arial, sans-serif' font-size='16' fill='%236b7280' text-anchor='middle' dy='.3em'%3EFaculty Member%3C/text%3E%3C/svg%3E";
+          }}
+        />
+      </div>
+      <div className="faculty-info">
+        <h3 className="faculty-name">{faculty.name}</h3>
+        <p className="faculty-designation">{faculty.designation}</p>
+      </div>
+    </div>
+  );
 };
 
 export default FacultyCard;

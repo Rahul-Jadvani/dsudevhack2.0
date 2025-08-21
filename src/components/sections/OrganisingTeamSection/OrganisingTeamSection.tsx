@@ -7,6 +7,7 @@ import "./OrganisingTeamSection.css";
 import AnimatedTeamCard from "./AnimatedTeamCard";
 import FacultyCard from "./FacultyCard";
 import PatronCard from "./PatronCard";
+
 const chief=[
   { 
     imageSrc : "/images/one.jpg", 
@@ -18,41 +19,40 @@ const chief=[
     name: "Dr. D. Premachandra Sagar", 
     designation: "Pro Chancellor, DSU" 
   },
+];
 
-]
-  const patrons = [
-   
-    { 
-      imageSrc: "/images/three.jpg", 
-      name: "Dr. B. S. Satyanarayana",   
-      designation: "Vice Chancellor, DSU" 
-    },
-    { 
-      imageSrc: "/images/four.jpg", 
-      name: "Prof. R Janardhan",    
-      designation: "Pro Vice Chancellor, DSU" 
-    },
-    { 
-      imageSrc: "/images/five.jpg", 
-      name: "Dr. Prakash S",   
-      designation: "Pro Vice Chancellor, DSU" 
-    },
-    { 
-      imageSrc: "/images/six.jpg", 
-      name: "Dr. C.Puttamadappa", 
-      designation: "Registrar, DSU" 
-    },
-    { 
-      imageSrc: "/images/seven.jpeg", 
-      name: "Dr.Udaya Kumar Reddy K.R", 
-      designation: "Professor & Dean-SoE" 
-    },
-    {
-      imageSrc: "/images/eight.jpg", 
-      name: "Dr. Girisha G S", 
-      designation: "Chairperson, CSE" 
-    }
-  ];
+const patrons = [
+  { 
+    imageSrc: "/images/three.jpg", 
+    name: "Dr. B. S. Satyanarayana",   
+    designation: "Vice Chancellor, DSU" 
+  },
+  { 
+    imageSrc: "/images/four.jpg", 
+    name: "Prof. R Janardhan",    
+    designation: "Pro Vice Chancellor, DSU" 
+  },
+  { 
+    imageSrc: "/images/five.jpg", 
+    name: "Dr. Prakash S",   
+    designation: "Pro Vice Chancellor, DSU" 
+  },
+  { 
+    imageSrc: "/images/six.jpg", 
+    name: "Dr. C.Puttamadappa", 
+    designation: "Registrar, DSU" 
+  },
+  { 
+    imageSrc: "/images/seven.jpeg", 
+    name: "Dr.Udaya Kumar Reddy K.R", 
+    designation: "Professor & Dean-SoE" 
+  },
+  {
+    imageSrc: "/images/eight.jpg", 
+    name: "Dr. Girisha G S", 
+    designation: "Chairperson, CSE" 
+  }
+];
 
 const team = {
   professorCoordinator: {
@@ -125,16 +125,13 @@ const team = {
     { emoji: "📢", label: "Ahmad", role: "Marketing Team", instagram: "https://www.instagram.com/ahhmaddx_", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/ahmad.jpg" },
     { emoji: "📢", label: "Vivan", role: "Marketing Team", instagram: "https://www.instagram.com/vivan_rajiv_336?igsh=ZXJ2bWVnM24wM2g0", linkedin: "https://www.linkedin.com/in/vivan-rajiv-yenagimath-950b4a2b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/vivan_rajiv_336.jpg" },
     { emoji: "📢", label: "Chinmayi Palled", role: "Content Creator", instagram: "https://www.instagram.com/chinmayipalled/", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/chinmayi.jpeg" },
-
   ],
   sponsorshipTeam: [
     { emoji: "🤝", label: "Utkarsh Priye (Jha)", role: "Sponsorship Team", instagram: "https://www.instagram.com/codex_ukj", linkedin: "https://www.linkedin.com/in/utkarsh-priye-jha", imageSrc: "/images/members/Utkarsh.jpg" },
     { emoji: "🤝", label: "Ritvik Vasundh", role: "Sponsorship Team", instagram: "https://www.instagram.com/ritvik.you/", linkedin: "https://www.linkedin.com/in/ritvikvasundh/", imageSrc: "/images/members/Ritvik.JPG" },
     { emoji: "🤝", label: "Trisha", role: "Sponsorship Team", instagram: "https://www.instagram.com/trishaaa.10.___", linkedin: "https://www.linkedin.com/feed/", imageSrc: "/images/members/Trisha.PNG" },
     { emoji: "🤝", label: "Aastha", role: "Sponsorship Team", instagram: "https://www.instagram.com/aastha_6696", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/aastha.jpg" },
-
   ],
-
 };
 
 // Social Media Icons Component
@@ -184,8 +181,8 @@ export const OrganisingTeamSection = () => {
   });
 
   // Tab state
-  const [activeTab, setActiveTab] = React.useState<'web' | 'design' | 'marketing' | 'sponsorship' | 'content'>('web');
-  const [currentView, setCurrentView] = React.useState<'team' | 'patrons'>('team');
+  const [activeTab, setActiveTab] = React.useState<'web' | 'design' | 'marketing' | 'sponsorship'>('web');
+  const [currentView, setCurrentView] = React.useState<'team' | 'faculty' | 'patrons'>('team');
 
   React.useEffect(() => {
     if (inView) {
@@ -235,6 +232,12 @@ export const OrganisingTeamSection = () => {
             className={`px-6 py-2 rounded-lg font-medium ${currentView === 'patrons' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
           >
             Patrons
+          </button>
+          <button
+            onClick={() => setCurrentView('faculty')}
+            className={`px-6 py-2 rounded-lg font-medium ${currentView === 'faculty' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+          >
+            Faculty
           </button>
         </div>
 
@@ -326,7 +329,6 @@ export const OrganisingTeamSection = () => {
                   <TabButton isActive={activeTab === 'sponsorship'} onClick={() => setActiveTab('sponsorship')} icon="">
                     Sponsorship Team
                   </TabButton>
-
                 </div>
               </div>
 
@@ -366,28 +368,78 @@ export const OrganisingTeamSection = () => {
               </motion.div>
             </div>
           </>
+        ) : currentView === 'faculty' ? (
+          <>
+            {/* Faculty Coordinator Section */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-center mb-8 organising-team-title">
+                Faculty Coordinator
+              </h3>
+              <div className="flex justify-center">
+                <FacultyCard 
+                  faculty={{
+                    imageSrc: team.professorCoordinator.imageSrc,
+                    name: team.professorCoordinator.name,
+                    designation: team.professorCoordinator.role + " - " + team.professorCoordinator.designation
+                  }} 
+                  index={0} 
+                />
+              </div>
+            </div>
+
+            {/* Organising Team Members Section */}
+            <div>
+              <h3 className="text-2xl font-bold text-center mb-8 organising-team-title">
+                Organising Team Members
+              </h3>
+              <div className="flex flex-wrap justify-center gap-8">
+                {[
+                  { name: "Dr. Meenakshi Malhotra", designation: "Associate Professor", imageSrc: "/images/Meenakshi.jpg" },
+                  { name: "Dr. Sivananda Reddy", designation: "Associate Professor", imageSrc: "/images/sivananda.jpg" },
+                  { name: "Prof. Bharath M B", designation: "Assistant Professor", imageSrc: "/images/BharathM.jpg" },
+                  { name: "Prof. Dharmendra D P", designation: "Assistant Professor", imageSrc: "/images/Dharmendra.jpg" },
+                  { name: "Dr. Kumar Dilip", designation: "Associate Professor", imageSrc: "/images/DrKumar.jpg" },
+                  { name: "Prof. Yashaswini H C", designation: "Assistant Professor", imageSrc: "/images/Yashaswini.jpg" },
+                  { name: "Dr. Shreekant Salotagi", designation: "Assistant Professor", imageSrc: "/images/Shreekant.jpg" },
+                  { name: "Dr. Naresh P", designation: "Assistant Professor", imageSrc: "" },
+                  { name: "Prof. Smriti Bharti", designation: "Assistant Professor", imageSrc: "/images/Smriti.jpg" },
+                  { name: "Prof. Shivani", designation: "Assistant Professor", imageSrc: "" },
+                  { name: "Dr Naitik ST", designation: "Assistant Professor", imageSrc: "/images/Naitik.jpg" }
+                ].map((faculty, i) => (
+                  <FacultyCard 
+                    key={i + 1}
+                    faculty={{
+                      imageSrc: faculty.imageSrc,
+                      name: faculty.name,
+                      designation: faculty.designation
+                    }} 
+                    index={i + 1} 
+                  />
+                ))}
+              </div>
+            </div>
+          </>
         ) : (
           <>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 organising-team-title" style={{ marginTop: '2.5rem' }}>
               Chief Patrons
             </h2>
 
-            <div className="flex flex-wrap justify-center gap-8 p-8  pb-0 ">
-      {chief.map((patron, index) => (
-        <PatronCard patron={patron} key={index} index={index} />
-      ))}
-    </div>
-    <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 organising-team-title" style={{ marginTop: '2.5rem' }}>
-               Patrons
+            <div className="flex flex-wrap justify-center gap-6 p-8 pb-0">
+              {chief.map((patron, index) => (
+                <PatronCard patron={patron} key={index} index={index} />
+              ))}
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 organising-team-title" style={{ marginTop: '2.5rem' }}>
+              Patrons
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-8">
-  {patrons.map((patron, index) => (
-    <PatronCard patron={patron} key={index} index={index} />
-  ))}
-</div>
-
-            
+            <div className="flex flex-wrap justify-center gap-6 p-8">
+              {patrons.map((patron, index) => (
+                <PatronCard patron={patron} key={index} index={index} />
+              ))}
+            </div>
           </>
         )}
       </div>

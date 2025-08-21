@@ -13,33 +13,29 @@ interface PatronCardProps {
 
 const PatronCard: React.FC<PatronCardProps> = ({ patron, index }) => {
   return (
-    <div className="flex flex-col items-center gap-1"> {/* Reduced gap between badge and card */}
-      {/* Designation Badge - Clean and Simple */}
-      <div className="px-4 py-1">
-  <span className="text-gray-800 text-lg font-semibold">
-    {patron.designation}
-  </span>
-</div>
-
-
-      {/* Tightly Fitted Image Card */}
+    <div className="patron-card-wrapper">
+      <div className="patron-designation-above">
+        {patron.designation}
+      </div>
       <div 
-        className="relative w-56 h-60 rounded-xl overflow-hidden group transition-all duration-500 hover:scale-[1.00] hover:shadow-xl bg-white"
-        style={{ transitionDelay: `${index * 100}ms` }}
+        className="patron-card"
+        style={{
+          animationDelay: `${index * 0.1}s`
+        }}
       >
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-110"
-          style={{ backgroundImage: `url('${patron.imageSrc}')` }}
-        />
-        
-        {/* Name Plate - Snug to bottom edge */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <div className="bg-white/70 px-4 py-2 mx-2 mb-2 rounded-lg shadow-sm">
-            <h3 className="text-gray-800 font-bold text-lg text-center">
-              {patron.name}
-            </h3>
-          </div>
+        <div className="patron-image-container">
+          <img 
+            src={patron.imageSrc} 
+            alt={patron.name}
+            className="patron-image"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f3f4f6'/%3E%3Ctext x='100' y='100' font-family='Arial, sans-serif' font-size='16' fill='%236b7280' text-anchor='middle' dy='.3em'%3EPatron%3C/text%3E%3C/svg%3E";
+            }}
+          />
+        </div>
+        <div className="patron-info">
+          <h3 className="patron-name">{patron.name}</h3>
         </div>
       </div>
     </div>
