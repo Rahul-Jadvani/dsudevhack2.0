@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './NewNavbar.css';
+import FlowingMenu from '../FlowingMenu';
 
 export const NewNavbar = () => {
   const MLHBadge = () => (
@@ -182,9 +183,16 @@ export const NewNavbar = () => {
               <span className="desktop-date-tag">&lt;/date&gt;</span>
             </div>
           </div>
-          
-           
+          <div className="desktop-flowing-menu w-full">
+            <div className="h-px bg-black w-full" />
+            <FlowingMenu />
+          </div>
         </div>
+        <div className="mobile-flowing-menu w-full">
+          <FlowingMenu />
+        </div>
+           
+        
        
       </header>
 

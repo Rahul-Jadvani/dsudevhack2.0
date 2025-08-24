@@ -329,10 +329,10 @@ export const HeroSection = (_props: HeroSectionProps) => {
   <div className="absolute left-0 top-0 h-full w-0 bg-[#000f1d] group-hover:w-full"></div>
 </a>
 </div> 
-*/}
+
 <span className="relative mx-auto flex w-full max-w-[180px] items-center justify-center rounded-none border-black bg-[#000f1d] px-3 py-2 text-sm font-medium text-[#f2f3f5] transition-none sm:max-w-[220px] sm:px-5 sm:py-3 sm:text-base group overflow-hidden z-[1] pr-[36px] sm:pr-[48px] -mt-6 sm:-mt-4">
   Entries Closed
-</span>
+</span> */}
 
 
 
