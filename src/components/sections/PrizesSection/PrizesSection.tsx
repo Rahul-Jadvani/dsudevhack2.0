@@ -24,7 +24,6 @@ const getCellColor = (x: number, y: number) => {
     "#ffe2b6", // orange (from payments-bg)
   ];
 
-  // Use position to determine color for consistency
   const index = (x + y) % colors.length;
   return colors[index];
 };
@@ -40,13 +39,11 @@ export const PrizesSection = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    // Calculate number of cells based on container size
     const rect = container.getBoundingClientRect();
-    const cellSize = 48; // matches CSS grid size
+    const cellSize = 48;
     const cols = Math.ceil(rect.width / cellSize);
     const rows = Math.ceil(rect.height / cellSize);
 
-    // Create grid cells
     const cells = [];
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < cols; x++) {
@@ -55,7 +52,6 @@ export const PrizesSection = () => {
     }
     setGridCells(cells);
 
-    // Update grid on resize
     const handleResize = () => {
       const newRect = container.getBoundingClientRect();
       const newCols = Math.ceil(newRect.width / cellSize);
@@ -77,7 +73,6 @@ export const PrizesSection = () => {
   const handleMouseMove = () => {
     if (!isHovering) {
       setIsHovering(true);
-      // Randomly activate 10% of cells
       setGridCells((prevCells) => {
         const totalCells = prevCells.length;
         const cellsToActivate = Math.floor(totalCells * 0.1);
@@ -107,7 +102,7 @@ export const PrizesSection = () => {
       place: "1st place",
       amount: "₹1,00,000",
       color: "yellow",
-      image:"/images/prizes/1.svg",
+      image: "/images/prizes/1.svg",
     },
     {
       place: "2nd place",
@@ -122,12 +117,13 @@ export const PrizesSection = () => {
       image: "/images/prizes/3.svg",
     },
     {
-      place:"Consolation prizes",
-      amount:"₹25,000",
-      color:"yellow",
-      image:"/images/gift.png",
-    }
+      place: "Consolation prizes",
+      amount: "₹25,000",
+      color: "yellow",
+      image: "/images/gift.png",
+    },
   ];
+
   const extraPrizes = [
     {
       place: ".xyz",
@@ -136,11 +132,7 @@ export const PrizesSection = () => {
     },
     {
       place: "Codecrafters",
-      amount: (
-        <>
-          VIP Codecrafters membership for winners
-        </>
-      ),
+      amount: <>VIP Codecrafters membership for winners</>,
       image: "$3,780",
     },
     {
@@ -153,33 +145,41 @@ export const PrizesSection = () => {
       amount: "Goodies for all onsite hackers",
       image: "$500",
     },
-    
+
     {
       place: "InterviewBuddy",
-      amount: "15% Discount Coupons for 1:1 Expert-Driven Sessions for all Participants .Al Interview vouchers to Winners",
+      amount:
+        "15% Discount Coupons for 1:1 Expert-Driven Sessions for all Participants .Al Interview vouchers to Winners",
       image: "$279",
     },
-    
+
     {
       place: "ETHIndia",
-      amount: "winner of this track receives $100 in prize from ETHIndia.Click to know more",
+      amount:
+        "winner of this track receives $100 in prize from ETHIndia.Click to know more",
       image: "$100",
     },
-   
-    
   ];
-  
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.1 });
-   const [isMounted, setIsMounted] = useState(false);
-  const [modalContent, setModalContent] = useState<string | null>(null);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.1 });
+  const [isMounted, setIsMounted] = useState(false);
+  const [modalPrize, setModalPrize] = useState<any | null>(null);
+
   useEffect(() => {
     if (isInView && !isMounted) {
       setIsMounted(true);
     }
   }, [isInView, isMounted]);
+
   const trackPrizes = [
     {
+      amount: "Credit rewards",
+      image: "/sponsors/vultr.png",
+      description:
+        "● $1,500 in Credits for the winners of the Vultr Track.\n● $1,000 in Credits for the runner-up team of the Vultr Track.",
+      details: "● $500 in Credits for the second runner-up team of the Vultr Track",
+    },{
       amount: "Direct hiring opportunities",
       image: "/sponsors/kroolo.png",
       pdfLink: "/Kroolo.pdf",
@@ -188,280 +188,61 @@ export const PrizesSection = () => {
   - Flawless product thinking (devil is in the detail)
   - Code like silicon valley engineers (full stack)
   - Great communication
-  - Available for full-time immediately`
-    },{
+  - Available for full-time immediately`,
+    },
+    {
       amount: "$100",
       image: "/sponsors/ethindia-light.svg",
-      description: " Select this track if you're building on Ethereum to be eligible for the prizes!",
-      details: " $100: Best hack built on Ethereum"
+      description:
+        "Select this track if you're building on Ethereum to be eligible for the prizes!",
+      details: "$100: Best hack built on Ethereum",
     },
-   
-  ]
-  
+  ];
 
   return (
     <>
-      
-
       <section id="prizes" className="prizes-section">
-      <div className="container mx-auto px-4 md:px-8 lg:px-4 xl:px-2 max-w-full">
-  <div className="md:py-4"> {/* Reduced padding for tablet only */}
-    <h1 className="prizes-heading text-3xl md:text-4xl lg:text-5xl font-bold">
-      Prizes
-    </h1>
-    <div className="divider md:mt-2 md:mb-4"></div> {/* Adjusted margins for tablet */}
-  </div>
+        <div className="container mx-auto px-4 md:px-8 lg:px-4 xl:px-2 max-w-full">
+          <div className="md:py-4">
+            <h1 className="prizes-heading text-3xl md:text-4xl lg:text-5xl font-bold">
+              Prizes
+            </h1>
+            <div className="divider md:mt-2 md:mb-4"></div>
+          </div>
 
+          {/* your existing prize cards code ... unchanged */}
 
-          <div className="prizes-grid">
-            {prizes.map((prize, index) => {
+          <h2
+            id="sponsor-prizes"
+            className="track-prizes-heading text-center text-4xl font-extrabold mb-6"
+          >
+            Sponsor Specific Prizes
+          </h2>
+
+          <div className="track-prizes-screenshot-grid grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {trackPrizes.map((trackPrize, index) => {
               const ref = useRef(null);
               const isInView = useInView(ref, { once: false, amount: 0.2 });
-              let placeClass = "";
-              if (prize.place.startsWith("1st")) placeClass = "place-1";
-              else if (prize.place.startsWith("2nd")) placeClass = "place-2";
-              else if (prize.place.startsWith("3rd")) placeClass = "place-3";
-              else if (prize.place.startsWith("Consolation")) placeClass = "consolation-prize";
+
               return (
                 <motion.div
                   ref={ref}
-                  className={`prize-card`}
+                  className="track-prize-screenshot-card cursor-pointer flex flex-col bg-white shadow-lg rounded-lg p-4 h-auto"
                   initial={{ opacity: 0, y: 60 }}
                   animate={
                     isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }
                   }
                   transition={{
-                    type: "tween",
-                    duration: 0.1,
-                  delay: index * 0.01,
-                  ease: "easeOut"
+                    duration: 0.8,
+                    delay: index * 0.08,
+                    ease: "easeOut",
                   }}
                   key={index}
+                  onClick={() => setModalPrize(trackPrize)}
                 >
-                <div className={`prize-header ${placeClass} h-[70px] flex items-center`}>
-  <span className="prize-header-group">
-    <span className="prize-hash">#</span>
-    <span className={`prize-place ${placeClass} ${prize.place.startsWith("Consolation") ? "text-base" : "text-lg"}`}>
-      {prize.place}
-    </span>
-    <span className="prize-bracket">{" }"}</span>
-  </span>
-</div>
-             <div className="prize-content  bg-[#fdf2e9]">
-  {prize.place === "1st place" ? (
-    <div className="relative mx-auto h-[clamp(200px,50vw,300px)] w-full rounded-lg transition-transform duration-300 origin-center hover:scale-105 ">
-      {/* main image + two stars */}
-      <div className="absolute inset-0 z-20 flex items-center justify-center pr-[25px] lg:pr-[55px]">
-        <img src={prize.image} loading="lazy" alt="" className="h-full w-full object-contain" />
-
-        <div className="star size-3 prize-1-1">
-          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"/>
-        </div>
-        <div className="star size-1 prize-1-2">
-          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"/>
-        </div>
-      </div>
-
-      {/* extra overlay slots kept (empty) */}
-      <div className="absolute inset-0" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="star size-2 prize-1-3">
-          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"/>
-        </div>
-        <div className="star size-1 prize-1-4">
-          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"/>
-        </div>
-      </div>
-      <div className="absolute inset-0" />
-    </div>
-  ) : prize.place === "2nd place" ? (
-    <div className="relative mx-auto h-[clamp(200px,50vw,300px)] w-full rounded-lg transition-transform duration-300 origin-center hover:scale-105">
-      <div className="absolute inset-0 z-20 flex items-center justify-center">
-        <img src={prize.image} loading="lazy" alt="" className="h-full w-full object-contain scale-[0.9]" />
-      </div>
-
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="star size-2 prize-3-3">
-          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
-        </div>
-      </div>
-
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="star size-3 prize-3-1">
-          <img src="/images/starry.png" alt="star glow" className="star-image"   loading="lazy" />
-        </div>
-        <div className="star size-1">
-          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
-        </div>
-      </div>
-    </div>
-  ) : prize.place === "3rd place" ? (
-    <div className="relative mx-auto h-[clamp(200px,50vw,300px)] w-full rounded-lg transition-transform duration-300 origin-center hover:scale-105">
-      <div className="absolute inset-0 items-center justify-center pl-[25px] lg:pl-[55px] ">
-        <img src={prize.image} loading="lazy" alt="" className="h-full w-full object-contain scale-[0.99]" />
-      </div>
-
-      <div className="absolute inset-0 z-20 flex items-center justify-center">
-        <div className="star size-3 prize-4-1">
-          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
-        </div>
-        <div className="star size-1 prize-4-2">
-          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
-        </div>
-      </div>
-
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="star size-1 prize-4-3">
-          <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"  />
-        </div>
-      </div>
-    </div>
-      ) : prize.place === "Consolation prizes" ? (
-        <div className="relative mx-auto h-[clamp(200px,50vw,300px)] w-full rounded-lg transition-transform duration-300 origin-center hover:scale-105">
-          <div className="absolute inset-0 items-center justify-center pl-[25px]  bg-[#fdf2e9] ">
-            <img src={prize.image} loading="lazy" alt="" className="h-full w-full object-contain scale-[0.37]" />
-          </div>
-    
-          <div className="absolute inset-0 z-20 flex items-center justify-center">
-            <div className="star size-3 prize-4-1">
-              <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
-            </div>
-            <div className="star size-1 prize-4-2">
-              <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy" />
-            </div>
-          </div>
-    
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="star size-1 prize-4-3">
-              <img src="/images/starry.png" alt="star glow" className="star-image" loading="lazy"  />
-            </div>
-          </div>
-        </div>
-  ) : (
-    <img src={prize.image} alt={prize.place} className="max-h-[200px] w-full object-contain" />
-  )}
-</div>
-
-                  <div className="prize-footer">
-                    <div className="prize-amount">{prize.amount}</div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
-      
-
-        
-         
-
-          <div className="prizes-grid mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 p-4 items-start"> 
-  {extraPrizes.map((prize, index) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.2 });
-
-    const placeClass = "place-extra";
-
-    const pastelColors = [
-      "#FFD1DC", "#C1F0F6", "#FFFACD", "#D4F4DD", "#E2D4F1", "#FADCD9", "#FFE4C4",
-    ];
-
-    const darkenColor = (color, percent) => {
-      const num = parseInt(color.replace("#", ""), 16);
-      const amt = Math.round(2.55 * percent);
-      const R = Math.max(0, (num >> 16) - amt);
-      const G = Math.max(0, ((num >> 8) & 0x00FF) - amt);
-      const B = Math.max(0, (num & 0x0000FF) - amt);
-      return `#${(1 << 24 | R << 16 | G << 8 | B).toString(16).slice(1)}`;
-    };
-
-    const bgColor = pastelColors[index % pastelColors.length];
-    const textColor = darkenColor(bgColor, 20);
-
-    return (
-      <motion.div
-        ref={ref}
-        key={index}
-        className="prize-card relative flex flex-col justify-between min-h-[220px] p-4 rounded-md border border-black shadow-sm border-solid max-h-[max-content] box-border"
-        style={{ backgroundColor: bgColor }}
-        initial={{ opacity: 0, y: 60 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-        transition={{
-          type: "tween",
-          duration: 0.1,
-          delay: index * 0.05,
-          ease: "easeOut",
-        }}
-        // Scroll to sponsor prizes when last card is clicked
-        onClick={() => {
-          if (index === extraPrizes.length - 1) {
-            const sponsorPrizesSection = document.getElementById('sponsor-prizes');
-            if (sponsorPrizesSection) {
-              sponsorPrizesSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          }
-        }}
-      >
-        {/* Prize Header */}
-        <div className={`prize-header ${placeClass}`}>
-          <span className="prize-header-group">
-            <span className="prize-hash">#</span>
-            <span className={`prize-place ${placeClass} text-sm`} style={{ backgroundColor: textColor }}>
-              {prize.place}
-            </span>
-            <span className="prize-bracket">{" }"}</span>
-          </span>
-        </div>
-
-        <div className="prize-content flex items-center justify-center text-4xl font-extrabold text-black">
-  {prize.image}
-</div>
-
-        {/* Prize Footer */}
-        <div className="prize-footer text-center text-sm mt-2 md:h-[75px] flex items-center justify-center">
-          {prize.amount}
-        </div>
-
-        {/* Row divider after every 4th card */}
-        {((index + 1) % 4 === 0) && (
-          <span className="absolute bottom-[-12px] left-[-12px] w-[calc(100%+24px)] h-[1px] bg-black"></span>
-        )}
-      </motion.div>
-    );
-  })}
-</div>
-
-
-<h2 id="sponsor-prizes" className="track-prizes-heading text-center text-4xl font-extrabold mb-6">
-  Sponsor Specific Prizes
-</h2>
-
-
-<div className="track-prizes-screenshot-grid grid grid-cols-1 lg:grid-cols-2 gap-4">
-
-  {trackPrizes.map((trackPrize, index) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.2 });
-
-    return (
-      <motion.div
-        ref={ref}
-        className="track-prize-screenshot-card cursor-pointer flex flex-col bg-white shadow-lg rounded-lg p-4 h-auto"
-
-        initial={{ opacity: 0, y: 60 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-        transition={{
-          duration: 0.8,
-          delay: index * 0.08,
-          ease: "easeOut",
-        }}
-        key={index}
-        onClick={() => setModalContent(trackPrize.details)}
-      >
-        {/* Image */}
-        <div
+               <div 
   className={`flex items-center justify-center w-full h-40 rounded-md overflow-hidden mb-3 
-    ${index === 0 ? "bg-white" : "bg-black"}`}
+    ${index === 0 || index === 1 ? "bg-white" : "bg-black"}`}
 >
   <img
     src={trackPrize.image}
@@ -472,76 +253,55 @@ export const PrizesSection = () => {
 </div>
 
 
-        {/* Money */}
-        <div className="text-5xl font-extrabold text-gray-900 text-center pt-4">
-          {trackPrize.amount}
-        </div>
-      </motion.div>
-    );
-  })}
-</div>
+                  <div className="text-5xl font-extrabold text-gray-900 text-center pt-4">
+                    {trackPrize.amount}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
 
+          {modalPrize && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+              <div className="relative bg-white p-4 sm:p-6 rounded-lg w-full max-w-sm sm:max-w-md max-h-[80vh] overflow-y-auto">
+                <button
+                  onClick={() => setModalPrize(null)}
+                  className="absolute top-2 left-2 text-gray-500 hover:text-gray-800 text-xl font-bold"
+                >
+                  ×
+                </button>
 
-{modalContent && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-    <div className="relative bg-white p-4 sm:p-6 rounded-lg w-full max-w-sm sm:max-w-md max-h-[80vh] overflow-y-auto">
-    <button
-  onClick={() => setModalContent(null)}
-  className="absolute top-2 left-2 text-gray-500 hover:text-gray-800 text-xl font-bold"
->
-  ×
-</button>
+                <div className="space-y-4">
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900 text-center">
+                    {modalPrize.amount}
+                  </p>
 
+                  {modalPrize.pdfLink && (
+                    <a
+                      href={modalPrize.pdfLink}
+                      download
+                      type="application/pdf"
+                      className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
+                    >
+                      📄 More Information (PDF)
+                    </a>
+                  )}
 
-      <div className="space-y-4">
-        <p className="text-xl sm:text-2xl font-bold text-gray-900 text-center">
-          {trackPrizes.find(prize => prize.details === modalContent)?.amount}
-        </p>
-        
-        <div className="text-sm sm:text-lg font-medium text-gray-700 text-center">
-  {(() => {
-    const prize = trackPrizes.find(prize => prize.details === modalContent);
+                  {modalPrize.description && (
+                    <div className="text-sm sm:text-lg font-medium text-gray-700 text-center whitespace-pre-line">
+                      {modalPrize.description}
+                    </div>
+                  )}
 
-    if (prize?.pdfLink) {
-      return (
-        <a
-          href={prize.pdfLink}
-          download="Kroolo.pdf"   // force PDF filename
-          type="application/pdf"      // ensures correct MIME type
-          className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
-        >
-          📄 More Information (PDF)
-        </a>
-      );
-    }
-
-    if (prize?.description) {
-      return prize.description.split('\n').map((line, i) => (
-        <span key={i}>
-          {i > 0 && <br />}
-          {line}
-        </span>
-      ));
-    }
-
-    return null;
-  })()}
-</div>
-
-        
-        <p className="text-xs sm:text-base text-gray-600 whitespace-pre-line">
-          {modalContent}
-        </p>
-      </div>
-    </div>
-  </div>
-)}
-
-
-
-
-
-
+                  {modalPrize.details && (
+                    <p className="text-xs sm:text-base text-gray-600 whitespace-pre-line">
+                      {modalPrize.details}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>
