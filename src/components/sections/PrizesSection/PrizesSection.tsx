@@ -174,7 +174,7 @@ export const PrizesSection = () => {
 
   const trackPrizes = [
     {
-      amount: "Credit rewards",
+      amount: "3000$ worth Rewards!",
       image: "/sponsors/vultr.png",
       description:
         "● $1,500 in Credits for the winners of the Vultr Track.\n● $1,000 in Credits for the runner-up team of the Vultr Track.",
