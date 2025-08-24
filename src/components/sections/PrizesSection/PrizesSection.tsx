@@ -287,17 +287,14 @@ export const PrizesSection = () => {
                     </a>
                   )}
 
-                  {modalPrize.description && (
-                    <div className="text-sm sm:text-lg font-medium text-gray-700 text-center whitespace-pre-line">
-                      {modalPrize.description}
-                    </div>
-                  )}
+{(modalPrize.description || modalPrize.details) && (
+  <div className="text-sm sm:text-lg font-medium text-gray-700 text-left whitespace-pre-line space-y-2">
+    {modalPrize.description && <p>{modalPrize.description}</p>}
+    {modalPrize.details && <p>{modalPrize.details}</p>}
+  </div>
+)}
 
-                  {modalPrize.details && (
-                    <p className="text-xs sm:text-base text-gray-600 whitespace-pre-line">
-                      {modalPrize.details}
-                    </p>
-                  )}
+
                 </div>
               </div>
             </div>
