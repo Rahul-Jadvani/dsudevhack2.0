@@ -396,7 +396,7 @@ export const OrganisingTeamSection = () => {
                 {[
                   { name: "Dr. Meenakshi Malhotra", designation: "Associate Professor", imageSrc: "/images/Meenakshi.jpg" },
                   { name: "Dr. Sivananda Reddy", designation: "Associate Professor", imageSrc: "/images/sivananda.jpg" },
-                  { name: "Prof. Bharath M B", designation: "Assistant Professor", imageSrc: "/images/BharathM.jpg" },
+                  { name: "Prof. Bharath M B", designation: "Assistant Professor", imageSrc: "/images/bharatm.jpg" },
                   { name: "Prof. Dharmendra D P", designation: "Assistant Professor", imageSrc: "/images/Dharmendra.jpg" },
                   { name: "Dr. Kumar Dilip", designation: "Associate Professor", imageSrc: "/images/DrKumar.jpg" },
                   { name: "Prof. Yashaswini H C", designation: "Assistant Professor", imageSrc: "/images/Yashaswini.jpg" },
