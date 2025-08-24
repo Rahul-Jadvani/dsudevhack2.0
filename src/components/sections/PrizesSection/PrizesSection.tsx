@@ -469,9 +469,11 @@ export const PrizesSection = () => {
   />
 </div>
 
-
 <div className="text-2xl sm:text-4xl font-extrabold text-gray-900 text-center pt-4">
-  {trackPrize.amount}
+  {trackPrize.amount} 
+  <span className="block text-sm font-normal text-gray-700">
+    (Click here to know more)
+  </span>
 </div>
 
                 </motion.div>
