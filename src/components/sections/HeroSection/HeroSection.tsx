@@ -214,7 +214,7 @@ export const HeroSection = (_props: HeroSectionProps) => {
           <div className="min-h-[70vh] sm:min-h-[90vh] flex flex-col justify-center py-6 scroll-snap-start relative">
             {/* University info for desktop */}
             {!isMobile && (
-              <div className="hidden absolute top-1 left-12 max-w-[450px] md:flex items-center sm:p-2">
+              <div className="hidden absolute top-3 left-12 max-w-[450px] md:flex items-center sm:p-2">
               <img
                 src="/images/dsu.png"
                 alt="DSU Logo"
