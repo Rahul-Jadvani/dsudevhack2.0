@@ -436,50 +436,68 @@ export const PrizesSection = () => {
             Sponsor Specific Prizes
           </h2>
 
-          <div className="track-prizes-screenshot-grid grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {trackPrizes.map((trackPrize, index) => {
-              const ref = useRef(null);
-              const isInView = useInView(ref, { once: false, amount: 0.2 });
+  <div className="track-prizes-screenshot-grid grid grid-cols-1 lg:grid-cols-2 gap-4">
+  {trackPrizes.map((trackPrize, index) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false, amount: 0.2 });
 
-              return (
-                <motion.div
-                  ref={ref}
-                  className="track-prize-screenshot-card cursor-pointer flex flex-col bg-white shadow-lg rounded-lg p-4 h-auto"
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }
-                  }
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.08,
-                    ease: "easeOut",
-                  }}
-                  key={index}
-                  onClick={() => setModalPrize(trackPrize)}
-                >
-               <div 
-  className={`flex items-center justify-center w-full h-40 rounded-md overflow-hidden mb-3 
-    ${index === 0 || index === 1 ? "bg-white" : "bg-black"}`}
->
-  <img
-    src={trackPrize.image}
-    alt={trackPrize.amount}
-    loading="lazy"
-    className="max-h-full max-w-full object-contain"
-  />
-</div>
+    // pastel gradient backgrounds
+    const overlayGradients = [
+      "linear-gradient(135deg, #bbf7d0, #86efac)",   // pastel green gradient
+      "linear-gradient(135deg, #ffe7c7, #ffd7a8)",   // pastel peach/cream gradient
+      "linear-gradient(135deg, #a5f3fc, #67e8f9)",   // pastel cyan gradient
+      "linear-gradient(135deg, #fef9c3, #fde68a)"    // pastel yellow gradient
+    ];
+    const overlayGradient = overlayGradients[index % overlayGradients.length];
 
-<div className="text-2xl sm:text-4xl font-extrabold text-gray-900 text-center pt-4">
-  {trackPrize.amount} 
-  <span className="block text-sm font-normal text-gray-700">
-    (Click here to know more)
-  </span>
-</div>
+    return (
+      <motion.div
+        ref={ref}
+        className="track-prize-screenshot-card cursor-pointer flex flex-col bg-white shadow-lg rounded-lg p-4 h-auto"
+        initial={{ opacity: 0, y: 60 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+        transition={{
+          duration: 0.8,
+          delay: index * 0.08,
+          ease: "easeOut",
+        }}
+        key={index}
+        onClick={() => setModalPrize(trackPrize)}
+      >
+        {/* Image container with hover gradient overlay */}
+        <div
+          className={`relative group flex items-center justify-center w-full h-40 rounded-md overflow-hidden mb-3 
+            ${index === 0 || index === 1 ? "bg-white" : "bg-black"}`}
+        >
+          {/* Image fades out on hover */}
+          <img
+            src={trackPrize.image}
+            alt={trackPrize.amount}
+            loading="lazy"
+            className="max-h-full max-w-full object-contain transition-opacity duration-300 group-hover:opacity-0"
+          />
 
-                </motion.div>
-              );
-            })}
+          {/* Gradient overlay fades in */}
+          <div
+            className="absolute inset-0 flex items-center justify-center text-black text-2xl sm:text-2xl lg:text-3xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{ background: overlayGradient }}
+          >
+            Click here to know more
           </div>
+        </div>
+
+        {/* Amount text */}
+        <div className="text-2xl sm:text-4xl font-extrabold text-gray-900 text-center pt-4">
+          {trackPrize.amount}
+          {/* Bracket text only on mobile/tablet */}
+          <span className="block text-base sm:text-lg font-normal text-gray-700 lg:hidden">
+            (Click here to know more)
+          </span>
+        </div>
+      </motion.div>
+    );
+  })}
+</div>
 
           {modalPrize && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
