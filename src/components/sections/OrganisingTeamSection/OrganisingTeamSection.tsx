@@ -123,7 +123,7 @@ const team = {
   ],
   marketingTeam: [
     { emoji: "📢", label: "Ahmad", role: "Marketing Team", instagram: "https://www.instagram.com/ahhmaddx_", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/ahmad.jpg" },
-    { emoji: "📢", label: "Vivan", role: "Marketing Team", instagram: "https://www.instagram.com/vivan_rajiv_336?igsh=ZXJ2bWVnM24wM2g0", linkedin: "https://www.linkedin.com/in/vivan-rajiv-yenagimath-950b4a2b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/vivan_rajiv_336.jpg" },
+    { emoji: "📢", label: "Nishchal Gowda R", role: "Marketing Team", instagram: "https://www.instagram.com/i.amgod.666?igsh=MXQzMG5xcG55aGRqcg==", linkedin: "https://www.linkedin.com/in/nishchal-gowda-r-b54208311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", imageSrc: "/images/members/Nishchal.jpg" },
     { emoji: "📢", label: "Chinmayi Palled", role: "Content Creator", instagram: "https://www.instagram.com/chinmayipalled/", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/chinmayi.jpeg" },
   ],
   sponsorshipTeam: [
