@@ -58,14 +58,14 @@ const timelineData = [
     content: (
       <div>
         <div className="font-semibold text-base md:text-2xl text-white mb-1">And the Chosen Ones Are... Meet the Finalists!
-       {/*  <br></br><a
-        href="/images/idea_template.pptx"
+        <br></br><a
+        href="/images/DSU DevHack 2.pdf"
         download
         className="inline-flex items-center gap-2 bg-[#ef4444] hover:bg-[#dc2626] text-white font-medium py-1 px-3 md:py-1.5 md:px-4 rounded transition duration-200 text-xs md:text-base mb-3"
       >
         <FiDownload className="text-lg" />
         Shortlisted teams
-      </a> */}
+      </a>
         </div>
         <div className="text-sm md:text-lg text-blue-500">1st September 2025
         </div>

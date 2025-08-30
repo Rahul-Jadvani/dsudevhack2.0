@@ -1,7 +1,7 @@
 function FlowingMenu() {
-  const firstSentence = 'Shortlisted teams are announced.';
+  const firstSentence = 'Shortlisted teams have been announced. Applications are now closed.';
   const secondSentence =
-    'Click here for more info!';
+    'We’re looking forward to the shortlisted teams joining us on 12th & 13th September!';
 
   const TARGET_TEXT = 'Ideas Lock In — Let the Best Concepts Win!';
 
