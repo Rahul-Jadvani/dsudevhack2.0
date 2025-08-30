@@ -116,7 +116,6 @@ const team = {
   ],
   designTeam: [
     { emoji: "🎨", label: "Mayur", role: "Design Team", instagram: "https://instagram.com/your_instagram_handle", linkedin: "https://www.linkedin.com/in/mayur-adithya-2324aa31b", imageSrc: "/images/members/Mayur.jpg" },
-    { emoji: "🎨", label: "Niharika Trivedi", role: "Design Team", instagram: "https://www.instagram.com/niharika__trivedi?igsh=MTVpNWQxemdjcjNxYw%3D%3D&utm_source=qr", linkedin: "https://www.linkedin.com/", imageSrc: "/images/members/Niharika.jpg" },
     { emoji: "🎨", label: "Moulya B", role: "Design Team", instagram: "https://www.instagram.com/prasad.moulya", linkedin: "https://in.linkedin.com/in/moulya-b-9435632b5", imageSrc: "/images/members/moulya.jpg" },
     { emoji: "🎨", label: "Moulika K", role: "Design Team", instagram: "https://www.instagram.com/moulika.k.reddy", linkedin: "https://www.linkedin.com/in/moulika-k-ba8694335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/moulika.jpg" },
     { emoji: "🎨", label: "Raksha U ", role: "Design Team", instagram: "https://www.instagram.com/_.raksha.umashankar._", linkedin: "https://www.linkedin.com/in/moulika-k-ba8694335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/raksha.JPG" },
@@ -125,6 +124,7 @@ const team = {
     { emoji: "📢", label: "Ahmad", role: "Marketing Team", instagram: "https://www.instagram.com/ahhmaddx_", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/ahmad.jpg" },
     { emoji: "📢", label: "Nishchal Gowda R", role: "Marketing Team", instagram: "https://www.instagram.com/i.amgod.666?igsh=MXQzMG5xcG55aGRqcg==", linkedin: "https://www.linkedin.com/in/nishchal-gowda-r-b54208311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", imageSrc: "/images/members/Nishchal.jpg" },
     { emoji: "📢", label: "Chinmayi Palled", role: "Content Creator", instagram: "https://www.instagram.com/chinmayipalled/", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/chinmayi.jpeg" },
+    { emoji: "🎨", label: "Niharika Trivedi", role: "Marketing Team", instagram: "https://www.instagram.com/niharika__trivedi?igsh=MTVpNWQxemdjcjNxYw%3D%3D&utm_source=qr", linkedin: "https://www.linkedin.com/", imageSrc: "/images/members/Niharika.jpg" },
   ],
   sponsorshipTeam: [
     { emoji: "🤝", label: "Utkarsh Priye (Jha)", role: "Sponsorship Team", instagram: "https://www.instagram.com/codex_ukj", linkedin: "https://www.linkedin.com/in/utkarsh-priye-jha", imageSrc: "/images/members/Utkarsh.jpg" },
@@ -403,7 +403,7 @@ export const OrganisingTeamSection = () => {
                   { name: "Dr. Shreekant Salotagi", designation: "Assistant Professor", imageSrc: "/images/Shreekant.jpg" },
                   { name: "Dr. Naresh P", designation: "Assistant Professor", imageSrc: "" },
                   { name: "Prof. Smriti Bharti", designation: "Assistant Professor", imageSrc: "/images/Smriti.jpg" },
-                  { name: "Prof. Shivani", designation: "Assistant Professor", imageSrc: "" },
+                  { name: "Prof. Shivani", designation: "Assistant Professor", imageSrc: "/images/Shivani.jpg" },
                   { name: "Dr Naitik ST", designation: "Assistant Professor", imageSrc: "/images/Naitik.jpg" }
                 ].map((faculty, i) => (
                   <FacultyCard 
