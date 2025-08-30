@@ -1,8 +1,10 @@
 function FlowingMenu() {
-  const firstSentence = 'Shortlisted teams have been announced. Applications are now closed.';
+  const firstSentence =
+    'Shortlisted teams have been announced.';
   const secondSentence =
-    'We’re looking forward to the shortlisted teams joining us on 12th & 13th September!';
-
+    'Applications are now closed.';
+  const thirdSentence =
+    'We’re looking forward to the shortlisted teams joining us on 12th & 13th September!';
   const TARGET_TEXT = 'Ideas Lock In — Let the Best Concepts Win!';
 
   const normalize = (s) =>
@@ -42,12 +44,13 @@ function FlowingMenu() {
 
   const repeatedMarqueeContent = Array.from({ length: 4 }).map((_, idx) => (
     <span
-      key={idx}
-      className="uppercase font-semibold text-[2.2vh] leading-[1.2] px-[2vw] whitespace-nowrap flex-shrink-0"
-    >
-      <span className="text-white">{firstSentence}</span>
-      <span className="text-[rgb(162_203_252)] ml-2">{secondSentence}</span>
-    </span>
+    key={idx}
+    className="uppercase font-semibold text-[2.2vh] leading-[1.2] px-[2vw] whitespace-nowrap flex-shrink-0"
+  >
+    <span className="text-[#ef4444]">{firstSentence}</span>
+    <span className="text-white ml-2">{secondSentence}</span>
+    <span className="text-[rgb(162_203_252)] ml-2">{thirdSentence}</span>
+  </span>
   ));
 
   return (

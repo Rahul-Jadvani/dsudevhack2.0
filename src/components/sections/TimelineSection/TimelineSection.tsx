@@ -19,14 +19,14 @@ const timelineData = [
       <div>
         <div className="font-semibold text-base md:text-2xl text-white mb-1">
           Time to Spark Ideas — Let the Innovation Flow!
-          <a
+          {/* <a
             href="/images/idea_template.pptx"
             download
             className="inline-flex items-center gap-2 bg-[#d6336c] hover:bg-[#c2255c] text-white font-medium py-1 px-3 md:py-1.5 md:px-4 rounded transition duration-200 text-xs md:text-base"
           >
             <FiDownload className="text-lg" />
             Download Template
-          </a>
+          </a> */}
         </div>
         <div id="idea-submissions-start"></div>
         <div className="text-sm md:text-lg text-blue-500 mb-3">25th JUL 2025</div>
@@ -59,7 +59,7 @@ const timelineData = [
       <div>
         <div className="font-semibold text-base md:text-2xl text-white mb-1">And the Chosen Ones Are... Meet the Finalists!
         <br></br><a
-        href="/images/DSU DevHack 2.pdf"
+        href="/images/Shortlisted.pdf"
         download
         className="inline-flex items-center gap-2 bg-[#ef4444] hover:bg-[#dc2626] text-white font-medium py-1 px-3 md:py-1.5 md:px-4 rounded transition duration-200 text-xs md:text-base mb-3"
       >
