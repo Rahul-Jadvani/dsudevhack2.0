@@ -159,11 +159,7 @@ export const NewNavbar = () => {
                   Register
                 </Link>
               </div>
-              <div className="mobile-menu-row">
-              <Link to="/" className="mobile-menu-item" onClick={() => handleNavClick({ path: '/', sectionId: 'timeline' })}>
-                  Download Template
-                </Link>
-              </div>
+            
             </div>
           </>
         )}
