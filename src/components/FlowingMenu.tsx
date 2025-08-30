@@ -47,7 +47,7 @@ function FlowingMenu() {
     key={idx}
     className="uppercase font-semibold text-[2.2vh] leading-[1.2] px-[2vw] whitespace-nowrap flex-shrink-0"
   >
-    <span className="text-[#ef4444]">{firstSentence}</span>
+    <span className="text-[#f87171] ml-2">{firstSentence}</span>
     <span className="text-white ml-2">{secondSentence}</span>
     <span className="text-[rgb(162_203_252)] ml-2">{thirdSentence}</span>
   </span>
