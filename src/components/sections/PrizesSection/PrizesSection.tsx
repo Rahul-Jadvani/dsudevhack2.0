@@ -192,6 +192,21 @@ export const PrizesSection = () => {
   - Available for full-time immediately`,
     },
     {
+      amount: "Best Use of Gemini API",
+      image: "/sponsors/gemini.png",
+   description: "Push the limits of AI with Google Gemini! \n Build chatbots, summarize research, or generate creative content using the Gemini API.",
+   details: "💡 Best team using Gemini API wins exciting Google Swags \n🚀 <a href='https://mlh.link/gemini-quickstart' target='_blank' style='color:blue; text-decoration:underline;'>Build with Gemini ➡</a>"
+    },
+    {
+      amount: "Best Use of MongoDB Atlas",
+      image: "/sponsors/mongo.png",
+      description: "Build your hack with MongoDB Atlas — the modern cloud database with free credits,\n forever-free tier, and resources from MongoDB University.",
+      details: "🏆 Best use of MongoDB Atlas wins an M5GO IoT Starter Kit for each team member \n🚀 <a href='https://mlh.link/mongodb' target='_blank' style='color:blue; text-decoration:underline;'>Learn more ➡</a>"}, {
+      amount: "Best Use of Auth0",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png",
+      description: "Secure your app with Auth0 — enable social sign-in, MFA, and passwordless login out of the box. Free for up to 7,000 users with unlimited logins.",
+      details: "🏆 Best use of Auth0 wins Wireless Headphones for each team member \n 🎧 <a href='https://mlh.link/auth0-signup' target='_blank' style='color:blue; text-decoration:underline;'>Sign up here ➡</a>"},
+    {
       amount: "$100",
       image: "/sponsors/ethindia-light.svg",
       description:
@@ -468,7 +483,7 @@ export const PrizesSection = () => {
         {/* Image container */}
         <div
           className={`relative flex items-center justify-center w-full h-40 rounded-md overflow-hidden mb-3 
-            ${index === 0 || index === 1 ? "bg-white" : "bg-black"} group`}
+            ${index === 0 || index === 1 || index ===4 || index === 3 ? "bg-white" : "bg-black"} group`}
         >
           {/* Image (always visible on mobile, fades on hover in desktop) */}
           <img
@@ -530,7 +545,11 @@ export const PrizesSection = () => {
 {(modalPrize.description || modalPrize.details) && (
   <div className="text-sm sm:text-lg font-medium text-gray-700 text-left whitespace-pre-line space-y-2">
     {modalPrize.description && <p>{modalPrize.description}</p>}
-    {modalPrize.details && <p>{modalPrize.details}</p>}
+    {modalPrize.details && (
+  <p
+    dangerouslySetInnerHTML={{ __html: modalPrize.details }}
+  />
+)}
   </div>
 )}
 
