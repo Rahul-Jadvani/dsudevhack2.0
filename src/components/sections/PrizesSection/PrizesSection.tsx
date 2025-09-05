@@ -174,12 +174,12 @@ export const PrizesSection = () => {
 
   const trackPrizes = [
     {
-      amount: "3000$ worth Rewards!",
+      amount: "3000$ worth Rewards!",
       image: "/sponsors/vultr.png",
       pdfLink: "/Vultr.pdf",
       description:
-        "● $1,500 in Vultr cloud credits. for the winners of the Vultr Track.\n● $1,000 in Vultr cloud credits. for the runner-up team of the Vultr Track.",
-      details: "● $500 in Vultr cloud credits. for the second runner-up team of the Vultr Track",
+        "● $1,500 in Vultr cloud credits  – 1st Place .\n● $1000 in Vultr cloud credits  – Runner Up.",
+      details: "● $500 in Vultr cloud credits  – Second Runner Up.",
     },{
       amount: "Direct hiring opportunities",
       image: "/sponsors/kroolo.png",
