@@ -178,8 +178,8 @@ export const PrizesSection = () => {
       image: "/sponsors/vultr.png",
       pdfLink: "/Vultr.pdf",
       description:
-        "● $1,500 in Vultr cloud credits  – 1st Place .\n● $1000 in Vultr cloud credits  – Runner Up.",
-      details: "● $500 in Vultr cloud credits  – Second Runner Up.",
+        "● $1,500 in Vultr cloud credits  – 1st Place in Vultr track .\n● $1000 in Vultr cloud credits  – Runner Up in Vultr track.",
+      details: "● $500 in Vultr cloud credits  – Second Runner Up in Vultr track.",
     },{
       amount: "Direct hiring opportunities",
       image: "/sponsors/kroolo.png",
