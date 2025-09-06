@@ -177,9 +177,9 @@ export const PrizesSection = () => {
       amount: "3000$ worth Rewards!",
       image: "/sponsors/vultr.png",
       pdfLink: "/Vultr.pdf",
-      description:"The Vultr Cloud Deployment Track challenges participants to build and host their entire project infrastructure on the Vultr Cloud Platform, leveraging its high-performance compute, networking, and storage services.",
-      details: "VULTR winners will be selected from Vultr Track participants:\n● $1,500 in Vultr cloud credits  – 1st Place in Vultr track .\n● $1000 in Vultr cloud credits  – Runner Up in Vultr track.\n● $500 in Vultr cloud credits  – Second Runner Up in Vultr track.",
-    },{
+      description: "The Vultr Cloud Deployment Track challenges teams to build and host their entire project on the Vultr Cloud Platform using its high-performance compute, networking, and storage services.",
+      details: "🏆 Vultr Track Prizes:\n● $1,500 in Vultr cloud credits – 1st Place\n● $1,000 in Vultr cloud credits – Runner Up\n● $500 in Vultr cloud credits – 2nd Runner Up"
+      },{
       amount: "Direct hiring opportunities",
       image: "/sponsors/kroolo.png",
       pdfLink: "/Kroolo.pdf",
