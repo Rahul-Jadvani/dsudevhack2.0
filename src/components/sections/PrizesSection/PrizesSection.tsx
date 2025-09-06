@@ -177,9 +177,8 @@ export const PrizesSection = () => {
       amount: "3000$ worth Rewards!",
       image: "/sponsors/vultr.png",
       pdfLink: "/Vultr.pdf",
-      description:
-        "● $1,500 in Vultr cloud credits  – 1st Place in Vultr track .\n● $1000 in Vultr cloud credits  – Runner Up in Vultr track.",
-      details: "● $500 in Vultr cloud credits  – Second Runner Up in Vultr track.",
+      description:"The Vultr Cloud Deployment Track challenges participants to build and host their entire project infrastructure on the Vultr Cloud Platform, leveraging its high-performance compute, networking, and storage services.",
+      details: "VULTR winners will be selected from Vultr Track participants:\n● $1,500 in Vultr cloud credits  – 1st Place in Vultr track .\n● $1000 in Vultr cloud credits  – Runner Up in Vultr track.\n● $500 in Vultr cloud credits  – Second Runner Up in Vultr track.",
     },{
       amount: "Direct hiring opportunities",
       image: "/sponsors/kroolo.png",
@@ -200,12 +199,14 @@ export const PrizesSection = () => {
     {
       amount: "Best Use of MongoDB Atlas",
       image: "/sponsors/mongo.png",
-      description: "Build your hack with MongoDB Atlas — the modern cloud database with free credits,\n forever-free tier, and resources from MongoDB University.",
-      details: "🏆 Best use of MongoDB Atlas wins an M5GO IoT Starter Kit for each team member \n🚀 <a href='https://mlh.link/mongodb' target='_blank' style='color:blue; text-decoration:underline;'>Learn more ➡</a>"}, {
+      description: "Build with MongoDB Atlas — the modern cloud database made accessible in the cloud!\n Get started with a <a href='https://mlh.link/mongodb' target='_blank' style='color:blue; text-decoration:underline;'>$50 credit for students</a>, try the <a href='https://mlh.link/mongodb-free' target='_blank' style='color:blue; text-decoration:underline;'>Atlas free forever tier</a> (no card required), and learn from <a href='https://mlh.link/mongodb-university' target='_blank' style='color:blue; text-decoration:underline;'>MongoDB University</a>.",
+      details: "🏆 Best use of MongoDB Atlas wins an M5GO IoT Starter Kit for each team member 🚀"
+      }, {
       amount: "Best Use of Auth0",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png",
-      description: "Secure your app with Auth0 — enable social sign-in, MFA, and passwordless login out of the box. Free for up to 7,000 users with unlimited logins.",
-      details: "🏆 Best use of Auth0 wins Wireless Headphones for each team member \n 🎧 <a href='https://mlh.link/auth0-signup' target='_blank' style='color:blue; text-decoration:underline;'>Sign up here ➡</a>"},
+      description: "Secure your app with Auth0 — enable social sign-in, MFA, and passwordless login out of the box. \nFree to try with no card required, supporting up to 7,000 active users and unlimited logins. \n<a href='https://mlh.link/auth0-signup' target='_blank' style='color:blue; text-decoration:underline;'>Create your account</a> and explore the <a href='https://mlh.link/auth0-docs' target='_blank' style='color:blue; text-decoration:underline;'>Auth0 APIs</a> to get started.",
+      details: "🏆 Best use of Auth0 wins Wireless Headphones for each team member 🎧"
+      },
     {
       amount: "$100",
       image: "/sponsors/ethindia-light.svg",
@@ -544,7 +545,7 @@ export const PrizesSection = () => {
 
 {(modalPrize.description || modalPrize.details) && (
   <div className="text-sm sm:text-lg font-medium text-gray-700 text-left whitespace-pre-line space-y-2">
-    {modalPrize.description && <p>{modalPrize.description}</p>}
+    {modalPrize.description && <p dangerouslySetInnerHTML={{ __html: modalPrize.description }} />}
     {modalPrize.details && (
   <p
     dangerouslySetInnerHTML={{ __html: modalPrize.details }}
