@@ -7,6 +7,7 @@ import "./OrganisingTeamSection.css";
 import AnimatedTeamCard from "./AnimatedTeamCard";
 import FacultyCard from "./FacultyCard";
 import PatronCard from "./PatronCard";
+import JudgeCard from "./JudgeCard";
 
 const chief=[
   { 
@@ -51,6 +52,93 @@ const patrons = [
     imageSrc: "/images/eight.jpg", 
     name: "Dr. Girisha G S", 
     designation: "Chairperson, CSE" 
+  }
+];
+
+const judges = [
+  {
+    name: "Kumar Satyarth",
+    designation: "Smart Contract Developer",
+    company: "Puffer Finance",
+    bio: "Kumar is a blockchain engineer with 4 years' experience, winning Smart India Hackathon twice and UNESCO India Africa Hackathon. He has delivered 20+ talks and workshops, mentoring developers in blockchain, smart contracts, and decentralized technologies.",
+    linkedin: "https://www.linkedin.com/in/ksatyarth2/"
+  },
+  {
+    name: "Ashish Shukla",
+    designation: "Lead Software Engineer",
+    company: "EPAM Systems",
+    bio: "Ashish has 6+ years of experience building Data and AI solutions across healthcare, networking, and oil & gas. At EPAM Systems, he architects scalable systems and mentors teams, combining technical expertise with real-world innovation.",
+    linkedin: "https://www.linkedin.com/in/ash2shukla"
+  },
+  {
+    name: "Tarun Agarwal",
+    designation: "SDE 2",
+    company: "Gocumet India Pvt Ltd",
+    bio: "Tarun, an SDE 2 at Gocomet, has won Smart India Hackathon as both participant and mentor. Passionate about problem-solving, he actively mentors developers and builds impactful, scalable systems for real-world challenges.",
+    linkedin: "https://www.linkedin.com/in/ertarunagarwal/"
+  },
+  {
+    name: "Devraj Kumar",
+    designation: "SDE 2",
+    company: "Oracle",
+    bio: "Devraj, a Senior Engineer at Oracle, has won multiple hackathons including UNESCO India Africa. A former Google DSC Lead and startup engineer, he combines innovation, mentorship, and technical depth to drive impactful solutions.",
+    linkedin: "https://www.linkedin.com/in/iamdevraj/"
+  },
+  {
+    name: "Mritunjai Rai",
+    designation: "SDET",
+    company: "Gojek",
+    bio: "Mritunjai, with 15+ years in software, specializes in development, automation, and testing. At Gojek, he focuses on quality engineering and scalable systems, ensuring high performance and efficiency in fast-paced tech environments.",
+    linkedin: "https://www.linkedin.com/in/mritunjai/"
+  },
+  {
+    name: "Abhay Singh",
+    designation: "SDE 2",
+    company: "Outcomes",
+    bio: "Abhay, SDE 2 at Outcomes, is a LinkedIn Top Voice 2024 with 80K+ followers. Ex-Juspay, he also sets problems for Turing and HackerEarth, inspiring developers through coding, technical content, and mentorship.",
+    linkedin: "https://www.linkedin.com/in/abhay-singh-a64b89192/"
+  },
+  {
+    name: "Velagandula Sai Teja",
+    designation: "Blockchain Lead",
+    company: "SimplyFi Softech",
+    bio: "Sai Teja, Blockchain Lead at SimplyFi, has 5+ years’ experience in pharma, banking, and government projects. Skilled in blockchain, ML, and Kubernetes, he builds scalable applications solving real-world problems.",
+    linkedin: "https://www.linkedin.com/in/saitejavelagandula?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+  },
+  {
+    name: "Prashant Srivastava",
+    designation: "Blockchain Developer",
+    company: "SimplyFi Softech",
+    bio: "Prashant is a blockchain developer skilled in Golang, Hyperledger Fabric, and Corda. He builds secure, scalable backend systems and enterprise blockchain applications, delivering reliable and innovative solutions ",
+    linkedin: "https://www.linkedin.com/in/prashantsrivsatava?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  
+  },
+  {
+    name: "Abhay Chauhan",
+    designation: "SDE 2",
+    company: "DomePe",
+    bio: "Abhay, SDE 2 at DomePe, specializes in fintech, AI, and SaaS products. He has built crypto payment engines and workflow platforms, bringing bold ideas and deep problem-solving skills to impactful projects.",
+    linkedin: "https://www.linkedin.com/in/theabhaychauhan/"
+  },
+  {
+    name: "Ayush Gupta",
+    designation: "Software Engineer ||| ",
+    company: "Walmart Global Tech",
+    bio: "Ayush, Software Engineer III at Walmart, has 5 years of experience. Winner of Smart India Hackathon 2019, he is passionate about competitive programming, problem-solving, and applying technology to drive impactful innovations.",
+    linkedin: "https://www.linkedin.com/in/ayug98"
+  },
+  {
+    name: "Upasana Singh",
+    designation: "SDE 2",
+    company: "Flipkart",
+    bio: "Upasana, SDE 2 at Flipkart, is also a DSA educator and creator of CodeWithUpasana with 50K+ followers. Founder of Banzara, she inspires learners through technical content and career-focused initiatives.",
+    linkedin: "https://www.linkedin.com/in/upasana-singh1216?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+  },
+  {
+    name: "Vishwachi",
+    designation: "QA Lead",
+    company: "IBM ISL",
+    bio: "Vishwachi, QA Lead at IBM, has 8+ years’ experience in automation. Skilled in Kubernetes, DevOps, and CI/CD, she integrates efficiency and precision into enterprise products like IBM Cloud Pak for Data.",
+    linkedin: "https://www.linkedin.com/in/vishwachi-choudhary-6463b7155"
   }
 ];
 
@@ -118,11 +206,11 @@ const team = {
     { emoji: "🎨", label: "Mayur", role: "Design Team", instagram: "https://instagram.com/your_instagram_handle", linkedin: "https://www.linkedin.com/in/mayur-adithya-2324aa31b", imageSrc: "/images/members/Mayur.jpg" },
     { emoji: "🎨", label: "Moulya B", role: "Design Team", instagram: "https://www.instagram.com/prasad.moulya", linkedin: "https://in.linkedin.com/in/moulya-b-9435632b5", imageSrc: "/images/members/moulya.jpg" },
     { emoji: "🎨", label: "Moulika K", role: "Design Team", instagram: "https://www.instagram.com/moulika.k.reddy", linkedin: "https://www.linkedin.com/in/moulika-k-ba8694335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/moulika.jpg" },
-    { emoji: "🎨", label: "Raksha U ", role: "Design Team", instagram: "https://www.instagram.com/_.raksha.umashankar._", linkedin: "https://www.linkedin.com/in/moulika-k-ba8694335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", imageSrc: "/images/members/raksha.JPG" },
+    { emoji: "🎨", label: "Raksha U ", role: "Design Team", instagram: "https://www.instagram.com/_.raksha.umashankar._", linkedin: "http://www.linkedin.com/in/rakshaumashankar", imageSrc: "/images/members/raksha.JPG" },
   ],
   marketingTeam: [
     { emoji: "📢", label: "Ahmad", role: "Marketing Team", instagram: "https://www.instagram.com/ahhmaddx_", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/ahmad.jpg" },
-    { emoji: "📢", label: "Nishchal Gowda R", role: "Marketing Team", instagram: "https://www.instagram.com/i.amgod.666?igsh=MXQzMG5xcG55aGRqcg==", linkedin: "https://www.linkedin.com/in/nishchal-gowda-r-b54208311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", imageSrc: "/images/members/Nishchal.jpg" },
+    { emoji: "📢", label: "Nishchal Gowda R", role: "Content Creator", instagram: "https://www.instagram.com/i.amgod.666?igsh=MXQzMG5xcG55aGRqcg==", linkedin: "https://www.linkedin.com/in/nishchal-gowda-r-b54208311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", imageSrc: "/images/members/Nishchal.jpg" },
     { emoji: "📢", label: "Chinmayi Palled", role: "Content Creator", instagram: "https://www.instagram.com/chinmayipalled/", linkedin: "https://linkedin.com/in/your_linkedin_handle", imageSrc: "/images/members/chinmayi.jpeg" },
     { emoji: "🎨", label: "Niharika Trivedi", role: "Marketing Team", instagram: "https://www.instagram.com/niharika__trivedi?igsh=MTVpNWQxemdjcjNxYw%3D%3D&utm_source=qr", linkedin: "https://www.linkedin.com/", imageSrc: "/images/members/Niharika.jpg" },
   ],
@@ -182,7 +270,7 @@ export const OrganisingTeamSection = () => {
 
   // Tab state
   const [activeTab, setActiveTab] = React.useState<'web' | 'design' | 'marketing' | 'sponsorship'>('web');
-  const [currentView, setCurrentView] = React.useState<'team' | 'faculty' | 'patrons'>('team');
+  const [currentView, setCurrentView] = React.useState<'team' | 'faculty' | 'patrons' | 'judges'>('team');
 
   React.useEffect(() => {
     if (inView) {
@@ -238,6 +326,12 @@ export const OrganisingTeamSection = () => {
             className={`px-6 py-2 rounded-lg font-medium ${currentView === 'faculty' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
           >
             Faculty
+          </button>
+          <button
+            onClick={() => setCurrentView('judges')}
+            className={`px-6 py-2 rounded-lg font-medium ${currentView === 'judges' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+          >
+            Judges
           </button>
         </div>
 
@@ -417,6 +511,22 @@ export const OrganisingTeamSection = () => {
                   />
                 ))}
               </div>
+            </div>
+          </>
+        ) : currentView === 'judges' ? (
+          <>
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 organising-team-title" style={{ marginTop: '2.5rem' }}>
+              Judges
+            </h2>
+            
+            <div className="flex flex-wrap justify-center gap-8 p-8">
+              {judges.map((judge, index) => (
+                <JudgeCard 
+                  key={index}
+                  judge={judge} 
+                  index={index} 
+                />
+              ))}
             </div>
           </>
         ) : (
