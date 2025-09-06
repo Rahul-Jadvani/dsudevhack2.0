@@ -27,6 +27,7 @@ const PatronCard: React.FC<PatronCardProps> = ({ patron, index }) => {
           <img 
             src={patron.imageSrc} 
             alt={patron.name}
+            loading='lazy'
             className="patron-image"
             onError={(e) => {
               const target = e.target as HTMLImageElement;

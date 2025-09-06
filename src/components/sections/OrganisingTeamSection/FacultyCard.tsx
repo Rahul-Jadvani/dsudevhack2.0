@@ -23,6 +23,7 @@ const FacultyCard: React.FC<FacultyCardProps> = ({ faculty, index }) => {
         <img 
           src={faculty.imageSrc} 
           alt={faculty.name}
+          loading='lazy'
           className="faculty-image"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
