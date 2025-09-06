@@ -18,7 +18,7 @@ interface JudgeCardProps {
 const getJudgeImageUrl = (judgeName: string): string => {
   const imageMap: { [key: string]: string } = {
     'Kumar Satyarth': '/images/judges/kumar.jpeg',
-    'Ashish Shukla': '/images/judges/ashish.jpeg', // Note: This image might not exist
+    'Ashish Shukla': '/images/judges/ashish.jpg', 
     'Tarun Agarwal': '/images/judges/tarun.jpeg',
     'Devraj Kumar': '/images/judges/devraj.jpeg',
     'Mritunjai Rai': '/images/judges/Mritunjai.jpeg',
@@ -31,7 +31,7 @@ const getJudgeImageUrl = (judgeName: string): string => {
     'Vishwachi Choudhary': '/images/judges/vishwachi.jpeg'
   };
   
-  return imageMap[judgeName] || '/images/judges/kumar.jpeg'; // Default fallback
+  return imageMap[judgeName] || '/images/judges/kumar.jpeg'; 
 };
 
 const JudgeCard: React.FC<JudgeCardProps> = ({ judge, index }) => {
@@ -46,6 +46,7 @@ const JudgeCard: React.FC<JudgeCardProps> = ({ judge, index }) => {
         <img 
           src={getJudgeImageUrl(judge.name)}
           alt={judge.name}
+          loading='lazy'
           className="judge-image"
           onError={(e) => {
             // Fallback to initials if image fails to load

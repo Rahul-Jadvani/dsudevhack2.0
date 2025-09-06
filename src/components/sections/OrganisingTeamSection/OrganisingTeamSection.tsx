@@ -72,8 +72,8 @@ const judges = [
   },
   {
     name: "Tarun Agarwal",
-    designation: "SDE 2",
-    company: "Gocumet India Pvt Ltd",
+    designation: "SDE 3",
+    company: "Go High Level Pvt. Ltd.",
     bio: "Tarun, an SDE 2 at Gocomet, has won Smart India Hackathon as both participant and mentor. Passionate about problem-solving, he actively mentors developers and builds impactful, scalable systems for real-world challenges.",
     linkedin: "https://www.linkedin.com/in/ertarunagarwal/"
   },
@@ -488,17 +488,17 @@ export const OrganisingTeamSection = () => {
               </h3>
               <div className="flex flex-wrap justify-center gap-8">
                 {[
-                  { name: "Dr. Meenakshi Malhotra", designation: "Associate Professor", imageSrc: "/images/Meenakshi.jpg" },
-                  { name: "Dr. Sivananda Reddy", designation: "Associate Professor", imageSrc: "/images/sivananda.jpg" },
-                  { name: "Prof. Bharath M B", designation: "Assistant Professor", imageSrc: "/images/bharatm.jpg" },
-                  { name: "Prof. Dharmendra D P", designation: "Assistant Professor", imageSrc: "/images/Dharmendra.jpg" },
-                  { name: "Dr. Kumar Dilip", designation: "Associate Professor", imageSrc: "/images/DrKumar.jpg" },
-                  { name: "Prof. Yashaswini H C", designation: "Assistant Professor", imageSrc: "/images/Yashaswini.jpg" },
-                  { name: "Dr. Shreekant Salotagi", designation: "Assistant Professor", imageSrc: "/images/Shreekant.jpg" },
-                  { name: "Dr. Naresh P", designation: "Assistant Professor", imageSrc: "" },
-                  { name: "Prof. Smriti Bharti", designation: "Assistant Professor", imageSrc: "/images/Smriti.jpg" },
-                  { name: "Prof. Shivani", designation: "Assistant Professor", imageSrc: "/images/Shivani.jpg" },
-                  { name: "Dr Naitik ST", designation: "Assistant Professor", imageSrc: "/images/Naitik.jpg" }
+                  { name: "Dr. Meenakshi Malhotra", designation: "Associate Professor", imageSrc: "/images/Meenakshi.jpg" ,loading:"lazy"},
+                  { name: "Dr. Sivananda Reddy", designation: "Associate Professor", imageSrc: "/images/sivananda.jpg" ,loading:"lazy"},
+                  { name: "Prof. Bharath M B", designation: "Assistant Professor", imageSrc: "/images/bharatm.jpg" ,loading:"lazy"},
+                  { name: "Prof. Dharmendra D P", designation: "Assistant Professor", imageSrc: "/images/Dharmendra.jpg" ,loading:"lazy"},
+                  { name: "Dr. Kumar Dilip", designation: "Associate Professor", imageSrc: "/images/DrKumar.jpg" ,loading:"lazy"},
+                  { name: "Prof. Yashaswini H C", designation: "Assistant Professor", imageSrc: "/images/Yashaswini.jpg" ,loading:"lazy"},
+                  { name: "Dr. Shreekant Salotagi", designation: "Assistant Professor", imageSrc: "/images/Shreekant.jpg" ,loading:"lazy"},
+                  { name: "Dr. Naresh P", designation: "Assistant Professor", imageSrc: "" ,loading:"lazy"},
+                  { name: "Prof. Smriti Bharti", designation: "Assistant Professor", imageSrc: "/images/Smriti.jpg" ,loading:"lazy"},
+                  { name: "Prof. Shivani", designation: "Assistant Professor", imageSrc: "/images/Shivani.jpg" ,loading:"lazy"},
+                  { name: "Dr Naitik ST", designation: "Assistant Professor", imageSrc: "/images/Naitik.jpg" ,loading:"lazy"}
                 ].map((faculty, i) => (
                   <FacultyCard 
                     key={i + 1}
