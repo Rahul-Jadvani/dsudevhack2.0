@@ -134,10 +134,10 @@ const judges = [
     linkedin: "https://www.linkedin.com/in/upasana-singh1216?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
   },
   {
-    name: "Vishwachi",
+    name: "Vishwachi Choudhary",
     designation: "QA Lead",
     company: "IBM ISL",
-    bio: "Vishwachi, QA Lead at IBM, has 8+ years’ experience in automation. Skilled in Kubernetes, DevOps, and CI/CD, she integrates efficiency and precision into enterprise products like IBM Cloud Pak for Data.",
+    bio: "Vishwachi, QA Lead at IBM, has 8+ years' experience in automation. Skilled in Kubernetes, DevOps, and CI/CD, she integrates efficiency and precision into enterprise products like IBM Cloud Pak for Data.",
     linkedin: "https://www.linkedin.com/in/vishwachi-choudhary-6463b7155"
   }
 ];
@@ -519,7 +519,7 @@ export const OrganisingTeamSection = () => {
               Judges
             </h2>
             
-            <div className="flex flex-wrap justify-center gap-8 p-8">
+            <div className="flex flex-wrap justify-center gap-8">
               {judges.map((judge, index) => (
                 <JudgeCard 
                   key={index}
