@@ -54,6 +54,7 @@ export const NewSponsorsSection = () => {
     {
       name: "Airia",
       logoUrl: "/sponsors/Airia.jpg",
+      website:"https://airia.com"
     }
   ];
 
