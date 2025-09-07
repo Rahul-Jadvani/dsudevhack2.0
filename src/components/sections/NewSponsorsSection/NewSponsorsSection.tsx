@@ -50,6 +50,10 @@ export const NewSponsorsSection = () => {
     {
       name: "GitHub",
       logoUrl: "/sponsors/GitHub Logos/PNG/GitHub_Lockup_Light.png",
+    },
+    {
+      name: "Airia",
+      logoUrl: "/sponsors/Airia.jpg",
     }
   ];
 
