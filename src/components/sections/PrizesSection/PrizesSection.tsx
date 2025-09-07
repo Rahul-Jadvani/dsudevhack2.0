@@ -200,12 +200,12 @@ export const PrizesSection = () => {
       amount: "Best Use of MongoDB Atlas",
       image: "/sponsors/mongo.png",
       description: "Build with MongoDB Atlas — the modern cloud database made accessible in the cloud!\n Get started with a <a href='https://mlh.link/mongodb' target='_blank' style='color:blue; text-decoration:underline;'>$50 credit for students</a>, try the <a href='https://mlh.link/mongodb-free' target='_blank' style='color:blue; text-decoration:underline;'>Atlas free forever tier</a> (no card required), and learn from <a href='https://mlh.link/mongodb-university' target='_blank' style='color:blue; text-decoration:underline;'>MongoDB University</a>.",
-      details: "🏆 Best use of MongoDB Atlas wins an M5GO IoT Starter Kit for each team member 🚀"
+      details: "🏆 Best use of MongoDB Atlas wins an M5GO IoT Starter Kit for each team member \n🚀 <a href='https://mlh.link/mongodb' target='_blank' style='color:blue; text-decoration:underline;'>Build with MongoDB ➡</a>"
       }, {
       amount: "Best Use of Auth0",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png",
       description: "Secure your app with Auth0 — enable social sign-in, MFA, and passwordless login out of the box. \nFree to try with no card required, supporting up to 7,000 active users and unlimited logins. \n<a href='https://mlh.link/auth0-signup' target='_blank' style='color:blue; text-decoration:underline;'>Create your account</a> and explore the <a href='https://mlh.link/auth0-docs' target='_blank' style='color:blue; text-decoration:underline;'>Auth0 APIs</a> to get started.",
-      details: "🏆 Best use of Auth0 wins Wireless Headphones for each team member 🎧"
+      details: "🏆 Best use of Auth0 wins Wireless Headphones for each team member 🎧\n🚀 <a href='https://mlh.link/auth0-MLH-guides' target='_blank' style='color:blue; text-decoration:underline;'>Build with Auth0 ➡</a>"
       },
     {
       amount: "$100",
