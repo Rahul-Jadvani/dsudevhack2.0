@@ -75,6 +75,11 @@ export const NewSponsorsSection = () => {
       name: "Trae",
       logoUrl: "/sponsors/trae.png",
       website: "https://www.trae.ai/"
+    },
+    {
+      name: "n8n",
+      logoUrl:"/sponsors/n8n.jpg",
+      website:"https://n8n.io/"
     }
   ];
 

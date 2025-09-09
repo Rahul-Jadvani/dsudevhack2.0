@@ -159,6 +159,11 @@ export const PrizesSection = () => {
         "winner of this track receives $100 in prize from ETHIndia.Click to know more",
       image: "$100",
     },
+    {
+      place:"n8n",
+      amount: "1 Month of n8n Pro to All Onsite Hackers and 1 year n8n Cloud Pro for all Winners",
+      image: "$17,801",
+    }
   ];
 
   const ref = useRef(null);
