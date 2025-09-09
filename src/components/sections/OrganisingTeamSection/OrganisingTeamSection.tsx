@@ -495,10 +495,10 @@ export const OrganisingTeamSection = () => {
                   { name: "Dr. Kumar Dilip", designation: "Associate Professor", imageSrc: "/images/DrKumar.jpg" },
                   { name: "Prof. Yashaswini H C", designation: "Assistant Professor", imageSrc: "/images/Yashaswini.jpg" },
                   { name: "Dr. Shreekant Salotagi", designation: "Assistant Professor", imageSrc: "/images/Shreekant.jpg" },
-                  { name: "Dr. Naresh P", designation: "Assistant Professor", imageSrc: "" },
                   { name: "Prof. Smriti Bharti", designation: "Assistant Professor", imageSrc: "/images/Smriti.jpg" },
                   { name: "Prof. Shivani", designation: "Assistant Professor", imageSrc: "/images/Shivani.jpg" },
-                  { name: "Dr Naitik ST", designation: "Assistant Professor", imageSrc: "/images/Naitik.jpg" }
+                  { name: "Dr Naitik ST", designation: "Assistant Professor", imageSrc: "/images/Naitik.jpg" },
+                  { name: "Dr. Pannangi Naresh", designation: "Assistant Professor", imageSrc: "/images/DrPannangi.jpg" },
                 ].map((faculty, i) => (
                   <FacultyCard 
                     key={i + 1}

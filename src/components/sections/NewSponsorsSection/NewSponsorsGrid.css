@@ -612,3 +612,9 @@ New Sponsors Grid CSS based on the reference image
   align-items: center;
   z-index: 2;
 }
+/* Make only Airia logo bigger */
+.airia-big img {
+  max-width: 320px;   /* adjust size */
+  height: auto;
+  object-fit: contain;
+}

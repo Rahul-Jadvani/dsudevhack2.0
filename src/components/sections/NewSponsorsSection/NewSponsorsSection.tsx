@@ -53,7 +53,7 @@ export const NewSponsorsSection = () => {
     },
     {
       name: "Airia",
-      logoUrl: "/sponsors/Airia.jpg",
+      logoUrl: "/sponsors/airia.png",
       website:"https://airia.com"
     }
   ];
@@ -78,7 +78,7 @@ export const NewSponsorsSection = () => {
     },
     {
       name: "n8n",
-      logoUrl:"/sponsors/n8n.jpg",
+      logoUrl:"/sponsors/n8n1.png",
       website:"https://n8n.io/"
     }
   ];
@@ -316,18 +316,24 @@ export const NewSponsorsSection = () => {
                       <span data-sponsor-el="arrow">[↗]</span>
                     </div>
                     <div className="sponsor-logo-wrapper">
-                      <img
-                        src={sponsor.logoUrl}
-                        alt={getAltText(sponsor.name)}
-                        loading="lazy"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src =
-                            "https://via.placeholder.com/200?text=" +
-                            sponsor.name;
-                        }}
-                      />
-                    </div>
+  <img
+    src={sponsor.logoUrl}
+    alt={getAltText(sponsor.name)}
+    loading="lazy"
+    className={
+      sponsor.name === "Airia"
+        ? "!w-72 !h-auto !max-h-none" // reduced size (18rem)
+        : ""
+    }
+    onError={(e) => {
+      const target = e.target as HTMLImageElement;
+      target.src =
+        "https://via.placeholder.com/200?text=" + sponsor.name;
+    }}
+  />
+</div>
+
+
                   </Wrapper>
                 );
               })
@@ -378,18 +384,24 @@ export const NewSponsorsSection = () => {
                     <span data-sponsor-el="arrow">[↗]</span>
                   </div>
                   <div className="sponsor-logo-wrapper">
-                    <img
-                      src={sponsor.logoUrl}
-                      alt={getAltText(sponsor.name)}
-                      loading="lazy"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src =
-                          "https://via.placeholder.com/150?text=" +
-                          sponsor.name;
-                      }}
-                    />
-                  </div>
+  <img
+    src={sponsor.logoUrl}
+    alt={getAltText(sponsor.name)}
+    loading="lazy"
+    className={
+      sponsor.name === "n8n"
+        ? "!w-[600px] !h-[400px] !max-h-none !max-w-none object-contain" // reduced size (18rem)
+        : ""
+    }
+    onError={(e) => {
+      const target = e.target as HTMLImageElement;
+      target.src =
+        "https://via.placeholder.com/200?text=" + sponsor.name;
+    }}
+  />
+</div>
+
+
                 </Wrapper>
               );
             })}
