@@ -212,6 +212,12 @@ export const PrizesSection = () => {
       description: "Secure your app with Auth0 — enable social sign-in, MFA, and passwordless login out of the box. \nFree to try with no card required, supporting up to 7,000 active users and unlimited logins. \n<a href='https://mlh.link/auth0-signup' target='_blank' style='color:blue; text-decoration:underline;'>Create your account</a> and explore the <a href='https://mlh.link/auth0-docs' target='_blank' style='color:blue; text-decoration:underline;'>Auth0 APIs</a> to get started.",
       details: "🏆 Best use of Auth0 wins Wireless Headphones for each team member 🎧\n🚀 <a href='https://mlh.link/auth0-MLH-guides' target='_blank' style='color:blue; text-decoration:underline;'>Build with Auth0 ➡</a>"
       },
+      {
+        amount: "Best Use of airia",
+        image: "/sponsors/airia.png",
+        description: "Winner of the track - $500",
+        details: "1 year's Professional Subscription and $100 model credit for any participant who submits an agent to our community. This will have to be approved by our team based solving a broad problem in industry"
+      },
     {
       amount: "$100",
       image: "/sponsors/ethindia-light.svg",
