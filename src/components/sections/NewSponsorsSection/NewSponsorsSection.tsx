@@ -55,6 +55,11 @@ export const NewSponsorsSection = () => {
       name: "Airia",
       logoUrl: "/sponsors/airia.png",
       website:"https://airia.com"
+    },
+    {
+      name: "n8n",
+      logoUrl:"/sponsors/n8n1.png",
+      website:"https://n8n.io/"
     }
   ];
 
@@ -75,11 +80,6 @@ export const NewSponsorsSection = () => {
       name: "Trae",
       logoUrl: "/sponsors/trae.png",
       website: "https://www.trae.ai/"
-    },
-    {
-      name: "n8n",
-      logoUrl:"/sponsors/n8n1.png",
-      website:"https://n8n.io/"
     }
   ];
 
@@ -315,14 +315,16 @@ export const NewSponsorsSection = () => {
                       <span data-sponsor-el="left">{sponsor.name}</span>
                       <span data-sponsor-el="arrow">[↗]</span>
                     </div>
-                    <div className="sponsor-logo-wrapper">
+                    <div className="sponsor-logo-wrapper overflow-x-auto">
   <img
     src={sponsor.logoUrl}
     alt={getAltText(sponsor.name)}
     loading="lazy"
     className={
       sponsor.name === "Airia"
-        ? "!w-72 !h-auto !max-h-none" // reduced size (18rem)
+        ? "!w-72 !h-auto !max-h-none" // Airia (18rem wide)
+        : sponsor.name === "n8n"
+        ? "min-w-[28rem] !w-[28rem] sm:!w-[40rem] md:!w-[50rem] lg:!w-[60rem] !h-auto !max-h-none"
         : ""
     }
     onError={(e) => {

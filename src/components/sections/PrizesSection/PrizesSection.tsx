@@ -127,8 +127,8 @@ export const PrizesSection = () => {
   const extraPrizes = [
     {
       place:"n8n",
-      amount: "1 Month of n8n Pro to All Onsite Hackers and 1 year n8n Cloud Pro for all Winners",
-      image: "$17,801",
+      amount: "1 Month of n8n Cloud Pro to all On-site Hackers & 1 Year n8n Cloud Pro to Winners",
+      image: "$12,600",
     },
     {
       place: ".xyz",
