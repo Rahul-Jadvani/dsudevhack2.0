@@ -10,6 +10,7 @@ import { Register } from "./pages/Register";
 import { LoadingPage } from "./components/LoadingPage";
 import CurtainTransition from "./components/transitions/CurtainTransition";
 import { NewNavbar } from "./components/layout/NewNavbar";
+import Winners from "@/components/sections/winners/winners";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +64,7 @@ const App = () => {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/register" element={<Register />} />
+                  <Route path="/winners" element={<Winners />} />
                 </Routes>
               </div>
             )}

@@ -12,6 +12,8 @@ import { useTheme } from "../lib/theme-context";
 import Themes from "../components/themes";
 import AboutWhySection from "../components/sections/AboutWhySection";
 import SplashCursor from '../blocks/Animations/SplashCursor/SplashCursor';
+// import Winners from "../components/sections/winners/winners";
+// import Glimpses from "../components/sections/winners/glimpse";
 
 export const Home = () => {
   const { theme } = useTheme();
@@ -27,6 +29,7 @@ export const Home = () => {
 
         {/* About & Why Participate Section */}
         <AboutWhySection />
+        {/* <Glimpses /> */}
 
         {/* All other sections without KeyboardCanvas */}
         <div className="relative w-full">
