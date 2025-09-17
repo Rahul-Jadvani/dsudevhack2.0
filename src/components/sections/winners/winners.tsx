@@ -74,13 +74,11 @@ export const Winners = () => {
                         w-full h-full
                         ${
                           // Trim 7,8,9 cards
-                          index === 6 || index === 7 || index === 8
-                            ? "object-[center_top]"
-                            : ""
+                          index === 6 || index === 7 || index === 8 ? "object-[center_top]" : ""
                         }
                         ${
-                          // Last 3 Vultr cards on mobile: unzoomed
-                          (index === 9 || index === 10 || index === 11) ? "sm:object-cover object-contain" : ""
+                          // Last 3 Vultr cards (indices 9,10,11) fully unzoomed
+                          index === 9 || index === 10 || index === 11 ? "object-contain" : ""
                         }
                       `}
                       loading="lazy"
