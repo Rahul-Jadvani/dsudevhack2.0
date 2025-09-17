@@ -12,7 +12,6 @@ export const Winners = () => {
     }
   }, [isInView, isMounted]);
 
-  // ✅ Final Winners Order with real images
   const winnersList = [
     { title: "🏆 Winners", team: "Sudo Wudo", main: true, image: "/images/1.jpg" },
     { title: "🥈 Runner Ups", team: "Aqua Sense", main: true, image: "/images/2.jpg" },
@@ -38,7 +37,6 @@ export const Winners = () => {
           <div className="divider md:mt-2 md:mb-4"></div>
         </div>
 
-        {/* ✅ Responsive Grid (3 desktop / 2 tablet / 1 mobile) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {winnersList.map((winner, index) => {
             const cardRef = useRef(null);
@@ -62,7 +60,6 @@ export const Winners = () => {
                   ease: "easeOut"
                 }}
               >
-                {/* Title */}
                 <h2 className={`font-bold ${isMain ? "text-xl md:text-2xl" : "text-lg"} text-center mb-2`}>
                   {winner.title}
                 </h2>
@@ -73,15 +70,24 @@ export const Winners = () => {
                     <img
                       src={winner.image}
                       alt={winner.team}
-                      className={`w-full h-full object-cover ${
-                        index === 6 || index === 7 || index === 8 ? "object-[center_top]" : ""
-                      }`}
+                      className={`
+                        w-full h-full
+                        ${
+                          // Trim 7,8,9 cards
+                          index === 6 || index === 7 || index === 8
+                            ? "object-[center_top]"
+                            : ""
+                        }
+                        ${
+                          // Last 3 Vultr cards on mobile: unzoomed
+                          (index === 9 || index === 10 || index === 11) ? "sm:object-cover object-contain" : ""
+                        }
+                      `}
                       loading="lazy"
                     />
                   </div>
                 )}
 
-                {/* Team Name */}
                 <p className="mt-3 text-gray-900 text-center text-lg font-semibold">
                   {winner.team}
                 </p>
