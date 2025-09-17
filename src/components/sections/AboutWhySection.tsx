@@ -2,11 +2,50 @@
 import Iridescence from "@/blocks/Backgrounds/Iridescence/Iridescence";
 import LetterGlitch from "@/blocks/Backgrounds/LetterGlitch/LetterGlitch";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import confetti from "canvas-confetti";
 
 
 const AboutWhySection = () => {
+  const navigate = useNavigate();
+  // celebration function
+  const handleNavigate = () => {
+    // Trigger confetti
+    confetti({
+      particleCount: 120,
+      spread: 90,
+      origin: { y: 0.6 },
+    });
+
+    // Navigate to winners page after short delay
+    setTimeout(() => {
+      navigate("/winners"); // make sure this path matches your route
+    }, 500); // 500ms delay so confetti shows
+  };
   return (
     <section className="about-why-section w-full h-full py-12 mb-20 sm:mt-0 bg-white relative overflow-hidden">
+         {/* <div
+        onClick={handleNavigate}
+        className="w-full flex justify-center mb-10 relative z-10 cursor-pointer"
+      >
+        <div className="border-2 border-blue-500 bg-white/70 backdrop-blur-md rounded-lg shadow-lg p-6 flex flex-col items-center text-center max-w-xl hover:scale-105 transition-transform duration-200">
+          <h3 className="text-xl sm:text-2xl font-bold text-blue-700 mb-3">
+            Excited to know the Winners?
+          </h3>
+          <p className="text-base text-gray-700 mb-4 font-medium">
+            Click below to reveal the champions of DSU DEVHACK 2025!
+          </p>
+          <button
+            onClick={(e) => {
+              e.stopPropagation(); // prevent double trigger
+              handleNavigate();
+            }}
+            className="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-md hover:scale-105 transition-transform duration-200"
+          >
+            Know the Winners
+          </button>
+        </div>
+      </div> 
       {/* LetterGlitch as background */}
       <div className="absolute inset-0 w-full h-full -z-1 pointer-events-none">
         <Iridescence

@@ -4,6 +4,7 @@ import { TracksSection } from "../components/sections/TracksSection";
 import { PrizesSection } from "../components/sections/PrizesSection";
 import { TimelineSection } from "../components/sections/TimelineSection";
 import { OrganisingTeamSection } from "../components/sections/OrganisingTeamSection/OrganisingTeamSection";
+import { Winners } from "../components/sections/winners/winners";
 import { TimeCapsuleSection } from "../components/sections/TimeCapsuleSection";
 import { NewSponsorsSection } from "../components/sections/NewSponsorsSection";
 import { FAQPageSection } from "../components/sections/FAQPageSection";
@@ -12,6 +13,8 @@ import { useTheme } from "../lib/theme-context";
 import Themes from "../components/themes";
 import AboutWhySection from "../components/sections/AboutWhySection";
 import SplashCursor from '../blocks/Animations/SplashCursor/SplashCursor';
+// import Winners from "../components/sections/winners/winners";
+// import Glimpses from "../components/sections/winners/glimpse";
 
 export const Home = () => {
   const { theme } = useTheme();
@@ -27,10 +30,13 @@ export const Home = () => {
 
         {/* About & Why Participate Section */}
         <AboutWhySection />
+       
+        {/* <Glimpses /> */}
 
         {/* All other sections without KeyboardCanvas */}
         <div className="relative w-full">
           <TimeCapsuleSection />
+          <Winners />
           <PrizesSection />
           <TracksSection />
           <TimelineSection />
